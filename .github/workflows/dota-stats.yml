@@ -1,4 +1,4 @@
-name: Update Dota 2 Stats
+name: Update Dota 2 Advanced Tracker
 
 on:
   schedule:
@@ -20,86 +20,158 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch Dota Data and Generate HTML
+      - name: Fetch Dota Data and Generate Advanced HTML
         run: |
           cat << 'EOF' > dota_script.py
           import requests
+          import math
 
           try:
-              # Твой ID игрока жестко прописан здесь
               steam_id = "924159299"
               
-              # Запрос списка героев
-              hero_map = {}
-              try:
-                  heroes_res = requests.get('https://opendota.com', timeout=15).json()
-                  hero_map = {h['id']: h['localized_name'] for h in heroes_res if 'id' in h}
-              except Exception as he:
-                  print(f"Предупреждение по героям: {he}")
+              # 1. Получаем общую информацию об игроке (Ранг, MMR, Ник, Аватар)
+              player_res = requests.get(f'https://opendota.com{steam_id}', timeout=15).json()
+              profile = player_res.get('profile', {})
+              persona_name = profile.get('personaname', 'faukree')
+              avatar = profile.get('avatarfull', 'https://akamaihd.net')
+              
+              # Расчет ММР и Медали
+              mmr_estimate = player_res.get('mmr_estimate', {}).get('estimate', 'Не определен')
+              rank_tier = player_res.get('rank_tier') # Например 51 (Legend 1)
+              
+              medals = {1: "Herald", 2: "Guardian", 3: "Crusader", 4: "Archon", 5: "Legend", 6: "Ancient", 7: "Divine", 8: "Immortal"}
+              if rank_tier:
+                  medal_num = rank_tier // 10
+                  stars = rank_tier % 10
+                  medal_name = medals.get(medal_num, "Unknown")
+                  rank_title = f"{medal_name} [{stars}]" if medal_num != 8 else "Immortal"
+              else:
+                  rank_title = "Без ранга"
 
-              # Прямой и чистый URL к OpenDota без склеек
-              url = f"https://api.opendota.com/api/players/{steam_id}/recentMatches"
-              print(f"Делаем запрос к: {url}")
+              # 2. Получаем словарь героев с картинками
+              heroes_res = requests.get('https://opendota.com', timeout=15).json()
+              hero_dict = {h['id']: {'name': h['localized_name'], 'short_name': h['name'].replace('npc_dota_hero_', '')} for h in heroes_res}
+
+              # 3. Получаем последние 20 матчей игрока (с расширенной статистикой)
+              matches = requests.get(f'https://opendota.com{steam_id}/matches?limit=20', timeout=15).json()
               
-              response = requests.get(url, timeout=15)
-              if response.status_code != 200:
-                  print(f"Ошибка API: Код {response.status_code}")
-                  exit(1)
-                  
-              matches = response.json()
-              
-              html_content = '''<!DOCTYPE html>
+              # HTML структура сайта
+              html_content = f'''<!DOCTYPE html>
               <html lang="ru">
               <head>
                   <meta charset="UTF-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Моя статистика Dota 2</title>
+                  <title>Dota 2 Tracker | {persona_name}</title>
                   <style>
-                      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #121214; color: #e1e1e6; padding: 40px; max-width: 800px; margin: 0 auto; }
-                      h1 { color: #fff; border-bottom: 2px solid #29292e; padding-bottom: 10px; }
-                      table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); background: #19191d; border-radius: 8px; overflow: hidden; }
-                      th, td { padding: 14px; text-align: left; border-bottom: 1px solid #29292e; }
-                      th { background: #202024; color: #00b4d8; font-weight: 600; }
-                      tr:hover { background: #222226; }
-                      .win { color: #4ade80; font-weight: bold; }
-                      .lose { color: #f87171; font-weight: bold; }
+                      body {{ font-family: 'Segoe UI', Roboto, sans-serif; background: #0c0d12; color: #b3b5c6; padding: 30px; max-width: 1100px; margin: 0 auto; }}
+                      .profile-card {{ display: flex; align-items: center; background: #14161f; border: 1px solid #232635; padding: 20px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }}
+                      .profile-card img {{ width: 80px; height: 80px; border-radius: 50%; border: 2px solid #00b4d8; margin-right: 20px; }}
+                      .info h2 {{ margin: 0; color: #fff; font-size: 24px; }}
+                      .info p {{ margin: 5px 0 0 0; font-size: 14px; }}
+                      .badge {{ background: #00b4d8; color: #fff; padding: 3px 8px; border-radius: 4px; font-weight: bold; }}
+                      .mmr {{ color: #ffb703; font-weight: bold; }}
+                      
+                      table {{ width: 100%; border-collapse: collapse; background: #14161f; border: 1px solid #232635; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }}
+                      th, td {{ padding: 12px 15px; text-align: left; border-bottom: 1px solid #1f222f; font-size: 14px; }}
+                      th {{ background: #1b1e2a; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }}
+                      tr:hover {{ background: #1a1d29; }}
+                      
+                      .hero-cell {{ display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 500; }}
+                      .hero-img {{ width: 45px; height: 25px; border-radius: 3px; object-fit: cover; box-shadow: 0 2px 4px rgba(0,0,0,0.5); }}
+                      
+                      .win {{ color: #4ade80; font-weight: bold; background: rgba(74, 222, 128, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; }}
+                      .lose {{ color: #f87171; font-weight: bold; background: rgba(248, 113, 113, 0.1); padding: 4px 8px; border-radius: 4px; display: inline-block; }}
+                      
+                      .stats-main {{ color: #e1e1e6; font-weight: bold; }}
+                      .stats-sec {{ font-size: 12px; color: #767993; }}
                   </style>
               </head>
               <body>
-                  <h1>🎮 Мои последние 20 игр в Dota 2</h1>
-                  <table>
+
+              <div class="profile-card">
+                  <img src="{avatar}" alt="Avatar">
+                  <div class="info">
+                      <h2>{persona_name}</h2>
+                      <p>Звание: <span class="badge">{rank_title}</span> | Примерный MMR: <span class="mmr">{mmr_estimate}</span></p>
+                  </div>
+              </div>
+
+              <h2>🎮 Последние 20 игр</h2>
+              <table>
+                  <thead>
                       <tr>
                           <th>Герой</th>
                           <th>Результат</th>
                           <th>K / D / A</th>
+                          <th>GPM / XPM</th>
+                          <th>Крипы (LH/DN)</th>
                           <th>Длительность</th>
                       </tr>
+                  </thead>
+                  <tbody>
               '''
-              
-              for m in matches[:20]:
+
+              for m in matches:
                   hero_id = m.get('hero_id', 0)
-                  hero = hero_map.get(hero_id, f"Hero ID: {hero_id}")
+                  hero_data = hero_dict.get(hero_id, {'name': f'Hero {hero_id}', 'short_name': 'unknown'})
                   
+                  # Ссылка на официальную иконку героя на сервере Valve
+                  hero_img_url = f"https://steamstatic.com{hero_data['short_name']}.png"
+                  
+                  # Определение победы
                   is_radiant = m.get('player_slot', 0) < 128
                   radiant_win = m.get('radiant_win', False)
-                  
                   win = (radiant_win and is_radiant) or (not radiant_win and not is_radiant)
-                  res_text = '<span class="win">🟢 Победа</span>' if win else '<span class="lose">🔴 Поражение</span>'
+                  res_html = f'<span class="win">Победа</span>' if win else f'<span class="lose">Поражение</span>'
                   
-                  duration_sec = m.get('duration', 0)
-                  duration = f"{duration_sec // 60}м {duration_sec % 60}с"
-                  kda = f"{m.get('kills', 0)} / {m.get('deaths', 0)} / {m.get('assists', 0)}"
+                  # Расчет времени
+                  dur = m.get('duration', 0)
+                  duration_text = f"{dur // 60}м {dur % 60}с"
                   
-                  html_content += f'<tr><td>{hero}</td><td>{res_text}</td><td>{kda}</td><td>{duration}</td></tr>\n'
-              
-              html_content += '</table></body></html>'
+                  # Выгрузка KDA, GPM, XPM и крипов
+                  kills = m.get('kills', 0)
+                  deaths = m.get('deaths', 0)
+                  assists = m.get('assists', 0)
+                  gpm = m.get('gold_per_min', 0)
+                  xpm = m.get('xp_per_min', 0)
+                  lh = m.get('last_hits', 0)
+                  dn = m.get('denies', 0)
+                  
+                  html_content += f'''
+                  <tr>
+                      <td>
+                          <div class="hero-cell">
+                              <img class="hero-img" src="{hero_img_url}" onerror="this.src='https://placeholder.com'" alt="hero">
+                              <span>{hero_data['name']}</span>
+                          </div>
+                      </td>
+                      <td>{res_html}</td>
+                      <td>
+                          <span class="stats-main">{kills} / {deaths} / {assists}</span>
+                      </td>
+                      <td>
+                          <span class="stats-main">{gpm}</span> / <span class="stats-sec">{xpm}</span>
+                      </td>
+                      <td>
+                          <span class="stats-main">{lh}</span> / <span class="stats-sec">{dn}</span>
+                      </td>
+                      <td>{duration_text}</td>
+                  </tr>
+                  '''
+
+              html_content += '''
+                  </tbody>
+              </table>
+              </body>
+              </html>
+              '''
               
               with open('index.html', 'w', encoding='utf-8') as f:
                   f.write(html_content)
-              print("HTML файл успешно сохранен!")
+              print("Продвинутый HTML успешно сгенерирован!")
               
           except Exception as e:
-              print(f"Критический сбой: {e}")
+              print(f"Ошибка выполнения скрипта: {e}")
               exit(1)
           EOF
           python dota_script.py
@@ -109,5 +181,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add index.html
-          git commit -m "Update match history site" || exit 0
+          git commit -m "Update advanced dota tracker page" || exit 0
           git push
