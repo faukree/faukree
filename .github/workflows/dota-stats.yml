@@ -49,7 +49,7 @@ jobs:
               # Запрос последних 20 матчей
               matches = requests.get(f'https://opendota.com{steam_id}/recentMatches', timeout=15).json()
               
-              # Создаем разметку для главной страницы профиля
+              # Генерируем Markdown разметку для главной страницы
               md = f'# Привет, я {name} 👋\\n\\n'
               md += f'### 📊 Мой ранг: `{title}` | Примерный MMR: `{mmr}`\\n\\n'
               md += '## 🎮 Последние 20 игр в Dota 2\\n\\n'
@@ -61,7 +61,7 @@ jobs:
                   loc_name = h_name_map.get(hero_id, f'Hero ID: {hero_id}')
                   short_name = h_img_map.get(hero_id, 'unknown')
                   
-                  # Ссылка на официальную иконку героя (будет отображаться прямо в профиле)
+                  # Иконка героя для разметки гитхаба
                   h_img_url = f'https://steamstatic.com{short_name}.png'
                   hero_html = f'<img src=\"{h_img_url}\" width=\"45\" height=\"25\" valign=\"middle\"> **{loc_name}**'
                   
@@ -77,16 +77,16 @@ jobs:
               
               with open('README.md', 'w', encoding='utf-8') as f: 
                   f.write(md)
-              print('README.md успешно обновлен!')
+              print('README.md успешно перезаписан!')
           except Exception as e:
               print(f'Ошибка: {e}')
               exit(1)
           "
 
-      - name: Commit and Push Changes
+      - name: Push to Main Branch
         run: |
           git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@://github.com'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add README.md
-          git commit -m "Update profile dota dashboard" || exit 0
-          git push
+          git commit -m "Update profile stats dashboard" || exit 0
+          git push origin main
