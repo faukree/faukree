@@ -75,13 +75,13 @@
 
     <script>
         const STEAM_ID = "924159299";
-        // Работаем НАПРЯМУЮ БЕЗ ПРОКСИ, чтобы избежать ERR_CONNECTION_RESET
-        const API_BASE = "https://opendota.com";
+        // Работаем НАПРЯМУЮ с OpenDota API без каких-либо прокси
+        const API_BASE = "https://api.opendota.com/api";
 
         async function initTracker() {
             try {
-                // 1. Прямой запрос данных профиля игрока
-                const playerRes = await fetch(`${API_BASE}/players/${STEAM_ID}`, { mode: 'cors' });
+                // 1. Загружаем данные профиля игрока напрямую
+                const playerRes = await fetch(`${API_BASE}/players/${STEAM_ID}`);
                 const playerData = await playerRes.json();
                 
                 if (playerData.profile) {
@@ -102,8 +102,8 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
-                // 2. Прямой запрос базы героев
-                const heroesRes = await fetch(`${API_BASE}/heroes`, { mode: 'cors' });
+                // 2. Загружаем базу героев напрямую
+                const heroesRes = await fetch(`${API_BASE}/heroes`);
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
                 heroesList.forEach(h => {
@@ -113,8 +113,8 @@
                     };
                 });
 
-                // 3. Прямой запрос последних 20 матчей
-                const matchesRes = await fetch(`${API_BASE}/players/${STEAM_ID}/matches?limit=20`, { mode: 'cors' });
+                // 3. Загружаем последние 20 матчей напрямую
+                const matchesRes = await fetch(`${API_BASE}/players/${STEAM_ID}/matches?limit=20`);
                 const matches = await matchesRes.json();
                 
                 const tbody = document.getElementById('table-body');
@@ -149,12 +149,13 @@
                     tbody.appendChild(tr);
                 });
                 
+                // Скрываем плашку синхронизации и выводим таблицу
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('match-table').style.display = 'table';
                 
             } catch (err) {
-                console.error("Ошибка трекера:", err);
-                document.getElementById('loader').innerText = 'Ошибка загрузки данных OpenDota API без прокси.';
+                console.error("Произошла ошибка во время сетевого запроса:", err);
+                document.getElementById('loader').innerText = 'Ошибка соединения с API OpenDota. Обновите страницу через Ctrl+F5.';
             }
         }
 
