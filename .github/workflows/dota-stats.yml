@@ -1,0 +1,69 @@
+name: Update Dota 2 Stats
+
+on:
+  schedule:
+    # Запуск каждые 2 часа (можно настроить чаще)
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # Позволяет запускать вручную одной кнопкой
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Dota 2 Table
+        env:
+          STEAM_ID: '924159299'
+        run: |
+          node -e "
+          const fs = require('fs');
+          const steamId = process.env.STEAM_ID;
+          
+          // Получаем словарь героев, чтобы переводить ID в имена
+          fetch('https://opendota.com').then(res => res.json()).then(heroes => {
+            const heroMap = Object.fromEntries(heroes.map(h => [h.id, h.localized_name]));
+            
+            // Получаем последние 20 матчей игрока
+            fetch(\`https://opendota.com\${steamId}/recentMatches\`).then(res => res.json()).then(matches => {
+              let table = '### 🎮 Последние 20 игр в Dota 2\\n\\n';
+              table += '| Герой | Результат | K / D / A | Длительность |\\n| :--- | :--- | :--- | :--- |\\n';
+              
+              matches.slice(0, 20).forEach(m => {
+                const hero = heroMap[m.hero_id] || 'Unknown';
+                const isRadiant = m.player_slot < 128;
+                const win = (m.radiant_win && isRadiant) || (!m.radiant_win && !isRadiant);
+                const result = win ? '🟢 Победа' : '🔴 Поражение';
+                const duration = Math.floor(m.duration / 60) + 'м ' + (m.duration % 60) + 'с';
+                
+                table += \`| \${hero} | \${result} | \${m.kills} / \${m.deaths} / \${m.assists} | \${duration} |\\n\`;
+              });
+              
+              // Запись в README.md (сохраняя базовое описание профиля сверху)
+              let readme = '# Привет, это мой профиль!\\n\\n';
+              if (fs.existsSync('README.md')) {
+                const current = fs.readFileSync('README.md', 'utf8');
+                if (current.includes('### 🎮 Последние 20 игр')) {
+                  readme = current.split('### 🎮 Последние 20 игр')[0];
+                } else {
+                  readme = current + '\\n\\n';
+                }
+              }
+              fs.writeFileSync('README.md', readme + table);
+            });
+          });
+          "
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "Update Dota 2 match history" || exit 0
+          git push
