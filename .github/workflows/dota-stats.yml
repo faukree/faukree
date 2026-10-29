@@ -1,4 +1,4 @@
-name: Update Dota 2 Profile Dashboard
+name: Update Dota 2 Tracker Layout
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  update-profile:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -23,17 +23,16 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Fetch Dota Data and Update Profile
+      - name: Generate Static HTML
         run: |
           python -c "
           import requests
           try:
               steam_id = '924159299'
-              
-              # Запрос профиля игрока
               p_res = requests.get(f'https://opendota.com{steam_id}', timeout=15).json()
               prof = p_res.get('profile', {})
               name = prof.get('personaname', 'faukree')
+              avatar = prof.get('avatarfull', 'https://placeholder.com')
               rank = p_res.get('rank_tier', 0)
               mmr = p_res.get('mmr_estimate', {}).get('estimate', '—')
               
@@ -41,52 +40,84 @@ jobs:
               title = f'{medals.get(rank//10, \"Unranked\")} [{rank%10}]' if rank else 'No Rank'
               if rank and rank // 10 == 8: title = 'Immortal'
               
-              # Запрос базы героев
               h_res = requests.get('https://opendota.com', timeout=15).json()
-              h_name_map = {h['id']: h['localized_name'] for h in h_res}
-              h_img_map = {h['id']: h['name'].replace('npc_dota_hero_', '') for h in h_res}
+              h_map = {h['id']: {'name': h['localized_name'], 'tag': h['name'].replace('npc_dota_hero_', '')} for h in h_res}
               
-              # Запрос последних 20 матчей
               matches = requests.get(f'https://opendota.com{steam_id}/recentMatches', timeout=15).json()
               
-              # Генерируем Markdown разметку для главной страницы
-              md = f'# Привет, я {name} 👋\\n\\n'
-              md += f'### 📊 Мой ранг: `{title}` | Примерный MMR: `{mmr}`\\n\\n'
-              md += '## 🎮 Последние 20 игр в Dota 2\\n\\n'
-              md += '| Герой | Результат | K / D / A | Длительность |\\n'
-              md += '| :--- | :--- | :--- | :--- |\\n'
+              body_html = f'''
+              <div class=\"header\">
+                  <img src=\"{avatar}\" alt=\"Avatar\">
+                  <div class=\"header-info\">
+                      <h1>{name}</h1>
+                      <p>ID: {steam_id} | Звание: <span class=\"rank-val\">{title}</span> | Примерный MMR: <span class=\"mmr-val\">{mmr}</span></p>
+                  </div>
+              </div>
+              <div class=\"title-block\">
+                  <h2>Последние 20 игр в Dota 2</h2>
+                  <div class=\"links\">
+                      <a href=\"https://dotabuff.com{steam_id}\" target=\"_blank\">Dotabuff</a>
+                      <a href=\"https://opendota.com{steam_id}\" target=\"_blank\">OpenDota</a>
+                  </div>
+              </div>
+              <div class=\"table-wrapper\">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Герой</th>
+                              <th>Результат</th>
+                              <th>K / D / A</th>
+                              <th>GPM / XPM</th>
+                              <th>Крипы (LH/DN)</th>
+                              <th>Длительность</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+              '''
               
               for m in matches[:20]:
-                  hero_id = m.get('hero_id', 0)
-                  loc_name = h_name_map.get(hero_id, f'Hero ID: {hero_id}')
-                  short_name = h_img_map.get(hero_id, 'unknown')
-                  
-                  # Иконка героя для разметки гитхаба
-                  h_img_url = f'https://steamstatic.com{short_name}.png'
-                  hero_html = f'<img src=\"{h_img_url}\" width=\"45\" height=\"25\" valign=\"middle\"> **{loc_name}**'
-                  
+                  hero = h_map.get(m.get('hero_id'), {'name': 'Unknown', 'tag': 'unknown'})
+                  hero_img = f'https://steamstatic.com{hero[\"tag\"]}.png'
                   is_rad = m.get('player_slot', 0) < 128
                   win = (m.get('radiant_win') and is_rad) or (not m.get('radiant_win') and not is_rad)
-                  res = '🟢 **Победа**' if win else '🔴 *Поражение*'
+                  res_html = '<span class=\"win\">Победа</span>' if win else '<span class=\"lose\">Поражение</span>'
+                  duration = f\"{m.get('duration', 0) // 60}м {m.get('duration', 0) % 60}с\"
                   
-                  dur = m.get('duration', 0)
-                  duration_text = f\"{dur // 60}м {dur % 60}с\"
-                  kda = f\"{m.get('kills', 0)} / {m.get('deaths', 0)} / {m.get('assists', 0)}\"
-                  
-                  md += f'| {hero_html} | {res} | {kda} | {duration_text} |\\n'
+                  body_html += f'''
+                          <tr>
+                              <td>
+                                  <div class=\"hero-cell\">
+                                      <img src=\"{hero_img}\" onerror=\"this.src='https://placeholder.com'\" alt=\"hero\">
+                                      <span>{hero[\"name\"]}</span>
+                                  </div>
+                              </td>
+                              <td>{res_html}</td>
+                              <td><span class=\"main-stat\">{m.get('kills', 0)}</span> / {m.get('deaths', 0)} / {m.get('assists', 0)}</td>
+                              <td><span class=\"main-stat\">{m.get('gold_per_min', 0)}</span> / <span class=\"sec-stat\">{m.get('xp_per_min', 0)}</span></td>
+                              <td><span class=\"main-stat\">{m.get('last_hits', 0)}</span> / <span class=\"sec-stat\">{m.get('denies', 0)}</span></td>
+                              <td>{duration}</td>
+                          </tr>
+                  '''
               
-              with open('README.md', 'w', encoding='utf-8') as f: 
-                  f.write(md)
-              print('README.md успешно перезаписан!')
+              body_html += '</tbody></table></div>'
+              
+              with open('index.html', 'r', encoding='utf-8') as f:
+                  base_template = f.read()
+              
+              final_html = base_template.replace('<!-- DATA_PLACEHOLDER -->', body_html)
+              
+              with open('index.html', 'w', encoding='utf-8') as f:
+                  f.write(final_html)
+              print('HTML успешно сгенерирован!')
           except Exception as e:
-              print(f'Ошибка: {e}')
+              print(e)
               exit(1)
           "
 
-      - name: Push to Main Branch
+      - name: Save updates
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m "Update profile stats dashboard" || exit 0
-          git push origin main
+          git add index.html
+          git commit -m "Render static dota table" || exit 0
+          git push
