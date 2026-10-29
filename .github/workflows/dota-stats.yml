@@ -21,44 +21,33 @@ jobs:
         run: pip install requests
 
       - name: Fetch Dota Data and Generate HTML
-        env:
-          STEAM_ID: '924159299'
         run: |
           cat << 'EOF' > dota_script.py
-          import os
           import requests
 
           try:
-              steam_id = os.environ.get('STEAM_ID', '').strip()
-              if not steam_id or 'ВСТАВЬ' in steam_id:
-                  print("Ошибка: Вы забыли указать свой реальный Steam ID вместо текста-заглушки!")
-                  exit(1)
+              # Твой ID игрока жестко прописан здесь
+              steam_id = "924159299"
               
-              # Запрос героев с обработкой ошибок
+              # Запрос списка героев
               hero_map = {}
               try:
                   heroes_res = requests.get('https://opendota.com', timeout=15).json()
                   hero_map = {h['id']: h['localized_name'] for h in heroes_res if 'id' in h}
               except Exception as he:
-                  print(f"Предупреждение: Не удалось загрузить имена героев ({he}). Используем ID.")
+                  print(f"Предупреждение по героям: {he}")
 
-              # Запрос матчей
-              url = f'https://opendota.com{steam_id}/recentMatches'
-              print(f"Запрос данных с OpenDota по адресу: {url}")
-              response = requests.get(url, timeout=15)
+              # Прямой и чистый URL к OpenDota без склеек
+              url = f"https://api.opendota.com/api/players/{steam_id}/recentMatches"
+              print(f"Делаем запрос к: {url}")
               
+              response = requests.get(url, timeout=15)
               if response.status_code != 200:
-                  print(f"Ошибка API OpenDota: Сервер вернул код {response.status_code}")
+                  print(f"Ошибка API: Код {response.status_code}")
                   exit(1)
                   
               matches = response.json()
-              if not isinstance(matches, list):
-                  print("Ошибка: API вернуло некорректный формат данных (не список матчей). Проверьте ID.")
-                  exit(1)
-                  
-              if len(matches) == 0:
-                  print("Предупреждение: История матчей пуста. Проверьте, открыта ли история в настройках Dota 2.")
-
+              
               html_content = '''<!DOCTYPE html>
               <html lang="ru">
               <head>
@@ -88,13 +77,10 @@ jobs:
               '''
               
               for m in matches[:20]:
-                  if not isinstance(m, dict):
-                      continue
                   hero_id = m.get('hero_id', 0)
                   hero = hero_map.get(hero_id, f"Hero ID: {hero_id}")
                   
-                  player_slot = m.get('player_slot', 0)
-                  is_radiant = player_slot < 128
+                  is_radiant = m.get('player_slot', 0) < 128
                   radiant_win = m.get('radiant_win', False)
                   
                   win = (radiant_win and is_radiant) or (not radiant_win and not is_radiant)
@@ -102,7 +88,6 @@ jobs:
                   
                   duration_sec = m.get('duration', 0)
                   duration = f"{duration_sec // 60}м {duration_sec % 60}с"
-                  
                   kda = f"{m.get('kills', 0)} / {m.get('deaths', 0)} / {m.get('assists', 0)}"
                   
                   html_content += f'<tr><td>{hero}</td><td>{res_text}</td><td>{kda}</td><td>{duration}</td></tr>\n'
@@ -111,10 +96,10 @@ jobs:
               
               with open('index.html', 'w', encoding='utf-8') as f:
                   f.write(html_content)
-              print("Файл index.html успешно сгенерирован!")
+              print("HTML файл успешно сохранен!")
               
           except Exception as e:
-              print(f"Критическая ошибка выполнения скрипта: {e}")
+              print(f"Критический сбой: {e}")
               exit(1)
           EOF
           python dota_script.py
@@ -122,7 +107,7 @@ jobs:
       - name: Commit and Push changes
         run: |
           git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@://github.com'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add index.html
           git commit -m "Update match history site" || exit 0
           git push
