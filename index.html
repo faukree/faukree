@@ -75,15 +75,13 @@
 
     <script>
         const STEAM_ID = "924159299";
-        // Полный, исправленный URL-адрес прокси-сервера AllOrigins
-        const PROXY = "https://api.allorigins.win/raw?url=";
+        // Работаем НАПРЯМУЮ БЕЗ ПРОКСИ, чтобы избежать ERR_CONNECTION_RESET
         const API_BASE = "https://opendota.com";
 
         async function initTracker() {
             try {
-                // 1. Загружаем данные профиля игрока через правильный URL API
-                const playerUrl = `${API_BASE}/players/${STEAM_ID}`;
-                const playerRes = await fetch(`${PROXY}${encodeURIComponent(playerUrl)}`);
+                // 1. Прямой запрос данных профиля игрока
+                const playerRes = await fetch(`${API_BASE}/players/${STEAM_ID}`, { mode: 'cors' });
                 const playerData = await playerRes.json();
                 
                 if (playerData.profile) {
@@ -104,9 +102,8 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
-                // 2. Загружаем базу героев
-                const heroesUrl = `${API_BASE}/heroes`;
-                const heroesRes = await fetch(`${PROXY}${encodeURIComponent(heroesUrl)}`);
+                // 2. Прямой запрос базы героев
+                const heroesRes = await fetch(`${API_BASE}/heroes`, { mode: 'cors' });
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
                 heroesList.forEach(h => {
@@ -116,9 +113,8 @@
                     };
                 });
 
-                // 3. Загружаем последние 20 матчей
-                const matchesUrl = `${API_BASE}/players/${STEAM_ID}/matches?limit=20`;
-                const matchesRes = await fetch(`${PROXY}${encodeURIComponent(matchesUrl)}`);
+                // 3. Прямой запрос последних 20 матчей
+                const matchesRes = await fetch(`${API_BASE}/players/${STEAM_ID}/matches?limit=20`, { mode: 'cors' });
                 const matches = await matchesRes.json();
                 
                 const tbody = document.getElementById('table-body');
@@ -157,8 +153,8 @@
                 document.getElementById('match-table').style.display = 'table';
                 
             } catch (err) {
-                console.error("Произошла ошибка в трекере:", err);
-                document.getElementById('loader').innerText = 'Ошибка соединения с API. Перезагрузите страницу через Ctrl+F5.';
+                console.error("Ошибка трекера:", err);
+                document.getElementById('loader').innerText = 'Ошибка загрузки данных OpenDota API без прокси.';
             }
         }
 
