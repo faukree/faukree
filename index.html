@@ -1,119 +1,106 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a0f17">
 <title>FAUKREE — Dota 2 Tracker</title>
 <style>
 :root {
   color-scheme: dark;
-  --bg: #090e16;
-  --panel: #111a27;
-  --panel2: #172334;
-  --line: #27374b;
-  --text: #edf3fc;
-  --muted: #91a3ba;
-  --green: #36d391;
-  --red: #ff6574;
-  --gold: #e8c477;
+  --bg:#0a0f17;
+  --panel:#111a27;
+  --panel2:#172334;
+  --line:#28374b;
+  --text:#edf3fc;
+  --muted:#8fa2ba;
+  --green:#35d391;
+  --red:#ff6474;
+  --gold:#e8c477;
 }
-* { box-sizing: border-box; }
+* { box-sizing:border-box; }
 body {
-  margin: 0;
-  background:
-    radial-gradient(ellipse at 50% -20%, #203653 0, transparent 65%),
-    var(--bg);
-  color: var(--text);
-  font: 15px/1.5 system-ui, -apple-system, Segoe UI, sans-serif;
-  min-height: 100vh;
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(ellipse at 50% -15%,#203754 0,transparent 65%),var(--bg);
+  color:var(--text);
+  font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;
 }
-main { width: min(1050px, 100% - 32px); margin: 34px auto; }
+main { width:min(1050px,calc(100% - 32px)); margin:30px auto; }
 header {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 16px; flex-wrap: wrap; margin-bottom: 22px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:14px; flex-wrap:wrap; margin-bottom:22px;
 }
-.logo { font-size: 22px; font-weight: 900; letter-spacing: 2px; }
-.logo span { color: var(--muted); font-size: 12px; letter-spacing: 1px; }
-button {
-  background: #223954; color: white; border: 1px solid #3b5879;
-  border-radius: 10px; padding: 10px 15px; font-weight: 700;
-  cursor: pointer; font-size: 14px;
+.logo { font-weight:900; font-size:23px; letter-spacing:2px; }
+.logo span { color:var(--muted); font-size:12px; letter-spacing:1px; }
+button,.link-button {
+  border:1px solid #3b5675; background:#203650; color:#f3f7ff;
+  padding:10px 15px; border-radius:10px; font-weight:750;
+  cursor:pointer; text-decoration:none; display:inline-block;
 }
-button:hover { background: #2c496a; }
-button:disabled { opacity: .6; cursor: wait; }
+button:hover,.link-button:hover { background:#2a4665; }
+button:disabled { opacity:.6; cursor:wait; }
 .panel {
-  background: linear-gradient(145deg, #141f2e, #101722);
-  border: 1px solid var(--line); border-radius: 16px;
-  padding: 20px; margin-bottom: 18px;
-  box-shadow: 0 12px 35px #0002;
+  background:linear-gradient(145deg,#141f2e,#101722);
+  border:1px solid var(--line); border-radius:16px;
+  padding:20px; margin-bottom:18px;
+  box-shadow:0 12px 35px #0002;
 }
-.profile { display: flex; align-items: center; gap: 18px; }
+.profile { display:flex; align-items:center; gap:18px; }
 .avatar {
-  width: 86px; height: 86px; object-fit: cover;
-  border-radius: 14px; background: var(--panel2);
-  border: 1px solid var(--line);
+  width:86px; height:86px; border-radius:15px;
+  object-fit:cover; background:var(--panel2);
+  border:1px solid var(--line);
 }
-.nickname { font-size: 27px; font-weight: 850; overflow-wrap: anywhere; }
-.muted { color: var(--muted); }
-.rank { display: flex; align-items: center; gap: 12px; margin-top: 7px; }
-.rank img { width: 50px; height: 50px; object-fit: contain; }
-.rank-name { color: var(--gold); font-weight: 750; }
-.section-title {
-  font-size: 18px; font-weight: 800; margin: 0;
+.nickname { font-size:27px; font-weight:850; overflow-wrap:anywhere; }
+.muted { color:var(--muted); }
+.rank { display:flex; align-items:center; gap:12px; margin-top:7px; }
+.rank img { width:50px; height:50px; object-fit:contain; }
+.rank-name { color:var(--gold); font-weight:800; }
+.stats {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px; margin-top:20px;
 }
+.stat { background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:14px; }
+.stat small { display:block; color:var(--muted); margin-bottom:4px; }
+.stat strong { font-size:23px; }
 .section-head {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: 12px; flex-wrap: wrap; margin-bottom: 17px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px; margin-bottom:16px;
 }
-.status {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 12px; color: var(--muted);
-}
-.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-.error {
-  background: #351c26; border: 1px solid #743441;
-  color: #ffc0c7; padding: 12px; border-radius: 10px;
-  margin-top: 15px; overflow-wrap: anywhere;
-}
-.empty { text-align: center; padding: 25px 10px; color: var(--muted); }
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; min-width: 760px; }
-th {
-  color: var(--muted); font-size: 11px; text-transform: uppercase;
-  letter-spacing: .6px; font-weight: 700;
-  background: #172334;
-}
-th, td {
-  text-align: left; padding: 12px 10px;
-  border-bottom: 1px solid var(--line); white-space: nowrap;
-}
-tbody tr:hover { background: #ffffff06; }
-.hero { display: flex; align-items: center; gap: 10px; font-weight: 700; }
-.hero img {
-  width: 58px; height: 33px; object-fit: cover;
-  border-radius: 5px; background: var(--panel2);
-}
-.win { color: var(--green); font-weight: 800; }
-.loss { color: var(--red); font-weight: 800; }
-.match-link { color: #a5caff; text-decoration: none; }
-.match-link:hover { text-decoration: underline; }
-footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 0 25px; }
-@media (max-width: 600px) {
-  main { width: calc(100% - 20px); margin: 18px auto; }
-  .panel { padding: 14px; border-radius: 13px; }
-  .avatar { width: 66px; height: 66px; }
-  .nickname { font-size: 21px; }
-  .logo { font-size: 19px; }
+h2 { font-size:18px; margin:0; }
+.status { font-size:12px; color:var(--muted); }
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; min-width:730px; font-size:13px; }
+th,td { padding:12px 10px; text-align:left; white-space:nowrap; border-bottom:1px solid var(--line); }
+th { background:#172334; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+tbody tr:hover { background:#ffffff07; }
+.hero { display:flex; align-items:center; gap:10px; font-weight:700; }
+.hero img { width:58px; height:33px; object-fit:cover; border-radius:5px; background:var(--panel2); }
+.win { color:var(--green); font-weight:800; }
+.loss { color:var(--red); font-weight:800; }
+.match-link { color:#a5caff; text-decoration:none; }
+.match-link:hover { text-decoration:underline; }
+.empty { color:var(--muted); text-align:center; padding:28px 12px; overflow-wrap:anywhere; }
+.error { color:#ffc0c7; background:#351c26; border:1px solid #743441; border-radius:10px; padding:12px; margin-top:15px; overflow-wrap:anywhere; }
+.actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+footer { text-align:center; color:var(--muted); font-size:12px; padding:8px 0 25px; }
+@media(max-width:600px) {
+  main { width:calc(100% - 20px); margin:16px auto; }
+  .panel { padding:14px; }
+  .avatar { width:66px; height:66px; }
+  .nickname { font-size:21px; }
+  .stats { grid-template-columns:1fr; gap:8px; }
+  .stat { padding:11px 13px; }
+  .stat strong { font-size:20px; }
 }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <div class="logo">
-      FAUKREE <span>/ DOTA 2 TRACKER</span>
-    </div>
+    <div class="logo">FAUKREE <span>/ DOTA 2 TRACKER</span></div>
     <button id="refresh">↻ Обновить</button>
   </header>
 
@@ -124,26 +111,43 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
         alt="Аватар игрока">
       <div>
         <div id="nickname" class="nickname">Загрузка профиля...</div>
-        <div class="muted">Steam ID: 924159299</div>
+        <div class="muted">Steam account ID: 924159299</div>
         <div class="rank">
           <img id="rankIcon" alt="Медаль" hidden>
           <div>
-            <div id="rankName" class="rank-name">Загружаем ранг...</div>
+            <div id="rankName" class="rank-name">Загружаем медаль...</div>
             <div id="rankStars" class="muted"></div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <small>Оценка MMR</small>
+        <strong id="mmr">—</strong>
+      </div>
+      <div class="stat">
+        <small>Победы</small>
+        <strong id="wins">—</strong>
+      </div>
+      <div class="stat">
+        <small>Поражения</small>
+        <strong id="losses">—</strong>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="link-button" href="https://www.dotabuff.com/players/924159299" target="_blank" rel="noopener noreferrer">Открыть Dotabuff ↗</a>
+      <a class="link-button" href="https://www.opendota.com/players/924159299" target="_blank" rel="noopener noreferrer">Открыть OpenDota ↗</a>
     </div>
     <div id="profileError"></div>
   </section>
 
   <section class="panel">
     <div class="section-head">
-      <h2 class="section-title">Последние матчи</h2>
-      <div class="status">
-        <span class="dot"></span>
-        <span id="updateStatus">Ожидание данных</span>
-      </div>
+      <h2>Последние 20 матчей</h2>
+      <span class="status" id="updateStatus">Ожидание данных</span>
     </div>
 
     <div id="matchesState" class="empty">Загружаем матчи...</div>
@@ -159,6 +163,7 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
             <th>A</th>
             <th>GPM</th>
             <th>XPM</th>
+            <th>Длительность</th>
             <th>Дата</th>
           </tr>
         </thead>
@@ -168,7 +173,7 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
   </section>
 
   <footer>
-    FAUKREE Dota 2 Tracker · Данные OpenDota · Автообновление раз в 10 минут
+    FAUKREE Dota 2 Tracker · OpenDota API · Автообновление каждые 10 минут
   </footer>
 </main>
 
@@ -177,38 +182,20 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
   'use strict';
 
   const ACCOUNT = '924159299';
-  const API = 'https://dota2-proxy.faukree11.workers.dev';
-
+  const API = 'https://api.opendota.com/api';
   const $ = id => document.getElementById(id);
 
   let heroes = {};
   let busy = false;
 
   async function get(path) {
-    const url = API + path;
-    let response;
-
-    try {
-      response = await fetch(url, { cache: 'no-store' });
-    } catch (error) {
-      throw new Error(
-        'Не удалось подключиться к Worker. Проверь интернет и адрес Worker.'
-      );
-    }
+    const response = await fetch(API + path, { cache: 'no-store' });
 
     if (!response.ok) {
-      const details = await response.text().catch(() => '');
-      throw new Error(
-        'HTTP ' + response.status +
-        (details ? ': ' + details.slice(0, 160) : '')
-      );
+      throw new Error('OpenDota ответил HTTP ' + response.status);
     }
 
-    try {
-      return await response.json();
-    } catch {
-      throw new Error('Сервер вернул ответ не в формате JSON.');
-    }
+    return response.json();
   }
 
   function showError(id, message) {
@@ -230,16 +217,10 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
 
     const medal = Math.floor(tier / 10);
     const star = tier % 10;
-
     const names = {
-      1: 'Herald',
-      2: 'Guardian',
-      3: 'Crusader',
-      4: 'Archon',
-      5: 'Legend',
-      6: 'Ancient',
-      7: 'Divine',
-      8: 'Immortal'
+      1: 'Herald', 2: 'Guardian', 3: 'Crusader',
+      4: 'Archon', 5: 'Legend', 6: 'Ancient',
+      7: 'Divine', 8: 'Immortal'
     };
 
     return {
@@ -257,16 +238,13 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
 
     $('nickname').textContent = d.personaname || 'Игрок Dota 2';
 
-    if (d.avatarfull) {
-      $('avatar').src = d.avatarfull;
-    }
+    if (d.avatarfull) $('avatar').src = d.avatarfull;
 
     const rank = rankInfo(p.rank_tier);
     $('rankName').textContent = rank.name;
     $('rankStars').textContent = rank.star;
 
     const icon = $('rankIcon');
-
     if (rank.icon) {
       icon.src = rank.icon;
       icon.hidden = false;
@@ -275,47 +253,40 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
       icon.hidden = true;
     }
 
+    $('mmr').textContent = p.mmr_estimate && p.mmr_estimate.estimate
+      ? Math.round(p.mmr_estimate.estimate).toLocaleString('ru-RU')
+      : 'Нет оценки';
+
+    const wl = await get('/players/' + ACCOUNT + '/wl');
+    $('wins').textContent = Number(wl.win || 0).toLocaleString('ru-RU');
+    $('losses').textContent = Number(wl.lose || 0).toLocaleString('ru-RU');
+
     showError('profileError', '');
   }
 
   async function loadHeroes() {
     const data = await get('/heroes');
-
-    if (!Array.isArray(data)) {
-      throw new Error('Справочник героев вернул неожиданный ответ.');
-    }
-
+    if (!Array.isArray(data)) throw new Error('Не удалось получить список героев');
     heroes = Object.fromEntries(data.map(h => [h.id, h]));
   }
 
   async function loadMatches() {
-    let data;
-
     try {
-      data = await get('/players/' + ACCOUNT + '/recentMatches');
-    } catch (firstError) {
-      data = await get('/players/' + ACCOUNT + '/matches?limit=20');
+      const data = await get('/players/' + ACCOUNT + '/recentMatches');
+      if (!Array.isArray(data)) throw new Error('Неверный формат списка матчей');
+      return data.slice(0, 20);
+    } catch (e) {
+      const data = await get('/players/' + ACCOUNT + '/matches?limit=20');
+      if (!Array.isArray(data)) throw new Error('Неверный формат списка матчей');
+      return data.slice(0, 20);
     }
-
-    if (!Array.isArray(data)) {
-      throw new Error('Сервер вернул неверный список матчей.');
-    }
-
-    return data.slice(0, 20);
   }
 
   function heroInfo(id) {
     const h = heroes[id];
-
-    if (!h) {
-      return {
-        name: 'Герой #' + (id ?? '?'),
-        img: ''
-      };
-    }
+    if (!h) return { name: 'Герой #' + (id ?? '?'), img: '' };
 
     const slug = h.name.replace('npc_dota_hero_', '');
-
     return {
       name: h.localized_name || slug,
       img: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/' + slug + '.png'
@@ -328,17 +299,13 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
 
   function formatDate(timestamp) {
     if (!timestamp) return '—';
-
     return new Date(timestamp * 1000).toLocaleString('ru-RU', {
-      day: '2-digit',
-      month: '2-digit',
-      year: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit'
+      day: '2-digit', month: '2-digit', year: '2-digit',
+      hour: '2-digit', minute: '2-digit'
     });
   }
 
-  function cell(row, text, className) {
+  function addCell(row, text, className) {
     const td = document.createElement('td');
     td.textContent = text;
     if (className) td.className = className;
@@ -346,19 +313,19 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
     return td;
   }
 
-  function renderMatches(matches) {
+  function renderMatches(data) {
     const rows = $('matchRows');
     rows.replaceChildren();
 
-    if (!matches.length) {
+    if (!data.length) {
       $('matchTable').hidden = true;
       $('matchesState').hidden = false;
       $('matchesState').textContent =
-        'Матчи не найдены. Возможно, история матчей скрыта в настройках Dota 2.';
+        'Матчи не найдены. Проверь, включена ли публичная история матчей в Dota 2.';
       return;
     }
 
-    matches.forEach(m => {
+    data.forEach(m => {
       const row = document.createElement('tr');
       const hero = heroInfo(m.hero_id);
 
@@ -375,19 +342,24 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
         heroWrap.appendChild(img);
       }
 
-      const heroName = document.createElement('span');
-      heroName.textContent = hero.name;
-      heroWrap.appendChild(heroName);
+      const name = document.createElement('span');
+      name.textContent = hero.name;
+      heroWrap.appendChild(name);
       heroCell.appendChild(heroWrap);
       row.appendChild(heroCell);
 
       const win = isWin(m);
-      cell(row, win ? 'ПОБЕДА' : 'ПОРАЖЕНИЕ', win ? 'win' : 'loss');
-      cell(row, String(m.kills ?? 0));
-      cell(row, String(m.deaths ?? 0));
-      cell(row, String(m.assists ?? 0));
-      cell(row, String(m.gold_per_min ?? '—'));
-      cell(row, String(m.xp_per_min ?? '—'));
+      addCell(row, win ? 'ПОБЕДА' : 'ПОРАЖЕНИЕ', win ? 'win' : 'loss');
+      addCell(row, String(m.kills ?? 0));
+      addCell(row, String(m.deaths ?? 0));
+      addCell(row, String(m.assists ?? 0));
+      addCell(row, String(m.gold_per_min ?? '—'));
+      addCell(row, String(m.xp_per_min ?? '—'));
+
+      const duration = Number(m.duration);
+      addCell(row, Number.isFinite(duration)
+        ? Math.floor(duration / 60) + ':' + String(duration % 60).padStart(2, '0')
+        : '—');
 
       const dateCell = document.createElement('td');
       const link = document.createElement('a');
@@ -413,42 +385,35 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
     const button = $('refresh');
     button.disabled = true;
     button.textContent = 'Загрузка...';
-    $('updateStatus').textContent = 'Обновляем данные...';
+    $('updateStatus').textContent = 'Обновляем...';
 
     try {
-      // Профиль и справочник загружаются независимо.
       const results = await Promise.allSettled([
         loadProfile(),
         loadHeroes()
       ]);
 
-      const profileResult = results[0];
-      const heroesResult = results[1];
-
-      if (profileResult.status === 'rejected') {
+      if (results[0].status === 'rejected') {
         showError('profileError',
-          'Не удалось загрузить профиль: ' +
-          profileResult.reason.message);
+          'Не удалось загрузить профиль: ' + results[0].reason.message +
+          '. Если ошибка Failed to fetch, возможно, браузер блокирует прямой API-запрос.');
       }
 
-      if (heroesResult.status === 'rejected') {
-        console.warn('Не удалось загрузить героев:', heroesResult.reason);
+      if (results[1].status === 'rejected') {
+        console.error('Ошибка загрузки героев:', results[1].reason);
       }
 
       try {
-        const matches = await loadMatches();
-        renderMatches(matches);
-      } catch (error) {
-        $('matchesState').hidden = false;
-        $('matchesState').textContent =
-          'Не удалось загрузить матчи: ' + error.message;
+        renderMatches(await loadMatches());
+      } catch (e) {
         $('matchTable').hidden = true;
+        $('matchesState').hidden = false;
+        $('matchesState').textContent = 'Не удалось загрузить матчи: ' + e.message;
       }
 
-      $('updateStatus').textContent =
-        'Обновлено: ' + new Date().toLocaleTimeString('ru-RU', {
-          hour: '2-digit',
-          minute: '2-digit'
+      $('updateStatus').textContent = 'Обновлено в ' +
+        new Date().toLocaleTimeString('ru-RU', {
+          hour: '2-digit', minute: '2-digit'
         });
     } finally {
       busy = false;
@@ -458,7 +423,6 @@ footer { text-align: center; color: var(--muted); font-size: 12px; padding: 8px 
   }
 
   $('refresh').addEventListener('click', refresh);
-
   refresh();
   setInterval(refresh, 10 * 60 * 1000);
 })();
