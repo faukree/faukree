@@ -1,4 +1,4 @@
-name: Update Dota 2 Tracker Layout
+name: Generate Dota Tracker Page
 
 on:
   schedule:
@@ -7,9 +7,11 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -23,12 +25,14 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Generate Static HTML
+      - name: Process Dota Statistics
         run: |
           python -c "
           import requests
           try:
               steam_id = '924159299'
+              
+              # Получаем профиль игрока
               p_res = requests.get(f'https://opendota.com{steam_id}', timeout=15).json()
               prof = p_res.get('profile', {})
               name = prof.get('personaname', 'faukree')
@@ -40,12 +44,14 @@ jobs:
               title = f'{medals.get(rank//10, \"Unranked\")} [{rank%10}]' if rank else 'No Rank'
               if rank and rank // 10 == 8: title = 'Immortal'
               
+              # База героев
               h_res = requests.get('https://opendota.com', timeout=15).json()
               h_map = {h['id']: {'name': h['localized_name'], 'tag': h['name'].replace('npc_dota_hero_', '')} for h in h_res}
               
+              # Последние 20 матчей
               matches = requests.get(f'https://opendota.com{steam_id}/recentMatches', timeout=15).json()
               
-              body_html = f'''
+              dashboard = f'''
               <div class=\"header\">
                   <img src=\"{avatar}\" alt=\"Avatar\">
                   <div class=\"header-info\">
@@ -53,26 +59,19 @@ jobs:
                       <p>ID: {steam_id} | Звание: <span class=\"rank-val\">{title}</span> | Примерный MMR: <span class=\"mmr-val\">{mmr}</span></p>
                   </div>
               </div>
-              <div class=\"title-block\">
-                  <h2>Последние 20 игр в Dota 2</h2>
-                  <div class=\"links\">
-                      <a href=\"https://dotabuff.com{steam_id}\" target=\"_blank\">Dotabuff</a>
-                      <a href=\"https://opendota.com{steam_id}\" target=\"_blank\">OpenDota</a>
-                  </div>
-              </div>
-              <div class=\"table-wrapper\">
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Герой</th>
-                              <th>Результат</th>
-                              <th>K / D / A</th>
-                              <th>GPM / XPM</th>
-                              <th>Крипы (LH/DN)</th>
-                              <th>Длительность</th>
-                          </tr>
-                      </thead>
-                      <tbody>
+              <h2>Последние 20 игр в Dota 2</h2>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Герой</th>
+                          <th>Результат</th>
+                          <th>K / D / A</th>
+                          <th>GPM / XPM</th>
+                          <th>LH / DN</th>
+                          <th>Длительность</th>
+                      </tr>
+                  </thead>
+                  <tbody>
               '''
               
               for m in matches[:20]:
@@ -80,44 +79,44 @@ jobs:
                   hero_img = f'https://steamstatic.com{hero[\"tag\"]}.png'
                   is_rad = m.get('player_slot', 0) < 128
                   win = (m.get('radiant_win') and is_rad) or (not m.get('radiant_win') and not is_rad)
-                  res_html = '<span class=\"win\">Победа</span>' if win else '<span class=\"lose\">Поражение</span>'
+                  res_text = '<span class=\"win\">Победа</span>' if win else '<span class=\"lose\">Поражение</span>'
+                  
                   duration = f\"{m.get('duration', 0) // 60}м {m.get('duration', 0) % 60}с\"
                   
-                  body_html += f'''
-                          <tr>
-                              <td>
-                                  <div class=\"hero-cell\">
+                  dashboard += f'''
+                      <tr>
+                          <td>
+                              <div class=\"hero-cell\">
                                       <img src=\"{hero_img}\" onerror=\"this.src='https://placeholder.com'\" alt=\"hero\">
                                       <span>{hero[\"name\"]}</span>
-                                  </div>
-                              </td>
-                              <td>{res_html}</td>
-                              <td><span class=\"main-stat\">{m.get('kills', 0)}</span> / {m.get('deaths', 0)} / {m.get('assists', 0)}</td>
-                              <td><span class=\"main-stat\">{m.get('gold_per_min', 0)}</span> / <span class=\"sec-stat\">{m.get('xp_per_min', 0)}</span></td>
-                              <td><span class=\"main-stat\">{m.get('last_hits', 0)}</span> / <span class=\"sec-stat\">{m.get('denies', 0)}</span></td>
-                              <td>{duration}</td>
-                          </tr>
+                              </div>
+                          </td>
+                          <td>{res_text}</td>
+                          <td><span class=\"main-stat\">{m.get('kills', 0)}</span> / {m.get('deaths', 0)} / {m.get('assists', 0)}</td>
+                          <td><span class=\"main-stat\">{m.get('gold_per_min', 0)}</span> / <span class=\"sec-stat\">{m.get('xp_per_min', 0)}</span></td>
+                          <td><span class=\"main-stat\">{m.get('last_hits', 0)}</span> / <span class=\"sec-stat\">{m.get('denies', 0)}</span></td>
+                          <td>{duration}</td>
+                      </tr>
                   '''
               
-              body_html += '</tbody></table></div>'
+              dashboard += '</tbody></table>'
               
               with open('index.html', 'r', encoding='utf-8') as f:
-                  base_template = f.read()
+                  template = f.read()
               
-              final_html = base_template.replace('<!-- DATA_PLACEHOLDER -->', body_html)
+              final_output = template.replace('<!-- DOTA_DASHBOARD -->', dashboard)
               
               with open('index.html', 'w', encoding='utf-8') as f:
-                  f.write(final_html)
-              print('HTML успешно сгенерирован!')
+                  f.write(final_output)
+              print('Страница успешно сгенерирована!')
           except Exception as e:
-              print(e)
+              print(f'Сбой сборщика: {e}')
               exit(1)
           "
 
-      - name: Save updates
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add index.html
-          git commit -m "Render static dota table" || exit 0
-          git push
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
