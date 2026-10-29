@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="ru">
 <head>
@@ -119,24 +118,21 @@ a { color:#8ebdff; }
 
   <section class="panel">
     <div class="profile">
-      <img id="avatar" class="avatar"
-           src="https://placehold.co/100x100?text=DOTA" alt="Аватар">
+      <img id="avatar" class="avatar" src="https://placehold.co/100x100?text=DOTA" alt="Аватар">
       <div>
         <div id="nickname" class="name">Загрузка профиля…</div>
         <div class="muted">Steam ID: 924159299</div>
         <div class="rank">
-          <img id="rankIcon" alt="Медаль" hidden>
+          <img id="rankIcon" alt="Медаль" style="display:none;">
           <div>
             <b id="rankName">Ранг загружается…</b>
             <div class="muted" id="rankStars"></div>
           </div>
         </div>
         <p style="margin:8px 0 0">
-          <a href="https://www.dotabuff.com/players/924159299"
-             target="_blank" rel="noopener">Открыть Dotabuff ↗</a>
+          <a href="https://www.dotabuff.com/players/924159299" target="_blank" rel="noopener">Открыть Dotabuff ↗</a>
           ·
-          <a href="https://www.opendota.com/players/924159299"
-             target="_blank" rel="noopener">Открыть OpenDota ↗</a>
+          <a href="https://www.opendota.com/players/924159299" target="_blank" rel="noopener">Открыть OpenDota ↗</a>
         </p>
       </div>
     </div>
@@ -156,21 +152,20 @@ a { color:#8ebdff; }
       <span class="muted">Последние 20 игр · слева старые</span>
     </div>
     <div class="chartwrap">
-      <svg id="chart" class="chart" role="img"
-           aria-label="График побед и поражений"></svg>
+      <svg id="chart" class="chart" role="img" aria-label="График побед и поражений"></svg>
       <div id="tooltip" class="tooltip"></div>
     </div>
-    <div class="muted">Наведи на столбец для деталей; нажми, чтобы открыть матч.</div>
+    <div class="muted" style="margin-top:10px; font-size:12px;">Наведи на столбец для деталей; нажми, чтобы открыть матч.</div>
   </section>
 
   <section class="panel">
     <div class="panelhead">
-      <h2>Последние матчи</h2>
+      <h2>Последние матчи (Таблица)</h2>
       <span class="muted" id="matchCount"></span>
     </div>
     <div id="matchesState" class="empty">Загрузка матчей…</div>
     <div class="tablewrap">
-      <table id="matchTable" hidden>
+      <table id="matchTable" style="display:none;">
         <thead>
           <tr>
             <th>Герой</th>
@@ -191,9 +186,7 @@ a { color:#8ebdff; }
   </section>
 
   <div class="foot">
-    Данные: OpenDota. Если основной API недоступен, сайт пробует
-    публичные прокси. Их доступность не гарантируется.
-    Автообновление раз в час.
+    Данные: OpenDota через безопасные CORS-шлюзы. История матчей в профиле Dota 2 должна быть открыта.
   </div>
 </main>
 
@@ -204,395 +197,87 @@ a { color:#8ebdff; }
 const ACCOUNT = '924159299';
 const API = 'https://api.opendota.com/api';
 
-const PROXIES = [
-  url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
-  url => 'https://corsproxy.io/?url=' + encodeURIComponent(url)
-];
-
 const $ = id => document.getElementById(id);
 
-let matches = [];
-let heroes = {};
+const safe = (v, fallback='—') => v === null || v === undefined || v === '' ? fallback : v;
+const fmtTime = s => `${Math.floor((s || 0) / 60)}:${String(Math.floor((s || 0) % 60)).padStart(2,'0')}`;
+const dateOf = t => t ? new Date(t * 1000).toLocaleString('ru-RU', {day:'2-digit', month:'2-digit', year:'2-digit', hour:'2-digit', minute:'2-digit'}) : '—';
 
-const safe = (v, fallback='—') =>
-  v === null || v === undefined || v === '' ? fallback : v;
+const RANKS = ["Рекрут", "Страж", "Рыцарь", "Герой", "Легенда", "Властелин", "Божество", "Титан"];
+function getRankName(tier) {
+  if (!tier) return "Без ранга";
+  if (tier >= 80) return RANKS[7];
+  const idx = Math.floor(tier / 10) - 1;
+  const stars = tier % 10;
+  return `${RANKS[idx] || "Неизвестно"} (${stars} ★)`;
+}
 
-const fmtTime = s =>
-  `${Math.floor((s || 0) / 60)}:${String(Math.floor((s || 0) % 60)).padStart(2,'0')}`;
-
-const dateOf = t => t
-  ? new Date(t * 1000).toLocaleString('ru-RU', {
-      day:'2-digit', month:'2-digit', year:'2-digit',
-      hour:'2-digit', minute:'2-digit'
-    })
-  : '—';
-
-/*
- * Новый загрузчик:
- * 1. Пробует OpenDota напрямую.
- * 2. Если браузер блокирует запрос — пробует AllOrigins.
- * 3. Если и он не сработал — пробует corsproxy.io.
- */
-async function get(path) {
-  const url = API + path;
-  const errors = [];
-
-  // Прямой запрос
+async function fetchWithProxy(path) {
+  const targetUrl = API + path;
+  // Используем прямой запрос, если не сработает - проксируем через corsproxy.io
   try {
-    const response = await fetch(url, {
-      cache:'no-store',
-      mode:'cors'
-    });
-
-    if (!response.ok) {
-      throw new Error('OpenDota HTTP ' + response.status);
-    }
-
-    return await response.json();
-  } catch (error) {
-    errors.push('OpenDota: ' + error.message);
-  }
-
-  // Резервные прокси
-  for (const makeProxyUrl of PROXIES) {
-    try {
-      const response = await fetch(makeProxyUrl(url), {
-        cache:'no-store',
-        mode:'cors'
-      });
-
-      if (!response.ok) {
-        throw new Error('HTTP ' + response.status);
-      }
-
-      const data = await response.json();
-
-      if (data === null || data === undefined) {
-        throw new Error('Пустой ответ');
-      }
-
-      return data;
-    } catch (error) {
-      errors.push(error.message);
-    }
-  }
-
-  throw new Error(
-    'Не удалось получить данные. ' + errors.join(' | ') +
-    '. Попробуй обновить страницу позже.'
-  );
+    const res = await fetch(targetUrl);
+    if (res.ok) return await res.json();
+  } catch(e) {}
+  
+  const proxyUrl = "https://corsproxy.io/?url=" + encodeURIComponent(targetUrl);
+  const res = await fetch(proxyUrl);
+  if (!res.ok) throw new Error("Не удалось получить данные с сервера API.");
+  return await res.json();
 }
 
-function setError(id, msg) {
-  const el = $(id);
-  el.replaceChildren();
-
-  if (!msg) return;
-
-  const box = document.createElement('div');
-  box.className = 'error';
-  box.textContent = msg;
-  el.appendChild(box);
-}
-
-function rankInfo(tier) {
-  if (!tier) return {name:'Ранг не указан', icon:''};
-
-  const medal = Math.floor(tier / 10);
-  const star = tier % 10;
-
-  const names = {
-    1:'Herald',
-    2:'Guardian',
-    3:'Crusader',
-    4:'Archon',
-    5:'Legend',
-    6:'Ancient',
-    7:'Divine',
-    8:'Immortal'
-  };
-
-  return {
-    name: names[medal] || 'Ранг не определён',
-    star: medal === 8 ? '' : `Звезда ${star || 1}`,
-    icon: medal
-      ? `https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_${medal}.png`
-      : ''
-  };
-}
-
-async function loadProfile() {
+async function loadAll() {
+  $('refresh').disabled = true;
+  $('profileError').innerHTML = '';
+  
   try {
-    const p = await get(`/players/${ACCOUNT}`);
-    const d = p.profile || {};
+    // 1. Загрузка справочника героев
+    if (!window.heroesCache) {
+      const heroesData = await fetchWithProxy('/heroes');
+      window.heroesCache = {};
+      heroesData.forEach(h => { window.heroesCache[h.id] = h; });
+    }
+    const heroesMap = window.heroesCache;
 
-    $('nickname').textContent = d.personaname || 'Игрок Dota 2';
-
-    if (d.avatarfull) $('avatar').src = d.avatarfull;
-
-    const rank = rankInfo(p.rank_tier);
-    $('rankName').textContent = rank.name;
-    $('rankStars').textContent = rank.star || '';
-
-    if (rank.icon) {
-      $('rankIcon').src = rank.icon;
-      $('rankIcon').hidden = false;
+    // 2. Загрузка профиля игрока
+    const playerData = await fetchWithProxy(`/players/${ACCOUNT}`);
+    if (playerData && playerData.profile) {
+      $('nickname').textContent = playerData.profile.personaname;
+      $('avatar').src = playerData.profile.avatarfull || playerData.profile.avatar;
+      
+      const tier = playerData.rank_tier;
+      $('rankName').textContent = getRankName(tier);
+      if (tier) {
+        $('rankIcon').src = `https://opendota.com{Math.floor(tier/10)}.png`;
+        $('rankIcon').style.display = 'inline-block';
+      }
+      $('mmr').textContent = safe(playerData.mmr_estimate.estimate || playerData.computed_mmr);
     } else {
-      $('rankIcon').hidden = true;
+      $('nickname').textContent = "Скрытый или приватный профиль";
     }
 
-    $('mmr').textContent = p.mmr_estimate?.estimate
-      ? Math.round(p.mmr_estimate.estimate).toLocaleString('ru-RU')
-      : 'Нет оценки';
-
-    setError('profileError', '');
-
-    try {
-      const wl = await get(`/players/${ACCOUNT}/wl`);
-      const wins = Number(wl.win || 0);
-      const losses = Number(wl.lose || 0);
-      const total = wins + losses;
-
-      $('wins').textContent = wins.toLocaleString('ru-RU');
-      $('losses').textContent = losses.toLocaleString('ru-RU');
-      $('wr').textContent = total
-        ? `${(100 * wins / total).toFixed(1)}%`
-        : '—';
-    } catch (error) {
-      console.warn('Не удалось загрузить победы и поражения:', error);
-      $('wins').textContent = '—';
-      $('losses').textContent = '—';
-      $('wr').textContent = '—';
-    }
-  } catch (error) {
-    setError('profileError', 'Не удалось загрузить профиль: ' + error.message);
-  }
-}
-
-async function loadHeroData() {
-  try {
-    const list = await get('/heroes');
-    heroes = Object.fromEntries(list.map(h => [h.id, h]));
-  } catch (error) {
-    console.warn('Не удалось загрузить список героев:', error);
-  }
-}
-
-async function loadMatches() {
-  $('matchesState').hidden = false;
-  $('matchesState').textContent = 'Загружаю матчи…';
-
-  try {
-    let data;
-
-    try {
-      data = await get(`/players/${ACCOUNT}/recentMatches`);
-    } catch {
-      data = await get(`/players/${ACCOUNT}/matches?limit=20`);
+    // 3. Загрузка винрейта
+    const wl = await fetchWithProxy(`/players/${ACCOUNT}/wl`);
+    $('wins').textContent = safe(wl.win);
+    $('losses').textContent = safe(wl.lose);
+    if (wl.win + wl.lose > 0) {
+      $('wr').textContent = ((wl.win / (wl.win + wl.lose)) * 100).toFixed(2) + '%';
     }
 
-    if (!Array.isArray(data)) {
-      throw new Error('API вернул неожиданный ответ');
-    }
-
-    matches = data.slice(0, 20);
-
-    if (!matches.length) {
-      $('matchesState').textContent =
-        'Матчи не найдены. Проверь публичность истории матчей в Dota 2.';
-      $('matchTable').hidden = true;
-      $('matchCount').textContent = '';
-      drawChart();
+    // 4. Загрузка последних 20 матчей
+    const recentMatches = await fetchWithProxy(`/players/${ACCOUNT}/recentMatches`);
+    if (!recentMatches || recentMatches.length === 0) {
+      $('matchesState').textContent = "Матчи не найдены. Убедитесь, что история матчей открыта в Dota 2.";
       return;
     }
 
-    $('matchesState').hidden = true;
-    $('matchTable').hidden = false;
-    $('matchCount').textContent = `${matches.length} матчей`;
+    $('matchesState').style.display = 'none';
+    $('matchTable').style.display = 'table';
+    $('matchCount').textContent = `Показано игр: ${recentMatches.length}`;
 
-    renderMatches();
-    drawChart();
-  } catch (error) {
-    $('matchesState').hidden = false;
-    $('matchesState').textContent = 'Ошибка загрузки матчей: ' + error.message;
-    $('matchTable').hidden = true;
-    $('matchCount').textContent = '';
-    drawChart();
-  }
-}
-
-function heroInfo(id) {
-  const h = heroes[id];
-
-  if (!h) return {name:`Герой #${id}`, img:''};
-
-  const slug = h.name.replace('npc_dota_hero_','');
-
-  return {
-    name: h.localized_name || slug,
-    img: `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${slug}.png`
-  };
-}
-
-function isWin(m) {
-  return (m.player_slot < 128) === !!m.radiant_win;
-}
-
-function renderMatches() {
-  $('matchRows').innerHTML = matches.map(m => {
-    const h = heroInfo(m.hero_id);
-    const win = isWin(m);
-    const url = `https://www.opendota.com/matches/${m.match_id}`;
-
-    return `
-      <tr>
-        <td>
-          <div class="hero">
-            ${h.img ? `
-              <img loading="lazy"
-                   src="${h.img}"
-                   alt="${h.name}"
-                   onerror="this.style.display='none'">
-            ` : ''}
-            <span>${h.name}</span>
-          </div>
-        </td>
-        <td class="${win?'win':'loss'}">${win?'ПОБЕДА':'ПОРАЖЕНИЕ'}</td>
-        <td>${safe(m.kills,0)}</td>
-        <td>${safe(m.deaths,0)}</td>
-        <td>${safe(m.assists,0)}</td>
-        <td>${safe(m.gold_per_min)}</td>
-        <td>${safe(m.xp_per_min)}</td>
-        <td>${safe(m.last_hits,0)} / ${safe(m.denies,0)}</td>
-        <td>${fmtTime(m.duration)}</td>
-        <td>
-          <a href="${url}" target="_blank" rel="noopener">
-            ${dateOf(m.start_time)}
-          </a>
-        </td>
-      </tr>
-    `;
-  }).join('');
-}
-
-function drawChart() {
-  const svg = $('chart');
-  const tip = $('tooltip');
-  const wrap = svg.parentElement;
-
-  const w = Math.max(320, wrap.clientWidth);
-  const h = wrap.clientHeight || 250;
-  const pad = {l:26,r:10,t:15,b:27};
-  const innerW = w-pad.l-pad.r;
-  const innerH = h-pad.t-pad.b;
-
-  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-  svg.innerHTML = '';
-
-  const ns = 'http://www.w3.org/2000/svg';
-
-  const node = (tag,attrs) => {
-    const el = document.createElementNS(ns,tag);
-    Object.entries(attrs).forEach(([k,v]) => el.setAttribute(k,v));
-    svg.appendChild(el);
-    return el;
-  };
-
-  [0,.5,1].forEach(v => {
-    const y = pad.t + innerH*v;
-    node('line',{
-      x1:pad.l,y1:y,x2:w-pad.r,y2:y,
-      stroke:'#29384b','stroke-dasharray':'3 4'
-    });
-  });
-
-  if (!matches.length) {
-    node('text',{
-      x:w/2,y:h/2,fill:'#91a2b8',
-      'font-size':13,'text-anchor':'middle'
-    }).textContent = 'Нет доступных матчей';
-    return;
-  }
-
-  const ordered = [...matches].reverse();
-  const gap = Math.min(7,innerW/ordered.length*.25);
-  const bw = Math.max(4,(innerW-gap*(ordered.length-1))/ordered.length);
-
-  ordered.forEach((m,i) => {
-    const win = isWin(m);
-    const x = pad.l+i*(bw+gap);
-    const barH = innerH*.82;
-    const y = pad.t+innerH-barH;
-
-    const r = node('rect',{
-      x,y,width:bw,height:barH,rx:Math.min(4,bw/3),
-      fill:win?'#27c781':'#ef5966',
-      class:'bar',tabindex:0
-    });
-
-    const hero = heroInfo(m.hero_id).name;
-
-    r.addEventListener('mousemove',e => {
-      const box = wrap.getBoundingClientRect();
-      tip.style.display = 'block';
-      tip.style.left = Math.min(w-220,Math.max(0,e.clientX-box.left+8))+'px';
-      tip.style.top = Math.max(0,e.clientY-box.top-65)+'px';
-      tip.textContent =
-        `${hero} · ${win?'Победа':'Поражение'} · ` +
-        `${m.kills||0}/${m.deaths||0}/${m.assists||0} · ${dateOf(m.start_time)}`;
-    });
-
-    r.addEventListener('mouseleave',() => tip.style.display='none');
-
-    r.addEventListener('focus',() => {
-      tip.style.display='block';
-      tip.style.left=x+'px';
-      tip.style.top='4px';
-      tip.textContent =
-        `${hero} · ${win?'Победа':'Поражение'} · ` +
-        `${m.kills||0}/${m.deaths||0}/${m.assists||0}`;
-    });
-
-    r.addEventListener('blur',() => tip.style.display='none');
-
-    r.addEventListener('click',() => {
-      window.open(
-        `https://www.opendota.com/matches/${m.match_id}`,
-        '_blank','noopener'
-      );
-    });
-  });
-}
-
-let refreshing = false;
-
-async function refresh() {
-  if (refreshing) return;
-  refreshing = true;
-
-  const button = $('refresh');
-  button.disabled = true;
-  button.textContent = 'Обновление…';
-
-  try {
-    await Promise.allSettled([
-      loadHeroData(),
-      loadProfile(),
-      loadMatches()
-    ]);
-  } finally {
-    button.disabled = false;
-    button.textContent = '↻ Обновить';
-    refreshing = false;
-  }
-}
-
-$('refresh').addEventListener('click',refresh);
-window.addEventListener('resize',drawChart);
-
-refresh();
-setInterval(refresh,60*60*1000);
-})();
-</script>
-</body>
-</html>
+    // Рендер таблицы матчей
+    const rowsContainer = $('matchRows');
+    rowsContainer.innerHTML = '';
+    
+    recentMatches.forEach(m => {
+      const hero = heroesMap[m.hero_id] || { localized_name: `Герой ${m.hero_id}`, name: '' };
