@@ -75,12 +75,20 @@
 
     <script>
         const STEAM_ID = "924159299";
+        // Прокси для гарантированного обхода CORS-блокировки
+        const PROXY = "https://herokuapp.com";
 
         async function initTracker() {
             try {
-                // 1. Загружаем данные профиля игрока
-                const playerRes = await fetch(`https://opendota.com{STEAM_ID}`);
-                const playerData = await playerRes.json();
+                // 1. Пробуем загрузить данные через прокси или напрямую
+                let playerData;
+                try {
+                    const res = await fetch(`https://opendota.com{STEAM_ID}`);
+                    playerData = await res.json();
+                } catch(e) {
+                    const res = await fetch(`${PROXY}https://opendota.com{STEAM_ID}`);
+                    playerData = await res.json();
+                }
                 
                 if (playerData.profile) {
                     document.getElementById('avatar').src = playerData.profile.avatarfull;
@@ -100,7 +108,7 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
-                // 2. Загружаем героев
+                // 2. Герои
                 const heroesRes = await fetch('https://opendota.com');
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
@@ -111,14 +119,14 @@
                     };
                 });
 
-                // 3. Загружаем последние 20 матчей (с проверкой на разные форматы ответов API)
+                // 3. Матчи
                 let matches;
                 try {
-                    const matchesRes = await fetch(`https://opendota.com{STEAM_ID}/recentMatches`);
-                    matches = await matchesRes.json();
+                    const res = await fetch(`https://opendota.com{STEAM_ID}/recentMatches`);
+                    matches = await res.json();
                 } catch(e) {
-                    const matchesRes = await fetch(`https://opendota.com{STEAM_ID}/matches?limit=20`);
-                    matches = await matchesRes.json();
+                    const res = await fetch(`https://opendota.com{STEAM_ID}/matches?limit=20`);
+                    matches = await res.json();
                 }
                 
                 const tbody = document.getElementById('table-body');
