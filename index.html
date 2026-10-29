@@ -183,7 +183,7 @@ tr:hover td { background:#ffffff05; }
 
   <div class="foot">
     Данные профиля и матчей: OpenDota. Доступность статистики зависит
-    от публичности профиля и состояния API. Автообновление раз в час.
+    от публичности профиля и состояния API. Автообновление каждые 10 минут.
   </div>
 </main>
 
@@ -198,6 +198,7 @@ const $ = id => document.getElementById(id);
 let matches = [];
 let heroes = {};
 let profile = null;
+let refreshInProgress = false;
 
 const safe = (v, fallback='—') =>
   v === null || v === undefined || v === '' ? fallback : v;
@@ -212,13 +213,13 @@ const dateOf = t => t
     })
   : '—';
 
-/* API запрос с повторной попыткой через CORS relay */
+/* OpenDota API: прямой запрос и резервный CORS-прокси */
 async function get(path) {
   const url = API + path;
   let firstError;
 
   try {
-    const r = await fetch(url, {cache:'no-store'});
+    const r = await fetch(url, { cache:'no-store' });
     if (!r.ok) throw Error(`OpenDota HTTP ${r.status}`);
     return await r.json();
   } catch (e) {
@@ -226,16 +227,20 @@ async function get(path) {
   }
 
   try {
-    const r = await fetch(
-      'https://proxy.cors.dev/' + url,
-      {cache:'no-store', credentials:'omit'}
-    );
-    if (!r.ok) throw Error(`Relay HTTP ${r.status}`);
+    const relayUrl =
+      'https://corsproxy.io/?url=' + encodeURIComponent(url);
+
+    const r = await fetch(relayUrl, {
+      cache:'no-store',
+      credentials:'omit'
+    });
+
+    if (!r.ok) throw Error(`Прокси HTTP ${r.status}`);
     return await r.json();
   } catch (e) {
     throw Error(
-      `${firstError?.message || 'API недоступен'}; ` +
-      `резервный запрос тоже не прошёл (${e.message})`
+      `${firstError?.message || 'OpenDota API недоступен'}; ` +
+      `резервный запрос не прошёл (${e.message}).`
     );
   }
 }
@@ -273,12 +278,10 @@ function rankInfo(tier) {
   };
 }
 
-/* Профиль и статистика грузятся независимо */
+/* Профиль и статистика побед/поражений */
 async function loadProfile() {
-  let p;
-
   try {
-    p = await get(`/players/${ACCOUNT}`);
+    const p = await get(`/players/${ACCOUNT}`);
     profile = p;
 
     const d = p.profile || {};
@@ -338,31 +341,77 @@ async function loadHeroData() {
   }
 }
 
-/* Матчи */
+/* Матчи. Полная статистика запрашивается отдельно */
 async function loadMatches() {
   $('matchesState').hidden = false;
-  $('matchesState').textContent = 'Загружаю матчи…';
+  $('matchesState').textContent = 'Загружаю матчи и статистику…';
 
   try {
-    let data;
+    const list = await get(`/players/${ACCOUNT}/matches?limit=20`);
 
-    try {
-      data = await get(`/players/${ACCOUNT}/recentMatches`);
-    } catch (e) {
-      data = await get(`/players/${ACCOUNT}/matches?limit=20`);
+    if (!Array.isArray(list)) {
+      throw Error('Непонятный ответ API');
     }
 
-    if (!Array.isArray(data)) throw Error('Непонятный ответ API');
+    const recent = list.slice(0, 20);
 
-    matches = data.slice(0,20);
-
-    if (!matches.length) {
+    if (!recent.length) {
+      matches = [];
       $('matchesState').textContent =
         'Матчи не найдены. Проверь публичность истории матчей в Dota 2.';
       $('matchTable').hidden = true;
+      $('matchCount').textContent = '0 матчей';
       drawChart();
       return;
     }
+
+    /*
+      Запрашиваем детальную статистику каждого матча.
+      Одновременно выполняется максимум 4 запроса.
+    */
+    const detailed = new Array(recent.length);
+    let nextIndex = 0;
+
+    const worker = async () => {
+      while (nextIndex < recent.length) {
+        const i = nextIndex++;
+        const m = recent[i];
+
+        try {
+          const details = await get(`/matches/${m.match_id}`);
+
+          const player = details.players?.find(
+            p => p.account_id === Number(ACCOUNT)
+          );
+
+          detailed[i] = player
+            ? {
+                ...m,
+                ...player,
+                match_id: m.match_id,
+                start_time: m.start_time || details.start_time,
+                duration: m.duration || details.duration,
+                radiant_win: m.radiant_win ?? details.radiant_win
+              }
+            : m;
+        } catch (e) {
+          console.warn(
+            `Подробности матча ${m.match_id} не загрузились:`,
+            e
+          );
+          detailed[i] = m;
+        }
+      }
+    };
+
+    await Promise.all(
+      Array.from(
+        { length:Math.min(4, recent.length) },
+        worker
+      )
+    );
+
+    matches = detailed;
 
     $('matchesState').hidden = true;
     $('matchTable').hidden = false;
@@ -373,7 +422,8 @@ async function loadMatches() {
   } catch (e) {
     $('matchesState').hidden = false;
     $('matchesState').textContent =
-      `Ошибка загрузки матчей: ${e.message}. Профиль остаётся доступен.`;
+      `Ошибка загрузки матчей: ${e.message}. Проверь доступность OpenDota.`;
+
     $('matchTable').hidden = true;
     drawChart();
   }
@@ -570,26 +620,36 @@ function drawChart() {
 
 /* Обновление данных */
 async function refresh() {
-  const b = $('refresh');
+  if (refreshInProgress) return;
 
+  refreshInProgress = true;
+
+  const b = $('refresh');
   b.disabled = true;
   b.textContent = 'Обновление…';
 
-  await Promise.allSettled([
-    loadHeroData(),
-    loadProfile(),
-    loadMatches()
-  ]);
+  try {
+    // Сначала загружаем героев, затем профиль и матчи.
+    await loadHeroData();
 
-  b.disabled = false;
-  b.textContent = '↻ Обновить';
+    await Promise.allSettled([
+      loadProfile(),
+      loadMatches()
+    ]);
+  } finally {
+    refreshInProgress = false;
+    b.disabled = false;
+    b.textContent = '↻ Обновить';
+  }
 }
 
 $('refresh').addEventListener('click',refresh);
 window.addEventListener('resize',drawChart);
 
 refresh();
-setInterval(refresh,60*60*1000);
+
+// Автообновление каждые 10 минут.
+setInterval(refresh,10*60*1000);
 
 })();
 </script>
