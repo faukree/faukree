@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>FAUKREE TRACKER</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0c0d12; color: #b3b5c6; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
@@ -75,6 +78,7 @@
 
         async function initTracker() {
             try {
+                // 1. Загружаем данные профиля игрока
                 const playerRes = await fetch(`https://opendota.com{STEAM_ID}`);
                 const playerData = await playerRes.json();
                 
@@ -96,6 +100,7 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
+                // 2. Загружаем героев
                 const heroesRes = await fetch('https://opendota.com');
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
@@ -106,12 +111,19 @@
                     };
                 });
 
-                const matchesRes = await fetch(`https://opendota.com{STEAM_ID}/matches?limit=20`);
-                const matches = await matchesRes.json();
+                // 3. Загружаем последние 20 матчей (с проверкой на разные форматы ответов API)
+                let matches;
+                try {
+                    const matchesRes = await fetch(`https://opendota.com{STEAM_ID}/recentMatches`);
+                    matches = await matchesRes.json();
+                } catch(e) {
+                    const matchesRes = await fetch(`https://opendota.com{STEAM_ID}/matches?limit=20`);
+                    matches = await matchesRes.json();
+                }
                 
                 const tbody = document.getElementById('table-body');
                 
-                matches.forEach(m => {
+                matches.slice(0, 20).forEach(m => {
                     const hero = heroMap[m.hero_id] || { name: 'Unknown', tag: 'unknown' };
                     const heroImg = `https://steamstatic.com{hero.tag}.png`;
                     
@@ -123,6 +135,12 @@
                     const sec = m.duration % 60;
                     const durationText = `${min}м ${sec}с`;
                     
+                    const kills = m.kills !== undefined ? m.kills : (m.kda || 0);
+                    const gpm = m.gold_per_min || '—';
+                    const xpm = m.xp_per_min || '—';
+                    const lh = m.last_hits || '—';
+                    const dn = m.denies || '—';
+                    
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td>
@@ -132,9 +150,9 @@
                             </div>
                         </td>
                         <td>${resHtml}</td>
-                        <td><span class="main-stat">${m.kills}</span> / ${m.deaths} / ${m.assists}</td>
-                        <td><span class="main-stat">${m.gold_per_min}</span> / <span class="sec-stat">${m.xp_per_min}</span></td>
-                        <td><span class="main-stat">${m.last_hits}</span> / <span class="sec-stat">${m.denies}</span></td>
+                        <td><span class="main-stat">${kills}</span> / ${m.deaths || 0} / ${m.assists || 0}</td>
+                        <td><span class="main-stat">${gpm}</span> / <span class="sec-stat">${xpm}</span></td>
+                        <td><span class="main-stat">${lh}</span> / <span class="sec-stat">${dn}</span></td>
                         <td>${durationText}</td>
                     `;
                     tbody.appendChild(tr);
