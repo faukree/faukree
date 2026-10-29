@@ -24,58 +24,100 @@ jobs:
         env:
           STEAM_ID: '924159299'
         run: |
-          python -c "
-          import os, requests
-          steam_id = os.environ['STEAM_ID']
-          
-          # Получаем героев
-          heroes_res = requests.get('https://opendota.com').json()
-          hero_map = {h['id']: h['localized_name'] for h in heroes_res}
-          
-          # Получаем последние 20 матчей
-          matches = requests.get(f'https://opendota.com{steam_id}/recentMatches').json()
-          
-          # Генерируем красивую HTML-страницу для сайта
-          html_content = '''<!DOCTYPE html>
-          <html lang='ru'>
-          <head>
-              <meta charset='UTF-8'>
-              <title>Моя статистика Dota 2</title>
-              <style>
-                  body { font-family: sans-serif; background: #121214; color: #e1e1e6; padding: 40px; }
-                  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-                  th, td { padding: 12px; text-align: left; border-bottom: 1px solid #29292e; }
-                  th { background: #19191d; color: #00b4d8; }
-                  .win { color: #4ade80; font-weight: bold; }
-                  .lose { color: #f87171; font-weight: bold; }
-              </style>
-          </head>
-          <body>
-              <h1>🎮 Мои последние 20 игр в Dota 2</h1>
-              <table>
-                  <tr>
-                      <th>Герой</th>
-                      <th>Результат</th>
-                      <th>K / D / A</th>
-                      <th>Длительность</th>
-                  </tr>
-          '''
-          
-          for m in matches[:20]:
-              hero = hero_map.get(m['hero_id'], 'Unknown')
-              is_radiant = m['player_slot'] < 128
-              win = (m['radiant_win'] and is_radiant) or (not m['radiant_win'] and not is_radiant)
-              res_text = '<span class=\"win\">🟢 Победа</span>' if win else '<span class=\"lose\">🔴 Поражение</span>'
-              duration = f\"{m['duration'] // 60}м {m['duration'] % 60}с\"
-              kda = f\"{m['kills']} / {m['deaths']} / {m['assists']}\"
+          cat << 'EOF' > dota_script.py
+          import os
+          import requests
+
+          try:
+              steam_id = os.environ.get('STEAM_ID', '').strip()
+              if not steam_id or 'ВСТАВЬ' in steam_id:
+                  print("Ошибка: Вы забыли указать свой реальный Steam ID вместо текста-заглушки!")
+                  exit(1)
               
-              html_content += f'<tr><td>{hero}</td><td>{res_text}</td><td>{kda}</td><td>{duration}</td></tr>\\n'
-          
-          html_content += '</table></body></html>'
-          
-          with open('index.html', 'w', encoding='utf-8') as f:
-              f.write(html_content)
-          "
+              # Запрос героев с обработкой ошибок
+              hero_map = {}
+              try:
+                  heroes_res = requests.get('https://opendota.com', timeout=15).json()
+                  hero_map = {h['id']: h['localized_name'] for h in heroes_res if 'id' in h}
+              except Exception as he:
+                  print(f"Предупреждение: Не удалось загрузить имена героев ({he}). Используем ID.")
+
+              # Запрос матчей
+              url = f'https://opendota.com{steam_id}/recentMatches'
+              print(f"Запрос данных с OpenDota по адресу: {url}")
+              response = requests.get(url, timeout=15)
+              
+              if response.status_code != 200:
+                  print(f"Ошибка API OpenDota: Сервер вернул код {response.status_code}")
+                  exit(1)
+                  
+              matches = response.json()
+              if not isinstance(matches, list):
+                  print("Ошибка: API вернуло некорректный формат данных (не список матчей). Проверьте ID.")
+                  exit(1)
+                  
+              if len(matches) == 0:
+                  print("Предупреждение: История матчей пуста. Проверьте, открыта ли история в настройках Dota 2.")
+
+              html_content = '''<!DOCTYPE html>
+              <html lang="ru">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Моя статистика Dota 2</title>
+                  <style>
+                      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #121214; color: #e1e1e6; padding: 40px; max-width: 800px; margin: 0 auto; }
+                      h1 { color: #fff; border-bottom: 2px solid #29292e; padding-bottom: 10px; }
+                      table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); background: #19191d; border-radius: 8px; overflow: hidden; }
+                      th, td { padding: 14px; text-align: left; border-bottom: 1px solid #29292e; }
+                      th { background: #202024; color: #00b4d8; font-weight: 600; }
+                      tr:hover { background: #222226; }
+                      .win { color: #4ade80; font-weight: bold; }
+                      .lose { color: #f87171; font-weight: bold; }
+                  </style>
+              </head>
+              <body>
+                  <h1>🎮 Мои последние 20 игр в Dota 2</h1>
+                  <table>
+                      <tr>
+                          <th>Герой</th>
+                          <th>Результат</th>
+                          <th>K / D / A</th>
+                          <th>Длительность</th>
+                      </tr>
+              '''
+              
+              for m in matches[:20]:
+                  if not isinstance(m, dict):
+                      continue
+                  hero_id = m.get('hero_id', 0)
+                  hero = hero_map.get(hero_id, f"Hero ID: {hero_id}")
+                  
+                  player_slot = m.get('player_slot', 0)
+                  is_radiant = player_slot < 128
+                  radiant_win = m.get('radiant_win', False)
+                  
+                  win = (radiant_win and is_radiant) or (not radiant_win and not is_radiant)
+                  res_text = '<span class="win">🟢 Победа</span>' if win else '<span class="lose">🔴 Поражение</span>'
+                  
+                  duration_sec = m.get('duration', 0)
+                  duration = f"{duration_sec // 60}м {duration_sec % 60}с"
+                  
+                  kda = f"{m.get('kills', 0)} / {m.get('deaths', 0)} / {m.get('assists', 0)}"
+                  
+                  html_content += f'<tr><td>{hero}</td><td>{res_text}</td><td>{kda}</td><td>{duration}</td></tr>\n'
+              
+              html_content += '</table></body></html>'
+              
+              with open('index.html', 'w', encoding='utf-8') as f:
+                  f.write(html_content)
+              print("Файл index.html успешно сгенерирован!")
+              
+          except Exception as e:
+              print(f"Критическая ошибка выполнения скрипта: {e}")
+              exit(1)
+          EOF
+          python dota_script.py
 
       - name: Commit and Push changes
         run: |
