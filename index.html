@@ -43,7 +43,7 @@
     <div class="header">
         <img id="avatar" src="https://placeholder.com" alt="Avatar">
         <div class="header-info">
-            <h1 id="username">Загрузка трекера...</h1>
+            <h1 id="username">faukree</h1>
             <p>ID: 924159299 | Звание: <span id="rank" class="rank-val">...</span> | Примерный MMR: <span id="mmr" class="mmr-val">...</span></p>
         </div>
     </div>
@@ -75,20 +75,14 @@
 
     <script>
         const STEAM_ID = "924159299";
-        // Прокси для гарантированного обхода CORS-блокировки
-        const PROXY = "https://herokuapp.com";
+        // Безопасный HTTPS прокси, работающий без ручной активации
+        const PROXY = "https://proxy.killcors.com/?url=";
 
         async function initTracker() {
             try {
-                // 1. Пробуем загрузить данные через прокси или напрямую
-                let playerData;
-                try {
-                    const res = await fetch(`https://opendota.com{STEAM_ID}`);
-                    playerData = await res.json();
-                } catch(e) {
-                    const res = await fetch(`${PROXY}https://opendota.com{STEAM_ID}`);
-                    playerData = await res.json();
-                }
+                // 1. Загружаем данные профиля игрока через безопасный прокси
+                const playerRes = await fetch(`${PROXY}https://opendota.com{STEAM_ID}`);
+                const playerData = await playerRes.json();
                 
                 if (playerData.profile) {
                     document.getElementById('avatar').src = playerData.profile.avatarfull;
@@ -108,8 +102,8 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
-                // 2. Герои
-                const heroesRes = await fetch('https://opendota.com');
+                // 2. Загружаем базу героев
+                const heroesRes = await fetch(`${PROXY}https://opendota.com`);
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
                 heroesList.forEach(h => {
@@ -119,19 +113,13 @@
                     };
                 });
 
-                // 3. Матчи
-                let matches;
-                try {
-                    const res = await fetch(`https://opendota.com{STEAM_ID}/recentMatches`);
-                    matches = await res.json();
-                } catch(e) {
-                    const res = await fetch(`https://opendota.com{STEAM_ID}/matches?limit=20`);
-                    matches = await res.json();
-                }
+                // 3. Загружаем матчи через прокси
+                const matchesRes = await fetch(`${PROXY}https://opendota.com{STEAM_ID}/matches?limit=20`);
+                const matches = await matchesRes.json();
                 
                 const tbody = document.getElementById('table-body');
                 
-                matches.slice(0, 20).forEach(m => {
+                matches.forEach(m => {
                     const hero = heroMap[m.hero_id] || { name: 'Unknown', tag: 'unknown' };
                     const heroImg = `https://steamstatic.com{hero.tag}.png`;
                     
@@ -143,12 +131,6 @@
                     const sec = m.duration % 60;
                     const durationText = `${min}м ${sec}с`;
                     
-                    const kills = m.kills !== undefined ? m.kills : (m.kda || 0);
-                    const gpm = m.gold_per_min || '—';
-                    const xpm = m.xp_per_min || '—';
-                    const lh = m.last_hits || '—';
-                    const dn = m.denies || '—';
-                    
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
                         <td>
@@ -158,9 +140,9 @@
                             </div>
                         </td>
                         <td>${resHtml}</td>
-                        <td><span class="main-stat">${kills}</span> / ${m.deaths || 0} / ${m.assists || 0}</td>
-                        <td><span class="main-stat">${gpm}</span> / <span class="sec-stat">${xpm}</span></td>
-                        <td><span class="main-stat">${lh}</span> / <span class="sec-stat">${dn}</span></td>
+                        <td><span class="main-stat">${m.kills}</span> / ${m.deaths} / ${m.assists}</td>
+                        <td><span class="main-stat">${m.gold_per_min}</span> / <span class="sec-stat">${m.xp_per_min}</span></td>
+                        <td><span class="main-stat">${m.last_hits}</span> / <span class="sec-stat">${m.denies}</span></td>
                         <td>${durationText}</td>
                     `;
                     tbody.appendChild(tr);
@@ -170,7 +152,7 @@
                 document.getElementById('match-table').style.display = 'table';
                 
             } catch (err) {
-                document.getElementById('loader').innerText = 'Ошибка загрузки данных из OpenDota API. Перезагрузите страницу.';
+                document.getElementById('loader').innerText = 'Ошибка загрузки данных из OpenDota API. Пожалуйста, перезагрузите страницу через Ctrl+F5.';
                 console.error(err);
             }
         }
