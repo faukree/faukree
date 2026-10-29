@@ -2,68 +2,85 @@ name: Update Dota 2 Stats
 
 on:
   schedule:
-    # Запуск каждые 2 часа (можно настроить чаще)
     - cron: '0 */2 * * *'
-  workflow_dispatch: # Позволяет запускать вручную одной кнопкой
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  update-stats:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.10'
 
-      - name: Generate Dota 2 Table
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Dota Data and Generate HTML
         env:
           STEAM_ID: '924159299'
         run: |
-          node -e "
-          const fs = require('fs');
-          const steamId = process.env.STEAM_ID;
+          python -c "
+          import os, requests
+          steam_id = os.environ['STEAM_ID']
           
-          // Получаем словарь героев, чтобы переводить ID в имена
-          fetch('https://opendota.com').then(res => res.json()).then(heroes => {
-            const heroMap = Object.fromEntries(heroes.map(h => [h.id, h.localized_name]));
-            
-            // Получаем последние 20 матчей игрока
-            fetch(\`https://opendota.com\${steamId}/recentMatches\`).then(res => res.json()).then(matches => {
-              let table = '### 🎮 Последние 20 игр в Dota 2\\n\\n';
-              table += '| Герой | Результат | K / D / A | Длительность |\\n| :--- | :--- | :--- | :--- |\\n';
+          # Получаем героев
+          heroes_res = requests.get('https://opendota.com').json()
+          hero_map = {h['id']: h['localized_name'] for h in heroes_res}
+          
+          # Получаем последние 20 матчей
+          matches = requests.get(f'https://opendota.com{steam_id}/recentMatches').json()
+          
+          # Генерируем красивую HTML-страницу для сайта
+          html_content = '''<!DOCTYPE html>
+          <html lang='ru'>
+          <head>
+              <meta charset='UTF-8'>
+              <title>Моя статистика Dota 2</title>
+              <style>
+                  body { font-family: sans-serif; background: #121214; color: #e1e1e6; padding: 40px; }
+                  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                  th, td { padding: 12px; text-align: left; border-bottom: 1px solid #29292e; }
+                  th { background: #19191d; color: #00b4d8; }
+                  .win { color: #4ade80; font-weight: bold; }
+                  .lose { color: #f87171; font-weight: bold; }
+              </style>
+          </head>
+          <body>
+              <h1>🎮 Мои последние 20 игр в Dota 2</h1>
+              <table>
+                  <tr>
+                      <th>Герой</th>
+                      <th>Результат</th>
+                      <th>K / D / A</th>
+                      <th>Длительность</th>
+                  </tr>
+          '''
+          
+          for m in matches[:20]:
+              hero = hero_map.get(m['hero_id'], 'Unknown')
+              is_radiant = m['player_slot'] < 128
+              win = (m['radiant_win'] and is_radiant) or (not m['radiant_win'] and not is_radiant)
+              res_text = '<span class=\"win\">🟢 Победа</span>' if win else '<span class=\"lose\">🔴 Поражение</span>'
+              duration = f\"{m['duration'] // 60}м {m['duration'] % 60}с\"
+              kda = f\"{m['kills']} / {m['deaths']} / {m['assists']}\"
               
-              matches.slice(0, 20).forEach(m => {
-                const hero = heroMap[m.hero_id] || 'Unknown';
-                const isRadiant = m.player_slot < 128;
-                const win = (m.radiant_win && isRadiant) || (!m.radiant_win && !isRadiant);
-                const result = win ? '🟢 Победа' : '🔴 Поражение';
-                const duration = Math.floor(m.duration / 60) + 'м ' + (m.duration % 60) + 'с';
-                
-                table += \`| \${hero} | \${result} | \${m.kills} / \${m.deaths} / \${m.assists} | \${duration} |\\n\`;
-              });
-              
-              // Запись в README.md (сохраняя базовое описание профиля сверху)
-              let readme = '# Привет, это мой профиль!\\n\\n';
-              if (fs.existsSync('README.md')) {
-                const current = fs.readFileSync('README.md', 'utf8');
-                if (current.includes('### 🎮 Последние 20 игр')) {
-                  readme = current.split('### 🎮 Последние 20 игр')[0];
-                } else {
-                  readme = current + '\\n\\n';
-                }
-              }
-              fs.writeFileSync('README.md', readme + table);
-            });
-          });
+              html_content += f'<tr><td>{hero}</td><td>{res_text}</td><td>{kda}</td><td>{duration}</td></tr>\\n'
+          
+          html_content += '</table></body></html>'
+          
+          with open('index.html', 'w', encoding='utf-8') as f:
+              f.write(html_content)
           "
 
       - name: Commit and Push changes
         run: |
           git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md
-          git commit -m "Update Dota 2 match history" || exit 0
+          git config --global user.email 'github-actions[bot]@://github.com'
+          git add index.html
+          git commit -m "Update match history site" || exit 0
           git push
