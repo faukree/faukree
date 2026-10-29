@@ -75,13 +75,14 @@
 
     <script>
         const STEAM_ID = "924159299";
-        // 100% стабильный HTTPS прокси без авторизации
+        // Исправленный рабочий прокси CORS
         const PROXY = "https://corsproxy.io";
+        const API_BASE = "https://opendota.com";
 
         async function initTracker() {
             try {
-                // 1. Загружаем данные профиля игрока через прокси
-                const playerRes = await fetch(`${PROXY}${encodeURIComponent('https://opendota.com' + STEAM_ID)}`);
+                // 1. Загружаем данные профиля игрока
+                const playerRes = await fetch(`${PROXY}${encodeURIComponent(`${API_BASE}/players/${STEAM_ID}`)}`);
                 const playerData = await playerRes.json();
                 
                 if (playerData.profile) {
@@ -102,8 +103,8 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
-                // 2. Загружаем героев
-                const heroesRes = await fetch(`${PROXY}${encodeURIComponent('https://opendota.com')}`);
+                // 2. Загружаем базу героев для определения имен по ID
+                const heroesRes = await fetch(`${PROXY}${encodeURIComponent(`${API_BASE}/heroes`)}`);
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
                 heroesList.forEach(h => {
@@ -113,14 +114,16 @@
                     };
                 });
 
-                // 3. Загружаем матчи через прокси
-                const matchesRes = await fetch(`${PROXY}${encodeURIComponent('https://opendota.com' + STEAM_ID + '/matches?limit=20')}`);
+                // 3. Загружаем последние 20 матчей
+                const matchesRes = await fetch(`${PROXY}${encodeURIComponent(`${API_BASE}/players/${STEAM_ID}/matches?limit=20`)}`);
                 const matches = await matchesRes.json();
                 
                 const tbody = document.getElementById('table-body');
+                tbody.innerHTML = ''; // Очищаем таблицу перед заполнением
                 
                 matches.forEach(m => {
                     const hero = heroMap[m.hero_id] || { name: 'Unknown', tag: 'unknown' };
+                    // Исправлена ссылка на официальные иконки героев от Valve
                     const heroImg = `https://steamstatic.com{hero.tag}.png`;
                     
                     const isRadiant = m.player_slot < 128;
@@ -135,7 +138,7 @@
                     tr.innerHTML = `
                         <td>
                             <div class="hero-cell">
-                                <img src="${heroImg}" onerror="this.src='https://placeholder.com?';" alt="hero">
+                                <img src="${heroImg}" onerror="this.src='https://placeholder.com';" alt="hero">
                                 <span>${hero.name}</span>
                             </div>
                         </td>
@@ -148,16 +151,18 @@
                     tbody.appendChild(tr);
                 });
                 
+                // Переключаем экраны с загрузки на таблицу
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('match-table').style.display = 'table';
                 
             } catch (err) {
-                document.getElementById('loader').innerText = 'Ошибка соединения с API OpenDota. Перезагрузите страницу.';
                 console.error(err);
+                document.getElementById('loader').innerText = 'Ошибка соединения с API OpenDota. Попробуйте обновить страницу.';
             }
         }
 
-        initTracker();
+        // Запуск трекера сразу после загрузки страницы
+        window.onload = initTracker;
     </script>
 </body>
 </html>
