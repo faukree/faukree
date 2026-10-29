@@ -1,165 +1,954 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>FAUKREE TRACKER</title>
-    <!-- Убираем ошибку с иконкой favicon.ico -->
-    <link rel="icon" href="data:,">
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0c0d12; color: #b3b5c6; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        .header { display: flex; align-items: center; background: #14161f; border: 1px solid #232635; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
-        .header img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00b4d8; margin-right: 20px; }
-        .header-info h1 { margin: 0; color: #fff; font-size: 26px; letter-spacing: 0.5px; }
-        .header-info p { margin: 8px 0 0 0; font-size: 14px; color: #767993; }
-        .mmr-val { color: #ffb703; font-weight: bold; }
-        .rank-val { color: #00b4d8; font-weight: bold; }
-        
-        .title-block { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        h2 { color: #fff; margin: 0; font-size: 20px; }
-        .links a { color: #00b4d8; text-decoration: none; margin-left: 15px; font-size: 14px; }
-        .links a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dota Tracker</title>
 
-        .table-wrapper { background: #14161f; border: 1px solid #232635; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid #1f222f; }
-        th { background: #1b1e2a; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
-        tr:hover { background: #1a1d29; }
-        
-        .hero-cell { display: flex; align-items: center; gap: 15px; color: #fff; font-weight: 500; }
-        .hero-cell img { width: 48px; height: 27px; border-radius: 4px; object-fit: cover; box-shadow: 0 2px 4px rgba(0,0,0,0.4); }
-        
-        .win { color: #4ade80; font-weight: bold; background: rgba(74, 222, 128, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; }
-        .lose { color: #f87171; font-weight: bold; background: rgba(248, 113, 113, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; }
-        
-        .main-stat { color: #fff; font-weight: bold; }
-        .sec-stat { color: #62657a; font-size: 12px; }
-        .loading { padding: 40px; text-align: center; color: #767993; font-size: 16px; }
-    </style>
+<style>
+:root {
+  --bg: #0b0e14;
+  --panel: #141923;
+  --panel2: #1b2230;
+  --text: #e9edf5;
+  --muted: #8c98ad;
+  --green: #55d69e;
+  --red: #ff6577;
+  --accent: #8b7cff;
+  --border: #252d3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 28px 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.status {
+  color: var(--green);
+  font-size: 12px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(120deg, #1b2230, #141923);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: var(--panel2);
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-name {
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.rank {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.rank img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.mmr {
+  text-align: right;
+}
+
+.mmr-value {
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.mmr-label {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+.section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--panel2);
+  padding: 8px 13px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.filter.active {
+  color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.chart-wrap {
+  height: 260px;
+  position: relative;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.match {
+  display: grid;
+  grid-template-columns: 5px 55px minmax(100px, 1fr) 100px 100px 100px 110px;
+  gap: 15px;
+  align-items: center;
+  background: var(--panel2);
+  border-radius: 12px;
+  padding: 13px;
+  margin-bottom: 9px;
+  transition: transform .2s, background .2s;
+}
+
+.match:hover {
+  transform: translateY(-2px);
+  background: #222b3b;
+}
+
+.match-bar {
+  height: 45px;
+  border-radius: 5px;
+}
+
+.match.win .match-bar {
+  background: var(--green);
+}
+
+.match.loss .match-bar {
+  background: var(--red);
+}
+
+.hero-icon {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #080b10;
+}
+
+.hero-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.match-result {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.match.win .match-result {
+  color: var(--green);
+}
+
+.match.loss .match-result {
+  color: var(--red);
+}
+
+.match-stat {
+  text-align: center;
+}
+
+.match-stat strong {
+  display: block;
+  font-size: 14px;
+}
+
+.match-stat span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.match-duration {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.match-link {
+  color: var(--muted);
+  text-decoration: none;
+  text-align: right;
+  font-size: 12px;
+}
+
+.match-link:hover {
+  color: white;
+}
+
+.loading {
+  color: var(--muted);
+  text-align: center;
+  padding: 35px;
+}
+
+.footer {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+@media(max-width: 800px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile {
+    flex-wrap: wrap;
+  }
+
+  .mmr {
+    text-align: left;
+    width: 100%;
+  }
+
+  .match {
+    grid-template-columns: 4px 45px minmax(90px, 1fr) 70px 70px;
+    gap: 9px;
+  }
+
+  .hero-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .match-stat:nth-of-type(4) {
+    display: none;
+  }
+
+  .match-duration {
+    display: none;
+  }
+
+  .match-link {
+    display: none;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+  }
+}
+
+@media(max-width: 480px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .player-name {
+    font-size: 21px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .match {
+    grid-template-columns: 4px 40px minmax(80px, 1fr) 65px;
+    gap: 8px;
+  }
+
+  .match-stat:nth-of-type(3) {
+    display: none;
+  }
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-    <div class="header">
-        <img id="avatar" src="https://placeholder.com" alt="Avatar">
-        <div class="header-info">
-            <h1 id="username">faukree</h1>
-            <p>ID: 924159299 | Звание: <span id="rank" class="rank-val">Загрузка...</span> | MMR: <span id="mmr" class="mmr-val">...</span></p>
+<header>
+  <div class="logo">DOTA<span>TRACKER</span></div>
+  <div class="status" id="status">● Загрузка данных...</div>
+</header>
+
+<section class="profile">
+  <img class="avatar" id="avatar" src="" alt="Avatar">
+
+  <div class="player-info">
+    <div class="player-name" id="nickname">Загрузка...</div>
+    <div class="rank" id="rank">Загрузка ранга...</div>
+  </div>
+
+  <div class="mmr">
+    <div class="mmr-value" id="mmr">—</div>
+    <div class="mmr-label">MMR</div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat-card">
+    <div class="stat-label">Победы</div>
+    <div class="stat-value green" id="wins">—</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">Поражения</div>
+    <div class="stat-value red" id="losses">—</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">Винрейт</div>
+    <div class="stat-value" id="winrate">—</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">Последние 20 игр</div>
+    <div class="stat-value" id="recent">—</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-title">График последних матчей</div>
+
+    <div class="filters">
+      <button class="filter active" data-chart="results">
+        Победы / поражения
+      </button>
+
+      <button class="filter" data-chart="winrate">
+        Винрейт
+      </button>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="chart"></canvas>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-title">Последние матчи</div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">Все</button>
+      <button class="filter" data-filter="win">Победы</button>
+      <button class="filter" data-filter="loss">Поражения</button>
+    </div>
+  </div>
+
+  <div id="matches">
+    <div class="loading">Загрузка матчей...</div>
+  </div>
+</section>
+
+<div class="footer">
+  Dota Tracker · OpenDota API · Автоматическое обновление каждый час
+</div>
+
+</div>
+
+<script>
+const ACCOUNT_ID = 924159299;
+
+const API = "https://api.opendota.com/api";
+
+const HERO_IMAGE =
+  "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/";
+
+const RANK_IMAGE =
+  "https://www.opendota.com/assets/images/dota2/rank_icons/";
+
+let matches = [];
+let currentFilter = "all";
+let currentChart = "results";
+
+let heroMap = {};
+let playerData = {};
+
+const $ = id => document.getElementById(id);
+
+async function fetchJSON(url) {
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Ошибка API: " + response.status);
+  }
+
+  return response.json();
+}
+
+function formatDuration(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secondsLeft = seconds % 60;
+
+  return `${minutes}:${String(secondsLeft).padStart(2, "0")}`;
+}
+
+function getRankName(rankTier) {
+  if (!rankTier) return "Ранг не определён";
+
+  const medals = [
+    "Herald",
+    "Guardian",
+    "Crusader",
+    "Archon",
+    "Legend",
+    "Ancient",
+    "Divine",
+    "Immortal"
+  ];
+
+  const medal = Math.floor(rankTier / 10);
+  const stars = rankTier % 10;
+
+  if (medal < 1 || medal > 8) {
+    return "Ранг не определён";
+  }
+
+  if (medal === 8) {
+    return "Immortal";
+  }
+
+  return `${medals[medal - 1]} ${stars}`;
+}
+
+function getRankImage(rankTier) {
+  if (!rankTier) {
+    return "";
+  }
+
+  const medal = Math.floor(rankTier / 10);
+
+  return `${RANK_IMAGE}rank_icon_${medal}.png`;
+}
+
+async function loadData() {
+  $("status").textContent = "● Обновление...";
+
+  try {
+    const [player, recentMatches, heroStats, winLoss] =
+      await Promise.all([
+        fetchJSON(`${API}/players/${ACCOUNT_ID}`),
+
+        fetchJSON(
+          `${API}/players/${ACCOUNT_ID}/recentMatches`
+        ),
+
+        fetchJSON(`${API}/heroStats`),
+
+        fetchJSON(`${API}/players/${ACCOUNT_ID}/wl`)
+      ]);
+
+    playerData = player;
+
+    heroMap = {};
+
+    heroStats.forEach(hero => {
+      heroMap[hero.id] = hero;
+    });
+
+    matches = recentMatches.slice(0, 20);
+
+    renderProfile(player);
+    renderStats(winLoss);
+    renderMatches();
+    drawChart();
+
+    $("status").textContent = "● Обновлено";
+  } catch (error) {
+    console.error(error);
+
+    $("status").textContent = "● Ошибка загрузки";
+
+    $("matches").innerHTML = `
+      <div class="loading">
+        Не удалось загрузить статистику.
+        Попробуй обновить страницу позже.
+      </div>
+    `;
+  }
+}
+
+function renderProfile(player) {
+  const profile = player.profile || {};
+
+  $("nickname").textContent =
+    profile.personaname || "Unknown Player";
+
+  $("avatar").src =
+    profile.avatarfull || "";
+
+  $("rank").innerHTML = "";
+
+  const rankTier = player.rank_tier;
+
+  if (rankTier) {
+    const image = document.createElement("img");
+
+    image.src = getRankImage(rankTier);
+    image.alt = "Медаль";
+
+    const label = document.createElement("span");
+
+    label.textContent = getRankName(rankTier);
+
+    $("rank").append(image, label);
+  } else {
+    $("rank").textContent = "Медаль не определена";
+  }
+
+  $("mmr").textContent =
+    player.mmr_estimate?.estimate
+      ? player.mmr_estimate.estimate.toLocaleString("ru-RU")
+      : "—";
+}
+
+function renderStats(winLoss) {
+  const wins = winLoss.win || 0;
+  const losses = winLoss.lose || 0;
+
+  const total = wins + losses;
+
+  const rate = total
+    ? ((wins / total) * 100).toFixed(1)
+    : 0;
+
+  $("wins").textContent = wins.toLocaleString("ru-RU");
+
+  $("losses").textContent =
+    losses.toLocaleString("ru-RU");
+
+  $("winrate").textContent = `${rate}%`;
+
+  const recentWins = matches.filter(isWin).length;
+
+  $("recent").textContent =
+    `${recentWins}W / ${matches.length - recentWins}L`;
+}
+
+function isWin(match) {
+  const radiant = match.player_slot < 128;
+
+  return radiant === Boolean(match.radiant_win);
+}
+
+function getHero(match) {
+  return heroMap[match.hero_id];
+}
+
+function renderMatches() {
+  const container = $("matches");
+
+  container.innerHTML = "";
+
+  const filtered = matches.filter(match => {
+    if (currentFilter === "win") {
+      return isWin(match);
+    }
+
+    if (currentFilter === "loss") {
+      return !isWin(match);
+    }
+
+    return true;
+  });
+
+  if (!filtered.length) {
+    container.innerHTML =
+      '<div class="loading">Матчей нет</div>';
+
+    return;
+  }
+
+  filtered.forEach(match => {
+    const win = isWin(match);
+
+    const hero = getHero(match);
+
+    const heroName =
+      hero?.localized_name || "Unknown Hero";
+
+    const heroImage = hero
+      ? `${HERO_IMAGE}${hero.name.replace("npc_dota_hero_", "")}.png`
+      : "";
+
+    const kd = `${match.kills}/${match.deaths}/${match.assists}`;
+
+    const element = document.createElement("div");
+
+    element.className = `match ${win ? "win" : "loss"}`;
+
+    element.innerHTML = `
+      <div class="match-bar"></div>
+
+      <img
+        class="hero-icon"
+        src="${heroImage}"
+        alt="${heroName}"
+        title="${heroName}"
+      >
+
+      <div>
+        <div class="hero-name">${heroName}</div>
+
+        <div class="match-result">
+          ${win ? "ПОБЕДА" : "ПОРАЖЕНИЕ"}
         </div>
-    </div>
+      </div>
 
-    <div class="title-block">
-        <h2>Последние 20 игр в Dota 2</h2>
-        <div class="links">
-            <a href="https://dotabuff.com" target="_blank">Dotabuff</a>
-            <a href="https://opendota.com" target="_blank">OpenDota</a>
-        </div>
-    </div>
+      <div class="match-stat">
+        <strong>${kd}</strong>
+        <span>K / D / A</span>
+      </div>
 
-    <div class="table-wrapper">
-        <div id="loader" class="loading">Синхронизация с OpenDota API...</div>
-        <table id="match-table" style="display: none;">
-            <thead>
-                <tr>
-                    <th>Герой</th>
-                    <th>Результат</th>
-                    <th>K / D / A</th>
-                    <th>GPM / XPM</th>
-                    <th>Крипы (LH/DN)</th>
-                    <th>Длительность</th>
-                </tr>
-            </thead>
-            <tbody id="table-body"></tbody>
-        </table>
-    </div>
+      <div class="match-stat">
+        <strong>${match.kills + match.assists}</strong>
+        <span>Участие</span>
+      </div>
 
-    <script>
-        const STEAM_ID = "924159299";
-        const API_BASE = "https://opendota.com";
+      <div class="match-duration">
+        ${formatDuration(match.duration)}
+      </div>
 
-        async function initTracker() {
-            try {
-                // 1. Прямой запрос к OpenDota без прокси
-                const playerRes = await fetch(`${API_BASE}/players/${STEAM_ID}`);
-                const playerData = await playerRes.json();
-                
-                if (playerData.profile) {
-                    document.getElementById('avatar').src = playerData.profile.avatarfull;
-                    document.getElementById('username').innerText = playerData.profile.personaname;
-                }
-                
-                const mmr = playerData.mmr_estimate?.estimate || '—';
-                document.getElementById('mmr').innerText = mmr;
-                
-                const rankTier = playerData.rank_tier;
-                const medals = {1:'Herald', 2:'Guardian', 3:'Crusader', 4:'Archon', 5:'Legend', 6:'Ancient', 7:'Divine', 8:'Immortal'};
-                let rankTitle = 'No Rank';
-                if (rankTier) {
-                    const medalNum = Math.floor(rankTier / 10);
-                    const stars = rankTier % 10;
-                    rankTitle = medalNum === 8 ? 'Immortal' : `${medals[medalNum]} [${stars}]`;
-                }
-                document.getElementById('rank').innerText = rankTitle;
+      <a
+        class="match-link"
+        href="https://www.dotabuff.com/matches/${match.match_id}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Dotabuff ↗
+      </a>
+    `;
 
-                // 2. Прямой запрос героев
-                const heroesRes = await fetch(`${API_BASE}/heroes`);
-                const heroesList = await heroesRes.json();
-                const heroMap = {};
-                heroesList.forEach(h => {
-                    heroMap[h.id] = {
-                        name: h.localized_name,
-                        tag: h.name.replace('npc_dota_hero_', '')
-                    };
-                });
+    container.appendChild(element);
+  });
+}
 
-                // 3. Прямой запрос матчей
-                const matchesRes = await fetch(`${API_BASE}/players/${STEAM_ID}/matches?limit=20`);
-                const matches = await matchesRes.json();
-                
-                const tbody = document.getElementById('table-body');
-                tbody.innerHTML = '';
-                
-                matches.forEach(m => {
-                    const hero = heroMap[m.hero_id] || { name: 'Unknown', tag: 'unknown' };
-                    const heroImg = `https://steamstatic.com{hero.tag}.png`;
-                    
-                    const isRadiant = m.player_slot < 128;
-                    const win = (m.radiant_win && isRadiant) || (!m.radiant_win && !isRadiant);
-                    const resHtml = win ? '<span class="win">Победа</span>' : '<span class="lose">Поражение</span>';
-                    
-                    const min = Math.floor(m.duration / 60);
-                    const sec = m.duration % 60;
-                    const durationText = `${min}м ${sec}с`;
-                    
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                        <td>
-                            <div class="hero-cell">
-                                <img src="${heroImg}" onerror="this.src='https://placeholder.com';" alt="hero">
-                                <span>${hero.name}</span>
-                            </div>
-                        </td>
-                        <td>${resHtml}</td>
-                        <td><span class="main-stat">${m.kills}</span> / ${m.deaths} / ${m.assists}</td>
-                        <td><span class="main-stat">${m.gold_per_min}</span> / <span class="sec-stat">${m.xp_per_min}</span></td>
-                        <td><span class="main-stat">${m.last_hits}</span> / <span class="sec-stat">${m.denies}</span></td>
-                        <td>${durationText}</td>
-                    `;
-                    tbody.appendChild(tr);
-                });
-                
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('match-table').style.display = 'table';
-                
-            } catch (err) {
-                console.error("Произошла ошибка:", err);
-                document.getElementById('loader').innerText = 'Ошибка соединения с API. Перезагрузите страницу.';
-            }
-        }
+function drawChart() {
+  const canvas = $("chart");
 
-        window.onload = initTracker;
-    </script>
+  const ctx = canvas.getContext("2d");
+
+  const rect = canvas.getBoundingClientRect();
+
+  const width = rect.width;
+  const height = rect.height;
+
+  const dpr = window.devicePixelRatio || 1;
+
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+
+  ctx.scale(dpr, dpr);
+
+  ctx.clearRect(0, 0, width, height);
+
+  if (!matches.length) {
+    return;
+  }
+
+  const data = [...matches].reverse();
+
+  const padding = {
+    top: 20,
+    bottom: 35,
+    left: 35,
+    right: 15
+  };
+
+  const chartWidth =
+    width - padding.left - padding.right;
+
+  const chartHeight =
+    height - padding.top - padding.bottom;
+
+  const count = data.length;
+
+  const step = chartWidth / count;
+
+  const values = [];
+
+  let wins = 0;
+
+  data.forEach((match, index) => {
+    if (isWin(match)) {
+      wins++;
+    }
+
+    if (currentChart === "results") {
+      values.push(isWin(match) ? 1 : 0);
+    } else {
+      values.push((wins / (index + 1)) * 100);
+    }
+  });
+
+  const min = currentChart === "results" ? 0 : 0;
+
+  const max = currentChart === "results" ? 1 : 100;
+
+  function getY(value) {
+    return padding.top +
+      chartHeight -
+      ((value - min) / (max - min)) * chartHeight;
+  }
+
+  // Горизонтальные линии
+  ctx.strokeStyle = "#293140";
+  ctx.lineWidth = 1;
+
+  const gridLines =
+    currentChart === "results" ? 2 : 5;
+
+  for (let i = 0; i <= gridLines; i++) {
+    const y =
+      padding.top +
+      (chartHeight / gridLines) * i;
+
+    ctx.beginPath();
+    ctx.moveTo(padding.left, y);
+    ctx.lineTo(width - padding.right, y);
+    ctx.stroke();
+  }
+
+  // Подписи
+  ctx.fillStyle = "#8c98ad";
+  ctx.font = "11px sans-serif";
+
+  if (currentChart === "results") {
+    ctx.fillText("Победа", 0, padding.top + 5);
+    ctx.fillText("Поражение", 0, height - padding.bottom);
+  } else {
+    ctx.fillText("100%", 0, padding.top + 5);
+    ctx.fillText("0%", 0, height - padding.bottom);
+  }
+
+  // Точки графика
+  data.forEach((match, index) => {
+    const value = values[index];
+
+    const x =
+      padding.left + step * index + step / 2;
+
+    const y = getY(value);
+
+    const win = isWin(match);
+
+    ctx.fillStyle =
+      currentChart === "results"
+        ? win ? "#55d69e" : "#ff6577"
+        : "#8b7cff";
+
+    const barWidth = Math.max(4, step * 0.65);
+
+    const barHeight = Math.max(3, chartHeight * 0.08);
+
+    ctx.beginPath();
+
+    ctx.roundRect(
+      x - barWidth / 2,
+      y - barHeight / 2,
+      barWidth,
+      barHeight,
+      3
+    );
+
+    ctx.fill();
+  });
+
+  // Линия винрейта
+  if (currentChart === "winrate") {
+    ctx.beginPath();
+
+    ctx.strokeStyle = "#8b7cff";
+    ctx.lineWidth = 2;
+
+    values.forEach((value, index) => {
+      const x =
+        padding.left + step * index + step / 2;
+
+      const y = getY(value);
+
+      if (index === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    });
+
+    ctx.stroke();
+  }
+
+  // Подписи матчей
+  ctx.fillStyle = "#8c98ad";
+  ctx.font = "10px sans-serif";
+  ctx.textAlign = "center";
+
+  data.forEach((match, index) => {
+    if (index % 2 !== 0 && count > 10) {
+      return;
+    }
+
+    const x =
+      padding.left + step * index + step / 2;
+
+    ctx.fillText(
+      String(index + 1),
+      x,
+      height - 10
+    );
+  });
+
+  ctx.textAlign = "left";
+}
+
+// Фильтр матчей
+document.querySelectorAll("[data-filter]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-filter]")
+      .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    currentFilter = button.dataset.filter;
+
+    renderMatches();
+  });
+});
+
+// Переключение графика
+document.querySelectorAll("[data-chart]").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll("[data-chart]")
+      .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    currentChart = button.dataset.chart;
+
+    drawChart();
+  });
+});
+
+// Перерисовка графика при изменении размера окна
+window.addEventListener("resize", drawChart);
+
+// Первичная загрузка
+loadData();
+
+// Обновление каждый час
+setInterval(loadData, 60 * 60 * 1000);
+</script>
 </body>
 </html>
