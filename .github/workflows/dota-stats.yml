@@ -1,4 +1,4 @@
-name: Update Dota 2 Tracker
+name: Update Dota 2 Profile Dashboard
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  update-profile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -23,46 +23,70 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Generate Dota Page
+      - name: Fetch Dota Data and Update Profile
         run: |
           python -c "
           import requests
           try:
               steam_id = '924159299'
-              p_res = requests.get(f'https://opendota.com{steam_id}').json()
+              
+              # Запрос профиля игрока
+              p_res = requests.get(f'https://opendota.com{steam_id}', timeout=15).json()
               prof = p_res.get('profile', {})
               name = prof.get('personaname', 'faukree')
-              avatar = prof.get('avatarfull', '')
               rank = p_res.get('rank_tier', 0)
               mmr = p_res.get('mmr_estimate', {}).get('estimate', '—')
               
               medals = {1:'Herald', 2:'Guardian', 3:'Crusader', 4:'Archon', 5:'Legend', 6:'Ancient', 7:'Divine', 8:'Immortal'}
               title = f'{medals.get(rank//10, \"Unranked\")} [{rank%10}]' if rank else 'No Rank'
+              if rank and rank // 10 == 8: title = 'Immortal'
               
-              h_res = requests.get('https://opendota.com').json()
-              h_map = {h['id']: h['name'].replace('npc_dota_hero_', '') for h in h_res}
+              # Запрос базы героев
+              h_res = requests.get('https://opendota.com', timeout=15).json()
+              h_name_map = {h['id']: h['localized_name'] for h in h_res}
+              h_img_map = {h['id']: h['name'].replace('npc_dota_hero_', '') for h in h_res}
               
-              matches = requests.get(f'https://opendota.com{steam_id}/matches?limit=20').json()
+              # Запрос последних 20 матчей
+              matches = requests.get(f'https://opendota.com{steam_id}/recentMatches', timeout=15).json()
               
-              html = f'<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Dota Tracker</title><style>body{{background:#0c0d12;color:#b3b5c6;font-family:sans-serif;padding:30px;max-width:1000px;margin:0 auto;}}.card{{display:flex;align-items:center;background:#14161f;padding:20px;border-radius:12px;margin-bottom:20px;}}img.av{{width:64px;border-radius:50%;margin-right:20px;}}table{{width:100%;border-collapse:collapse;background:#14161f;border-radius:8px;overflow:hidden;}}th,td{{padding:12px;text-align:left;border-bottom:1px solid #1f222f;}}th{{background:#1b1e2a;color:#fff;}}.win{{color:#4ade80;}}.lose{{color:#f87171;}}img.h{{width:40px;vertical-align:middle;margin-right:10px;}}</style></head><body>'
-              html += f'<div class=\"card\"><img class=\"av\" src=\"{avatar}\"><div><h2>{name}</h2><p>Rank: <b>{title}</b> | Est. MMR: <b>{mmr}</b></p></div></div>'
-              html += '<table><tr><th>Hero</th><th>Result</th><th>K/D/A</th><th>GPM/XPM</th></tr>'
+              # Создаем разметку для главной страницы профиля
+              md = f'# Привет, я {name} 👋\\n\\n'
+              md += f'### 📊 Мой ранг: `{title}` | Примерный MMR: `{mmr}`\\n\\n'
+              md += '## 🎮 Последние 20 игр в Dota 2\\n\\n'
+              md += '| Герой | Результат | K / D / A | Длительность |\\n'
+              md += '| :--- | :--- | :--- | :--- |\\n'
               
-              for m in matches:
+              for m in matches[:20]:
+                  hero_id = m.get('hero_id', 0)
+                  loc_name = h_name_map.get(hero_id, f'Hero ID: {hero_id}')
+                  short_name = h_img_map.get(hero_id, 'unknown')
+                  
+                  # Ссылка на официальную иконку героя (будет отображаться прямо в профиле)
+                  h_img_url = f'https://steamstatic.com{short_name}.png'
+                  hero_html = f'<img src=\"{h_img_url}\" width=\"45\" height=\"25\" valign=\"middle\"> **{loc_name}**'
+                  
                   is_rad = m.get('player_slot', 0) < 128
                   win = (m.get('radiant_win') and is_rad) or (not m.get('radiant_win') and not is_rad)
-                  res = '<span class=\"win\">Win</span>' if win else '<span class=\"lose\">Loss</span>'
-                  h_img = f'https://steamstatic.com{h_map.get(m.get(\"hero_id\",0), \"unknown\")}.png'
-                  html += f'<tr><td><img class=\"h\" src=\"{h_img}\">{m.get(\"hero_id\")}</td><td>{res}</td><td>{m.get(\"kills\")}/{m.get(\"deaths\")}/{m.get(\"assists\")}</td><td>{m.get(\"gold_per_min\")}/{m.get(\"xp_per_min\")}</td></tr>'
+                  res = '🟢 **Победа**' if win else '🔴 *Поражение*'
+                  
+                  dur = m.get('duration', 0)
+                  duration_text = f\"{dur // 60}м {dur % 60}с\"
+                  kda = f\"{m.get('kills', 0)} / {m.get('deaths', 0)} / {m.get('assists', 0)}\"
+                  
+                  md += f'| {hero_html} | {res} | {kda} | {duration_text} |\\n'
               
-              html += '</table></body></html>'
-              with open('index.html', 'w', encoding='utf-8') as f: f.write(html)
+              with open('README.md', 'w', encoding='utf-8') as f: 
+                  f.write(md)
+              print('README.md успешно обновлен!')
           except Exception as e:
-              print(e)
+              print(f'Ошибка: {e}')
+              exit(1)
           "
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@://github.com'
+          git add README.md
+          git commit -m "Update profile dota dashboard" || exit 0
+          git push
