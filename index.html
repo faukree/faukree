@@ -1,47 +1,155 @@
 <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Моя статистика Dota 2</title>
-        <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #121214; color: #e1e1e6; padding: 40px; max-width: 800px; margin: 0 auto; }
-            h1 { color: #fff; border-bottom: 2px solid #29292e; padding-bottom: 10px; }
-            table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); background: #19191d; border-radius: 8px; overflow: hidden; }
-            th, td { padding: 14px; text-align: left; border-bottom: 1px solid #29292e; }
-            th { background: #202024; color: #00b4d8; font-weight: 600; }
-            tr:hover { background: #222226; }
-            .win { color: #4ade80; font-weight: bold; }
-            .lose { color: #f87171; font-weight: bold; }
-        </style>
-    </head>
-    <body>
-        <h1>🎮 Мои последние 20 игр в Dota 2</h1>
-        <table>
-            <tr>
-                <th>Герой</th>
-                <th>Результат</th>
-                <th>K / D / A</th>
-                <th>Длительность</th>
-            </tr>
-    <tr><td>Hero ID: 74</td><td><span class="lose">🔴 Поражение</span></td><td>5 / 13 / 15</td><td>41м 51с</td></tr>
-<tr><td>Hero ID: 110</td><td><span class="win">🟢 Победа</span></td><td>5 / 16 / 27</td><td>52м 55с</td></tr>
-<tr><td>Hero ID: 22</td><td><span class="lose">🔴 Поражение</span></td><td>5 / 6 / 9</td><td>36м 13с</td></tr>
-<tr><td>Hero ID: 110</td><td><span class="lose">🔴 Поражение</span></td><td>3 / 11 / 8</td><td>31м 4с</td></tr>
-<tr><td>Hero ID: 9</td><td><span class="win">🟢 Победа</span></td><td>5 / 6 / 19</td><td>51м 27с</td></tr>
-<tr><td>Hero ID: 51</td><td><span class="lose">🔴 Поражение</span></td><td>1 / 10 / 10</td><td>34м 52с</td></tr>
-<tr><td>Hero ID: 85</td><td><span class="lose">🔴 Поражение</span></td><td>6 / 13 / 13</td><td>31м 26с</td></tr>
-<tr><td>Hero ID: 110</td><td><span class="lose">🔴 Поражение</span></td><td>8 / 11 / 6</td><td>27м 35с</td></tr>
-<tr><td>Hero ID: 110</td><td><span class="win">🟢 Победа</span></td><td>1 / 7 / 18</td><td>25м 38с</td></tr>
-<tr><td>Hero ID: 110</td><td><span class="win">🟢 Победа</span></td><td>11 / 12 / 24</td><td>52м 17с</td></tr>
-<tr><td>Hero ID: 14</td><td><span class="lose">🔴 Поражение</span></td><td>0 / 15 / 7</td><td>33м 34с</td></tr>
-<tr><td>Hero ID: 68</td><td><span class="lose">🔴 Поражение</span></td><td>3 / 10 / 12</td><td>34м 1с</td></tr>
-<tr><td>Hero ID: 59</td><td><span class="lose">🔴 Поражение</span></td><td>6 / 17 / 14</td><td>46м 11с</td></tr>
-<tr><td>Hero ID: 121</td><td><span class="win">🟢 Победа</span></td><td>2 / 1 / 15</td><td>24м 26с</td></tr>
-<tr><td>Hero ID: 40</td><td><span class="lose">🔴 Поражение</span></td><td>2 / 9 / 2</td><td>23м 13с</td></tr>
-<tr><td>Hero ID: 75</td><td><span class="win">🟢 Победа</span></td><td>7 / 10 / 37</td><td>45м 38с</td></tr>
-<tr><td>Hero ID: 105</td><td><span class="lose">🔴 Поражение</span></td><td>2 / 12 / 9</td><td>44м 8с</td></tr>
-<tr><td>Hero ID: 31</td><td><span class="lose">🔴 Поражение</span></td><td>10 / 17 / 25</td><td>50м 50с</td></tr>
-<tr><td>Hero ID: 41</td><td><span class="win">🟢 Победа</span></td><td>6 / 1 / 11</td><td>27м 11с</td></tr>
-<tr><td>Hero ID: 102</td><td><span class="lose">🔴 Поражение</span></td><td>4 / 6 / 2</td><td>22м 58с</td></tr>
-</table></body></html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAUKREE TRACKER</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0c0d12; color: #b3b5c6; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .header { display: flex; align-items: center; background: #14161f; border: 1px solid #232635; padding: 25px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .header img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #00b4d8; margin-right: 20px; }
+        .header-info h1 { margin: 0; color: #fff; font-size: 26px; letter-spacing: 0.5px; }
+        .header-info p { margin: 8px 0 0 0; font-size: 14px; color: #767993; }
+        .mmr-val { color: #ffb703; font-weight: bold; }
+        .rank-val { color: #00b4d8; font-weight: bold; }
+        
+        .title-block { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        h2 { color: #fff; margin: 0; font-size: 20px; }
+        .links a { color: #00b4d8; text-decoration: none; margin-left: 15px; font-size: 14px; }
+        .links a:hover { text-decoration: underline; }
+
+        .table-wrapper { background: #14161f; border: 1px solid #232635; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid #1f222f; }
+        th { background: #1b1e2a; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+        tr:hover { background: #1a1d29; }
+        
+        .hero-cell { display: flex; align-items: center; gap: 15px; color: #fff; font-weight: 500; }
+        .hero-cell img { width: 48px; height: 27px; border-radius: 4px; object-fit: cover; box-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+        
+        .win { color: #4ade80; font-weight: bold; background: rgba(74, 222, 128, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; }
+        .lose { color: #f87171; font-weight: bold; background: rgba(248, 113, 113, 0.1); padding: 4px 10px; border-radius: 6px; display: inline-block; }
+        
+        .main-stat { color: #fff; font-weight: bold; }
+        .sec-stat { color: #62657a; font-size: 12px; }
+        .loading { padding: 40px; text-align: center; color: #767993; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img id="avatar" src="https://placeholder.com" alt="Avatar">
+        <div class="header-info">
+            <h1 id="username">Загрузка трекера...</h1>
+            <p>ID: 924159299 | Звание: <span id="rank" class="rank-val">...</span> | Примерный MMR: <span id="mmr" class="mmr-val">...</span></p>
+        </div>
+    </div>
+
+    <div class="title-block">
+        <h2>Последние 20 игр в Dota 2</h2>
+        <div class="links">
+            <a href="https://dotabuff.com" target="_blank">Dotabuff</a>
+            <a href="https://opendota.com" target="_blank">OpenDota</a>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <div id="loader" class="loading">Синхронизация с OpenDota API...</div>
+        <table id="match-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Герой</th>
+                    <th>Результат</th>
+                    <th>K / D / A</th>
+                    <th>GPM / XPM</th>
+                    <th>Крипы (LH/DN)</th>
+                    <th>Длительность</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const STEAM_ID = "924159299";
+
+        async function initTracker() {
+            try {
+                const playerRes = await fetch(`https://opendota.com{STEAM_ID}`);
+                const playerData = await playerRes.json();
+                
+                if (playerData.profile) {
+                    document.getElementById('avatar').src = playerData.profile.avatarfull;
+                    document.getElementById('username').innerText = playerData.profile.personaname;
+                }
+                
+                const mmr = playerData.mmr_estimate?.estimate || '—';
+                document.getElementById('mmr').innerText = mmr;
+                
+                const rankTier = playerData.rank_tier;
+                const medals = {1:'Herald', 2:'Guardian', 3:'Crusader', 4:'Archon', 5:'Legend', 6:'Ancient', 7:'Divine', 8:'Immortal'};
+                let rankTitle = 'No Rank';
+                if (rankTier) {
+                    const medalNum = Math.floor(rankTier / 10);
+                    const stars = rankTier % 10;
+                    rankTitle = medalNum === 8 ? 'Immortal' : `${medals[medalNum]} [${stars}]`;
+                }
+                document.getElementById('rank').innerText = rankTitle;
+
+                const heroesRes = await fetch('https://opendota.com');
+                const heroesList = await heroesRes.json();
+                const heroMap = {};
+                heroesList.forEach(h => {
+                    heroMap[h.id] = {
+                        name: h.localized_name,
+                        tag: h.name.replace('npc_dota_hero_', '')
+                    };
+                });
+
+                const matchesRes = await fetch(`https://opendota.com{STEAM_ID}/matches?limit=20`);
+                const matches = await matchesRes.json();
+                
+                const tbody = document.getElementById('table-body');
+                
+                matches.forEach(m => {
+                    const hero = heroMap[m.hero_id] || { name: 'Unknown', tag: 'unknown' };
+                    const heroImg = `https://steamstatic.com{hero.tag}.png`;
+                    
+                    const isRadiant = m.player_slot < 128;
+                    const win = (m.radiant_win && isRadiant) || (!m.radiant_win && !isRadiant);
+                    const resHtml = win ? '<span class="win">Победа</span>' : '<span class="lose">Поражение</span>';
+                    
+                    const min = Math.floor(m.duration / 60);
+                    const sec = m.duration % 60;
+                    const durationText = `${min}м ${sec}с`;
+                    
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>
+                            <div class="hero-cell">
+                                <img src="${heroImg}" onerror="this.src='https://placeholder.com?';" alt="hero">
+                                <span>${hero.name}</span>
+                            </div>
+                        </td>
+                        <td>${resHtml}</td>
+                        <td><span class="main-stat">${m.kills}</span> / ${m.deaths} / ${m.assists}</td>
+                        <td><span class="main-stat">${m.gold_per_min}</span> / <span class="sec-stat">${m.xp_per_min}</span></td>
+                        <td><span class="main-stat">${m.last_hits}</span> / <span class="sec-stat">${m.denies}</span></td>
+                        <td>${durationText}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+                
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('match-table').style.display = 'table';
+                
+            } catch (err) {
+                document.getElementById('loader').innerText = 'Ошибка загрузки данных из OpenDota API. Перезагрузите страницу.';
+                console.error(err);
+            }
+        }
+
+        initTracker();
+    </script>
+</body>
+</html>
