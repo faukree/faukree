@@ -4,19 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dota Tracker</title>
 
 <style>
 :root {
-  --bg: #0b0e14;
-  --panel: #141923;
-  --panel2: #1b2230;
-  --text: #e9edf5;
-  --muted: #8c98ad;
-  --green: #55d69e;
-  --red: #ff6577;
-  --accent: #8b7cff;
-  --border: #252d3b;
+  --bg: #090d14;
+  --panel: #121a27;
+  --panel2: #1a2535;
+  --border: #273449;
+  --text: #edf2fa;
+  --muted: #8493aa;
+  --green: #42d99a;
+  --red: #ff647b;
+  --purple: #8d7aff;
 }
 
 * {
@@ -25,32 +26,45 @@
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse at top, #18243b 0%, #090d14 55%);
   color: var(--text);
-  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-family: Inter, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
 }
 
 .container {
   max-width: 1250px;
   margin: auto;
-  padding: 28px 20px;
+  padding: 25px 18px;
 }
 
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 25px;
+  gap: 15px;
 }
 
 .logo {
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: -1px;
 }
 
 .logo span {
-  color: var(--accent);
+  color: var(--purple);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .status {
@@ -58,45 +72,63 @@ header {
   font-size: 12px;
 }
 
+.refresh {
+  background: var(--panel2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.refresh:hover {
+  background: var(--purple);
+}
+
 .profile {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: linear-gradient(120deg, #1b2230, #141923);
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  gap: 22px;
   padding: 25px;
-  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(120deg, #1b2638, #121a27);
+  margin-bottom: 18px;
 }
 
 .avatar {
   width: 90px;
   height: 90px;
-  border-radius: 16px;
   object-fit: cover;
+  border-radius: 16px;
   background: var(--panel2);
 }
 
 .player-info {
   flex: 1;
+  min-width: 0;
 }
 
 .player-name {
   font-size: 27px;
-  font-weight: 800;
-  margin-bottom: 8px;
+  font-weight: 900;
+  overflow-wrap: anywhere;
 }
 
 .rank {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   color: var(--muted);
+  margin-top: 10px;
   font-size: 14px;
 }
 
 .rank img {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  margin-right: 8px;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
 .mmr {
@@ -104,39 +136,40 @@ header {
 }
 
 .mmr-value {
-  font-size: 35px;
+  font-size: 36px;
   font-weight: 900;
 }
 
 .mmr-label {
+  font-size: 11px;
   color: var(--muted);
-  font-size: 12px;
-  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 4px;
 }
 
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
 .stat-card {
+  padding: 20px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 15px;
-  padding: 20px;
 }
 
 .stat-label {
   color: var(--muted);
   font-size: 13px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .stat-value {
   font-size: 29px;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .green {
@@ -148,18 +181,19 @@ header {
 }
 
 .section {
+  padding: 22px;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 17px;
-  padding: 22px;
-  margin-bottom: 20px;
+  border-radius: 18px;
+  margin-bottom: 18px;
 }
 
 .section-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
 }
 
@@ -170,53 +204,63 @@ header {
 
 .filters {
   display: flex;
-  gap: 8px;
+  gap: 7px;
+  flex-wrap: wrap;
 }
 
 .filter {
+  background: var(--panel2);
   border: 1px solid var(--border);
   color: var(--muted);
-  background: var(--panel2);
-  padding: 8px 13px;
+  padding: 8px 12px;
   border-radius: 9px;
   cursor: pointer;
+  transition: .2s;
+  font-size: 12px;
+}
+
+.filter:hover {
+  color: white;
 }
 
 .filter.active {
   color: white;
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--purple);
+  border-color: var(--purple);
 }
 
 .chart-wrap {
-  height: 260px;
+  height: 270px;
   position: relative;
 }
 
 canvas {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .match {
   display: grid;
-  grid-template-columns: 5px 55px minmax(100px, 1fr) 100px 100px 100px 110px;
-  gap: 15px;
+  grid-template-columns: 5px 58px minmax(100px, 1fr) 90px 90px 80px 75px;
   align-items: center;
-  background: var(--panel2);
-  border-radius: 12px;
+  gap: 13px;
   padding: 13px;
+  background: var(--panel2);
+  border: 1px solid transparent;
+  border-radius: 12px;
   margin-bottom: 9px;
-  transition: transform .2s, background .2s;
+  transition: .2s;
 }
 
 .match:hover {
+  border-color: #435574;
   transform: translateY(-2px);
-  background: #222b3b;
 }
 
 .match-bar {
-  height: 45px;
+  width: 5px;
+  height: 48px;
   border-radius: 5px;
 }
 
@@ -229,21 +273,22 @@ canvas {
 }
 
 .hero-icon {
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
   object-fit: cover;
   border-radius: 9px;
   background: #080b10;
 }
 
 .hero-name {
-  font-weight: 700;
   font-size: 14px;
+  font-weight: 800;
 }
 
 .match-result {
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 11px;
+  margin-top: 6px;
+  font-weight: 800;
 }
 
 .match.win .match-result {
@@ -265,7 +310,9 @@ canvas {
 
 .match-stat span {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 10px;
+  display: block;
+  margin-top: 4px;
 }
 
 .match-duration {
@@ -277,8 +324,8 @@ canvas {
 .match-link {
   color: var(--muted);
   text-decoration: none;
-  text-align: right;
   font-size: 12px;
+  text-align: center;
 }
 
 .match-link:hover {
@@ -286,71 +333,94 @@ canvas {
 }
 
 .loading {
-  color: var(--muted);
   text-align: center;
-  padding: 35px;
+  padding: 35px 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.error {
+  color: var(--red);
 }
 
 .footer {
+  text-align: center;
   color: var(--muted);
   font-size: 12px;
-  text-align: center;
-  padding: 20px;
+  padding: 20px 0;
 }
 
-@media(max-width: 800px) {
+@media(max-width: 850px) {
   .stats {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .match {
+    grid-template-columns: 4px 48px minmax(80px, 1fr) 75px 75px;
+    gap: 9px;
+  }
+
+  .hero-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .match-duration,
+  .match-link {
+    display: none;
+  }
+}
+
+@media(max-width: 550px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .header-right {
+    gap: 7px;
+  }
+
+  .status {
+    font-size: 10px;
+  }
+
+  .refresh {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
   .profile {
+    padding: 17px;
+    gap: 13px;
     flex-wrap: wrap;
+  }
+
+  .avatar {
+    width: 68px;
+    height: 68px;
+  }
+
+  .player-name {
+    font-size: 20px;
+  }
+
+  .rank img {
+    width: 30px;
+    height: 30px;
   }
 
   .mmr {
     text-align: left;
     width: 100%;
+    padding-top: 8px;
   }
 
-  .match {
-    grid-template-columns: 4px 45px minmax(90px, 1fr) 70px 70px;
-    gap: 9px;
-  }
-
-  .hero-icon {
-    width: 45px;
-    height: 45px;
-  }
-
-  .match-stat:nth-of-type(4) {
-    display: none;
-  }
-
-  .match-duration {
-    display: none;
-  }
-
-  .match-link {
-    display: none;
-  }
-
-  .section-header {
-    flex-wrap: wrap;
-  }
-}
-
-@media(max-width: 480px) {
-  .container {
-    padding: 15px 10px;
-  }
-
-  .player-name {
-    font-size: 21px;
-  }
-
-  .avatar {
-    width: 70px;
-    height: 70px;
+  .mmr-value {
+    font-size: 29px;
   }
 
   .stat-card {
@@ -361,41 +431,84 @@ canvas {
     font-size: 24px;
   }
 
+  .section {
+    padding: 14px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
   .match {
-    grid-template-columns: 4px 40px minmax(80px, 1fr) 65px;
+    grid-template-columns: 4px 42px minmax(70px, 1fr) 65px;
     gap: 8px;
+    padding: 9px;
+  }
+
+  .hero-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-name {
+    font-size: 12px;
   }
 
   .match-stat:nth-of-type(3) {
     display: none;
+  }
+
+  .chart-wrap {
+    height: 220px;
   }
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <header>
   <div class="logo">DOTA<span>TRACKER</span></div>
-  <div class="status" id="status">● Загрузка данных...</div>
+
+  <div class="header-right">
+    <div class="status" id="status">● Подключение</div>
+
+    <button class="refresh" id="refresh">
+      ↻ Обновить
+    </button>
+  </div>
 </header>
 
 <section class="profile">
-  <img class="avatar" id="avatar" src="" alt="Avatar">
+
+  <img
+    class="avatar"
+    id="avatar"
+    src="https://placehold.co/100x100/1a2535/ffffff?text=DOTA"
+    alt="Аватар"
+  >
 
   <div class="player-info">
-    <div class="player-name" id="nickname">Загрузка...</div>
-    <div class="rank" id="rank">Загрузка ранга...</div>
+    <div class="player-name" id="nickname">
+      Загрузка...
+    </div>
+
+    <div class="rank" id="rank">
+      Загрузка ранга...
+    </div>
   </div>
 
   <div class="mmr">
     <div class="mmr-value" id="mmr">—</div>
-    <div class="mmr-label">MMR</div>
+    <div class="mmr-label">MMR ESTIMATE</div>
   </div>
+
 </section>
 
 <section class="stats">
+
   <div class="stat-card">
     <div class="stat-label">Победы</div>
     <div class="stat-value green" id="wins">—</div>
@@ -415,51 +528,99 @@ canvas {
     <div class="stat-label">Последние 20 игр</div>
     <div class="stat-value" id="recent">—</div>
   </div>
+
 </section>
 
 <section class="section">
+
   <div class="section-header">
-    <div class="section-title">График последних матчей</div>
+
+    <div class="section-title">
+      График последних матчей
+    </div>
 
     <div class="filters">
-      <button class="filter active" data-chart="results">
+
+      <button
+        class="filter active"
+        data-chart="results"
+      >
         Победы / поражения
       </button>
 
-      <button class="filter" data-chart="winrate">
+      <button
+        class="filter"
+        data-chart="winrate"
+      >
         Винрейт
       </button>
+
     </div>
+
   </div>
 
   <div class="chart-wrap">
     <canvas id="chart"></canvas>
   </div>
+
 </section>
 
 <section class="section">
+
   <div class="section-header">
-    <div class="section-title">Последние матчи</div>
+
+    <div class="section-title">
+      Последние матчи
+    </div>
 
     <div class="filters">
-      <button class="filter active" data-filter="all">Все</button>
-      <button class="filter" data-filter="win">Победы</button>
-      <button class="filter" data-filter="loss">Поражения</button>
+
+      <button
+        class="filter active"
+        data-filter="all"
+      >
+        Все
+      </button>
+
+      <button
+        class="filter"
+        data-filter="win"
+      >
+        Победы
+      </button>
+
+      <button
+        class="filter"
+        data-filter="loss"
+      >
+        Поражения
+      </button>
+
     </div>
+
   </div>
 
   <div id="matches">
-    <div class="loading">Загрузка матчей...</div>
+    <div class="loading">
+      Загрузка матчей...
+    </div>
   </div>
+
 </section>
 
 <div class="footer">
-  Dota Tracker · OpenDota API · Автоматическое обновление каждый час
+  Dota Tracker · OpenDota API · Обновление каждый час
 </div>
 
 </div>
 
 <script>
+"use strict";
+
+// ==============================
+// НАСТРОЙКИ
+// ==============================
+
 const ACCOUNT_ID = 924159299;
 
 const API = "https://api.opendota.com/api";
@@ -471,33 +632,65 @@ const RANK_IMAGE =
   "https://www.opendota.com/assets/images/dota2/rank_icons/";
 
 let matches = [];
+let heroMap = {};
 let currentFilter = "all";
 let currentChart = "results";
-
-let heroMap = {};
-let playerData = {};
+let isLoading = false;
 
 const $ = id => document.getElementById(id);
 
+
+// ==============================
+// ЗАПРОСЫ К API
+// ==============================
+
 async function fetchJSON(url) {
-  const response = await fetch(url);
+  const controller = new AbortController();
 
-  if (!response.ok) {
-    throw new Error("Ошибка API: " + response.status);
+  const timeoutId = setTimeout(
+    () => controller.abort(),
+    15000
+  );
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `OpenDota API: HTTP ${response.status}`
+      );
+    }
+
+    return await response.json();
+
+  } finally {
+    clearTimeout(timeoutId);
   }
+}
 
-  return response.json();
+
+// ==============================
+// ФОРМАТИРОВАНИЕ
+// ==============================
+
+function formatNumber(number) {
+  return Number(number || 0).toLocaleString("ru-RU");
 }
 
 function formatDuration(seconds) {
   const minutes = Math.floor(seconds / 60);
-  const secondsLeft = seconds % 60;
 
-  return `${minutes}:${String(secondsLeft).padStart(2, "0")}`;
+  const remaining = seconds % 60;
+
+  return `${minutes}:${String(remaining).padStart(2, "0")}`;
 }
 
 function getRankName(rankTier) {
-  if (!rankTier) return "Ранг не определён";
+  if (!rankTier) {
+    return "Ранг не определён";
+  }
 
   const medals = [
     "Herald",
@@ -511,6 +704,7 @@ function getRankName(rankTier) {
   ];
 
   const medal = Math.floor(rankTier / 10);
+
   const stars = rankTier % 10;
 
   if (medal < 1 || medal > 8) {
@@ -534,52 +728,10 @@ function getRankImage(rankTier) {
   return `${RANK_IMAGE}rank_icon_${medal}.png`;
 }
 
-async function loadData() {
-  $("status").textContent = "● Обновление...";
 
-  try {
-    const [player, recentMatches, heroStats, winLoss] =
-      await Promise.all([
-        fetchJSON(`${API}/players/${ACCOUNT_ID}`),
-
-        fetchJSON(
-          `${API}/players/${ACCOUNT_ID}/recentMatches`
-        ),
-
-        fetchJSON(`${API}/heroStats`),
-
-        fetchJSON(`${API}/players/${ACCOUNT_ID}/wl`)
-      ]);
-
-    playerData = player;
-
-    heroMap = {};
-
-    heroStats.forEach(hero => {
-      heroMap[hero.id] = hero;
-    });
-
-    matches = recentMatches.slice(0, 20);
-
-    renderProfile(player);
-    renderStats(winLoss);
-    renderMatches();
-    drawChart();
-
-    $("status").textContent = "● Обновлено";
-  } catch (error) {
-    console.error(error);
-
-    $("status").textContent = "● Ошибка загрузки";
-
-    $("matches").innerHTML = `
-      <div class="loading">
-        Не удалось загрузить статистику.
-        Попробуй обновить страницу позже.
-      </div>
-    `;
-  }
-}
+// ==============================
+// ПРОФИЛЬ
+// ==============================
 
 function renderProfile(player) {
   const profile = player.profile || {};
@@ -587,56 +739,44 @@ function renderProfile(player) {
   $("nickname").textContent =
     profile.personaname || "Unknown Player";
 
-  $("avatar").src =
-    profile.avatarfull || "";
-
-  $("rank").innerHTML = "";
-
-  const rankTier = player.rank_tier;
-
-  if (rankTier) {
-    const image = document.createElement("img");
-
-    image.src = getRankImage(rankTier);
-    image.alt = "Медаль";
-
-    const label = document.createElement("span");
-
-    label.textContent = getRankName(rankTier);
-
-    $("rank").append(image, label);
-  } else {
-    $("rank").textContent = "Медаль не определена";
+  if (profile.avatarfull) {
+    $("avatar").src = profile.avatarfull;
   }
 
   $("mmr").textContent =
     player.mmr_estimate?.estimate
-      ? player.mmr_estimate.estimate.toLocaleString("ru-RU")
+      ? formatNumber(player.mmr_estimate.estimate)
       : "—";
+
+  $("rank").replaceChildren();
+
+  if (player.rank_tier) {
+    const image = document.createElement("img");
+
+    image.src = getRankImage(player.rank_tier);
+
+    image.alt = "Медаль";
+
+    image.onerror = () => {
+      image.style.display = "none";
+    };
+
+    const label = document.createElement("span");
+
+    label.textContent = getRankName(player.rank_tier);
+
+    $("rank").append(image, label);
+
+  } else {
+    $("rank").textContent =
+      "Медаль не определена";
+  }
 }
 
-function renderStats(winLoss) {
-  const wins = winLoss.win || 0;
-  const losses = winLoss.lose || 0;
 
-  const total = wins + losses;
-
-  const rate = total
-    ? ((wins / total) * 100).toFixed(1)
-    : 0;
-
-  $("wins").textContent = wins.toLocaleString("ru-RU");
-
-  $("losses").textContent =
-    losses.toLocaleString("ru-RU");
-
-  $("winrate").textContent = `${rate}%`;
-
-  const recentWins = matches.filter(isWin).length;
-
-  $("recent").textContent =
-    `${recentWins}W / ${matches.length - recentWins}L`;
-}
+// ==============================
+// ПОБЕДЫ И ПОРАЖЕНИЯ
+// ==============================
 
 function isWin(match) {
   const radiant = match.player_slot < 128;
@@ -644,14 +784,38 @@ function isWin(match) {
   return radiant === Boolean(match.radiant_win);
 }
 
-function getHero(match) {
-  return heroMap[match.hero_id];
+function renderStats(data) {
+  const wins = Number(data.win || 0);
+
+  const losses = Number(data.lose || 0);
+
+  const total = wins + losses;
+
+  const winrate = total
+    ? ((wins / total) * 100).toFixed(1)
+    : "0.0";
+
+  $("wins").textContent = formatNumber(wins);
+
+  $("losses").textContent = formatNumber(losses);
+
+  $("winrate").textContent = `${winrate}%`;
+
+  const recentWins = matches.filter(isWin).length;
+
+  $("recent").textContent =
+    `${recentWins}W / ${matches.length - recentWins}L`;
 }
+
+
+// ==============================
+// МАТЧИ
+// ==============================
 
 function renderMatches() {
   const container = $("matches");
 
-  container.innerHTML = "";
+  container.replaceChildren();
 
   const filtered = matches.filter(match => {
     if (currentFilter === "win") {
@@ -666,8 +830,11 @@ function renderMatches() {
   });
 
   if (!filtered.length) {
-    container.innerHTML =
-      '<div class="loading">Матчей нет</div>';
+    container.innerHTML = `
+      <div class="loading">
+        Матчи не найдены
+      </div>
+    `;
 
     return;
   }
@@ -675,7 +842,7 @@ function renderMatches() {
   filtered.forEach(match => {
     const win = isWin(match);
 
-    const hero = getHero(match);
+    const hero = heroMap[match.hero_id];
 
     const heroName =
       hero?.localized_name || "Unknown Hero";
@@ -684,57 +851,97 @@ function renderMatches() {
       ? `${HERO_IMAGE}${hero.name.replace("npc_dota_hero_", "")}.png`
       : "";
 
-    const kd = `${match.kills}/${match.deaths}/${match.assists}`;
-
     const element = document.createElement("div");
 
-    element.className = `match ${win ? "win" : "loss"}`;
+    element.className =
+      `match ${win ? "win" : "loss"}`;
 
-    element.innerHTML = `
-      <div class="match-bar"></div>
+    const bar = document.createElement("div");
 
-      <img
-        class="hero-icon"
-        src="${heroImage}"
-        alt="${heroName}"
-        title="${heroName}"
-      >
+    bar.className = "match-bar";
 
-      <div>
-        <div class="hero-name">${heroName}</div>
+    const image = document.createElement("img");
 
-        <div class="match-result">
-          ${win ? "ПОБЕДА" : "ПОРАЖЕНИЕ"}
-        </div>
-      </div>
+    image.className = "hero-icon";
 
-      <div class="match-stat">
-        <strong>${kd}</strong>
-        <span>K / D / A</span>
-      </div>
+    image.src = heroImage;
 
-      <div class="match-stat">
-        <strong>${match.kills + match.assists}</strong>
-        <span>Участие</span>
-      </div>
+    image.alt = heroName;
 
-      <div class="match-duration">
-        ${formatDuration(match.duration)}
-      </div>
+    image.title = heroName;
 
-      <a
-        class="match-link"
-        href="https://www.dotabuff.com/matches/${match.match_id}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Dotabuff ↗
-      </a>
+    const info = document.createElement("div");
+
+    const name = document.createElement("div");
+
+    name.className = "hero-name";
+
+    name.textContent = heroName;
+
+    const result = document.createElement("div");
+
+    result.className = "match-result";
+
+    result.textContent = win ? "ПОБЕДА" : "ПОРАЖЕНИЕ";
+
+    info.append(name, result);
+
+    const kd = document.createElement("div");
+
+    kd.className = "match-stat";
+
+    kd.innerHTML = `
+      <strong>${match.kills}/${match.deaths}/${match.assists}</strong>
+      <span>K / D / A</span>
     `;
+
+    const participation = document.createElement("div");
+
+    participation.className = "match-stat";
+
+    participation.innerHTML = `
+      <strong>${match.kills + match.assists}</strong>
+      <span>K + A</span>
+    `;
+
+    const duration = document.createElement("div");
+
+    duration.className = "match-duration";
+
+    duration.textContent =
+      formatDuration(match.duration);
+
+    const link = document.createElement("a");
+
+    link.className = "match-link";
+
+    link.href =
+      `https://www.dotabuff.com/matches/${match.match_id}`;
+
+    link.target = "_blank";
+
+    link.rel = "noopener noreferrer";
+
+    link.textContent = "Dotabuff ↗";
+
+    element.append(
+      bar,
+      image,
+      info,
+      kd,
+      participation,
+      duration,
+      link
+    );
 
     container.appendChild(element);
   });
 }
+
+
+// ==============================
+// ГРАФИК
+// ==============================
 
 function drawChart() {
   const canvas = $("chart");
@@ -744,14 +951,20 @@ function drawChart() {
   const rect = canvas.getBoundingClientRect();
 
   const width = rect.width;
+
   const height = rect.height;
+
+  if (!width || !height) {
+    return;
+  }
 
   const dpr = window.devicePixelRatio || 1;
 
-  canvas.width = width * dpr;
-  canvas.height = height * dpr;
+  canvas.width = Math.round(width * dpr);
 
-  ctx.scale(dpr, dpr);
+  canvas.height = Math.round(height * dpr);
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   ctx.clearRect(0, 0, width, height);
 
@@ -764,7 +977,7 @@ function drawChart() {
   const padding = {
     top: 20,
     bottom: 35,
-    left: 35,
+    left: 45,
     right: 15
   };
 
@@ -794,22 +1007,23 @@ function drawChart() {
     }
   });
 
-  const min = currentChart === "results" ? 0 : 0;
-
-  const max = currentChart === "results" ? 1 : 100;
+  const max =
+    currentChart === "results" ? 1 : 100;
 
   function getY(value) {
     return padding.top +
       chartHeight -
-      ((value - min) / (max - min)) * chartHeight;
+      (value / max) * chartHeight;
   }
 
-  // Горизонтальные линии
-  ctx.strokeStyle = "#293140";
+  // Сетка
+
+  ctx.strokeStyle = "#273449";
+
   ctx.lineWidth = 1;
 
   const gridLines =
-    currentChart === "results" ? 2 : 5;
+    currentChart === "results" ? 2 : 4;
 
   for (let i = 0; i <= gridLines; i++) {
     const y =
@@ -817,29 +1031,48 @@ function drawChart() {
       (chartHeight / gridLines) * i;
 
     ctx.beginPath();
+
     ctx.moveTo(padding.left, y);
+
     ctx.lineTo(width - padding.right, y);
+
     ctx.stroke();
   }
 
   // Подписи
-  ctx.fillStyle = "#8c98ad";
-  ctx.font = "11px sans-serif";
+
+  ctx.fillStyle = "#8493aa";
+
+  ctx.font = "11px Arial";
 
   if (currentChart === "results") {
     ctx.fillText("Победа", 0, padding.top + 5);
-    ctx.fillText("Поражение", 0, height - padding.bottom);
+
+    ctx.fillText(
+      "Поражение",
+      0,
+      height - padding.bottom
+    );
+
   } else {
     ctx.fillText("100%", 0, padding.top + 5);
-    ctx.fillText("0%", 0, height - padding.bottom);
+
+    ctx.fillText(
+      "0%",
+      0,
+      height - padding.bottom
+    );
   }
 
-  // Точки графика
+  // Столбцы
+
   data.forEach((match, index) => {
     const value = values[index];
 
     const x =
-      padding.left + step * index + step / 2;
+      padding.left +
+      step * index +
+      step / 2;
 
     const y = getY(value);
 
@@ -847,12 +1080,20 @@ function drawChart() {
 
     ctx.fillStyle =
       currentChart === "results"
-        ? win ? "#55d69e" : "#ff6577"
-        : "#8b7cff";
+        ? win
+          ? "#42d99a"
+          : "#ff647b"
+        : "#8d7aff";
 
-    const barWidth = Math.max(4, step * 0.65);
+    const barWidth = Math.max(
+      3,
+      Math.min(14, step * 0.65)
+    );
 
-    const barHeight = Math.max(3, chartHeight * 0.08);
+    const barHeight =
+      currentChart === "results"
+        ? Math.max(3, chartHeight * 0.12)
+        : 5;
 
     ctx.beginPath();
 
@@ -867,16 +1108,20 @@ function drawChart() {
     ctx.fill();
   });
 
-  // Линия винрейта
+  // Линия накопительного винрейта
+
   if (currentChart === "winrate") {
     ctx.beginPath();
 
-    ctx.strokeStyle = "#8b7cff";
+    ctx.strokeStyle = "#8d7aff";
+
     ctx.lineWidth = 2;
 
     values.forEach((value, index) => {
       const x =
-        padding.left + step * index + step / 2;
+        padding.left +
+        step * index +
+        step / 2;
 
       const y = getY(value);
 
@@ -890,18 +1135,23 @@ function drawChart() {
     ctx.stroke();
   }
 
-  // Подписи матчей
-  ctx.fillStyle = "#8c98ad";
-  ctx.font = "10px sans-serif";
+  // Номера матчей
+
+  ctx.fillStyle = "#8493aa";
+
+  ctx.font = "10px Arial";
+
   ctx.textAlign = "center";
 
   data.forEach((match, index) => {
-    if (index % 2 !== 0 && count > 10) {
+    if (count > 10 && index % 2 !== 0) {
       return;
     }
 
     const x =
-      padding.left + step * index + step / 2;
+      padding.left +
+      step * index +
+      step / 2;
 
     ctx.fillText(
       String(index + 1),
@@ -913,42 +1163,197 @@ function drawChart() {
   ctx.textAlign = "left";
 }
 
-// Фильтр матчей
-document.querySelectorAll("[data-filter]").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-filter]")
-      .forEach(btn => btn.classList.remove("active"));
 
-    button.classList.add("active");
+// ==============================
+// ЗАГРУЗКА
+// ==============================
 
-    currentFilter = button.dataset.filter;
+async function loadData() {
+  if (isLoading) {
+    return;
+  }
+
+  isLoading = true;
+
+  $("status").textContent = "● Обновление...";
+
+  $("refresh").disabled = true;
+
+  try {
+    // Сначала профиль
+
+    const player = await fetchJSON(
+      `${API}/players/${ACCOUNT_ID}`
+    );
+
+    if (!player || !player.profile) {
+      throw new Error(
+        "Профиль не найден или скрыт"
+      );
+    }
+
+    renderProfile(player);
+
+    // Остальные данные загружаются независимо
+
+    const results = await Promise.allSettled([
+      fetchJSON(
+        `${API}/players/${ACCOUNT_ID}/recentMatches`
+      ),
+
+      fetchJSON(
+        `${API}/heroStats`
+      ),
+
+      fetchJSON(
+        `${API}/players/${ACCOUNT_ID}/wl`
+      )
+    ]);
+
+    const recentResult = results[0];
+
+    const heroesResult = results[1];
+
+    const winLossResult = results[2];
+
+    if (recentResult.status === "fulfilled") {
+      matches = recentResult.value.slice(0, 20);
+
+    } else {
+      console.error(
+        "Ошибка загрузки матчей:",
+        recentResult.reason
+      );
+    }
+
+    if (heroesResult.status === "fulfilled") {
+      heroMap = {};
+
+      heroesResult.value.forEach(hero => {
+        heroMap[hero.id] = hero;
+      });
+
+    } else {
+      console.error(
+        "Ошибка загрузки героев:",
+        heroesResult.reason
+      );
+    }
+
+    if (winLossResult.status === "fulfilled") {
+      renderStats(winLossResult.value);
+
+    } else {
+      console.error(
+        "Ошибка загрузки статистики:",
+        winLossResult.reason
+      );
+    }
 
     renderMatches();
-  });
-});
-
-// Переключение графика
-document.querySelectorAll("[data-chart]").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll("[data-chart]")
-      .forEach(btn => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    currentChart = button.dataset.chart;
 
     drawChart();
+
+    $("status").textContent =
+      "● " + new Date().toLocaleTimeString("ru-RU", {
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+
+  } catch (error) {
+    console.error(error);
+
+    $("status").textContent = "● Ошибка";
+
+    $("matches").innerHTML = `
+      <div class="loading error">
+        ${error.message}
+        <br><br>
+        Проверь доступность OpenDota API
+        и попробуй обновить страницу.
+      </div>
+    `;
+
+    if (!$("nickname").textContent ||
+        $("nickname").textContent === "Загрузка...") {
+      $("nickname").textContent =
+        "Не удалось загрузить профиль";
+
+      $("rank").textContent =
+        "Ошибка подключения к OpenDota";
+    }
+
+  } finally {
+    isLoading = false;
+
+    $("refresh").disabled = false;
+  }
+}
+
+
+// ==============================
+// ФИЛЬТРЫ
+// ==============================
+
+document.querySelectorAll("[data-filter]")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      document.querySelectorAll("[data-filter]")
+        .forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+      button.classList.add("active");
+
+      currentFilter = button.dataset.filter;
+
+      renderMatches();
+    });
   });
-});
 
-// Перерисовка графика при изменении размера окна
-window.addEventListener("resize", drawChart);
+document.querySelectorAll("[data-chart]")
+  .forEach(button => {
 
-// Первичная загрузка
+    button.addEventListener("click", () => {
+
+      document.querySelectorAll("[data-chart]")
+        .forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+      button.classList.add("active");
+
+      currentChart = button.dataset.chart;
+
+      drawChart();
+    });
+  });
+
+$("refresh").addEventListener(
+  "click",
+  loadData
+);
+
+window.addEventListener(
+  "resize",
+  drawChart
+);
+
+
+// ==============================
+// ЗАПУСК
+// ==============================
+
 loadData();
 
-// Обновление каждый час
-setInterval(loadData, 60 * 60 * 1000);
+setInterval(
+  loadData,
+  60 * 60 * 1000
+);
+
 </script>
+
 </body>
 </html>
