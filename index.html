@@ -75,11 +75,12 @@
 
     <script>
         const STEAM_ID = "924159299";
-        // Исправленный рабочий прокси CORS
-        const PROXY = "https://corsproxy.io";
+        // Используем другой стабильный прокси AllOrigins
+        const PROXY = "https://allorigins.win";
         const API_BASE = "https://opendota.com";
 
         async function initTracker() {
+            console.log("Скрипт трекера успешно запустился!");
             try {
                 // 1. Загружаем данные профиля игрока
                 const playerRes = await fetch(`${PROXY}${encodeURIComponent(`${API_BASE}/players/${STEAM_ID}`)}`);
@@ -103,7 +104,7 @@
                 }
                 document.getElementById('rank').innerText = rankTitle;
 
-                // 2. Загружаем базу героев для определения имен по ID
+                // 2. Загружаем базу героев
                 const heroesRes = await fetch(`${PROXY}${encodeURIComponent(`${API_BASE}/heroes`)}`);
                 const heroesList = await heroesRes.json();
                 const heroMap = {};
@@ -119,11 +120,10 @@
                 const matches = await matchesRes.json();
                 
                 const tbody = document.getElementById('table-body');
-                tbody.innerHTML = ''; // Очищаем таблицу перед заполнением
+                tbody.innerHTML = '';
                 
                 matches.forEach(m => {
                     const hero = heroMap[m.hero_id] || { name: 'Unknown', tag: 'unknown' };
-                    // Исправлена ссылка на официальные иконки героев от Valve
                     const heroImg = `https://steamstatic.com{hero.tag}.png`;
                     
                     const isRadiant = m.player_slot < 128;
@@ -151,17 +151,15 @@
                     tbody.appendChild(tr);
                 });
                 
-                // Переключаем экраны с загрузки на таблицу
                 document.getElementById('loader').style.display = 'none';
                 document.getElementById('match-table').style.display = 'table';
                 
             } catch (err) {
-                console.error(err);
-                document.getElementById('loader').innerText = 'Ошибка соединения с API OpenDota. Попробуйте обновить страницу.';
+                console.error("Произошла ошибка в трекере:", err);
+                document.getElementById('loader').innerText = 'Ошибка соединения с API. Перезагрузите страницу через Ctrl+F5.';
             }
         }
 
-        // Запуск трекера сразу после загрузки страницы
         window.onload = initTracker;
     </script>
 </body>
