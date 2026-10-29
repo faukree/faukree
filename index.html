@@ -9,14 +9,14 @@
 
 <style>
 :root {
-  --bg: #090d14;
+  --bg: #080c13;
   --panel: #121a27;
-  --panel2: #1a2535;
-  --border: #273449;
-  --text: #edf2fa;
-  --muted: #8493aa;
+  --panel2: #1b2637;
+  --border: #28374d;
+  --text: #edf3ff;
+  --muted: #8998af;
   --green: #42d99a;
-  --red: #ff647b;
+  --red: #ff657b;
   --purple: #8d7aff;
 }
 
@@ -26,15 +26,14 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(ellipse at top, #18243b 0%, #090d14 55%);
+  background: radial-gradient(ellipse at top, #192740, #080c13 60%);
   color: var(--text);
   font-family: Inter, Arial, sans-serif;
   min-height: 100vh;
 }
 
 button {
-  font: inherit;
+  font-family: inherit;
 }
 
 .container {
@@ -47,8 +46,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   margin-bottom: 25px;
-  gap: 15px;
 }
 
 .logo {
@@ -68,28 +67,32 @@ header {
 }
 
 .status {
-  color: var(--green);
   font-size: 12px;
+  color: var(--green);
 }
 
 .refresh {
+  color: white;
   background: var(--panel2);
-  color: var(--text);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 10px 14px;
   cursor: pointer;
-  transition: .2s;
 }
 
 .refresh:hover {
   background: var(--purple);
 }
 
+.refresh:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
 .profile {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   padding: 25px;
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -100,8 +103,8 @@ header {
 .avatar {
   width: 90px;
   height: 90px;
-  object-fit: cover;
   border-radius: 16px;
+  object-fit: cover;
   background: var(--panel2);
 }
 
@@ -119,16 +122,23 @@ header {
 .rank {
   display: flex;
   align-items: center;
-  gap: 9px;
-  color: var(--muted);
+  gap: 10px;
   margin-top: 10px;
+  color: var(--muted);
   font-size: 14px;
 }
 
 .rank img {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
+}
+
+.rank-stars {
+  display: flex;
+  gap: 2px;
+  color: #f6c66d;
+  font-size: 13px;
 }
 
 .mmr {
@@ -141,10 +151,10 @@ header {
 }
 
 .mmr-label {
-  font-size: 11px;
   color: var(--muted);
+  font-size: 11px;
   letter-spacing: 2px;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .stats {
@@ -155,10 +165,10 @@ header {
 }
 
 .stat-card {
-  padding: 20px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 15px;
+  padding: 20px;
 }
 
 .stat-label {
@@ -181,17 +191,17 @@ header {
 }
 
 .section {
-  padding: 22px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 18px;
+  padding: 22px;
   margin-bottom: 18px;
 }
 
 .section-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 15px;
   flex-wrap: wrap;
   margin-bottom: 20px;
@@ -215,12 +225,7 @@ header {
   padding: 8px 12px;
   border-radius: 9px;
   cursor: pointer;
-  transition: .2s;
   font-size: 12px;
-}
-
-.filter:hover {
-  color: white;
 }
 
 .filter.active {
@@ -341,6 +346,7 @@ canvas {
 
 .error {
   color: var(--red);
+  overflow-wrap: anywhere;
 }
 
 .footer {
@@ -409,8 +415,8 @@ canvas {
   }
 
   .rank img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 
   .mmr {
@@ -491,6 +497,7 @@ canvas {
   >
 
   <div class="player-info">
+
     <div class="player-name" id="nickname">
       Загрузка...
     </div>
@@ -498,11 +505,19 @@ canvas {
     <div class="rank" id="rank">
       Загрузка ранга...
     </div>
+
   </div>
 
   <div class="mmr">
-    <div class="mmr-value" id="mmr">—</div>
-    <div class="mmr-label">MMR ESTIMATE</div>
+
+    <div class="mmr-value" id="mmr">
+      —
+    </div>
+
+    <div class="mmr-label">
+      MMR ESTIMATE
+    </div>
+
   </div>
 
 </section>
@@ -541,17 +556,11 @@ canvas {
 
     <div class="filters">
 
-      <button
-        class="filter active"
-        data-chart="results"
-      >
+      <button class="filter active" data-chart="results">
         Победы / поражения
       </button>
 
-      <button
-        class="filter"
-        data-chart="winrate"
-      >
+      <button class="filter" data-chart="winrate">
         Винрейт
       </button>
 
@@ -575,24 +584,15 @@ canvas {
 
     <div class="filters">
 
-      <button
-        class="filter active"
-        data-filter="all"
-      >
+      <button class="filter active" data-filter="all">
         Все
       </button>
 
-      <button
-        class="filter"
-        data-filter="win"
-      >
+      <button class="filter" data-filter="win">
         Победы
       </button>
 
-      <button
-        class="filter"
-        data-filter="loss"
-      >
+      <button class="filter" data-filter="loss">
         Поражения
       </button>
 
@@ -617,10 +617,6 @@ canvas {
 <script>
 "use strict";
 
-// ==============================
-// НАСТРОЙКИ
-// ==============================
-
 const ACCOUNT_ID = 924159299;
 
 const API = "https://api.opendota.com/api";
@@ -633,15 +629,17 @@ const RANK_IMAGE =
 
 let matches = [];
 let heroMap = {};
+
 let currentFilter = "all";
 let currentChart = "results";
+
 let isLoading = false;
 
 const $ = id => document.getElementById(id);
 
 
 // ==============================
-// ЗАПРОСЫ К API
+// API
 // ==============================
 
 async function fetchJSON(url) {
@@ -659,7 +657,7 @@ async function fetchJSON(url) {
 
     if (!response.ok) {
       throw new Error(
-        `OpenDota API: HTTP ${response.status}`
+        `HTTP ${response.status}: ${url}`
       );
     }
 
@@ -672,19 +670,11 @@ async function fetchJSON(url) {
 
 
 // ==============================
-// ФОРМАТИРОВАНИЕ
+// ПРОФИЛЬ
 // ==============================
 
-function formatNumber(number) {
-  return Number(number || 0).toLocaleString("ru-RU");
-}
-
-function formatDuration(seconds) {
-  const minutes = Math.floor(seconds / 60);
-
-  const remaining = seconds % 60;
-
-  return `${minutes}:${String(remaining).padStart(2, "0")}`;
+function formatNumber(value) {
+  return Number(value || 0).toLocaleString("ru-RU");
 }
 
 function getRankName(rankTier) {
@@ -728,11 +718,6 @@ function getRankImage(rankTier) {
   return `${RANK_IMAGE}rank_icon_${medal}.png`;
 }
 
-
-// ==============================
-// ПРОФИЛЬ
-// ==============================
-
 function renderProfile(player) {
   const profile = player.profile || {};
 
@@ -743,10 +728,12 @@ function renderProfile(player) {
     $("avatar").src = profile.avatarfull;
   }
 
+  const estimate = player.mmr_estimate?.estimate;
+
   $("mmr").textContent =
-    player.mmr_estimate?.estimate
-      ? formatNumber(player.mmr_estimate.estimate)
-      : "—";
+    estimate != null
+      ? formatNumber(estimate)
+      : "Нет оценки";
 
   $("rank").replaceChildren();
 
@@ -755,7 +742,7 @@ function renderProfile(player) {
 
     image.src = getRankImage(player.rank_tier);
 
-    image.alt = "Медаль";
+    image.alt = getRankName(player.rank_tier);
 
     image.onerror = () => {
       image.style.display = "none";
@@ -765,7 +752,24 @@ function renderProfile(player) {
 
     label.textContent = getRankName(player.rank_tier);
 
-    $("rank").append(image, label);
+    const stars = document.createElement("span");
+
+    stars.className = "rank-stars";
+
+    const medal = Math.floor(player.rank_tier / 10);
+
+    const starCount = player.rank_tier % 10;
+
+    if (medal !== 8) {
+      stars.textContent =
+        "★".repeat(starCount);
+    }
+
+    $("rank").append(
+      image,
+      label,
+      stars
+    );
 
   } else {
     $("rank").textContent =
@@ -775,7 +779,7 @@ function renderProfile(player) {
 
 
 // ==============================
-// ПОБЕДЫ И ПОРАЖЕНИЯ
+// МАТЧИ
 // ==============================
 
 function isWin(match) {
@@ -783,6 +787,59 @@ function isWin(match) {
 
   return radiant === Boolean(match.radiant_win);
 }
+
+function formatDuration(seconds) {
+  const minutes = Math.floor(seconds / 60);
+
+  const remaining = seconds % 60;
+
+  return `${minutes}:${String(remaining).padStart(2, "0")}`;
+}
+
+async function loadMatches() {
+  // Сначала основной endpoint
+
+  try {
+    const data = await fetchJSON(
+      `${API}/players/${ACCOUNT_ID}/recentMatches`
+    );
+
+    if (Array.isArray(data) && data.length) {
+      return data.slice(0, 20);
+    }
+
+  } catch (error) {
+    console.warn(
+      "recentMatches не загрузился:",
+      error
+    );
+  }
+
+  // Резервный endpoint
+
+  try {
+    const data = await fetchJSON(
+      `${API}/players/${ACCOUNT_ID}/matches?limit=20`
+    );
+
+    if (Array.isArray(data)) {
+      return data.slice(0, 20);
+    }
+
+  } catch (error) {
+    console.error(
+      "Резервная загрузка матчей не удалась:",
+      error
+    );
+  }
+
+  return [];
+}
+
+
+// ==============================
+// СТАТИСТИКА
+// ==============================
 
 function renderStats(data) {
   const wins = Number(data.win || 0);
@@ -795,21 +852,47 @@ function renderStats(data) {
     ? ((wins / total) * 100).toFixed(1)
     : "0.0";
 
-  $("wins").textContent = formatNumber(wins);
+  $("wins").textContent =
+    formatNumber(wins);
 
-  $("losses").textContent = formatNumber(losses);
+  $("losses").textContent =
+    formatNumber(losses);
 
-  $("winrate").textContent = `${winrate}%`;
+  $("winrate").textContent =
+    `${winrate}%`;
 
-  const recentWins = matches.filter(isWin).length;
+  const recentWins =
+    matches.filter(isWin).length;
 
   $("recent").textContent =
     `${recentWins}W / ${matches.length - recentWins}L`;
 }
 
+function renderRecentStats() {
+  const wins = matches.filter(isWin).length;
+
+  const losses = matches.length - wins;
+
+  const winrate = matches.length
+    ? ((wins / matches.length) * 100).toFixed(1)
+    : "0.0";
+
+  $("wins").textContent =
+    formatNumber(wins);
+
+  $("losses").textContent =
+    formatNumber(losses);
+
+  $("winrate").textContent =
+    `${winrate}%`;
+
+  $("recent").textContent =
+    `${wins}W / ${losses}L`;
+}
+
 
 // ==============================
-// МАТЧИ
+// СПИСОК МАТЧЕЙ
 // ==============================
 
 function renderMatches() {
@@ -882,7 +965,8 @@ function renderMatches() {
 
     result.className = "match-result";
 
-    result.textContent = win ? "ПОБЕДА" : "ПОРАЖЕНИЕ";
+    result.textContent =
+      win ? "ПОБЕДА" : "ПОРАЖЕНИЕ";
 
     info.append(name, result);
 
@@ -1003,7 +1087,9 @@ function drawChart() {
     if (currentChart === "results") {
       values.push(isWin(match) ? 1 : 0);
     } else {
-      values.push((wins / (index + 1)) * 100);
+      values.push(
+        (wins / (index + 1)) * 100
+      );
     }
   });
 
@@ -1018,7 +1104,7 @@ function drawChart() {
 
   // Сетка
 
-  ctx.strokeStyle = "#273449";
+  ctx.strokeStyle = "#28374d";
 
   ctx.lineWidth = 1;
 
@@ -1041,12 +1127,16 @@ function drawChart() {
 
   // Подписи
 
-  ctx.fillStyle = "#8493aa";
+  ctx.fillStyle = "#8998af";
 
   ctx.font = "11px Arial";
 
   if (currentChart === "results") {
-    ctx.fillText("Победа", 0, padding.top + 5);
+    ctx.fillText(
+      "Победа",
+      0,
+      padding.top + 5
+    );
 
     ctx.fillText(
       "Поражение",
@@ -1055,7 +1145,11 @@ function drawChart() {
     );
 
   } else {
-    ctx.fillText("100%", 0, padding.top + 5);
+    ctx.fillText(
+      "100%",
+      0,
+      padding.top + 5
+    );
 
     ctx.fillText(
       "0%",
@@ -1082,7 +1176,7 @@ function drawChart() {
       currentChart === "results"
         ? win
           ? "#42d99a"
-          : "#ff647b"
+          : "#ff657b"
         : "#8d7aff";
 
     const barWidth = Math.max(
@@ -1108,7 +1202,7 @@ function drawChart() {
     ctx.fill();
   });
 
-  // Линия накопительного винрейта
+  // Линия винрейта
 
   if (currentChart === "winrate") {
     ctx.beginPath();
@@ -1137,7 +1231,7 @@ function drawChart() {
 
   // Номера матчей
 
-  ctx.fillStyle = "#8493aa";
+  ctx.fillStyle = "#8998af";
 
   ctx.font = "10px Arial";
 
@@ -1165,7 +1259,7 @@ function drawChart() {
 
 
 // ==============================
-// ЗАГРУЗКА
+// ГЛАВНАЯ ЗАГРУЗКА
 // ==============================
 
 async function loadData() {
@@ -1175,12 +1269,13 @@ async function loadData() {
 
   isLoading = true;
 
-  $("status").textContent = "● Обновление...";
+  $("status").textContent =
+    "● Обновление...";
 
   $("refresh").disabled = true;
 
   try {
-    // Сначала профиль
+    // 1. Профиль
 
     const player = await fetchJSON(
       `${API}/players/${ACCOUNT_ID}`
@@ -1194,37 +1289,21 @@ async function loadData() {
 
     renderProfile(player);
 
-    // Остальные данные загружаются независимо
+    // 2. Матчи
+
+    matches = await loadMatches();
+
+    // 3. Герои и общая статистика
 
     const results = await Promise.allSettled([
-      fetchJSON(
-        `${API}/players/${ACCOUNT_ID}/recentMatches`
-      ),
+      fetchJSON(`${API}/heroStats`),
 
-      fetchJSON(
-        `${API}/heroStats`
-      ),
-
-      fetchJSON(
-        `${API}/players/${ACCOUNT_ID}/wl`
-      )
+      fetchJSON(`${API}/players/${ACCOUNT_ID}/wl`)
     ]);
 
-    const recentResult = results[0];
+    const heroesResult = results[0];
 
-    const heroesResult = results[1];
-
-    const winLossResult = results[2];
-
-    if (recentResult.status === "fulfilled") {
-      matches = recentResult.value.slice(0, 20);
-
-    } else {
-      console.error(
-        "Ошибка загрузки матчей:",
-        recentResult.reason
-      );
-    }
+    const winLossResult = results[1];
 
     if (heroesResult.status === "fulfilled") {
       heroMap = {};
@@ -1240,48 +1319,56 @@ async function loadData() {
       );
     }
 
+    // 4. Отрисовка
+
     if (winLossResult.status === "fulfilled") {
       renderStats(winLossResult.value);
 
     } else {
-      console.error(
-        "Ошибка загрузки статистики:",
-        winLossResult.reason
-      );
+      renderRecentStats();
     }
 
     renderMatches();
 
     drawChart();
 
+    if (!matches.length) {
+      $("matches").innerHTML = `
+        <div class="loading error">
+          OpenDota не вернул историю матчей.
+          <br><br>
+          Возможно, профиль ещё не обновлён
+          или история матчей недоступна.
+        </div>
+      `;
+    }
+
     $("status").textContent =
-      "● " + new Date().toLocaleTimeString("ru-RU", {
-        hour: "2-digit",
-        minute: "2-digit"
-      });
+      "● " + new Date().toLocaleTimeString(
+        "ru-RU",
+        {
+          hour: "2-digit",
+          minute: "2-digit"
+        }
+      );
 
   } catch (error) {
-    console.error(error);
+    console.error(
+      "Ошибка загрузки:",
+      error
+    );
 
-    $("status").textContent = "● Ошибка";
+    $("status").textContent =
+      "● Ошибка подключения";
 
     $("matches").innerHTML = `
       <div class="loading error">
         ${error.message}
         <br><br>
-        Проверь доступность OpenDota API
+        Проверь OpenDota API
         и попробуй обновить страницу.
       </div>
     `;
-
-    if (!$("nickname").textContent ||
-        $("nickname").textContent === "Загрузка...") {
-      $("nickname").textContent =
-        "Не удалось загрузить профиль";
-
-      $("rank").textContent =
-        "Ошибка подключения к OpenDota";
-    }
 
   } finally {
     isLoading = false;
