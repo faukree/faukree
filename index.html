@@ -4,165 +4,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a0f17">
-<title>FAUKREE — Dota 2 Tracker</title>
+<title>FAUKREE · Dota 2 Tracker</title>
 <style>
 :root {
   color-scheme: dark;
-  --bg:#0a0f17;
-  --panel:#111a27;
-  --panel2:#172334;
-  --line:#28374b;
-  --text:#edf3fc;
-  --muted:#8fa2ba;
-  --green:#35d391;
-  --red:#ff6474;
-  --gold:#e8c477;
+  --bg:#0b1018;
+  --panel:#131c29;
+  --line:#26364a;
+  --text:#e8eef7;
+  --muted:#91a2b8;
+  --green:#27c781;
+  --red:#ef5966;
 }
 * { box-sizing:border-box; }
 body {
   margin:0;
-  min-height:100vh;
-  background:radial-gradient(ellipse at 50% -15%,#203754 0,transparent 65%),var(--bg);
+  background:radial-gradient(ellipse at top,#15243a 0,#0b1018 55%);
   color:var(--text);
-  font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;
+  font:15px/1.5 system-ui,Segoe UI,Arial,sans-serif;
 }
-main { width:min(1050px,calc(100% - 32px)); margin:30px auto; }
-header {
-  display:flex; align-items:center; justify-content:space-between;
-  gap:14px; flex-wrap:wrap; margin-bottom:22px;
+main { max-width:1180px; margin:32px auto; padding:0 18px; }
+.top {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:14px; flex-wrap:wrap; margin-bottom:20px;
 }
-.logo { font-weight:900; font-size:23px; letter-spacing:2px; }
-.logo span { color:var(--muted); font-size:12px; letter-spacing:1px; }
-button,.link-button {
-  border:1px solid #3b5675; background:#203650; color:#f3f7ff;
-  padding:10px 15px; border-radius:10px; font-weight:750;
-  cursor:pointer; text-decoration:none; display:inline-block;
+.brand { font-size:22px; font-weight:800; letter-spacing:.08em; }
+.muted { color:var(--muted); }
+button {
+  border:1px solid #38506c; background:#20344c; color:#eaf3ff;
+  padding:10px 15px; border-radius:10px; font-weight:700; cursor:pointer;
 }
-button:hover,.link-button:hover { background:#2a4665; }
-button:disabled { opacity:.6; cursor:wait; }
+button:hover { background:#2a4563; }
+button:disabled { opacity:.5; cursor:wait; }
 .panel {
-  background:linear-gradient(145deg,#141f2e,#101722);
+  background:linear-gradient(145deg,#151f2d,#101824);
   border:1px solid var(--line); border-radius:16px;
-  padding:20px; margin-bottom:18px;
-  box-shadow:0 12px 35px #0002;
+  padding:18px; margin:16px 0; box-shadow:0 12px 30px #0002;
 }
 .profile { display:flex; align-items:center; gap:18px; }
 .avatar {
-  width:86px; height:86px; border-radius:15px;
-  object-fit:cover; background:var(--panel2);
-  border:1px solid var(--line);
+  width:82px; height:82px; border-radius:15px;
+  object-fit:cover; background:#26364a;
 }
-.nickname { font-size:27px; font-weight:850; overflow-wrap:anywhere; }
-.muted { color:var(--muted); }
-.rank { display:flex; align-items:center; gap:12px; margin-top:7px; }
-.rank img { width:50px; height:50px; object-fit:contain; }
-.rank-name { color:var(--gold); font-weight:800; }
+.name { font-size:25px; font-weight:800; }
+.rank { display:flex; align-items:center; gap:10px; margin-top:4px; }
+.rank img { width:48px; height:48px; object-fit:contain; }
 .stats {
-  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:12px; margin-top:20px;
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px; margin-top:16px;
 }
-.stat { background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:14px; }
-.stat small { display:block; color:var(--muted); margin-bottom:4px; }
+.stat {
+  background:#192536; border:1px solid var(--line);
+  border-radius:12px; padding:13px;
+}
+.stat small { display:block; color:var(--muted); }
 .stat strong { font-size:23px; }
-.section-head {
-  display:flex; align-items:center; justify-content:space-between;
-  flex-wrap:wrap; gap:12px; margin-bottom:16px;
+.panelhead {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:12px; flex-wrap:wrap;
 }
-h2 { font-size:18px; margin:0; }
-.status { font-size:12px; color:var(--muted); }
-.table-wrap { overflow-x:auto; }
-table { width:100%; border-collapse:collapse; min-width:730px; font-size:13px; }
-th,td { padding:12px 10px; text-align:left; white-space:nowrap; border-bottom:1px solid var(--line); }
-th { background:#172334; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
-tbody tr:hover { background:#ffffff07; }
+h2 { font-size:18px; margin:0 0 12px; }
+.chartwrap { height:250px; position:relative; margin-top:12px; }
+.chart { width:100%; height:100%; display:block; overflow:visible; }
+.bar { cursor:pointer; transition:opacity .15s; }
+.bar:hover { opacity:.75; }
+.tooltip {
+  position:absolute; display:none; pointer-events:none;
+  background:#050a11; border:1px solid #40536b; border-radius:9px;
+  padding:9px 12px; font-size:12px; z-index:3; max-width:220px;
+  box-shadow:0 5px 20px #0008;
+}
+.tablewrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; min-width:850px; font-size:13px; }
+th,td {
+  text-align:left; padding:11px 10px;
+  border-bottom:1px solid var(--line); white-space:nowrap;
+}
+th {
+  font-size:11px; text-transform:uppercase; letter-spacing:.07em;
+  color:var(--muted); background:#172333; position:sticky; top:0;
+}
+tr:hover td { background:#ffffff05; }
 .hero { display:flex; align-items:center; gap:10px; font-weight:700; }
-.hero img { width:58px; height:33px; object-fit:cover; border-radius:5px; background:var(--panel2); }
+.hero img {
+  width:62px; height:35px; object-fit:cover;
+  border-radius:5px; background:#26364a;
+}
 .win { color:var(--green); font-weight:800; }
 .loss { color:var(--red); font-weight:800; }
-.match-link { color:#a5caff; text-decoration:none; }
-.match-link:hover { text-decoration:underline; }
-.empty { color:var(--muted); text-align:center; padding:28px 12px; overflow-wrap:anywhere; }
-.error { color:#ffc0c7; background:#351c26; border:1px solid #743441; border-radius:10px; padding:12px; margin-top:15px; overflow-wrap:anywhere; }
-.actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-footer { text-align:center; color:var(--muted); font-size:12px; padding:8px 0 25px; }
-@media(max-width:600px) {
-  main { width:calc(100% - 20px); margin:16px auto; }
-  .panel { padding:14px; }
-  .avatar { width:66px; height:66px; }
-  .nickname { font-size:21px; }
-  .stats { grid-template-columns:1fr; gap:8px; }
-  .stat { padding:11px 13px; }
-  .stat strong { font-size:20px; }
+.error {
+  color:#ffb5bb; background:#3a1b24; border:1px solid #71333e;
+  padding:10px; border-radius:9px; margin-top:12px;
+  overflow-wrap:anywhere;
+}
+.foot { font-size:12px; color:var(--muted); margin:16px 0; }
+.empty { text-align:center; padding:25px; color:var(--muted); }
+a { color:#8ebdff; }
+@media(max-width:650px) {
+  main { margin:16px auto; }
+  .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .profile { align-items:flex-start; }
+  .avatar { width:64px; height:64px; }
+  .name { font-size:20px; }
+  .chartwrap { height:210px; }
 }
 </style>
 </head>
 <body>
 <main>
-  <header>
-    <div class="logo">FAUKREE <span>/ DOTA 2 TRACKER</span></div>
+  <div class="top">
+    <div class="brand">FAUKREE <span class="muted">/ DOTA 2 TRACKER</span></div>
     <button id="refresh">↻ Обновить</button>
-  </header>
+  </div>
 
   <section class="panel">
     <div class="profile">
       <img id="avatar" class="avatar"
-        src="https://placehold.co/100x100/172334/ffffff?text=DOTA"
-        alt="Аватар игрока">
+           src="https://placehold.co/100x100?text=DOTA" alt="Аватар">
       <div>
-        <div id="nickname" class="nickname">Загрузка профиля...</div>
-        <div class="muted">Steam account ID: 924159299</div>
+        <div id="nickname" class="name">Загрузка профиля…</div>
+        <div class="muted">Steam ID: 924159299</div>
         <div class="rank">
           <img id="rankIcon" alt="Медаль" hidden>
           <div>
-            <div id="rankName" class="rank-name">Загружаем медаль...</div>
-            <div id="rankStars" class="muted"></div>
+            <b id="rankName">Ранг загружается…</b>
+            <div class="muted" id="rankStars"></div>
           </div>
         </div>
+        <p style="margin:8px 0 0">
+          <a href="https://www.dotabuff.com/players/924159299"
+             target="_blank" rel="noopener">Открыть Dotabuff ↗</a>
+          ·
+          <a href="https://www.opendota.com/players/924159299"
+             target="_blank" rel="noopener">Открыть OpenDota ↗</a>
+        </p>
       </div>
     </div>
 
     <div class="stats">
-      <div class="stat">
-        <small>Оценка MMR</small>
-        <strong id="mmr">—</strong>
-      </div>
-      <div class="stat">
-        <small>Победы</small>
-        <strong id="wins">—</strong>
-      </div>
-      <div class="stat">
-        <small>Поражения</small>
-        <strong id="losses">—</strong>
-      </div>
-    </div>
-
-    <div class="actions">
-      <a class="link-button" href="https://www.dotabuff.com/players/924159299" target="_blank" rel="noopener noreferrer">Открыть Dotabuff ↗</a>
-      <a class="link-button" href="https://www.opendota.com/players/924159299" target="_blank" rel="noopener noreferrer">Открыть OpenDota ↗</a>
+      <div class="stat"><small>Оценка MMR</small><strong id="mmr">—</strong></div>
+      <div class="stat"><small>Всего побед</small><strong id="wins">—</strong></div>
+      <div class="stat"><small>Всего поражений</small><strong id="losses">—</strong></div>
+      <div class="stat"><small>Win rate</small><strong id="wr">—</strong></div>
     </div>
     <div id="profileError"></div>
   </section>
 
   <section class="panel">
-    <div class="section-head">
-      <h2>Последние 20 матчей</h2>
-      <span class="status" id="updateStatus">Ожидание данных</span>
+    <div class="panelhead">
+      <h2>Результаты последних матчей</h2>
+      <span class="muted">Последние 20 игр · слева старые</span>
     </div>
+    <div class="chartwrap">
+      <svg id="chart" class="chart" role="img"
+           aria-label="График побед и поражений"></svg>
+      <div id="tooltip" class="tooltip"></div>
+    </div>
+    <div class="muted">Наведи на столбец для деталей; нажми, чтобы открыть матч.</div>
+  </section>
 
-    <div id="matchesState" class="empty">Загружаем матчи...</div>
-
-    <div class="table-wrap">
+  <section class="panel">
+    <div class="panelhead">
+      <h2>Последние матчи</h2>
+      <span class="muted" id="matchCount"></span>
+    </div>
+    <div id="matchesState" class="empty">Загрузка матчей…</div>
+    <div class="tablewrap">
       <table id="matchTable" hidden>
         <thead>
           <tr>
             <th>Герой</th>
             <th>Результат</th>
-            <th>K</th>
-            <th>D</th>
-            <th>A</th>
+            <th>Убийства</th>
+            <th>Смерти</th>
+            <th>Ассисты</th>
             <th>GPM</th>
             <th>XPM</th>
+            <th>Крипы (LH/DN)</th>
             <th>Длительность</th>
             <th>Дата</th>
           </tr>
@@ -172,68 +190,140 @@ footer { text-align:center; color:var(--muted); font-size:12px; padding:8px 0 25
     </div>
   </section>
 
-  <footer>
-    FAUKREE Dota 2 Tracker · OpenDota API · Автообновление каждые 10 минут
-  </footer>
+  <div class="foot">
+    Данные: OpenDota. Если основной API недоступен, сайт пробует
+    публичные прокси. Их доступность не гарантируется.
+    Автообновление раз в час.
+  </div>
 </main>
 
 <script>
 (() => {
-  'use strict';
+'use strict';
 
-  const ACCOUNT = '924159299';
-  const API = 'https://api.opendota.com/api';
-  const $ = id => document.getElementById(id);
+const ACCOUNT = '924159299';
+const API = 'https://api.opendota.com/api';
 
-  let heroes = {};
-  let busy = false;
+const PROXIES = [
+  url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
+  url => 'https://corsproxy.io/?url=' + encodeURIComponent(url)
+];
 
-  async function get(path) {
-    const response = await fetch(API + path, { cache: 'no-store' });
+const $ = id => document.getElementById(id);
+
+let matches = [];
+let heroes = {};
+
+const safe = (v, fallback='—') =>
+  v === null || v === undefined || v === '' ? fallback : v;
+
+const fmtTime = s =>
+  `${Math.floor((s || 0) / 60)}:${String(Math.floor((s || 0) % 60)).padStart(2,'0')}`;
+
+const dateOf = t => t
+  ? new Date(t * 1000).toLocaleString('ru-RU', {
+      day:'2-digit', month:'2-digit', year:'2-digit',
+      hour:'2-digit', minute:'2-digit'
+    })
+  : '—';
+
+/*
+ * Новый загрузчик:
+ * 1. Пробует OpenDota напрямую.
+ * 2. Если браузер блокирует запрос — пробует AllOrigins.
+ * 3. Если и он не сработал — пробует corsproxy.io.
+ */
+async function get(path) {
+  const url = API + path;
+  const errors = [];
+
+  // Прямой запрос
+  try {
+    const response = await fetch(url, {
+      cache:'no-store',
+      mode:'cors'
+    });
 
     if (!response.ok) {
-      throw new Error('OpenDota ответил HTTP ' + response.status);
+      throw new Error('OpenDota HTTP ' + response.status);
     }
 
-    return response.json();
+    return await response.json();
+  } catch (error) {
+    errors.push('OpenDota: ' + error.message);
   }
 
-  function showError(id, message) {
-    const el = $(id);
-    el.replaceChildren();
+  // Резервные прокси
+  for (const makeProxyUrl of PROXIES) {
+    try {
+      const response = await fetch(makeProxyUrl(url), {
+        cache:'no-store',
+        mode:'cors'
+      });
 
-    if (!message) return;
+      if (!response.ok) {
+        throw new Error('HTTP ' + response.status);
+      }
 
-    const box = document.createElement('div');
-    box.className = 'error';
-    box.textContent = message;
-    el.appendChild(box);
-  }
+      const data = await response.json();
 
-  function rankInfo(tier) {
-    if (!tier) {
-      return { name: 'Медаль не указана', star: '', icon: '' };
+      if (data === null || data === undefined) {
+        throw new Error('Пустой ответ');
+      }
+
+      return data;
+    } catch (error) {
+      errors.push(error.message);
     }
-
-    const medal = Math.floor(tier / 10);
-    const star = tier % 10;
-    const names = {
-      1: 'Herald', 2: 'Guardian', 3: 'Crusader',
-      4: 'Archon', 5: 'Legend', 6: 'Ancient',
-      7: 'Divine', 8: 'Immortal'
-    };
-
-    return {
-      name: names[medal] || 'Неизвестный ранг',
-      star: medal === 8 ? '' : 'Звезда ' + (star || 1),
-      icon: medal >= 1 && medal <= 8
-        ? 'https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_' + medal + '.png'
-        : ''
-    };
   }
 
-  async function loadProfile() {
-    const p = await get('/players/' + ACCOUNT);
+  throw new Error(
+    'Не удалось получить данные. ' + errors.join(' | ') +
+    '. Попробуй обновить страницу позже.'
+  );
+}
+
+function setError(id, msg) {
+  const el = $(id);
+  el.replaceChildren();
+
+  if (!msg) return;
+
+  const box = document.createElement('div');
+  box.className = 'error';
+  box.textContent = msg;
+  el.appendChild(box);
+}
+
+function rankInfo(tier) {
+  if (!tier) return {name:'Ранг не указан', icon:''};
+
+  const medal = Math.floor(tier / 10);
+  const star = tier % 10;
+
+  const names = {
+    1:'Herald',
+    2:'Guardian',
+    3:'Crusader',
+    4:'Archon',
+    5:'Legend',
+    6:'Ancient',
+    7:'Divine',
+    8:'Immortal'
+  };
+
+  return {
+    name: names[medal] || 'Ранг не определён',
+    star: medal === 8 ? '' : `Звезда ${star || 1}`,
+    icon: medal
+      ? `https://www.opendota.com/assets/images/dota2/rank_icons/rank_icon_${medal}.png`
+      : ''
+  };
+}
+
+async function loadProfile() {
+  try {
+    const p = await get(`/players/${ACCOUNT}`);
     const d = p.profile || {};
 
     $('nickname').textContent = d.personaname || 'Игрок Dota 2';
@@ -242,189 +332,266 @@ footer { text-align:center; color:var(--muted); font-size:12px; padding:8px 0 25
 
     const rank = rankInfo(p.rank_tier);
     $('rankName').textContent = rank.name;
-    $('rankStars').textContent = rank.star;
+    $('rankStars').textContent = rank.star || '';
 
-    const icon = $('rankIcon');
     if (rank.icon) {
-      icon.src = rank.icon;
-      icon.hidden = false;
-      icon.onerror = () => { icon.hidden = true; };
+      $('rankIcon').src = rank.icon;
+      $('rankIcon').hidden = false;
     } else {
-      icon.hidden = true;
+      $('rankIcon').hidden = true;
     }
 
-    $('mmr').textContent = p.mmr_estimate && p.mmr_estimate.estimate
+    $('mmr').textContent = p.mmr_estimate?.estimate
       ? Math.round(p.mmr_estimate.estimate).toLocaleString('ru-RU')
       : 'Нет оценки';
 
-    const wl = await get('/players/' + ACCOUNT + '/wl');
-    $('wins').textContent = Number(wl.win || 0).toLocaleString('ru-RU');
-    $('losses').textContent = Number(wl.lose || 0).toLocaleString('ru-RU');
+    setError('profileError', '');
 
-    showError('profileError', '');
-  }
-
-  async function loadHeroes() {
-    const data = await get('/heroes');
-    if (!Array.isArray(data)) throw new Error('Не удалось получить список героев');
-    heroes = Object.fromEntries(data.map(h => [h.id, h]));
-  }
-
-  async function loadMatches() {
     try {
-      const data = await get('/players/' + ACCOUNT + '/recentMatches');
-      if (!Array.isArray(data)) throw new Error('Неверный формат списка матчей');
-      return data.slice(0, 20);
-    } catch (e) {
-      const data = await get('/players/' + ACCOUNT + '/matches?limit=20');
-      if (!Array.isArray(data)) throw new Error('Неверный формат списка матчей');
-      return data.slice(0, 20);
+      const wl = await get(`/players/${ACCOUNT}/wl`);
+      const wins = Number(wl.win || 0);
+      const losses = Number(wl.lose || 0);
+      const total = wins + losses;
+
+      $('wins').textContent = wins.toLocaleString('ru-RU');
+      $('losses').textContent = losses.toLocaleString('ru-RU');
+      $('wr').textContent = total
+        ? `${(100 * wins / total).toFixed(1)}%`
+        : '—';
+    } catch (error) {
+      console.warn('Не удалось загрузить победы и поражения:', error);
+      $('wins').textContent = '—';
+      $('losses').textContent = '—';
+      $('wr').textContent = '—';
     }
+  } catch (error) {
+    setError('profileError', 'Не удалось загрузить профиль: ' + error.message);
   }
+}
 
-  function heroInfo(id) {
-    const h = heroes[id];
-    if (!h) return { name: 'Герой #' + (id ?? '?'), img: '' };
-
-    const slug = h.name.replace('npc_dota_hero_', '');
-    return {
-      name: h.localized_name || slug,
-      img: 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/' + slug + '.png'
-    };
+async function loadHeroData() {
+  try {
+    const list = await get('/heroes');
+    heroes = Object.fromEntries(list.map(h => [h.id, h]));
+  } catch (error) {
+    console.warn('Не удалось загрузить список героев:', error);
   }
+}
 
-  function isWin(m) {
-    return (m.player_slot < 128) === Boolean(m.radiant_win);
-  }
+async function loadMatches() {
+  $('matchesState').hidden = false;
+  $('matchesState').textContent = 'Загружаю матчи…';
 
-  function formatDate(timestamp) {
-    if (!timestamp) return '—';
-    return new Date(timestamp * 1000).toLocaleString('ru-RU', {
-      day: '2-digit', month: '2-digit', year: '2-digit',
-      hour: '2-digit', minute: '2-digit'
-    });
-  }
+  try {
+    let data;
 
-  function addCell(row, text, className) {
-    const td = document.createElement('td');
-    td.textContent = text;
-    if (className) td.className = className;
-    row.appendChild(td);
-    return td;
-  }
+    try {
+      data = await get(`/players/${ACCOUNT}/recentMatches`);
+    } catch {
+      data = await get(`/players/${ACCOUNT}/matches?limit=20`);
+    }
 
-  function renderMatches(data) {
-    const rows = $('matchRows');
-    rows.replaceChildren();
+    if (!Array.isArray(data)) {
+      throw new Error('API вернул неожиданный ответ');
+    }
 
-    if (!data.length) {
-      $('matchTable').hidden = true;
-      $('matchesState').hidden = false;
+    matches = data.slice(0, 20);
+
+    if (!matches.length) {
       $('matchesState').textContent =
-        'Матчи не найдены. Проверь, включена ли публичная история матчей в Dota 2.';
+        'Матчи не найдены. Проверь публичность истории матчей в Dota 2.';
+      $('matchTable').hidden = true;
+      $('matchCount').textContent = '';
+      drawChart();
       return;
     }
 
-    data.forEach(m => {
-      const row = document.createElement('tr');
-      const hero = heroInfo(m.hero_id);
-
-      const heroCell = document.createElement('td');
-      const heroWrap = document.createElement('div');
-      heroWrap.className = 'hero';
-
-      if (hero.img) {
-        const img = document.createElement('img');
-        img.src = hero.img;
-        img.alt = hero.name;
-        img.loading = 'lazy';
-        img.onerror = () => img.remove();
-        heroWrap.appendChild(img);
-      }
-
-      const name = document.createElement('span');
-      name.textContent = hero.name;
-      heroWrap.appendChild(name);
-      heroCell.appendChild(heroWrap);
-      row.appendChild(heroCell);
-
-      const win = isWin(m);
-      addCell(row, win ? 'ПОБЕДА' : 'ПОРАЖЕНИЕ', win ? 'win' : 'loss');
-      addCell(row, String(m.kills ?? 0));
-      addCell(row, String(m.deaths ?? 0));
-      addCell(row, String(m.assists ?? 0));
-      addCell(row, String(m.gold_per_min ?? '—'));
-      addCell(row, String(m.xp_per_min ?? '—'));
-
-      const duration = Number(m.duration);
-      addCell(row, Number.isFinite(duration)
-        ? Math.floor(duration / 60) + ':' + String(duration % 60).padStart(2, '0')
-        : '—');
-
-      const dateCell = document.createElement('td');
-      const link = document.createElement('a');
-      link.className = 'match-link';
-      link.href = 'https://www.opendota.com/matches/' + encodeURIComponent(m.match_id);
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.textContent = formatDate(m.start_time);
-      dateCell.appendChild(link);
-      row.appendChild(dateCell);
-
-      rows.appendChild(row);
-    });
-
     $('matchesState').hidden = true;
     $('matchTable').hidden = false;
+    $('matchCount').textContent = `${matches.length} матчей`;
+
+    renderMatches();
+    drawChart();
+  } catch (error) {
+    $('matchesState').hidden = false;
+    $('matchesState').textContent = 'Ошибка загрузки матчей: ' + error.message;
+    $('matchTable').hidden = true;
+    $('matchCount').textContent = '';
+    drawChart();
+  }
+}
+
+function heroInfo(id) {
+  const h = heroes[id];
+
+  if (!h) return {name:`Герой #${id}`, img:''};
+
+  const slug = h.name.replace('npc_dota_hero_','');
+
+  return {
+    name: h.localized_name || slug,
+    img: `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${slug}.png`
+  };
+}
+
+function isWin(m) {
+  return (m.player_slot < 128) === !!m.radiant_win;
+}
+
+function renderMatches() {
+  $('matchRows').innerHTML = matches.map(m => {
+    const h = heroInfo(m.hero_id);
+    const win = isWin(m);
+    const url = `https://www.opendota.com/matches/${m.match_id}`;
+
+    return `
+      <tr>
+        <td>
+          <div class="hero">
+            ${h.img ? `
+              <img loading="lazy"
+                   src="${h.img}"
+                   alt="${h.name}"
+                   onerror="this.style.display='none'">
+            ` : ''}
+            <span>${h.name}</span>
+          </div>
+        </td>
+        <td class="${win?'win':'loss'}">${win?'ПОБЕДА':'ПОРАЖЕНИЕ'}</td>
+        <td>${safe(m.kills,0)}</td>
+        <td>${safe(m.deaths,0)}</td>
+        <td>${safe(m.assists,0)}</td>
+        <td>${safe(m.gold_per_min)}</td>
+        <td>${safe(m.xp_per_min)}</td>
+        <td>${safe(m.last_hits,0)} / ${safe(m.denies,0)}</td>
+        <td>${fmtTime(m.duration)}</td>
+        <td>
+          <a href="${url}" target="_blank" rel="noopener">
+            ${dateOf(m.start_time)}
+          </a>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function drawChart() {
+  const svg = $('chart');
+  const tip = $('tooltip');
+  const wrap = svg.parentElement;
+
+  const w = Math.max(320, wrap.clientWidth);
+  const h = wrap.clientHeight || 250;
+  const pad = {l:26,r:10,t:15,b:27};
+  const innerW = w-pad.l-pad.r;
+  const innerH = h-pad.t-pad.b;
+
+  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  svg.innerHTML = '';
+
+  const ns = 'http://www.w3.org/2000/svg';
+
+  const node = (tag,attrs) => {
+    const el = document.createElementNS(ns,tag);
+    Object.entries(attrs).forEach(([k,v]) => el.setAttribute(k,v));
+    svg.appendChild(el);
+    return el;
+  };
+
+  [0,.5,1].forEach(v => {
+    const y = pad.t + innerH*v;
+    node('line',{
+      x1:pad.l,y1:y,x2:w-pad.r,y2:y,
+      stroke:'#29384b','stroke-dasharray':'3 4'
+    });
+  });
+
+  if (!matches.length) {
+    node('text',{
+      x:w/2,y:h/2,fill:'#91a2b8',
+      'font-size':13,'text-anchor':'middle'
+    }).textContent = 'Нет доступных матчей';
+    return;
   }
 
-  async function refresh() {
-    if (busy) return;
+  const ordered = [...matches].reverse();
+  const gap = Math.min(7,innerW/ordered.length*.25);
+  const bw = Math.max(4,(innerW-gap*(ordered.length-1))/ordered.length);
 
-    busy = true;
-    const button = $('refresh');
-    button.disabled = true;
-    button.textContent = 'Загрузка...';
-    $('updateStatus').textContent = 'Обновляем...';
+  ordered.forEach((m,i) => {
+    const win = isWin(m);
+    const x = pad.l+i*(bw+gap);
+    const barH = innerH*.82;
+    const y = pad.t+innerH-barH;
 
-    try {
-      const results = await Promise.allSettled([
-        loadProfile(),
-        loadHeroes()
-      ]);
+    const r = node('rect',{
+      x,y,width:bw,height:barH,rx:Math.min(4,bw/3),
+      fill:win?'#27c781':'#ef5966',
+      class:'bar',tabindex:0
+    });
 
-      if (results[0].status === 'rejected') {
-        showError('profileError',
-          'Не удалось загрузить профиль: ' + results[0].reason.message +
-          '. Если ошибка Failed to fetch, возможно, браузер блокирует прямой API-запрос.');
-      }
+    const hero = heroInfo(m.hero_id).name;
 
-      if (results[1].status === 'rejected') {
-        console.error('Ошибка загрузки героев:', results[1].reason);
-      }
+    r.addEventListener('mousemove',e => {
+      const box = wrap.getBoundingClientRect();
+      tip.style.display = 'block';
+      tip.style.left = Math.min(w-220,Math.max(0,e.clientX-box.left+8))+'px';
+      tip.style.top = Math.max(0,e.clientY-box.top-65)+'px';
+      tip.textContent =
+        `${hero} · ${win?'Победа':'Поражение'} · ` +
+        `${m.kills||0}/${m.deaths||0}/${m.assists||0} · ${dateOf(m.start_time)}`;
+    });
 
-      try {
-        renderMatches(await loadMatches());
-      } catch (e) {
-        $('matchTable').hidden = true;
-        $('matchesState').hidden = false;
-        $('matchesState').textContent = 'Не удалось загрузить матчи: ' + e.message;
-      }
+    r.addEventListener('mouseleave',() => tip.style.display='none');
 
-      $('updateStatus').textContent = 'Обновлено в ' +
-        new Date().toLocaleTimeString('ru-RU', {
-          hour: '2-digit', minute: '2-digit'
-        });
-    } finally {
-      busy = false;
-      button.disabled = false;
-      button.textContent = '↻ Обновить';
-    }
+    r.addEventListener('focus',() => {
+      tip.style.display='block';
+      tip.style.left=x+'px';
+      tip.style.top='4px';
+      tip.textContent =
+        `${hero} · ${win?'Победа':'Поражение'} · ` +
+        `${m.kills||0}/${m.deaths||0}/${m.assists||0}`;
+    });
+
+    r.addEventListener('blur',() => tip.style.display='none');
+
+    r.addEventListener('click',() => {
+      window.open(
+        `https://www.opendota.com/matches/${m.match_id}`,
+        '_blank','noopener'
+      );
+    });
+  });
+}
+
+let refreshing = false;
+
+async function refresh() {
+  if (refreshing) return;
+  refreshing = true;
+
+  const button = $('refresh');
+  button.disabled = true;
+  button.textContent = 'Обновление…';
+
+  try {
+    await Promise.allSettled([
+      loadHeroData(),
+      loadProfile(),
+      loadMatches()
+    ]);
+  } finally {
+    button.disabled = false;
+    button.textContent = '↻ Обновить';
+    refreshing = false;
   }
+}
 
-  $('refresh').addEventListener('click', refresh);
-  refresh();
-  setInterval(refresh, 10 * 60 * 1000);
+$('refresh').addEventListener('click',refresh);
+window.addEventListener('resize',drawChart);
+
+refresh();
+setInterval(refresh,60*60*1000);
 })();
 </script>
 </body>
