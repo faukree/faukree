@@ -10,6 +10,13 @@ PLAYER_ID = "924159299"
 BASE = "https://api.opendota.com/api"
 OUT = Path("data/stats.json")
 
+START_MMR = 5068
+MMR_PER_MATCH = 25
+RANKED_LOBBY = 7
+MATCH_HISTORY_LIMIT = 100
+DISPLAY_MATCHES = 20
+MAX_SAVED_MATCH_IDS = 5000
+
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "Faukree-Dota-Tracker/1.0"})
 
@@ -29,9 +36,6 @@ def hero_icon(hero):
 
 
 def hero_score(games, wins):
-    """
-    Adjusted winrate score.
-    """
     if games <= 0:
         return 50.0
 
@@ -41,16 +45,97 @@ def hero_score(games, wins):
     return 50 + (winrate - 50) * confidence
 
 
+def match_won(match):
+    radiant_win = match.get("radiant_win")
+    player_slot = match.get("player_slot")
+
+    if radiant_win is None or player_slot is None:
+        return None
+
+    return bool(radiant_win) == (int(player_slot) < 128)
+
+
 def main():
-    profile = get(f"/players/{PLAYER_ID}")
-    matches = get(f"/players/{PLAYER_ID}/matches", {"limit": 20})
+    # Load previously saved MMR and processed match IDs.
+    old_data = {}
+
+    if OUT.exists():
+        try:
+            old_data = json.loads(OUT.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            old_data = {}
+
+    mmr = int(old_data.get("mmr", START_MMR))
+    saved_ids = old_data.get("processed_match_ids")
+
+    # Get profile and ranked matches only.
+    profile_data = get(f"/players/{PLAYER_ID}")
+    matches = get(
+        f"/players/{PLAYER_ID}/matches",
+        {
+            "limit": MATCH_HISTORY_LIMIT,
+            "lobby_type": RANKED_LOBBY,
+        },
+    )
 
     heroes = get("/constants/heroes")
     hero_by_id = {int(key): value for key, value in heroes.items()}
 
+    # First run: establish a baseline.
+    # Do not change MMR for matches played before this setup.
+    if saved_ids is None:
+        processed_ids = {
+            str(match["match_id"])
+            for match in matches
+            if match.get("match_id") is not None
+        }
+        print("MMR baseline created. Existing matches were not counted.")
+    else:
+        processed_ids = {str(match_id) for match_id in saved_ids}
+
+        new_matches = [
+            match
+            for match in matches
+            if str(match.get("match_id")) not in processed_ids
+        ]
+
+        # Process new matches from oldest to newest.
+        new_matches.sort(key=lambda match: match.get("start_time", 0))
+
+        for match in new_matches:
+            result = match_won(match)
+
+            if result is None:
+                print(
+                    f"Could not determine result for match "
+                    f"{match.get('match_id')}. It will be checked again."
+                )
+                continue
+
+            if result:
+                mmr += MMR_PER_MATCH
+                print(f"Ranked win: +{MMR_PER_MATCH} MMR")
+            else:
+                mmr -= MMR_PER_MATCH
+                print(f"Ranked loss: -{MMR_PER_MATCH} MMR")
+
+            processed_ids.add(str(match["match_id"]))
+
+    # Keep a bounded history of processed IDs.
+    # Include the currently returned matches as well.
+    for match in matches:
+        match_id = match.get("match_id")
+        if match_id is not None:
+            processed_ids.add(str(match_id))
+
+    processed_ids = set(
+        sorted(processed_ids, key=int)[-MAX_SAVED_MATCH_IDS:]
+    )
+
+    # Enrich the latest 20 ranked matches for the website.
     enriched = []
 
-    for match in matches[:20]:
+    for match in matches[:DISPLAY_MATCHES]:
         match_id = match["match_id"]
 
         try:
@@ -88,11 +173,6 @@ def main():
             slot = me.get("player_slot", match.get("player_slot", 0))
             win = bool(radiant_win) == (int(slot) < 128)
 
-            duration = detail.get(
-                "duration",
-                match.get("duration", 0),
-            )
-
             enriched.append(
                 {
                     "match_id": match_id,
@@ -103,24 +183,18 @@ def main():
                     ),
                     "hero_icon": hero_icon(hero),
                     "win": win,
-                    "kills": me.get(
-                        "kills",
-                        match.get("kills", 0),
-                    ),
-                    "deaths": me.get(
-                        "deaths",
-                        match.get("deaths", 0),
-                    ),
-                    "assists": me.get(
-                        "assists",
-                        match.get("assists", 0),
-                    ),
+                    "kills": me.get("kills", match.get("kills", 0)),
+                    "deaths": me.get("deaths", match.get("deaths", 0)),
+                    "assists": me.get("assists", match.get("assists", 0)),
                     "hero_damage": me.get("hero_damage"),
                     "total_xp": me.get("total_xp"),
                     "xp_per_min": me.get("xp_per_min"),
                     "gold": me.get("gold"),
                     "gold_per_min": me.get("gold_per_min"),
-                    "duration": duration,
+                    "duration": detail.get(
+                        "duration",
+                        match.get("duration", 0),
+                    ),
                     "start_time": detail.get(
                         "start_time",
                         match.get("start_time", int(time.time())),
@@ -133,10 +207,7 @@ def main():
 
             hero_id = match.get("hero_id")
             hero = hero_by_id.get(int(hero_id or 0), {})
-
-            radiant_win = match.get("radiant_win", False)
-            slot = int(match.get("player_slot", 0))
-            win = bool(radiant_win) == (slot < 128)
+            win = match_won(match)
 
             enriched.append(
                 {
@@ -147,7 +218,7 @@ def main():
                         "Unknown",
                     ),
                     "hero_icon": hero_icon(hero),
-                    "win": win,
+                    "win": bool(win),
                     "kills": match.get("kills", 0),
                     "deaths": match.get("deaths", 0),
                     "assists": match.get("assists", 0),
@@ -166,8 +237,11 @@ def main():
 
         time.sleep(0.25)
 
-    # Lifetime hero statistics from OpenDota.
-    hero_stats = get(f"/players/{PLAYER_ID}/heroes")
+    # Lifetime hero statistics from Ranked matches only.
+    hero_stats = get(
+        f"/players/{PLAYER_ID}/heroes",
+        {"lobby_type": RANKED_LOBBY},
+    )
 
     totals = {}
 
@@ -178,7 +252,7 @@ def main():
         games = int(row.get("games", 0))
         wins = int(row.get("win", 0))
 
-        if games <= 0:
+        if games < 20:
             continue
 
         winrate = round(wins / games * 100, 1)
@@ -194,7 +268,7 @@ def main():
             "kda": "—",
         }
 
-    # KDA from the recent 20 matches, when available.
+    # KDA from the latest 20 Ranked matches.
     for hero_id, item in totals.items():
         group = [
             match
@@ -212,16 +286,9 @@ def main():
                 2,
             )
 
-    # Best heroes: at least 20 games.
-    # Sort by actual winrate first.
-    eligible_heroes = [
-        hero
-        for hero in totals.values()
-        if hero["games"] >= 20
-    ]
-
+    # Best heroes: at least 20 Ranked games.
     top_heroes = sorted(
-        eligible_heroes,
+        totals.values(),
         key=lambda hero: (
             hero["winrate"],
             hero["score"],
@@ -230,11 +297,19 @@ def main():
         reverse=True,
     )[:15]
 
+    profile = profile_data.get("profile", {})
+    profile["mmr"] = mmr
+
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "profile": profile.get("profile", {}),
+        "profile": profile,
+        "mmr": mmr,
         "matches": enriched,
         "top_heroes": top_heroes,
+        "processed_match_ids": sorted(
+            processed_ids,
+            key=int,
+        ),
     }
 
     OUT.parent.mkdir(exist_ok=True)
@@ -244,7 +319,7 @@ def main():
         encoding="utf-8",
     )
 
-    print("Dota stats updated successfully.")
+    print(f"Ranked stats updated successfully. Estimated MMR: {mmr}")
 
 
 if __name__ == "__main__":
