@@ -132,13 +132,12 @@ header p,
 .rank {
     display: flex;
     align-items: center;
-    gap: 14px;
-    background: linear-gradient(135deg, #191b20, #151920);
+    gap: 12px;
+    background: #191b20;
     border: 1px solid #3b3325;
-    padding: 12px 18px;
+    padding: 10px 16px;
     border-radius: 12px;
     min-width: 190px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
 }
 
 .rankicon {
@@ -147,33 +146,30 @@ header p,
     height: 76px;
     object-fit: contain;
     flex-shrink: 0;
-    filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .35));
 }
 
 .rankinfo {
-    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .rank b {
     display: block;
     color: var(--gold);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
-    letter-spacing: 0.8px;
 }
 
 .rank small {
     display: block;
     color: var(--muted);
-    font-size: 18px;
-    letter-spacing: 2px;
-    margin-top: 6px;
-    white-space: nowrap;
-    font-weight: 800;
-    text-shadow: 0 1px 5px rgba(229, 184, 92, 0.2);
+    font-size: 11px;
+    margin-top: 2px;
 }
 
-/* Статистика */
+/* Карточки статистики */
 
 .stats {
     display: grid;
@@ -259,13 +255,13 @@ header p,
     color: var(--muted);
 }
 
-/* Панели */
-
 .panel {
     padding: 22px;
     margin-bottom: 18px;
     min-width: 0;
 }
+
+/* Заголовки панелей */
 
 .panelhead {
     display: flex;
@@ -707,24 +703,13 @@ footer {
         display: none;
     }
 
-    /* Медаль на телефоне */
-
     .rank {
-        padding: 10px 14px;
-        gap: 11px;
-        min-width: 175px;
+        padding: 9px 13px;
+        min-width: 170px;
     }
 
     .rankicon {
         width: 66px;
         height: 66px;
-    }
-
-    .rank b {
-        font-size: 13px;
-    }
-
-    .rank small {
-        font-size: 16px;
     }
 }
