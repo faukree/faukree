@@ -155,8 +155,6 @@ header p,
     margin-top: 5px;
 }
 
-/* Верхние карточки статистики */
-
 .stats {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -188,24 +186,50 @@ header p,
     display: block;
     font-size: 29px;
     margin: 12px 0 7px;
-    white-space: nowrap;
-}
-
-/* W — победы, L — поражения */
-
-.wins-letter {
-    color: var(--green);
-    display: inline;
-}
-
-.losses-letter {
-    color: var(--red);
-    display: inline;
 }
 
 .stats span {
     font-size: 11px;
 }
+
+/* Буквы и числа W/L в верхних карточках */
+
+#wins,
+#losses {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+#wins .wins-letter,
+#losses .losses-letter {
+    display: inline-block;
+    font-size: 2em !important;
+    line-height: 1;
+    font-weight: 800;
+    vertical-align: baseline;
+}
+
+#wins .wins-letter,
+#wins .wins-number {
+    color: var(--green) !important;
+}
+
+#losses .losses-letter,
+#losses .losses-number {
+    color: var(--red) !important;
+}
+
+#wins .wins-number,
+#losses .losses-number {
+    display: inline-block;
+    font-size: 29px !important;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+/* Общие цвета */
 
 .positive {
     color: var(--green);
@@ -245,17 +269,19 @@ header p,
     white-space: nowrap;
 }
 
-/* Таблица матчей */
+/* Таблица матчей с горизонтальной прокруткой */
 
 .tablewrap {
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
     max-width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
-table {
-    width: 100%;
+.tablewrap table {
+    width: max-content;
+    min-width: 100%;
     border-collapse: collapse;
     white-space: nowrap;
     font-size: 10px;
@@ -591,6 +617,11 @@ footer {
 
     .stats strong {
         font-size: 24px;
+    }
+
+    #wins .wins-number,
+    #losses .losses-number {
+        font-size: 24px !important;
     }
 
     .panel {
