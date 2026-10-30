@@ -370,6 +370,32 @@ tbody tr:hover {
     white-space: nowrap;
 }
 
+/* Пять последних результатов */
+
+.recent-result-dots {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 4px;
+}
+
+.recent-result-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    border-radius: 50%;
+    background: var(--muted);
+}
+
+.recent-result-dot.won {
+    background: var(--green);
+}
+
+.recent-result-dot.lost {
+    background: var(--red);
+}
+
 .recent-hero-winrate {
     text-align: right;
     font-size: 12px;
@@ -470,6 +496,17 @@ footer {
     .recent-hero-results {
         gap: 7px;
         font-size: 10px;
+    }
+
+    .recent-result-dots {
+        gap: 4px;
+        margin-left: 2px;
+    }
+
+    .recent-result-dot {
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
     }
 
     .recent-hero-winrate {
