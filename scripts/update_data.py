@@ -17,6 +17,7 @@ MATCH_HISTORY_LIMIT = 100
 DISPLAY_MATCHES = 20
 MAX_SAVED_MATCH_IDS = 5000
 RECENT_DAYS = 30
+RECENT_RESULTS_LIMIT = 5
 
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "Faukree-Dota-Tracker/1.0"})
@@ -178,10 +179,7 @@ def main():
                 {
                     "match_id": match_id,
                     "hero_id": hero_id,
-                    "hero_name": hero.get(
-                        "localized_name",
-                        "Unknown",
-                    ),
+                    "hero_name": hero.get("localized_name", "Unknown"),
                     "hero_icon": hero_icon(hero),
                     "win": win,
                     "kills": me.get("kills", match.get("kills", 0)),
@@ -213,10 +211,7 @@ def main():
                 {
                     "match_id": match_id,
                     "hero_id": hero_id,
-                    "hero_name": hero.get(
-                        "localized_name",
-                        "Unknown",
-                    ),
+                    "hero_name": hero.get("localized_name", "Unknown"),
                     "hero_icon": hero_icon(hero),
                     "win": match_won(match),
                     "kills": match.get("kills", 0),
@@ -238,7 +233,7 @@ def main():
         time.sleep(0.25)
 
     # Статистика героев за последние 30 календарных дней.
-    # Источник — история Ranked-матчей.
+    # История результатов собирается только из Ranked-матчей.
     cutoff = int(
         (datetime.now(timezone.utc) - timedelta(days=RECENT_DAYS))
         .timestamp()
@@ -273,6 +268,7 @@ def main():
                 "wins": 0,
                 "losses": 0,
                 "winrate": 0,
+                "recent_results": [],
             }
 
         item = recent_heroes[hero_id]
@@ -283,17 +279,34 @@ def main():
         else:
             item["losses"] += 1
 
+        item["recent_results"].append(
+            {
+                "win": result,
+                "start_time": start_time,
+            }
+        )
+
     for item in recent_heroes.values():
         item["winrate"] = round(
             item["wins"] / item["games"] * 100,
             1,
         )
 
+        # Оставляем пять последних результатов.
+        # Порядок: от старой игры к новой.
+        item["recent_results"] = sorted(
+            item["recent_results"],
+            key=lambda result: result["start_time"],
+        )[-RECENT_RESULTS_LIMIT:]
+
+    # Порядок: больше побед, выше винрейт,
+    # при равенстве — меньше игр выше.
     recent_heroes_30d = sorted(
         recent_heroes.values(),
         key=lambda hero: (
-            hero["games"],
+            hero["wins"],
             hero["winrate"],
+            -hero["games"],
         ),
         reverse=True,
     )
