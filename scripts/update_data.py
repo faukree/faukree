@@ -261,7 +261,7 @@ top_heroes = sorted(
 )[:15]
 
 
-    output = {
+output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "profile": profile.get("profile", {}),
         "matches": enriched,
