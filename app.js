@@ -1,13 +1,85 @@
 
-const PLAYER_ID = '924159299';
 const DATA_URL = './data/stats.json';
-const MMR_PER_MATCH = 25;
-
-// Пути к изображениям медалей.
-// Изображения добавим в папку assets/medals.
 const MEDAL_PATH = './assets/medals/';
 
 const $ = id => document.getElementById(id);
+
+const RANKS = [
+    { name: 'Рекрут', file: 'recruit', thresholds: [0, 154, 308, 462, 616] },
+    { name: 'Страж', file: 'guardian', thresholds: [770, 924, 1078, 1232, 1386] },
+    { name: 'Рыцарь', file: 'crusader', thresholds: [1540, 1694, 1848, 2002, 2156] },
+    { name: 'Герой', file: 'archon', thresholds: [2310, 2464, 2618, 2772, 2926] },
+    { name: 'Легенда', file: 'legend', thresholds: [3080, 3234, 3388, 3542, 3696] },
+    { name: 'Властелин', file: 'ancient', thresholds: [3850, 4004, 4158, 4312, 4466] },
+    { name: 'Божество', file: 'divine', thresholds: [4620, 4820, 5020, 5220, 5420] }
+];
+
+function getMedal(mmr) {
+    if (!Number.isFinite(mmr) || mmr < 0) {
+        return null;
+    }
+
+    if (mmr >= 5640) {
+        return {
+            name: 'Титан',
+            file: 'immortal.png',
+            stars: '',
+            title: 'Immortal'
+        };
+    }
+
+    let currentRank = RANKS[0];
+
+    for (const rank of RANKS) {
+        if (mmr >= rank.thresholds[0]) {
+            currentRank = rank;
+        }
+    }
+
+    let stars = 1;
+
+    for (let i = 0; i < currentRank.thresholds.length; i++) {
+        if (mmr >= currentRank.thresholds[i]) {
+            stars = i + 1;
+        }
+    }
+
+    return {
+        name: currentRank.name,
+        file: `${currentRank.file}_${stars}.png`,
+        stars: `${stars} ★`,
+        title: `${currentRank.name} ${stars}`
+    };
+}
+
+function renderMedal(mmr) {
+    const image = $('medalImage');
+    const name = $('medalName');
+    const stars = $('medalStars');
+
+    if (!image || !name || !stars) return;
+
+    const medal = getMedal(mmr);
+
+    if (!medal) {
+        image.style.display = 'none';
+        name.textContent = 'Ранг неизвестен';
+        stars.textContent = 'Нет данных MMR';
+        return;
+    }
+
+    image.style.display = 'block';
+    image.src = MEDAL_PATH + medal.file;
+    image.alt = medal.title;
+    image.title = medal.title;
+
+    image.onerror = () => {
+        image.style.display = 'none';
+    };
+
+    name.textContent = medal.name;
+    stars.textContent = medal.stars;
+}
 
 const fmtDate = timestamp => {
     if (!timestamp) return '—';
@@ -22,7 +94,6 @@ const fmtDate = timestamp => {
 
 const duration = seconds => {
     const value = Number(seconds || 0);
-
     return `${Math.floor(value / 60)}:${String(value % 60).padStart(2, '0')}`;
 };
 
@@ -51,126 +122,6 @@ function formatMmrChange(value) {
     if (number < 0) return `−${Math.abs(number)}`;
 
     return '0';
-}
-
-// Определяем медаль по оценочному MMR.
-function getMedal(mmr) {
-    const value = Number(mmr);
-
-    if (!Number.isFinite(value) || value < 0) {
-        return null;
-    }
-
-    const ranks = [
-        {
-            name: 'Рекрут',
-            file: 'recruit',
-            thresholds: [0, 154, 308, 462, 616]
-        },
-        {
-            name: 'Страж',
-            file: 'guardian',
-            thresholds: [770, 924, 1078, 1232, 1386]
-        },
-        {
-            name: 'Рыцарь',
-            file: 'crusader',
-            thresholds: [1540, 1694, 1848, 2002, 2156]
-        },
-        {
-            name: 'Герой',
-            file: 'archon',
-            thresholds: [2310, 2464, 2618, 2772, 2926]
-        },
-        {
-            name: 'Легенда',
-            file: 'legend',
-            thresholds: [3080, 3234, 3388, 3542, 3696]
-        },
-        {
-            name: 'Властелин',
-            file: 'ancient',
-            thresholds: [3850, 4004, 4158, 4312, 4466]
-        },
-        {
-            name: 'Божество',
-            file: 'divine',
-            thresholds: [4620, 4820, 5020, 5220, 5420]
-        }
-    ];
-
-    if (value >= 5640) {
-        return {
-            name: 'Титан',
-            file: 'immortal',
-            stars: 0,
-            title: 'Титан',
-            image: `${MEDAL_PATH}immortal.png`
-        };
-    }
-
-    let currentRank = null;
-
-    for (const rank of ranks) {
-        if (value >= rank.thresholds[0]) {
-            currentRank = rank;
-        }
-    }
-
-    if (!currentRank) {
-        return null;
-    }
-
-    let stars = 1;
-
-    currentRank.thresholds.forEach((threshold, index) => {
-        if (value >= threshold) {
-            stars = index + 1;
-        }
-    });
-
-    return {
-        name: currentRank.name,
-        file: currentRank.file,
-        stars,
-        title: `${currentRank.name} ${stars}`,
-        image: `${MEDAL_PATH}${currentRank.file}_${stars}.png`
-    };
-}
-
-// Показываем соответствующую медаль на сайте.
-function renderMedal(mmr) {
-    const medalImage = $('medalImage');
-    const medalName = $('medalName');
-    const medalStars = $('medalStars');
-
-    if (!medalImage || !medalName || !medalStars) {
-        return;
-    }
-
-    const medal = getMedal(mmr);
-
-    if (!medal) {
-        medalImage.style.display = 'none';
-        medalName.textContent = 'Ранг неизвестен';
-        medalStars.textContent = '';
-        return;
-    }
-
-    medalImage.src = medal.image;
-    medalImage.alt = medal.title;
-    medalImage.title = medal.title;
-    medalImage.style.display = 'block';
-
-    medalImage.onerror = () => {
-        medalImage.style.display = 'none';
-    };
-
-    medalName.textContent = medal.name;
-
-    medalStars.textContent = medal.stars
-        ? `${'★'.repeat(medal.stars)}`
-        : 'Бессмертный';
 }
 
 function renderPerformance(performance = {}) {
@@ -320,30 +271,14 @@ function renderMatches(matches = []) {
                     </div>
                 </td>
 
-                <td class="${resultClass}">
-                    ${resultText}
-                </td>
-
-                <td>
-                    ${num(match.kills)}/${num(match.deaths)}/${num(match.assists)}
-                </td>
-
-                <td>
-                    ${renderItems(match.items || [])}
-                </td>
-
+                <td class="${resultClass}">${resultText}</td>
+                <td>${num(match.kills)}/${num(match.deaths)}/${num(match.assists)}</td>
+                <td>${renderItems(match.items || [])}</td>
                 <td>${num(match.hero_damage)}</td>
                 <td>${num(match.xp_per_min)}</td>
                 <td>${num(match.gold_per_min)}</td>
-
-                <td>
-                    ${renderRating(match.rating)}
-                </td>
-
-                <td>
-                    ${match.mmr_after == null ? '—' : num(match.mmr_after)}
-                </td>
-
+                <td>${renderRating(match.rating)}</td>
+                <td>${match.mmr_after == null ? '—' : num(match.mmr_after)}</td>
                 <td>${duration(match.duration)}</td>
                 <td>${fmtDate(match.start_time)}</td>
             </tr>
@@ -377,7 +312,6 @@ function renderTopHeroes(data) {
 
             <div>
                 <b>${esc(hero.name || 'Неизвестно')}</b>
-
                 <small>
                     ${num(hero.games)} игр ·
                     ${num(hero.winrate)}% побед ·
@@ -436,10 +370,7 @@ function renderRecentHeroes(data) {
                 <div class="recent-hero-results">
                     <span class="won">W ${num(hero.wins)}</span>
                     <span class="lost">L ${num(hero.losses)}</span>
-
-                    <div class="recent-result-dots">
-                        ${results}
-                    </div>
+                    <div class="recent-result-dots">${results}</div>
                 </div>
 
                 <div class="recent-hero-winrate">
@@ -456,7 +387,9 @@ function render(data) {
     const matches = (data.matches || []).slice(0, 20);
 
     const rawMmr = data.mmr ?? data.profile?.mmr;
-    const currentMmr = rawMmr == null ? null : Number(rawMmr);
+    const currentMmr = rawMmr == null || rawMmr === ''
+        ? null
+        : Number(rawMmr);
 
     const validMmr = currentMmr != null && Number.isFinite(currentMmr);
 
@@ -470,9 +403,7 @@ function render(data) {
     }
 
     if ($('mmr')) {
-        $('mmr').textContent = validMmr
-            ? num(currentMmr)
-            : '—';
+        $('mmr').textContent = validMmr ? num(currentMmr) : '—';
     }
 
     renderMedal(validMmr ? currentMmr : null);
@@ -523,9 +454,7 @@ function render(data) {
 
 async function load() {
     try {
-        const response = await fetch(
-            `${DATA_URL}?v=${Date.now()}`
-        );
+        const response = await fetch(`${DATA_URL}?v=${Date.now()}`);
 
         if (!response.ok) {
             throw new Error(`Не удалось загрузить stats.json: ${response.status}`);
@@ -571,5 +500,4 @@ async function load() {
 }
 
 load();
-
 setInterval(load, 600000);
