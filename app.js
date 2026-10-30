@@ -348,36 +348,75 @@ function render(data) {
         <p>Статистика героев появится после обработки матчей.</p>
     `;
 
-    // Герои за последние 30 календарных дней.
+    // Герои за последние 30 дней.
+    // Сортировка: победы, винрейт, меньше игр.
     const recentHeroes = (data.recent_heroes_30d || [])
         .slice()
         .sort((a, b) => {
-            if (b.games !== a.games) {
-                return b.games - a.games;
+            if (Number(b.wins) !== Number(a.wins)) {
+                return Number(b.wins) - Number(a.wins);
             }
 
-            return b.winrate - a.winrate;
+            if (Number(b.winrate) !== Number(a.winrate)) {
+                return Number(b.winrate) - Number(a.winrate);
+            }
+
+            return Number(a.games) - Number(b.games);
         });
 
-    $('recentHeroGrid').innerHTML = recentHeroes.map(hero => `
-        <div class="recent-hero-row">
-            <img src="${esc(hero.icon || '')}" alt="">
+    $('recentHeroGrid').innerHTML = recentHeroes.map(hero => {
+        const results = (hero.recent_results || [])
+            .slice()
+            .sort((a, b) => Number(a.start_time) - Number(b.start_time))
+            .slice(-5);
 
-            <div class="recent-hero-name">
-                <b>${esc(hero.name)}</b>
-                <small>${num(hero.games)} игр</small>
-            </div>
+        const resultDots = results.map(result => {
+            const won = result.win === true;
 
-            <div class="recent-hero-results">
-                <span class="won">${num(hero.wins)}W</span>
-                <span class="lost">${num(hero.losses)}L</span>
-            </div>
+            const color = won ? '#39c98a' : '#ef5350';
+            const label = won ? 'Победа' : 'Поражение';
 
-            <div class="recent-hero-winrate">
-                ${num(hero.winrate)}%
+            return `
+                <span
+                    title="${label}"
+                    aria-label="${label}"
+                    style="
+                        display:inline-block;
+                        width:10px;
+                        height:10px;
+                        min-width:10px;
+                        border-radius:50%;
+                        background:${color};
+                        margin-right:5px;
+                        vertical-align:middle;
+                    "
+                ></span>
+            `;
+        }).join('');
+
+        return `
+            <div class="recent-hero-row">
+                <img src="${esc(hero.icon || '')}" alt="">
+
+                <div class="recent-hero-name">
+                    <b>${esc(hero.name)}</b>
+                    <small>${num(hero.games)} игр</small>
+                </div>
+
+                <div class="recent-hero-results">
+                    <span class="won">${num(hero.wins)}W</span>
+                    <span class="lost">${num(hero.losses)}L</span>
+                    <div style="margin-top:5px; white-space:nowrap;">
+                        ${resultDots || '<small>Нет истории</small>'}
+                    </div>
+                </div>
+
+                <div class="recent-hero-winrate">
+                    ${num(hero.winrate)}%
+                </div>
             </div>
-        </div>
-    `).join('') || `
+        `;
+    }).join('') || `
         <p>За последние 30 дней Ranked-матчей пока нет.</p>
     `;
 
