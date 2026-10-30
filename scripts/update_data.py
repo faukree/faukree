@@ -1,7 +1,7 @@
 
 import json
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
@@ -16,6 +16,7 @@ RANKED_LOBBY = 7
 MATCH_HISTORY_LIMIT = 100
 DISPLAY_MATCHES = 20
 MAX_SAVED_MATCH_IDS = 5000
+RECENT_DAYS = 30
 
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "Faukree-Dota-Tracker/1.0"})
@@ -56,7 +57,6 @@ def match_won(match):
 
 
 def main():
-    # Read previously saved data.
     old_data = {}
 
     if OUT.exists():
@@ -65,9 +65,9 @@ def main():
         except (json.JSONDecodeError, OSError):
             old_data = {}
 
-    # Get profile and Ranked matches only.
     profile_data = get(f"/players/{PLAYER_ID}")
 
+    # Только Ranked-матчи.
     matches = get(
         f"/players/{PLAYER_ID}/matches",
         {
@@ -82,10 +82,8 @@ def main():
     saved_ids = old_data.get("processed_match_ids")
 
     if saved_ids is None:
-        # One-time migration:
-        # The known current MMR is 5043.
-        # Existing matches, including match 9067849694,
-        # must not be counted again.
+        # Однократная инициализация.
+        # Уже учтённые матчи не должны менять MMR повторно.
         mmr = int(old_data.get("mmr", START_MMR))
 
         processed_ids = {
@@ -103,7 +101,6 @@ def main():
         mmr = int(old_data.get("mmr", START_MMR))
         processed_ids = {str(match_id) for match_id in saved_ids}
 
-        # Find only matches that have not been processed before.
         new_matches = [
             match
             for match in matches
@@ -111,7 +108,6 @@ def main():
             and str(match["match_id"]) not in processed_ids
         ]
 
-        # Process from oldest to newest.
         new_matches.sort(key=lambda match: match.get("start_time", 0))
 
         for match in new_matches:
@@ -133,12 +129,11 @@ def main():
 
             processed_ids.add(str(match["match_id"]))
 
-    # Keep the saved list within a reasonable size.
     processed_ids = set(
         sorted(processed_ids, key=int)[-MAX_SAVED_MATCH_IDS:]
     )
 
-    # Enrich the latest 20 Ranked matches for the website.
+    # Подробности последних 20 Ranked-матчей.
     enriched = []
 
     for match in matches[:DISPLAY_MATCHES]:
@@ -242,7 +237,68 @@ def main():
 
         time.sleep(0.25)
 
-    # Lifetime hero statistics from Ranked matches only.
+    # Статистика героев за последние 30 календарных дней.
+    # Источник — история Ranked-матчей.
+    cutoff = int(
+        (datetime.now(timezone.utc) - timedelta(days=RECENT_DAYS))
+        .timestamp()
+    )
+
+    recent_heroes = {}
+
+    for match in matches:
+        start_time = int(match.get("start_time", 0))
+
+        if start_time < cutoff:
+            continue
+
+        hero_id = int(match.get("hero_id", 0))
+        hero = hero_by_id.get(hero_id, {})
+
+        if not hero_id or not hero:
+            continue
+
+        result = match_won(match)
+
+        # Не записываем матч, если OpenDota не вернул результат.
+        if result is None:
+            continue
+
+        if hero_id not in recent_heroes:
+            recent_heroes[hero_id] = {
+                "hero_id": hero_id,
+                "name": hero.get("localized_name", "Unknown"),
+                "icon": hero_icon(hero),
+                "games": 0,
+                "wins": 0,
+                "losses": 0,
+                "winrate": 0,
+            }
+
+        item = recent_heroes[hero_id]
+        item["games"] += 1
+
+        if result:
+            item["wins"] += 1
+        else:
+            item["losses"] += 1
+
+    for item in recent_heroes.values():
+        item["winrate"] = round(
+            item["wins"] / item["games"] * 100,
+            1,
+        )
+
+    recent_heroes_30d = sorted(
+        recent_heroes.values(),
+        key=lambda hero: (
+            hero["games"],
+            hero["winrate"],
+        ),
+        reverse=True,
+    )
+
+    # Статистика героев за всё время: только Ranked.
     hero_stats = get(
         f"/players/{PLAYER_ID}/heroes",
         {"lobby_type": RANKED_LOBBY},
@@ -273,7 +329,7 @@ def main():
             "kda": "—",
         }
 
-    # KDA from the latest 20 Ranked matches.
+    # KDA по доступным последним 20 Ranked-матчам.
     for hero_id, item in totals.items():
         group = [
             match
@@ -291,7 +347,6 @@ def main():
                 2,
             )
 
-    # Best heroes: at least 20 Ranked games.
     top_heroes = sorted(
         totals.values(),
         key=lambda hero: (
@@ -311,6 +366,7 @@ def main():
         "mmr": mmr,
         "matches": enriched,
         "top_heroes": top_heroes,
+        "recent_heroes_30d": recent_heroes_30d,
         "processed_match_ids": sorted(processed_ids, key=int),
     }
 
@@ -323,6 +379,10 @@ def main():
 
     print(
         f"Ranked stats updated successfully. Estimated MMR: {mmr}"
+    )
+    print(
+        f"Heroes played in the last {RECENT_DAYS} days: "
+        f"{len(recent_heroes_30d)}"
     )
 
 
