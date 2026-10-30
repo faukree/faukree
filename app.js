@@ -75,14 +75,6 @@ function renderPerformance(performance = {}) {
                 ? 'lost'
                 : '';
     }
-
-    // Текущую серию больше не выводим.
-    const streak = $('streak');
-
-    if (streak) {
-        streak.textContent = '';
-        streak.style.display = 'none';
-    }
 }
 
 function renderItems(items = []) {
@@ -217,7 +209,7 @@ function renderMatches(matches = []) {
                     ${renderItems(match.items || [])}
                 </td>
 
-                <td>${num(match.damage)}</td>
+                <td>${num(match.hero_damage)}</td>
                 <td>${num(match.xp_per_min)}</td>
                 <td>${num(match.gold_per_min)}</td>
 
@@ -361,13 +353,11 @@ function render(data) {
         $('mmr').textContent = num(currentMmr);
     }
 
-    // Не показываем расчётное изменение под текущим MMR.
     if ($('mmrDelta')) {
         $('mmrDelta').textContent = '';
         $('mmrDelta').className = '';
     }
 
-    // Победы: буква W и число раздельно для оформления.
     if ($('wins')) {
         $('wins').innerHTML = `
             <span class="wins-letter">W</span>
@@ -375,7 +365,6 @@ function render(data) {
         `;
     }
 
-    // Поражения: буква L и число раздельно для оформления.
     if ($('losses')) {
         $('losses').innerHTML = `
             <span class="losses-letter">L</span>
