@@ -37,6 +37,17 @@ def hero_icon(hero):
     )
 
 
+def item_icon(item):
+    name = item.get("name", "").replace("item_", "")
+    if not name:
+        return ""
+
+    return (
+        "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/"
+        f"dota_react/items/{name}.png"
+    )
+
+
 def hero_score(games, wins):
     if games <= 0:
         return 50.0
@@ -91,7 +102,6 @@ def calculate_performance(matches):
         if start_time >= cutoff_30d:
             mmr_change_30d += change
 
-        # Серия считается от самого последнего матча.
         if streak_type is None:
             streak_type = "win" if result else "loss"
             streak_count = 1
@@ -108,6 +118,128 @@ def calculate_performance(matches):
         "streak_type": streak_type,
         "streak_count": streak_count,
     }
+
+
+def calculate_match_rating(match):
+    """
+    Примерная оценка личной статистики от 1 до 10.
+    Это не официальный рейтинг OpenDota или Valve.
+    """
+
+    kills = int(match.get("kills") or 0)
+    deaths = int(match.get("deaths") or 0)
+    assists = int(match.get("assists") or 0)
+    gpm = float(match.get("gold_per_min") or 0)
+    xpm = float(match.get("xp_per_min") or 0)
+    hero_damage = float(match.get("hero_damage") or 0)
+    duration_minutes = max(float(match.get("duration") or 0) / 60, 1)
+
+    damage_per_min = hero_damage / duration_minutes
+    kda = (kills + assists) / max(deaths, 1)
+
+    # Базовая оценка — 5.5.
+    # Показатели постепенно изменяют её, без чрезмерного веса одного фактора.
+    score = 5.5
+
+    score += min(kda - 1.5, 3) * 0.55
+    score += min(gpm - 400, 300) / 300 * 0.8
+    score += min(xpm - 400, 300) / 300 * 0.6
+    score += min(damage_per_min - 300, 700) / 700 * 0.7
+
+    score -= max(deaths - 5, 0) * 0.25
+
+    if match.get("win") is True:
+        score += 0.5
+    elif match.get("win") is False:
+        score -= 0.3
+
+    score = max(1, min(10, score))
+
+    return round(score, 1)
+
+
+def make_review_notes(match):
+    """Формирует осторожные подсказки на основе статистики матча."""
+
+    notes = []
+
+    deaths = int(match.get("deaths") or 0)
+    kills = int(match.get("kills") or 0)
+    assists = int(match.get("assists") or 0)
+    gpm = float(match.get("gold_per_min") or 0)
+    xpm = float(match.get("xp_per_min") or 0)
+    duration_minutes = max(float(match.get("duration") or 0) / 60, 1)
+
+    hero_damage = float(match.get("hero_damage") or 0)
+    damage_per_min = hero_damage / duration_minutes
+
+    if deaths >= 10:
+        notes.append(
+            "Много смертей. Стоит проверить позиционирование "
+            "и опасные перемещения по карте."
+        )
+    elif deaths >= 7:
+        notes.append(
+            "Смертей довольно много. Можно обратить внимание "
+            "на моменты перед проигранными драками."
+        )
+
+    if kills + assists <= 5 and duration_minutes >= 25:
+        notes.append(
+            "Низкое участие в убийствах. Возможно, стоит чаще "
+            "подключаться к командным действиям."
+        )
+
+    if gpm and gpm < 350:
+        notes.append(
+            "Низкий GPM. Проверь фарм, свободные линии "
+            "и сбор ресурсов между драками."
+        )
+
+    if xpm and xpm < 350:
+        notes.append(
+            "Низкий XPM. Возможно, часть времени теряется "
+            "без получения опыта."
+        )
+
+    if damage_per_min and damage_per_min < 250:
+        notes.append(
+            "Невысокий урон по героям в минуту. Это может зависеть "
+            "от роли и хода матча."
+        )
+
+    if not notes:
+        notes.append(
+            "Явных сигналов по базовым показателям нет. "
+            "Для более точного разбора нужны данные о карте, "
+            "предметах и ключевых моментах."
+        )
+
+    return notes[:3]
+
+
+def get_final_items(player, item_constants):
+    """Возвращает предметы из основных слотов инвентаря в конце матча."""
+
+    items = []
+
+    for slot in range(6):
+        item_id = int(player.get(f"item_{slot}") or 0)
+
+        if item_id <= 0:
+            continue
+
+        item = item_constants.get(item_id, {})
+
+        items.append(
+            {
+                "id": item_id,
+                "name": item.get("localized_name", "Предмет"),
+                "icon": item_icon(item),
+            }
+        )
+
+    return items
 
 
 def main():
@@ -133,11 +265,23 @@ def main():
     heroes = get("/constants/heroes")
     hero_by_id = {int(key): value for key, value in heroes.items()}
 
+    # Справочник предметов для названий и иконок.
+    try:
+        item_data = get("/constants/items")
+        item_by_id = {
+            int(item.get("id", 0)): item
+            for item in item_data.values()
+            if item.get("id") is not None
+        }
+    except Exception as exc:
+        print(f"Could not fetch item constants: {exc}")
+        item_by_id = {}
+
     saved_ids = old_data.get("processed_match_ids")
 
     if saved_ids is None:
-        # Однократная инициализация.
-        # Уже учтённые матчи не должны менять MMR повторно.
+        # Однократная инициализация:
+        # старые матчи отмечаются обработанными и не меняют MMR повторно.
         mmr = int(old_data.get("mmr", START_MMR))
 
         processed_ids = {
@@ -228,31 +372,50 @@ def main():
             else:
                 win = match_won(match)
 
-            enriched.append(
-                {
-                    "match_id": match_id,
-                    "hero_id": hero_id,
-                    "hero_name": hero.get("localized_name", "Unknown"),
-                    "hero_icon": hero_icon(hero),
-                    "win": win,
-                    "kills": me.get("kills", match.get("kills", 0)),
-                    "deaths": me.get("deaths", match.get("deaths", 0)),
-                    "assists": me.get("assists", match.get("assists", 0)),
-                    "hero_damage": me.get("hero_damage"),
-                    "total_xp": me.get("total_xp"),
-                    "xp_per_min": me.get("xp_per_min"),
-                    "gold": me.get("gold"),
-                    "gold_per_min": me.get("gold_per_min"),
-                    "duration": detail.get(
-                        "duration",
-                        match.get("duration", 0),
-                    ),
-                    "start_time": detail.get(
-                        "start_time",
-                        match.get("start_time", int(time.time())),
-                    ),
-                }
+            match_duration = int(
+                detail.get("duration", match.get("duration", 0)) or 0
             )
+            duration_minutes = max(match_duration / 60, 1)
+
+            hero_damage = me.get("hero_damage")
+            xp_per_min = me.get("xp_per_min")
+            gold_per_min = me.get("gold_per_min")
+
+            enriched_match = {
+                "match_id": match_id,
+                "hero_id": hero_id,
+                "hero_name": hero.get("localized_name", "Unknown"),
+                "hero_icon": hero_icon(hero),
+                "win": win,
+                "kills": me.get("kills", match.get("kills", 0)),
+                "deaths": me.get("deaths", match.get("deaths", 0)),
+                "assists": me.get("assists", match.get("assists", 0)),
+                "hero_damage": hero_damage,
+                "damage_per_min": (
+                    round(float(hero_damage) / duration_minutes)
+                    if hero_damage is not None
+                    else None
+                ),
+                "total_xp": me.get("total_xp"),
+                "xp_per_min": xp_per_min,
+                "gold": me.get("gold"),
+                "gold_per_min": gold_per_min,
+                "duration": match_duration,
+                "start_time": detail.get(
+                    "start_time",
+                    match.get("start_time", int(time.time())),
+                ),
+                "items": get_final_items(me, item_by_id),
+            }
+
+            enriched_match["rating"] = calculate_match_rating(
+                enriched_match
+            )
+            enriched_match["review_notes"] = make_review_notes(
+                enriched_match
+            )
+
+            enriched.append(enriched_match)
 
         except Exception as exc:
             print(f"Match {match_id} detail fetch failed: {exc}")
@@ -260,33 +423,53 @@ def main():
             hero_id = match.get("hero_id")
             hero = hero_by_id.get(int(hero_id or 0), {})
 
-            enriched.append(
-                {
-                    "match_id": match_id,
-                    "hero_id": hero_id,
-                    "hero_name": hero.get("localized_name", "Unknown"),
-                    "hero_icon": hero_icon(hero),
-                    "win": match_won(match),
-                    "kills": match.get("kills", 0),
-                    "deaths": match.get("deaths", 0),
-                    "assists": match.get("assists", 0),
-                    "hero_damage": None,
-                    "total_xp": None,
-                    "xp_per_min": None,
-                    "gold": None,
-                    "gold_per_min": None,
-                    "duration": match.get("duration", 0),
-                    "start_time": match.get(
-                        "start_time",
-                        int(time.time()),
-                    ),
-                }
+            enriched_match = {
+                "match_id": match_id,
+                "hero_id": hero_id,
+                "hero_name": hero.get("localized_name", "Unknown"),
+                "hero_icon": hero_icon(hero),
+                "win": match_won(match),
+                "kills": match.get("kills", 0),
+                "deaths": match.get("deaths", 0),
+                "assists": match.get("assists", 0),
+                "hero_damage": None,
+                "damage_per_min": None,
+                "total_xp": None,
+                "xp_per_min": None,
+                "gold": None,
+                "gold_per_min": None,
+                "duration": match.get("duration", 0),
+                "start_time": match.get(
+                    "start_time",
+                    int(time.time()),
+                ),
+                "items": [],
+            }
+
+            enriched_match["rating"] = calculate_match_rating(
+                enriched_match
             )
+            enriched_match["review_notes"] = make_review_notes(
+                enriched_match
+            )
+
+            enriched.append(enriched_match)
 
         time.sleep(0.25)
 
-    # Статистика героев за последние 30 календарных дней.
-    # История результатов собирается только из Ranked-матчей.
+    # Рассчитываем MMR после каждого матча.
+    # Начинаем с текущего MMR и идём от самого нового матча к старым.
+    rating_after = mmr
+
+    for match in enriched:
+        match["mmr_after"] = rating_after
+
+        if match.get("win") is True:
+            rating_after -= MMR_PER_MATCH
+        elif match.get("win") is False:
+            rating_after += MMR_PER_MATCH
+
+    # Статистика героев за последние 30 дней.
     cutoff = int(
         (datetime.now(timezone.utc) - timedelta(days=RECENT_DAYS))
         .timestamp()
@@ -418,7 +601,6 @@ def main():
         reverse=True,
     )[:15]
 
-    # Новые показатели: изменение MMR и текущая серия.
     performance = calculate_performance(matches)
 
     profile = profile_data.get("profile", {})
