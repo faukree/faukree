@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T14:45:33.809138+00:00",
+  "updated_at": "2026-10-30T15:34:16.489761+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -92,49 +92,18 @@
       "kills": 4,
       "deaths": 6,
       "assists": 14,
-      "hero_damage": 17423,
-      "damage_per_min": 445,
-      "total_xp": 19465,
-      "xp_per_min": 497,
-      "gold": 697,
-      "gold_per_min": 306,
+      "hero_damage": null,
+      "damage_per_min": null,
+      "total_xp": null,
+      "xp_per_min": null,
+      "gold": null,
+      "gold_per_min": null,
       "duration": 2350,
       "start_time": 1793321829,
-      "items": [
-        {
-          "id": 60,
-          "name": "Point Booster",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 5.9,
+      "items": [],
+      "rating": 3.6,
       "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5043
     },
