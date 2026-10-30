@@ -16,14 +16,14 @@
       </div>
 
       <nav>
-        <a class="active" href="#">◈ Overview</a>
-        <a href="#matches">▤ Match history</a>
-        <a href="#heroes">♜ Heroes</a>
-        <a href="#recentHeroes">◷ Last 30 days</a>
+        <a class="active" href="#">◈ Обзор</a>
+        <a href="#matches">▤ Матчи</a>
+        <a href="#heroes">♜ Герои</a>
+        <a href="#recentHeroes">◷ 30 дней</a>
       </nav>
 
       <div class="sidefoot">
-        OPEN DOTA DATA<br>
+        ДАННЫЕ OPENDOTA<br>
         <span id="updated">Обновление: —</span>
       </div>
     </aside>
@@ -31,7 +31,7 @@
     <main>
       <header>
         <div>
-          <div class="eyebrow">PLAYER DASHBOARD / 924159299</div>
+          <div class="eyebrow">СТАТИСТИКА ИГРОКА / 924159299</div>
           <h1>Добро пожаловать, <span id="nickname">Faukree</span></h1>
           <p>Твоя форма за последние матчи</p>
         </div>
@@ -47,13 +47,13 @@
 
       <section class="stats">
         <article>
-          <label>ESTIMATED MMR</label>
+          <label>ОЦЕНОЧНЫЙ MMR</label>
           <strong id="mmr">—</strong>
-          <span id="mmrDelta" class="positive">—</span>
+          <span id="mmrDelta" class="positive"></span>
         </article>
 
         <article>
-          <label>WIN RATE</label>
+          <label>ВИНРЕЙТ</label>
           <strong id="winrate">—</strong>
           <span id="record">—</span>
         </article>
@@ -61,13 +61,13 @@
         <article>
           <label>ПОБЕДЫ</label>
           <strong id="wins">—</strong>
-          <span class="muted">последние 20 Ranked-матчей</span>
+          <span class="muted">Последние 20 рейтинговых матчей</span>
         </article>
 
         <article>
           <label>ПОРАЖЕНИЯ</label>
           <strong id="losses">—</strong>
-          <span class="muted">последние 20 Ranked-матчей</span>
+          <span class="muted">Последние 20 рейтинговых матчей</span>
         </article>
       </section>
 
@@ -75,19 +75,19 @@
         <article>
           <label>MMR ЗА 7 ДНЕЙ</label>
           <strong id="mmr7d">—</strong>
-          <span class="muted">расчётное изменение</span>
+          <span class="muted">Расчётное изменение</span>
         </article>
 
         <article>
           <label>MMR ЗА 30 ДНЕЙ</label>
           <strong id="mmr30d">—</strong>
-          <span class="muted">расчётное изменение</span>
+          <span class="muted">Расчётное изменение</span>
         </article>
 
         <article>
           <label>ТЕКУЩАЯ СЕРИЯ</label>
           <strong id="streak">—</strong>
-          <span class="muted">последние Ranked-матчи</span>
+          <span class="muted">Последние рейтинговые матчи</span>
         </article>
       </section>
 
@@ -95,9 +95,9 @@
         <div class="panelhead">
           <div>
             <h2>Последние матчи</h2>
-            <p>Самые свежие Ranked-игры профиля</p>
+            <p>Самые свежие рейтинговые игры профиля</p>
           </div>
-          <span class="tag">MATCH HISTORY</span>
+          <span class="tag">ИСТОРИЯ МАТЧЕЙ</span>
         </div>
 
         <div class="tablewrap">
@@ -108,7 +108,7 @@
                 <th>Результат</th>
                 <th>K / D / A</th>
                 <th>Предметы</th>
-                <th>Урон/мин</th>
+                <th>Урон</th>
                 <th>Опыт/мин</th>
                 <th>Золото/мин</th>
                 <th>Оценка</th>
@@ -128,9 +128,9 @@
         <div class="panelhead">
           <div>
             <h2>Разбор матчей</h2>
-            <p>Подсказки на основе базовых показателей</p>
+            <p>Полезные наблюдения по твоим играм</p>
           </div>
-          <span class="tag">MATCH REVIEW</span>
+          <span class="tag">РАЗБОР МАТЧЕЙ</span>
         </div>
 
         <div id="reviewNotes">
@@ -142,9 +142,9 @@
         <div class="panelhead">
           <div>
             <h2>Твои лучшие герои</h2>
-            <p>Топ-15 по винрейту · минимум 20 Ranked-игр</p>
+            <p>Топ-15 по винрейту · минимум 20 рейтинговых игр</p>
           </div>
-          <span class="tag">HERO POOL</span>
+          <span class="tag">ЛУЧШИЕ ГЕРОИ</span>
         </div>
 
         <div id="heroGrid" class="herogrid">
@@ -156,9 +156,9 @@
         <div class="panelhead">
           <div>
             <h2>Герои за последние 30 дней</h2>
-            <p>Количество игр, побед и поражений в Ranked</p>
+            <p>Количество игр, побед и поражений в рейтинговых матчах</p>
           </div>
-          <span class="tag">LAST 30 DAYS</span>
+          <span class="tag">ПОСЛЕДНИЕ 30 ДНЕЙ</span>
         </div>
 
         <div id="recentHeroGrid" class="recent-hero-list">
