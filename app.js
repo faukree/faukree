@@ -18,12 +18,7 @@ function getMedal(mmr) {
     if (!Number.isFinite(mmr) || mmr < 0) return null;
 
     if (mmr >= 5640) {
-        return {
-            name: 'Титан',
-            tier: 8,
-            stars: 0,
-            title: 'Immortal'
-        };
+        return { name: 'Титан', tier: 8, stars: 0, title: 'Immortal' };
     }
 
     let currentRank = RANKS[0];
@@ -48,17 +43,17 @@ function getMedal(mmr) {
 
 function renderMedal(mmr) {
     const image = $('medalImage');
-    const name = $('medalName');
-    const starsText = $('medalStars');
+    const starImage = $('medalStar');
+    const rankBlock = $('rank');
 
-    if (!image || !name || !starsText) return;
+    if (!image || !starImage || !rankBlock) return;
 
     const medal = getMedal(mmr);
 
     if (!medal) {
         image.style.display = 'none';
-        name.textContent = 'Ранг неизвестен';
-        starsText.textContent = 'Нет данных MMR';
+        starImage.style.display = 'none';
+        rankBlock.title = 'Ранг неизвестен';
         return;
     }
 
@@ -71,10 +66,20 @@ function renderMedal(mmr) {
         image.style.display = 'none';
     };
 
-    name.textContent = medal.name;
-    starsText.textContent = medal.tier === 8
-        ? 'Immortal'
-        : `${medal.stars} ★`;
+    if (medal.tier === 8) {
+        starImage.style.display = 'none';
+    } else {
+        starImage.style.display = 'block';
+        starImage.src = `${MEDAL_URL}star_${medal.stars}.png`;
+        starImage.alt = `${medal.stars} звезды`;
+        starImage.title = `${medal.stars} звезды`;
+
+        starImage.onerror = () => {
+            starImage.style.display = 'none';
+        };
+    }
+
+    rankBlock.title = medal.title;
 }
 
 const fmtDate = timestamp => {
