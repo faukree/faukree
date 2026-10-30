@@ -268,14 +268,14 @@ output = {
         "top_heroes": top_heroes,
     }
 
-    OUT.parent.mkdir(exist_ok=True)
+OUT.parent.mkdir(exist_ok=True)
 
-    OUT.write_text(
+OUT.write_text(
         json.dumps(output, ensure_ascii=False, indent=2),
         encoding="utf-8",
-    )
+)
 
-    print("Dota stats updated successfully.")
+print("Dota stats updated successfully.")
 
 
 if __name__ == "__main__":
