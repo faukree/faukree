@@ -38,6 +38,57 @@ function esc(s) {
     }[c]));
 }
 
+function formatMmrChange(value) {
+    const n = Number(value ?? 0);
+
+    if (n > 0) return `+${n}`;
+    if (n < 0) return `−${Math.abs(n)}`;
+
+    return '0';
+}
+
+function renderPerformance(performance = {}) {
+    const mmr7d = $('mmr7d');
+    const mmr30d = $('mmr30d');
+    const streak = $('streak');
+
+    if (mmr7d) {
+        const value = Number(performance.mmr_change_7d ?? 0);
+        mmr7d.textContent = formatMmrChange(value);
+        mmr7d.className = value > 0
+            ? 'positive'
+            : value < 0
+                ? 'lost'
+                : '';
+    }
+
+    if (mmr30d) {
+        const value = Number(performance.mmr_change_30d ?? 0);
+        mmr30d.textContent = formatMmrChange(value);
+        mmr30d.className = value > 0
+            ? 'positive'
+            : value < 0
+                ? 'lost'
+                : '';
+    }
+
+    if (streak) {
+        const count = Number(performance.streak_count ?? 0);
+        const type = performance.streak_type;
+
+        if (count > 0 && type === 'win') {
+            streak.textContent = `${count} ${count === 1 ? 'победа' : count < 5 ? 'победы' : 'побед'} подряд`;
+            streak.className = 'positive';
+        } else if (count > 0 && type === 'loss') {
+            streak.textContent = `${count} ${count === 1 ? 'поражение' : count < 5 ? 'поражения' : 'поражений'} подряд`;
+            streak.className = 'lost';
+        } else {
+            streak.textContent = '—';
+            streak.className = '';
+        }
+    }
+}
+
 async function load() {
     try {
         const response = await fetch(DATA_URL + '?v=' + Date.now());
@@ -107,7 +158,7 @@ function render(data) {
     const matches = (data.matches || []).slice(0, 20);
 
     const currentMmr = Number(
-        data.mmr ?? data.profile?.mmr ?? 5068
+        data.mmr ?? data.profile?.mmr ?? 5043
     );
 
     const wins = matches.filter(match => match.win === true).length;
@@ -143,6 +194,9 @@ function render(data) {
         : '—';
 
     $('record').textContent = `${wins}W — ${losses}L`;
+
+    // Новые показатели за 7 и 30 дней и текущая серия.
+    renderPerformance(data.performance);
 
     $('matchesBody').innerHTML = matches.map(match => {
         const resultClass = match.win === true
@@ -348,51 +402,31 @@ function render(data) {
         <p>Статистика героев появится после обработки матчей.</p>
     `;
 
-    // Герои за последние 30 дней.
-    // Сортировка: победы, винрейт, меньше игр.
+    // Герои за последние 30 календарных дней.
     const recentHeroes = (data.recent_heroes_30d || [])
         .slice()
         .sort((a, b) => {
-            if (Number(b.wins) !== Number(a.wins)) {
-                return Number(b.wins) - Number(a.wins);
+            if (b.wins !== a.wins) {
+                return b.wins - a.wins;
             }
 
-            if (Number(b.winrate) !== Number(a.winrate)) {
-                return Number(b.winrate) - Number(a.winrate);
+            if (b.winrate !== a.winrate) {
+                return b.winrate - a.winrate;
             }
 
-            return Number(a.games) - Number(b.games);
+            return a.games - b.games;
         });
 
     $('recentHeroGrid').innerHTML = recentHeroes.map(hero => {
         const results = (hero.recent_results || [])
-            .slice()
-            .sort((a, b) => Number(a.start_time) - Number(b.start_time))
-            .slice(-5);
-
-        const resultDots = results.map(result => {
-            const won = result.win === true;
-
-            const color = won ? '#39c98a' : '#ef5350';
-            const label = won ? 'Победа' : 'Поражение';
-
-            return `
+            .slice(-5)
+            .map(result => `
                 <span
-                    title="${label}"
-                    aria-label="${label}"
-                    style="
-                        display:inline-block;
-                        width:10px;
-                        height:10px;
-                        min-width:10px;
-                        border-radius:50%;
-                        background:${color};
-                        margin-right:5px;
-                        vertical-align:middle;
-                    "
+                    class="recent-result-dot ${result.win ? 'won' : 'lost'}"
+                    title="${result.win ? 'Победа' : 'Поражение'}"
                 ></span>
-            `;
-        }).join('');
+            `)
+            .join('');
 
         return `
             <div class="recent-hero-row">
@@ -406,8 +440,8 @@ function render(data) {
                 <div class="recent-hero-results">
                     <span class="won">${num(hero.wins)}W</span>
                     <span class="lost">${num(hero.losses)}L</span>
-                    <div style="margin-top:5px; white-space:nowrap;">
-                        ${resultDots || '<small>Нет истории</small>'}
+                    <div class="recent-result-dots">
+                        ${results}
                     </div>
                 </div>
 
