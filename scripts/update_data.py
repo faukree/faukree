@@ -20,17 +20,25 @@ RECENT_DAYS = 30
 RECENT_RESULTS_LIMIT = 5
 
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "Faukree-Dota-Tracker/1.0"})
+SESSION.headers.update({
+    "User-Agent": "Faukree-Dota-Tracker/1.0"
+})
 
 
 def get(path, params=None):
-    response = SESSION.get(BASE + path, params=params, timeout=35)
+    response = SESSION.get(
+        BASE + path,
+        params=params,
+        timeout=35
+    )
     response.raise_for_status()
     return response.json()
 
 
 def hero_icon(hero):
-    name = hero.get("name", "").replace("npc_dota_hero_", "")
+    name = hero.get(
+        "name", ""
+    ).replace("npc_dota_hero_", "")
 
     if not name:
         return ""
@@ -42,9 +50,9 @@ def hero_icon(hero):
 
 
 def item_icon(item):
-    """Возвращает ссылку на иконку предмета."""
-
-    name = str(item.get("name") or "").replace("item_", "", 1)
+    name = str(
+        item.get("name") or ""
+    ).replace("item_", "", 1)
 
     if not name:
         return ""
@@ -76,26 +84,35 @@ def match_won(match):
 
 
 def calculate_performance(matches):
-    """Рассчитывает изменения MMR и текущую серию по Ranked-матчам."""
-
     now = datetime.now(timezone.utc)
-    cutoff_7d = int((now - timedelta(days=7)).timestamp())
-    cutoff_30d = int((now - timedelta(days=30)).timestamp())
+
+    cutoff_7d = int(
+        (now - timedelta(days=7)).timestamp()
+    )
+
+    cutoff_30d = int(
+        (now - timedelta(days=30)).timestamp()
+    )
 
     mmr_change_7d = 0
     mmr_change_30d = 0
 
     ordered_matches = sorted(
         matches,
-        key=lambda match: int(match.get("start_time", 0)),
-        reverse=True,
+        key=lambda match: int(
+            match.get("start_time", 0)
+        ),
+        reverse=True
     )
 
     streak_type = None
     streak_count = 0
 
     for match in ordered_matches:
-        start_time = int(match.get("start_time", 0))
+        start_time = int(
+            match.get("start_time", 0)
+        )
+
         result = match_won(match)
 
         if result is None:
@@ -126,16 +143,11 @@ def calculate_performance(matches):
         "mmr_change_7d": mmr_change_7d,
         "mmr_change_30d": mmr_change_30d,
         "streak_type": streak_type,
-        "streak_count": streak_count,
+        "streak_count": streak_count
     }
 
 
 def calculate_match_rating(match):
-    """
-    Примерная оценка личной статистики от 1 до 10.
-    Это не официальный рейтинг OpenDota или Valve.
-    """
-
     kills = int(match.get("kills") or 0)
     deaths = int(match.get("deaths") or 0)
     assists = int(match.get("assists") or 0)
@@ -146,7 +158,7 @@ def calculate_match_rating(match):
 
     duration_minutes = max(
         float(match.get("duration") or 0) / 60,
-        1,
+        1
     )
 
     damage_per_min = hero_damage / duration_minutes
@@ -166,14 +178,10 @@ def calculate_match_rating(match):
     elif match.get("win") is False:
         score -= 0.3
 
-    score = max(1, min(10, score))
-
-    return round(score, 1)
+    return round(max(1, min(10, score)), 1)
 
 
 def make_review_notes(match):
-    """Формирует осторожные подсказки на основе статистики матча."""
-
     notes = []
 
     deaths = int(match.get("deaths") or 0)
@@ -185,7 +193,7 @@ def make_review_notes(match):
 
     duration_minutes = max(
         float(match.get("duration") or 0) / 60,
-        1,
+        1
     )
 
     hero_damage = float(match.get("hero_damage") or 0)
@@ -196,7 +204,6 @@ def make_review_notes(match):
             "Много смертей. Стоит проверить позиционирование "
             "и опасные перемещения по карте."
         )
-
     elif deaths >= 7:
         notes.append(
             "Смертей довольно много. Можно обратить внимание "
@@ -238,18 +245,17 @@ def make_review_notes(match):
 
 
 def get_final_items(player, item_constants):
-    """Возвращает предметы из основных слотов инвентаря в конце матча."""
-
     items = []
 
     for slot in range(6):
-        item_id = int(player.get(f"item_{slot}") or 0)
+        item_id = int(
+            player.get(f"item_{slot}") or 0
+        )
 
         if item_id <= 0:
             continue
 
         item = item_constants.get(item_id, {})
-
         internal_name = str(item.get("name") or "")
 
         if internal_name.startswith("item_"):
@@ -267,23 +273,16 @@ def get_final_items(player, item_constants):
             or fallback_name
         )
 
-        items.append(
-            {
-                "id": item_id,
-                "name": localized_name,
-                "icon": item_icon(item),
-            }
-        )
+        items.append({
+            "id": item_id,
+            "name": localized_name,
+            "icon": item_icon(item)
+        })
 
     return items
 
 
 def load_item_constants():
-    """
-    Загружает справочник предметов.
-    Сохраняет внутреннее имя из ключа, если поле name отсутствует.
-    """
-
     item_data = get("/constants/items")
     item_by_id = {}
 
@@ -316,22 +315,21 @@ def main():
 
     profile_data = get(f"/players/{PLAYER_ID}")
 
-    # Только Ranked-матчи.
     matches = get(
         f"/players/{PLAYER_ID}/matches",
         {
             "limit": MATCH_HISTORY_LIMIT,
-            "lobby_type": RANKED_LOBBY,
-        },
+            "lobby_type": RANKED_LOBBY
+        }
     )
 
     heroes = get("/constants/heroes")
+
     hero_by_id = {
         int(key): value
         for key, value in heroes.items()
     }
 
-    # Справочник предметов.
     try:
         item_by_id = load_item_constants()
 
@@ -346,9 +344,9 @@ def main():
     saved_ids = old_data.get("processed_match_ids")
 
     if saved_ids is None:
-        # Однократная инициализация:
-        # старые матчи отмечаются обработанными и не меняют MMR повторно.
-        mmr = int(old_data.get("mmr", START_MMR))
+        mmr = int(
+            old_data.get("mmr", START_MMR)
+        )
 
         processed_ids = {
             str(match["match_id"])
@@ -362,7 +360,10 @@ def main():
         )
 
     else:
-        mmr = int(old_data.get("mmr", START_MMR))
+        mmr = int(
+            old_data.get("mmr", START_MMR)
+        )
+
         processed_ids = {
             str(match_id)
             for match_id in saved_ids
@@ -391,17 +392,10 @@ def main():
 
             if result:
                 mmr += MMR_PER_MATCH
-
-                print(
-                    f"Ranked win: +{MMR_PER_MATCH} MMR"
-                )
-
+                print(f"Ranked win: +{MMR_PER_MATCH} MMR")
             else:
                 mmr -= MMR_PER_MATCH
-
-                print(
-                    f"Ranked loss: -{MMR_PER_MATCH} MMR"
-                )
+                print(f"Ranked loss: -{MMR_PER_MATCH} MMR")
 
             processed_ids.add(str(match["match_id"]))
 
@@ -411,7 +405,6 @@ def main():
         ]
     )
 
-    # Подробности последних 20 Ranked-матчей.
     enriched = []
 
     for match in matches[:DISPLAY_MATCHES]:
@@ -427,7 +420,7 @@ def main():
                     for player in players
                     if str(player.get("account_id")) == PLAYER_ID
                 ),
-                None,
+                None
             )
 
             if me is None:
@@ -438,23 +431,23 @@ def main():
                         if player.get("player_slot")
                         == match.get("player_slot")
                     ),
-                    {},
+                    {}
                 )
 
             hero_id = me.get(
                 "hero_id",
-                match.get("hero_id"),
+                match.get("hero_id")
             )
 
             hero = hero_by_id.get(
                 int(hero_id or 0),
-                {},
+                {}
             )
 
             radiant_win = detail.get("radiant_win")
             slot = me.get(
                 "player_slot",
-                match.get("player_slot"),
+                match.get("player_slot")
             )
 
             if radiant_win is not None and slot is not None:
@@ -465,40 +458,52 @@ def main():
             match_duration = int(
                 detail.get(
                     "duration",
-                    match.get("duration", 0),
-                )
-                or 0
+                    match.get("duration", 0)
+                ) or 0
             )
 
             duration_minutes = max(
                 match_duration / 60,
-                1,
+                1
             )
 
+            # Общий урон по героям за матч.
+            # Если подробности не содержат значение, пробуем историю.
             hero_damage = me.get("hero_damage")
+
+            if hero_damage is None:
+                hero_damage = match.get("hero_damage")
+
             xp_per_min = me.get("xp_per_min")
+
+            if xp_per_min is None:
+                xp_per_min = match.get("xp_per_min")
+
             gold_per_min = me.get("gold_per_min")
+
+            if gold_per_min is None:
+                gold_per_min = match.get("gold_per_min")
 
             enriched_match = {
                 "match_id": match_id,
                 "hero_id": hero_id,
                 "hero_name": hero.get(
                     "localized_name",
-                    "Unknown",
+                    "Unknown"
                 ),
                 "hero_icon": hero_icon(hero),
                 "win": win,
                 "kills": me.get(
                     "kills",
-                    match.get("kills", 0),
+                    match.get("kills", 0)
                 ),
                 "deaths": me.get(
                     "deaths",
-                    match.get("deaths", 0),
+                    match.get("deaths", 0)
                 ),
                 "assists": me.get(
                     "assists",
-                    match.get("assists", 0),
+                    match.get("assists", 0)
                 ),
                 "hero_damage": hero_damage,
                 "damage_per_min": (
@@ -517,13 +522,13 @@ def main():
                     "start_time",
                     match.get(
                         "start_time",
-                        int(time.time()),
-                    ),
+                        int(time.time())
+                    )
                 ),
                 "items": get_final_items(
                     me,
-                    item_by_id,
-                ),
+                    item_by_id
+                )
             }
 
             enriched_match["rating"] = calculate_match_rating(
@@ -536,41 +541,51 @@ def main():
 
             enriched.append(enriched_match)
 
+            print(
+                f"Match {match_id}: hero damage = "
+                f"{hero_damage if hero_damage is not None else 'unavailable'}"
+            )
+
         except Exception as exc:
             print(
                 f"Match {match_id} detail fetch failed: {exc}"
             )
 
             hero_id = match.get("hero_id")
+
             hero = hero_by_id.get(
                 int(hero_id or 0),
-                {},
+                {}
             )
+
+            # В резервной записи также пытаемся взять урон
+            # из истории, если API его предоставляет.
+            hero_damage = match.get("hero_damage")
 
             enriched_match = {
                 "match_id": match_id,
                 "hero_id": hero_id,
                 "hero_name": hero.get(
                     "localized_name",
-                    "Unknown",
+                    "Unknown"
                 ),
                 "hero_icon": hero_icon(hero),
                 "win": match_won(match),
                 "kills": match.get("kills", 0),
                 "deaths": match.get("deaths", 0),
                 "assists": match.get("assists", 0),
-                "hero_damage": None,
+                "hero_damage": hero_damage,
                 "damage_per_min": None,
                 "total_xp": None,
-                "xp_per_min": None,
+                "xp_per_min": match.get("xp_per_min"),
                 "gold": None,
-                "gold_per_min": None,
+                "gold_per_min": match.get("gold_per_min"),
                 "duration": match.get("duration", 0),
                 "start_time": match.get(
                     "start_time",
-                    int(time.time()),
+                    int(time.time())
                 ),
-                "items": [],
+                "items": []
             }
 
             enriched_match["rating"] = calculate_match_rating(
@@ -585,8 +600,7 @@ def main():
 
         time.sleep(0.25)
 
-    # Рассчитываем MMR после каждого матча.
-    # Идём от самого нового матча к старым.
+    # MMR после каждого матча.
     rating_after = mmr
 
     for match in enriched:
@@ -594,11 +608,10 @@ def main():
 
         if match.get("win") is True:
             rating_after -= MMR_PER_MATCH
-
         elif match.get("win") is False:
             rating_after += MMR_PER_MATCH
 
-    # Статистика героев за последние 30 дней.
+    # Герои за последние 30 дней.
     cutoff = int(
         (
             datetime.now(timezone.utc)
@@ -622,7 +635,7 @@ def main():
 
         hero = hero_by_id.get(
             hero_id,
-            {},
+            {}
         )
 
         if not hero_id or not hero:
@@ -638,14 +651,14 @@ def main():
                 "hero_id": hero_id,
                 "name": hero.get(
                     "localized_name",
-                    "Unknown",
+                    "Unknown"
                 ),
                 "icon": hero_icon(hero),
                 "games": 0,
                 "wins": 0,
                 "losses": 0,
                 "winrate": 0,
-                "recent_results": [],
+                "recent_results": []
             }
 
         item = recent_heroes[hero_id]
@@ -656,22 +669,20 @@ def main():
         else:
             item["losses"] += 1
 
-        item["recent_results"].append(
-            {
-                "win": result,
-                "start_time": start_time,
-            }
-        )
+        item["recent_results"].append({
+            "win": result,
+            "start_time": start_time
+        })
 
     for item in recent_heroes.values():
         item["winrate"] = round(
             item["wins"] / item["games"] * 100,
-            1,
+            1
         )
 
         item["recent_results"] = sorted(
             item["recent_results"],
-            key=lambda result: result["start_time"],
+            key=lambda result: result["start_time"]
         )[-RECENT_RESULTS_LIMIT:]
 
     recent_heroes_30d = sorted(
@@ -679,17 +690,17 @@ def main():
         key=lambda hero: (
             hero["wins"],
             hero["winrate"],
-            -hero["games"],
+            -hero["games"]
         ),
-        reverse=True,
+        reverse=True
     )
 
-    # Статистика героев за всё время: только Ranked.
+    # Статистика героев за всё время.
     hero_stats = get(
         f"/players/{PLAYER_ID}/heroes",
         {
-            "lobby_type": RANKED_LOBBY,
-        },
+            "lobby_type": RANKED_LOBBY
+        }
     )
 
     totals = {}
@@ -701,7 +712,7 @@ def main():
 
         hero = hero_by_id.get(
             hero_id,
-            {},
+            {}
         )
 
         games = int(
@@ -717,28 +728,28 @@ def main():
 
         winrate = round(
             wins / games * 100,
-            1,
+            1
         )
 
         score = hero_score(
             games,
-            wins,
+            wins
         )
 
         totals[hero_id] = {
             "name": hero.get(
                 "localized_name",
-                "Unknown",
+                "Unknown"
             ),
             "icon": hero_icon(hero),
             "games": games,
             "wins": wins,
             "winrate": winrate,
             "score": round(score, 2),
-            "kda": "—",
+            "kda": "—"
         }
 
-    # KDA по доступным последним 20 Ranked-матчам.
+    # KDA по последним 20 матчам.
     for hero_id, item in totals.items():
         group = [
             match
@@ -764,7 +775,7 @@ def main():
 
             item["kda"] = round(
                 (kills + assists) / max(deaths, 1),
-                2,
+                2
             )
 
     top_heroes = sorted(
@@ -772,16 +783,16 @@ def main():
         key=lambda hero: (
             hero["winrate"],
             hero["score"],
-            hero["games"],
+            hero["games"]
         ),
-        reverse=True,
+        reverse=True
     )[:15]
 
     performance = calculate_performance(matches)
 
     profile = profile_data.get(
         "profile",
-        {},
+        {}
     )
 
     profile["mmr"] = mmr
@@ -798,8 +809,8 @@ def main():
         "recent_heroes_30d": recent_heroes_30d,
         "processed_match_ids": sorted(
             processed_ids,
-            key=int,
-        ),
+            key=int
+        )
     }
 
     OUT.parent.mkdir(
@@ -810,9 +821,9 @@ def main():
         json.dumps(
             output,
             ensure_ascii=False,
-            indent=2,
+            indent=2
         ),
-        encoding="utf-8",
+        encoding="utf-8"
     )
 
     print(
@@ -828,12 +839,6 @@ def main():
     print(
         f"MMR change in 30 days: "
         f"{performance['mmr_change_30d']}"
-    )
-
-    print(
-        f"Current streak: "
-        f"{performance['streak_count']} "
-        f"{performance['streak_type'] or '—'}"
     )
 
     print(
