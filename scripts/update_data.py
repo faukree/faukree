@@ -217,15 +217,49 @@ def main():
 
     # Sort by adjusted winrate score, then actual winrate,
     # then number of games.
-    top_heroes = sorted(
-        totals.values(),
+   
+# A hero should have a reasonable sample size and a positive winrate.
+# Heroes with a poor winrate should not appear in the "best heroes" list
+# merely because they have many games.
+
+eligible_heroes = [
+    hero
+    for hero in totals.values()
+    if hero["games"] >= 10 and hero["winrate"] >= 50
+]
+
+# If fewer than 15 heroes qualify, show the strongest remaining heroes
+# with at least 10 games to fill the list.
+if len(eligible_heroes) < 15:
+    remaining = [
+        hero
+        for hero in totals.values()
+        if hero["games"] >= 10 and hero not in eligible_heroes
+    ]
+
+    remaining.sort(
         key=lambda hero: (
             hero["score"],
             hero["winrate"],
             hero["games"],
         ),
         reverse=True,
-    )[:15]
+    )
+
+    eligible_heroes.extend(
+        remaining[:15 - len(eligible_heroes)]
+    )
+
+top_heroes = sorted(
+    eligible_heroes,
+    key=lambda hero: (
+        hero["score"],
+        hero["winrate"],
+        hero["games"],
+    ),
+    reverse=True,
+)[:15]
+
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
