@@ -1,14 +1,152 @@
+
 <!doctype html>
-<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Faukree — Dota 2 Tracker</title><link rel="stylesheet" href="styles.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>
-<body><div class="app">
-<aside class="sidebar"><div class="brand"><span class="logo">D</span><span>FAUKREE<span class="sub">DOTA TRACKER</span></span></div>
-<nav><a class="active">◈ Overview</a><a href="#matches">▤ Match history</a><a href="#heroes">♜ Heroes</a></nav>
-<div class="sidefoot">OPEN DOTA DATA<br><span id="updated">Обновление: —</span></div></aside>
-<main><header><div><div class="eyebrow">PLAYER DASHBOARD / 924159299</div><h1>Добро пожаловать, <span id="nickname">Faukree</span></h1><p>Твоя форма за последние матчи</p></div><div class="rank"><div class="rankicon">✦</div><div><b>DIVINE</b><small>Начальный MMR <span id="startMmr">5068</span></small></div></div></header>
-<section class="stats"><article><label>ESTIMATED MMR</label><strong id="mmr">5068</strong><span id="mmrDelta" class="positive">+0 за 20 игр</span></article><article><label>WIN RATE</label><strong id="winrate">—</strong><span id="record">—</span></article><article><label>ПОБЕДЫ</label><strong id="wins">—</strong><span class="muted">последние 20 матчей</span></article><article><label>ПОРАЖЕНИЯ</label><strong id="losses">—</strong><span class="muted">последние 20 матчей</span></article></section>
-<section class="panel"><div class="panelhead"><div><h2>MMR & RESULTS</h2><p>Динамика последних 20 игр · ±25 MMR</p></div><span class="tag">LAST 20</span></div><canvas id="chart" height="100"></canvas></section>
-<section class="panel" id="matches"><div class="panelhead"><div><h2>Последние матчи</h2><p>Самые свежие игры профиля</p></div><span class="tag">MATCH HISTORY</span></div><div class="tablewrap"><table><thead><tr><th>Герой</th><th>Результат</th><th>K / D / A</th><th>Урон</th><th>Опыт</th><th>Золото</th><th>Длительность</th><th>Дата</th><th>MMR</th></tr></thead><tbody id="matchesBody"><tr><td colspan="9">Загрузка данных…</td></tr></tbody></table></div></section>
-<section class="panel" id="heroes"><div class="panelhead"><div><h2>Твои лучшие герои</h2><p>Топ-15 по количеству игр · статистика доступных матчей</p></div><span class="tag">HERO POOL</span></div><div id="heroGrid" class="herogrid"><p>Загрузка…</p></div></section>
-<footer>Статистика предоставлена OpenDota. MMR — расчётная оценка, не официальный рейтинг Valve.</footer></main></div><script src="app.js"></script></body></html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faukree — Dota 2 Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">D</span>
+        <span>FAUKREE<span class="sub">DOTA TRACKER</span></span>
+      </div>
+
+      <nav>
+        <a class="active">◈ Overview</a>
+        <a href="#matches">▤ Match history</a>
+        <a href="#heroes">♜ Heroes</a>
+        <a href="#recentHeroes">◷ Last 30 days</a>
+      </nav>
+
+      <div class="sidefoot">
+        OPEN DOTA DATA<br>
+        <span id="updated">Обновление: —</span>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div>
+          <div class="eyebrow">PLAYER DASHBOARD / 924159299</div>
+          <h1>Добро пожаловать, <span id="nickname">Faukree</span></h1>
+          <p>Твоя форма за последние матчи</p>
+        </div>
+
+        <div class="rank">
+          <div class="rankicon">✦</div>
+          <div>
+            <b>DIVINE</b>
+            <small>Начальный MMR <span id="startMmr">5068</span></small>
+          </div>
+        </div>
+      </header>
+
+      <section class="stats">
+        <article>
+          <label>ESTIMATED MMR</label>
+          <strong id="mmr">5068</strong>
+          <span id="mmrDelta" class="positive">+0</span>
+        </article>
+
+        <article>
+          <label>WIN RATE</label>
+          <strong id="winrate">—</strong>
+          <span id="record">—</span>
+        </article>
+
+        <article>
+          <label>ПОБЕДЫ</label>
+          <strong id="wins">—</strong>
+          <span class="muted">последние 20 Ranked-матчей</span>
+        </article>
+
+        <article>
+          <label>ПОРАЖЕНИЯ</label>
+          <strong id="losses">—</strong>
+          <span class="muted">последние 20 Ranked-матчей</span>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panelhead">
+          <div>
+            <h2>MMR & RESULTS</h2>
+          </div>
+          <span class="tag">LAST 20</span>
+        </div>
+        <canvas id="chart" height="100"></canvas>
+      </section>
+
+      <section class="panel" id="matches">
+        <div class="panelhead">
+          <div>
+            <h2>Последние матчи</h2>
+            <p>Самые свежие Ranked-игры профиля</p>
+          </div>
+          <span class="tag">MATCH HISTORY</span>
+        </div>
+
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Герой</th>
+                <th>Результат</th>
+                <th>K / D / A</th>
+                <th>Урон</th>
+                <th>Опыт</th>
+                <th>Золото</th>
+                <th>Длительность</th>
+                <th>Дата</th>
+                <th>MMR</th>
+              </tr>
+            </thead>
+            <tbody id="matchesBody">
+              <tr><td colspan="9">Загрузка данных…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="heroes">
+        <div class="panelhead">
+          <div>
+            <h2>Твои лучшие герои</h2>
+            <p>Топ-15 по винрейту · минимум 20 Ranked-игр</p>
+          </div>
+          <span class="tag">HERO POOL</span>
+        </div>
+
+        <div id="heroGrid" class="herogrid">
+          <p>Загрузка…</p>
+        </div>
+      </section>
+
+      <section class="panel" id="recentHeroes">
+        <div class="panelhead">
+          <div>
+            <h2>Герои за последние 30 дней</h2>
+            <p>Количество игр, побед и поражений в Ranked</p>
+          </div>
+          <span class="tag">LAST 30 DAYS</span>
+        </div>
+
+        <div id="recentHeroGrid" class="recent-hero-list">
+          <p>Загрузка…</p>
+        </div>
+      </section>
+
+      <footer>
+        Статистика предоставлена OpenDota. MMR — расчётная оценка, не официальный рейтинг Valve.
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
