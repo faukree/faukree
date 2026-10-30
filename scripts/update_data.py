@@ -10,7 +10,7 @@ PLAYER_ID = "924159299"
 BASE = "https://api.opendota.com/api"
 OUT = Path("data/stats.json")
 
-START_MMR = 5068
+START_MMR = 5043
 MMR_PER_MATCH = 25
 RANKED_LOBBY = 7
 MATCH_HISTORY_LIMIT = 100
@@ -56,7 +56,7 @@ def match_won(match):
 
 
 def main():
-    # Load previously saved MMR and processed match IDs.
+    # Read previously saved data.
     old_data = {}
 
     if OUT.exists():
@@ -65,11 +65,9 @@ def main():
         except (json.JSONDecodeError, OSError):
             old_data = {}
 
-    mmr = int(old_data.get("mmr", START_MMR))
-    saved_ids = old_data.get("processed_match_ids")
-
-    # Get profile and ranked matches only.
+    # Get profile and Ranked matches only.
     profile_data = get(f"/players/{PLAYER_ID}")
+
     matches = get(
         f"/players/{PLAYER_ID}/matches",
         {
@@ -81,25 +79,39 @@ def main():
     heroes = get("/constants/heroes")
     hero_by_id = {int(key): value for key, value in heroes.items()}
 
-    # First run: establish a baseline.
-    # Do not change MMR for matches played before this setup.
+    saved_ids = old_data.get("processed_match_ids")
+
     if saved_ids is None:
+        # One-time migration:
+        # The known current MMR is 5043.
+        # Existing matches, including match 9067849694,
+        # must not be counted again.
+        mmr = int(old_data.get("mmr", START_MMR))
+
         processed_ids = {
             str(match["match_id"])
             for match in matches
             if match.get("match_id") is not None
         }
-        print("MMR baseline created. Existing matches were not counted.")
+
+        print(
+            f"Initial MMR set to {mmr}. "
+            "Existing Ranked matches marked as processed."
+        )
+
     else:
+        mmr = int(old_data.get("mmr", START_MMR))
         processed_ids = {str(match_id) for match_id in saved_ids}
 
+        # Find only matches that have not been processed before.
         new_matches = [
             match
             for match in matches
-            if str(match.get("match_id")) not in processed_ids
+            if match.get("match_id") is not None
+            and str(match["match_id"]) not in processed_ids
         ]
 
-        # Process new matches from oldest to newest.
+        # Process from oldest to newest.
         new_matches.sort(key=lambda match: match.get("start_time", 0))
 
         for match in new_matches:
@@ -108,7 +120,7 @@ def main():
             if result is None:
                 print(
                     f"Could not determine result for match "
-                    f"{match.get('match_id')}. It will be checked again."
+                    f"{match.get('match_id')}. Will retry later."
                 )
                 continue
 
@@ -121,18 +133,12 @@ def main():
 
             processed_ids.add(str(match["match_id"]))
 
-    # Keep a bounded history of processed IDs.
-    # Include the currently returned matches as well.
-    for match in matches:
-        match_id = match.get("match_id")
-        if match_id is not None:
-            processed_ids.add(str(match_id))
-
+    # Keep the saved list within a reasonable size.
     processed_ids = set(
         sorted(processed_ids, key=int)[-MAX_SAVED_MATCH_IDS:]
     )
 
-    # Enrich the latest 20 ranked matches for the website.
+    # Enrich the latest 20 Ranked matches for the website.
     enriched = []
 
     for match in matches[:DISPLAY_MATCHES]:
@@ -165,13 +171,13 @@ def main():
             hero_id = me.get("hero_id", match.get("hero_id"))
             hero = hero_by_id.get(int(hero_id or 0), {})
 
-            radiant_win = detail.get(
-                "radiant_win",
-                match.get("radiant_win", False),
-            )
+            radiant_win = detail.get("radiant_win")
+            slot = me.get("player_slot", match.get("player_slot"))
 
-            slot = me.get("player_slot", match.get("player_slot", 0))
-            win = bool(radiant_win) == (int(slot) < 128)
+            if radiant_win is not None and slot is not None:
+                win = bool(radiant_win) == (int(slot) < 128)
+            else:
+                win = match_won(match)
 
             enriched.append(
                 {
@@ -207,7 +213,6 @@ def main():
 
             hero_id = match.get("hero_id")
             hero = hero_by_id.get(int(hero_id or 0), {})
-            win = match_won(match)
 
             enriched.append(
                 {
@@ -218,7 +223,7 @@ def main():
                         "Unknown",
                     ),
                     "hero_icon": hero_icon(hero),
-                    "win": bool(win),
+                    "win": match_won(match),
                     "kills": match.get("kills", 0),
                     "deaths": match.get("deaths", 0),
                     "assists": match.get("assists", 0),
@@ -306,10 +311,7 @@ def main():
         "mmr": mmr,
         "matches": enriched,
         "top_heroes": top_heroes,
-        "processed_match_ids": sorted(
-            processed_ids,
-            key=int,
-        ),
+        "processed_match_ids": sorted(processed_ids, key=int),
     }
 
     OUT.parent.mkdir(exist_ok=True)
@@ -319,7 +321,9 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"Ranked stats updated successfully. Estimated MMR: {mmr}")
+    print(
+        f"Ranked stats updated successfully. Estimated MMR: {mmr}"
+    )
 
 
 if __name__ == "__main__":
