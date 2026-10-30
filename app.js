@@ -240,7 +240,7 @@ function renderMatches(matches = []) {
                     ${renderItems(match.items || [])}
                 </td>
 
-                <td>${num(match.damage_per_min)}</td>
+                <td>${num(match.damage)}</td>
                 <td>${num(match.xp_per_min)}</td>
                 <td>${num(match.gold_per_min)}</td>
 
@@ -288,7 +288,7 @@ function renderTopHeroes(data) {
 
                 <small>
                     ${num(hero.games)} игр ·
-                    ${num(hero.winrate)}% WR ·
+                    ${num(hero.winrate)}% побед ·
                     KDA ${esc(hero.kda ?? '—')}
                 </small>
             </div>
@@ -342,8 +342,8 @@ function renderRecentHeroes(data) {
                 </div>
 
                 <div class="recent-hero-results">
-                    <span class="won">${num(hero.wins)}W</span>
-                    <span class="lost">${num(hero.losses)}L</span>
+                    <span class="won">W ${num(hero.wins)}</span>
+                    <span class="lost">L ${num(hero.losses)}</span>
 
                     <div class="recent-result-dots">
                         ${results}
@@ -356,7 +356,7 @@ function renderRecentHeroes(data) {
             </div>
         `;
     }).join('') || `
-        <p>За последние 30 дней Ranked-матчей пока нет.</p>
+        <p>За последние 30 дней рейтинговых матчей пока нет.</p>
     `;
 }
 
@@ -371,12 +371,6 @@ function render(data) {
     const losses = matches.filter(match => match.win === false).length;
     const decidedMatches = wins + losses;
 
-    const netChange = matches.reduce((sum, match) => {
-        if (match.win === true) return sum + MMR_PER_MATCH;
-        if (match.win === false) return sum - MMR_PER_MATCH;
-        return sum;
-    }, 0);
-
     if ($('nickname')) {
         $('nickname').textContent =
             data.profile?.personaname || 'Faukree';
@@ -390,13 +384,10 @@ function render(data) {
         $('mmr').textContent = num(currentMmr);
     }
 
+    // Не показываем расчётное изменение под текущим MMR.
     if ($('mmrDelta')) {
-        $('mmrDelta').textContent = formatMmrChange(netChange);
-        $('mmrDelta').className = netChange > 0
-            ? 'positive'
-            : netChange < 0
-                ? 'lost'
-                : '';
+        $('mmrDelta').textContent = '';
+        $('mmrDelta').className = '';
     }
 
     if ($('wins')) $('wins').textContent = num(wins);
@@ -409,7 +400,7 @@ function render(data) {
     }
 
     if ($('record')) {
-        $('record').textContent = `${wins}W — ${losses}L`;
+        $('record').textContent = `W ${wins} — L ${losses}`;
     }
 
     renderPerformance(data.performance || {});
