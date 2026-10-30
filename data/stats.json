@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T17:10:25.241624+00:00",
+  "updated_at": "2026-10-30T17:48:37.058484+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,73 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4993
+    "mmr": 4968
   },
-  "mmr": 4993,
+  "mmr": 4968,
   "performance": {
-    "mmr_change_7d": -75,
-    "mmr_change_30d": -75,
+    "mmr_change_7d": -100,
+    "mmr_change_30d": -100,
     "streak_type": "loss",
-    "streak_count": 4
+    "streak_count": 5
   },
   "matches": [
+    {
+      "match_id": 9068744170,
+      "hero_id": 87,
+      "hero_name": "Disruptor",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+      "win": false,
+      "kills": 1,
+      "deaths": 10,
+      "assists": 14,
+      "hero_damage": 17744,
+      "damage_per_min": 516,
+      "total_xp": 9976,
+      "xp_per_min": 290,
+      "gold": 180,
+      "gold_per_min": 277,
+      "duration": 2064,
+      "start_time": 1793378735,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 218,
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 23,
+          "name": "Staff of Wizardry",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
+        }
+      ],
+      "rating": 3.6,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 4968
+    },
     {
       "match_id": 9068688867,
       "hero_id": 110,
@@ -955,61 +1012,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5193
-    },
-    {
-      "match_id": 9060748522,
-      "hero_id": 105,
-      "hero_name": "Techies",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
-      "win": false,
-      "kills": 2,
-      "deaths": 12,
-      "assists": 9,
-      "hero_damage": 20453,
-      "damage_per_min": 463,
-      "total_xp": 17388,
-      "xp_per_min": 394,
-      "gold": 2012,
-      "gold_per_min": 353,
-      "duration": 2648,
-      "start_time": 1792906388,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 232,
-          "name": "Aether Lens",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aether_lens.png"
-        },
-        {
-          "id": 188,
-          "name": "Smoke of Deceit",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        }
-      ],
-      "rating": 3.2,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5168
     }
   ],
   "top_heroes": [
@@ -1032,15 +1034,6 @@
       "kda": "—"
     },
     {
-      "name": "Disruptor",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
-      "games": 40,
-      "wins": 24,
-      "winrate": 60.0,
-      "score": 56.67,
-      "kda": "—"
-    },
-    {
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
       "games": 75,
@@ -1048,6 +1041,15 @@
       "winrate": 58.7,
       "score": 56.84,
       "kda": 1.46
+    },
+    {
+      "name": "Disruptor",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+      "games": 41,
+      "wins": 24,
+      "winrate": 58.5,
+      "score": 55.74,
+      "kda": 1.5
     },
     {
       "name": "Nyx Assassin",
@@ -1154,10 +1156,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 15,
-      "wins": 11,
+      "games": 14,
+      "wins": 10,
       "losses": 4,
-      "winrate": 73.3,
+      "winrate": 71.4,
       "recent_results": [
         {
           "win": true,
@@ -1426,10 +1428,10 @@
       "hero_id": 87,
       "name": "Disruptor",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
-      "games": 2,
+      "games": 3,
       "wins": 1,
-      "losses": 1,
-      "winrate": 50.0,
+      "losses": 2,
+      "winrate": 33.3,
       "recent_results": [
         {
           "win": true,
@@ -1438,6 +1440,10 @@
         {
           "win": false,
           "start_time": 1791827326
+        },
+        {
+          "win": false,
+          "start_time": 1793378735
         }
       ]
     },
@@ -1917,6 +1923,7 @@
     "9066854381",
     "9067849694",
     "9068469614",
-    "9068688867"
+    "9068688867",
+    "9068744170"
   ]
 }
