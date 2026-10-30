@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T00:03:21.678214+00:00",
+  "updated_at": "2026-10-30T02:09:58.071222+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -19,6 +19,23 @@
     "is_subscriber": false
   },
   "matches": [
+    {
+      "match_id": 9067849694,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 6,
+      "assists": 14,
+      "hero_damage": 17423,
+      "total_xp": 19465,
+      "xp_per_min": 497,
+      "gold": 697,
+      "gold_per_min": 306,
+      "duration": 2350,
+      "start_time": 1793321829
+    },
     {
       "match_id": 9066854381,
       "hero_id": 74,
@@ -341,121 +358,17 @@
       "gold_per_min": 393,
       "duration": 2981,
       "start_time": 1792816692
-    },
-    {
-      "match_id": 9058991996,
-      "hero_id": 102,
-      "hero_name": "Abaddon",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
-      "win": false,
-      "kills": 3,
-      "deaths": 8,
-      "assists": 2,
-      "hero_damage": 11298,
-      "total_xp": 11481,
-      "xp_per_min": 375,
-      "gold": 790,
-      "gold_per_min": 247,
-      "duration": 1837,
-      "start_time": 1792814392
     }
   ],
   "top_heroes": [
     {
-      "name": "Mirana",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 441,
-      "wins": 240,
-      "winrate": 54.4,
-      "kda": 4.0
-    },
-    {
-      "name": "Rubick",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
-      "games": 261,
-      "wins": 119,
-      "winrate": 45.6,
+      "name": "Io",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+      "games": 31,
+      "wins": 19,
+      "winrate": 61.3,
+      "score": 56.86,
       "kda": "—"
-    },
-    {
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 223,
-      "wins": 129,
-      "winrate": 57.8,
-      "kda": 2.06
-    },
-    {
-      "name": "Phoenix",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 193,
-      "wins": 116,
-      "winrate": 60.1,
-      "kda": 1.95
-    },
-    {
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 175,
-      "wins": 103,
-      "winrate": 58.9,
-      "kda": 2.33
-    },
-    {
-      "name": "Jakiro",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
-      "games": 172,
-      "wins": 92,
-      "winrate": 53.5,
-      "kda": "—"
-    },
-    {
-      "name": "Windranger",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 167,
-      "wins": 86,
-      "winrate": 51.5,
-      "kda": 3.67
-    },
-    {
-      "name": "Pudge",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
-      "games": 142,
-      "wins": 56,
-      "winrate": 39.4,
-      "kda": 0.47
-    },
-    {
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 133,
-      "wins": 70,
-      "winrate": 52.6,
-      "kda": "—"
-    },
-    {
-      "name": "Lion",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "games": 129,
-      "wins": 71,
-      "winrate": 55.0,
-      "kda": "—"
-    },
-    {
-      "name": "Invoker",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
-      "games": 123,
-      "wins": 52,
-      "winrate": 42.3,
-      "kda": 1.54
-    },
-    {
-      "name": "Venomancer",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "games": 121,
-      "wins": 64,
-      "winrate": 52.9,
-      "kda": 0.44
     },
     {
       "name": "Undying",
@@ -463,22 +376,124 @@
       "games": 118,
       "wins": 71,
       "winrate": 60.2,
+      "score": 58.7,
       "kda": 1.46
     },
     {
-      "name": "Grimstroke",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "games": 106,
-      "wins": 54,
-      "winrate": 50.9,
-      "kda": 17.0
+      "name": "Phoenix",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "games": 193,
+      "wins": 116,
+      "winrate": 60.1,
+      "score": 59.15,
+      "kda": 1.95
     },
     {
-      "name": "Lina",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lina.png",
-      "games": 104,
-      "wins": 32,
-      "winrate": 30.8,
+      "name": "Vengeful Spirit",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
+      "games": 90,
+      "wins": 54,
+      "winrate": 60.0,
+      "score": 58.18,
+      "kda": "—"
+    },
+    {
+      "name": "Slardar",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slardar.png",
+      "games": 25,
+      "wins": 15,
+      "winrate": 60.0,
+      "score": 55.56,
+      "kda": "—"
+    },
+    {
+      "name": "Clockwerk",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+      "games": 52,
+      "wins": 31,
+      "winrate": 59.6,
+      "score": 56.94,
+      "kda": 1.1
+    },
+    {
+      "name": "Oracle",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/oracle.png",
+      "games": 47,
+      "wins": 28,
+      "winrate": 59.6,
+      "score": 56.72,
+      "kda": "—"
+    },
+    {
+      "name": "Necrophos",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/necrolyte.png",
+      "games": 22,
+      "wins": 13,
+      "winrate": 59.1,
+      "score": 54.76,
+      "kda": "—"
+    },
+    {
+      "name": "Centaur Warrunner",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png",
+      "games": 22,
+      "wins": 13,
+      "winrate": 59.1,
+      "score": 54.76,
+      "kda": "—"
+    },
+    {
+      "name": "Disruptor",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+      "games": 61,
+      "wins": 36,
+      "winrate": 59.0,
+      "score": 56.79,
+      "kda": "—"
+    },
+    {
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 175,
+      "wins": 103,
+      "winrate": 58.9,
+      "score": 57.95,
+      "kda": 2.33
+    },
+    {
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 224,
+      "wins": 129,
+      "winrate": 57.6,
+      "score": 56.97,
+      "kda": 2.3
+    },
+    {
+      "name": "Magnus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnataur.png",
+      "games": 39,
+      "wins": 22,
+      "winrate": 56.4,
+      "score": 54.24,
+      "kda": "—"
+    },
+    {
+      "name": "Ursa",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ursa.png",
+      "games": 27,
+      "wins": 15,
+      "winrate": 55.6,
+      "score": 53.19,
+      "kda": "—"
+    },
+    {
+      "name": "Ring Master",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ringmaster.png",
+      "games": 27,
+      "wins": 15,
+      "winrate": 55.6,
+      "score": 53.19,
       "kda": "—"
     }
   ]
