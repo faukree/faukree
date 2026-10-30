@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T12:39:01.763287+00:00",
+  "updated_at": "2026-10-30T12:57:33.577663+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -47,33 +47,33 @@
       "items": [
         {
           "id": 60,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Point Booster",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png"
         },
         {
           "id": 218,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
         },
         {
           "id": 254,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
         },
         {
           "id": 1,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
         },
         {
           "id": 40,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
         },
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         }
       ],
       "rating": 5.9,
@@ -102,33 +102,33 @@
       "items": [
         {
           "id": 108,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
         },
         {
           "id": 218,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
         },
         {
           "id": 77,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Null Talisman",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
         },
         {
           "id": 100,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
         },
         {
           "id": 40,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
         },
         {
           "id": 29,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Boots of Speed",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots.png"
         }
       ],
       "rating": 3.4,
@@ -158,23 +158,23 @@
       "items": [
         {
           "id": 210,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Heaven's Halberd",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/heavens_halberd.png"
         },
         {
           "id": 226,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Lotus Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png"
         },
         {
           "id": 267,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
         },
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         }
       ],
       "rating": 4.3,
@@ -203,18 +203,18 @@
       "items": [
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 77,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Null Talisman",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
         },
         {
           "id": 108,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
         }
       ],
       "rating": 4.9,
@@ -244,18 +244,18 @@
       "items": [
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         },
         {
           "id": 267,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
         },
         {
           "id": 188,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
         }
       ],
       "rating": 3.3,
@@ -286,28 +286,28 @@
       "items": [
         {
           "id": 108,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
         },
         {
           "id": 96,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
         },
         {
           "id": 100,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
         },
         {
           "id": 267,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
         },
         {
           "id": 29,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Boots of Speed",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots.png"
         }
       ],
       "rating": 7.7,
@@ -336,23 +336,23 @@
       "items": [
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         },
         {
           "id": 244,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Wind Lace",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_lace.png"
         },
         {
           "id": 1852,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Essence Distiller",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
         },
         {
           "id": 98,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Orchid Malevolence",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
         }
       ],
       "rating": 3.3,
@@ -383,28 +383,28 @@
       "items": [
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         },
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 254,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
         },
         {
           "id": 42,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
         },
         {
           "id": 127,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Blade Mail",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blade_mail.png"
         }
       ],
       "rating": 3.2,
@@ -434,33 +434,33 @@
       "items": [
         {
           "id": 40,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
         },
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         },
         {
           "id": 92,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Urn of Shadows",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png"
         },
         {
           "id": 226,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Lotus Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png"
         },
         {
           "id": 218,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
         },
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         }
       ],
       "rating": 4.1,
@@ -490,23 +490,23 @@
       "items": [
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         },
         {
           "id": 73,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Bracer",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bracer.png"
         },
         {
           "id": 1847,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Splintmail",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/splintmail.png"
         },
         {
           "id": 267,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
         }
       ],
       "rating": 6.4,
@@ -535,28 +535,28 @@
       "items": [
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         },
         {
           "id": 267,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
         },
         {
           "id": 110,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Refresher Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
         },
         {
           "id": 116,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Black King Bar",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
         },
         {
           "id": 137,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Radiance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/radiance.png"
         }
       ],
       "rating": 6.8,
@@ -585,23 +585,23 @@
       "items": [
         {
           "id": 38,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Clarity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/clarity.png"
         },
         {
           "id": 92,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Urn of Shadows",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png"
         },
         {
           "id": 254,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
         },
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         }
       ],
       "rating": 1.2,
@@ -632,28 +632,28 @@
       "items": [
         {
           "id": 1575,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Orb of Frost",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_frost.png"
         },
         {
           "id": 42,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
         },
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 100,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
         },
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         }
       ],
       "rating": 3.7,
@@ -684,33 +684,33 @@
       "items": [
         {
           "id": 63,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Power Treads",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png"
         },
         {
           "id": 21,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Ogre Axe",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
         },
         {
           "id": 40,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
         },
         {
           "id": 1,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
         },
         {
           "id": 151,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Armlet of Mordiggian",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/armlet.png"
         },
         {
           "id": 73,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Bracer",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bracer.png"
         }
       ],
       "rating": 2.2,
@@ -740,23 +740,23 @@
       "items": [
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         },
         {
           "id": 254,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
         },
         {
           "id": 1,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
         }
       ],
       "rating": 7.4,
@@ -786,18 +786,18 @@
       "items": [
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         },
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 190,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Veil of Discord",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/veil_of_discord.png"
         }
       ],
       "rating": 3.3,
@@ -828,28 +828,28 @@
       "items": [
         {
           "id": 218,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
         },
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 102,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Force Staff",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
         },
         {
           "id": 100,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
         },
         {
           "id": 108,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
         }
       ],
       "rating": 7.2,
@@ -878,33 +878,33 @@
       "items": [
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         },
         {
           "id": 232,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Aether Lens",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/aether_lens.png"
         },
         {
           "id": 188,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
         },
         {
           "id": 65,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
         },
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         },
         {
           "id": 108,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
         }
       ],
       "rating": 3.2,
@@ -933,18 +933,18 @@
       "items": [
         {
           "id": 214,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
         },
         {
           "id": 36,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
         },
         {
           "id": 604,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Blink",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_blink.png"
         }
       ],
       "rating": 3.1,
@@ -973,33 +973,33 @@
       "items": [
         {
           "id": 40,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
         },
         {
           "id": 180,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
         },
         {
           "id": 98,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Orchid Malevolence",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
         },
         {
           "id": 100,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
         },
         {
           "id": 1852,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Essence Distiller",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
         },
         {
           "id": 166,
-          "name": "Предмет",
-          "icon": ""
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
         }
       ],
       "rating": 7.7,
