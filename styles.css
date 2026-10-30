@@ -127,33 +127,53 @@ header p,
     font-size: 12px;
 }
 
+/* Медаль Dota 2 */
+
 .rank {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: #191b20;
+    gap: 14px;
+    background: linear-gradient(135deg, #191b20, #151920);
     border: 1px solid #3b3325;
-    padding: 13px 18px;
+    padding: 12px 18px;
     border-radius: 12px;
+    min-width: 190px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.18);
 }
 
 .rankicon {
-    font-size: 26px;
-    color: var(--gold);
+    display: block;
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.4));
+}
+
+.rankinfo {
+    min-width: 0;
 }
 
 .rank b {
     display: block;
     color: var(--gold);
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
 }
 
 .rank small {
     display: block;
     color: var(--muted);
-    font-size: 10px;
-    margin-top: 5px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 6px;
+    white-space: nowrap;
+    font-weight: 800;
+    text-shadow: 0 1px 5px rgba(229, 184, 92, 0.2);
 }
+
+/* Статистика */
 
 .stats {
     display: grid;
@@ -192,7 +212,7 @@ header p,
     font-size: 11px;
 }
 
-/* Победы и поражения: буква в 2 раза больше числа */
+/* Победы и поражения */
 
 .stats article #wins,
 .stats article #losses {
@@ -239,6 +259,8 @@ header p,
     color: var(--muted);
 }
 
+/* Панели */
+
 .panel {
     padding: 22px;
     margin-bottom: 18px;
@@ -269,7 +291,7 @@ header p,
     white-space: nowrap;
 }
 
-/* Таблица матчей с горизонтальной прокруткой */
+/* Таблица матчей */
 
 .tablewrap {
     overflow-x: auto;
@@ -539,6 +561,8 @@ tbody tr:hover {
     white-space: nowrap;
 }
 
+/* Подвал */
+
 footer {
     color: #697587;
     font-size: 10px;
@@ -681,5 +705,26 @@ footer {
 
     .recent-hero-winrate {
         display: none;
+    }
+
+    /* Медаль на телефоне */
+
+    .rank {
+        padding: 10px 14px;
+        gap: 11px;
+        min-width: 175px;
+    }
+
+    .rankicon {
+        width: 66px;
+        height: 66px;
+    }
+
+    .rank b {
+        font-size: 13px;
+    }
+
+    .rank small {
+        font-size: 16px;
     }
 }
