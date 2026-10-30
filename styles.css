@@ -95,9 +95,10 @@ body {
 
 main {
     margin-left: 225px;
-    padding: 34px 4vw;
+    padding: 34px 3vw;
     width: calc(100% - 225px);
     max-width: 1700px;
+    min-width: 0;
 }
 
 header {
@@ -170,6 +171,7 @@ header p,
 
 .stats article {
     padding: 20px;
+    min-width: 0;
 }
 
 .stats label {
@@ -201,12 +203,14 @@ header p,
 .panel {
     padding: 22px;
     margin-bottom: 18px;
+    min-width: 0;
 }
 
 .panelhead {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     margin-bottom: 20px;
 }
 
@@ -223,30 +227,34 @@ header p,
     border: 1px solid #303947;
     padding: 7px 9px;
     border-radius: 5px;
+    white-space: nowrap;
 }
 
 .tablewrap {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     white-space: nowrap;
-    font-size: 11px;
+    font-size: 10px;
+    table-layout: auto;
 }
 
 th {
     text-align: left;
     color: #7e8a9b;
-    font-size: 9px;
-    letter-spacing: .8px;
-    padding: 12px;
+    font-size: 8px;
+    letter-spacing: .3px;
+    padding: 9px 6px;
     border-bottom: 1px solid var(--line);
 }
 
 td {
-    padding: 13px 12px;
+    padding: 9px 6px;
     border-bottom: 1px solid #202733;
     color: #cbd2dd;
 }
@@ -258,15 +266,16 @@ tbody tr:hover {
 .hero {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 .hero img {
-    width: 38px;
-    height: 23px;
+    width: 32px;
+    height: 20px;
     object-fit: cover;
     border-radius: 3px;
     background: #252b35;
+    flex-shrink: 0;
 }
 
 .won {
@@ -279,22 +288,23 @@ tbody tr:hover {
     font-weight: 700;
 }
 
-/* Предметы в таблице */
+/* Предметы */
 
 .match-items {
     display: flex;
     align-items: center;
-    gap: 4px;
-    min-width: 130px;
+    gap: 2px;
+    min-width: 0;
 }
 
 .match-items img {
     display: block;
-    width: 30px;
-    height: 22px;
+    width: 24px;
+    height: 19px;
     object-fit: contain;
     border-radius: 3px;
     background: #252b35;
+    flex-shrink: 0;
 }
 
 .match-no-items {
@@ -310,7 +320,7 @@ tbody tr:hover {
 
 .match-rating {
     display: inline-block;
-    min-width: 45px;
+    min-width: 40px;
     font-weight: 800;
     text-align: center;
 }
@@ -327,7 +337,7 @@ tbody tr:hover {
     color: var(--red);
 }
 
-/* Заметки по матчам */
+/* Разбор матчей */
 
 .review-notes-list {
     margin: 0;
@@ -438,9 +448,17 @@ tbody tr:hover {
 .recent-hero-results {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     font-size: 11px;
     white-space: nowrap;
+}
+
+.recent-hero-results .won {
+    color: var(--green);
+}
+
+.recent-hero-results .lost {
+    color: var(--red);
 }
 
 /* Пять последних результатов */
@@ -483,15 +501,21 @@ footer {
     padding: 12px 0 28px;
 }
 
-/* Адаптация под планшеты */
+/* Планшеты */
 
 @media (max-width: 1100px) {
-    .tablewrap table {
-        min-width: 1150px;
-    }
-
     .herogrid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tablewrap th,
+    .tablewrap td {
+        padding: 7px 4px;
+    }
+
+    .match-items img {
+        width: 20px;
+        height: 17px;
     }
 }
 
@@ -536,7 +560,7 @@ footer {
     }
 }
 
-/* Адаптация под телефоны */
+/* Телефоны */
 
 @media (max-width: 540px) {
     .herogrid {
@@ -553,6 +577,25 @@ footer {
 
     .panel {
         padding: 15px;
+    }
+
+    .panelhead {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tablewrap table {
+        font-size: 9px;
+    }
+
+    .tablewrap th {
+        white-space: normal;
+        max-width: 65px;
+    }
+
+    .match-items img {
+        width: 17px;
+        height: 15px;
     }
 
     .recent-hero-row {
