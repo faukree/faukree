@@ -215,65 +215,44 @@ def main():
                 2,
             )
 
-    # Sort by adjusted winrate score, then actual winrate,
-    # then number of games.
-   
-# A hero should have a reasonable sample size and a positive winrate.
-# Heroes with a poor winrate should not appear in the "best heroes" list
-# merely because they have many games.
-
-eligible_heroes = [
-    hero
-    for hero in totals.values()
-    if hero["games"] >= 10 and hero["winrate"] >= 50
-]
-
-# If fewer than 15 heroes qualify, show the strongest remaining heroes
-# with at least 10 games to fill the list.
-if len(eligible_heroes) < 15:
-    remaining = [
+    
+    # Best heroes: minimum 20 games.
+    # Prioritize actual winrate over number of games.
+    eligible_heroes = [
         hero
         for hero in totals.values()
-        if hero["games"] >= 10 and hero not in eligible_heroes
+        if hero["games"] >= 20
     ]
 
-    remaining.sort(
+    top_heroes = sorted(
+        eligible_heroes,
         key=lambda hero: (
-            hero["score"],
             hero["winrate"],
+            hero["score"],
             hero["games"],
         ),
         reverse=True,
-    )
+    )[:15]
 
-    eligible_heroes.extend(
-        remaining[:15 - len(eligible_heroes)]
-    )
-
-top_heroes = sorted(
-    eligible_heroes,
-    key=lambda hero: (
-        hero["score"],
-        hero["winrate"],
-        hero["games"],
-    ),
-    reverse=True,
-)[:15]
-
-
-output = {
+    output = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "profile": profile.get("profile", {}),
         "matches": enriched,
         "top_heroes": top_heroes,
     }
 
-OUT.parent.mkdir(exist_ok=True)
+    OUT.parent.mkdir(exist_ok=True)
 
-OUT.write_text(
+    OUT.write_text(
         json.dumps(output, ensure_ascii=False, indent=2),
         encoding="utf-8",
-)
+    )
+
+    print("Dota stats updated successfully.")
+
+
+if __name__ == "__main__":
+    main()
 
 print("Dota stats updated successfully.")
 
