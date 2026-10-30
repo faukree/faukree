@@ -51,6 +51,14 @@ async function load() {
     } catch (error) {
         $('matchesBody').innerHTML =
             '<tr><td colspan="9">Не удалось загрузить данные. Проверь GitHub Actions и файл data/stats.json.</td></tr>';
+
+        $('heroGrid').innerHTML =
+            '<p>Не удалось загрузить статистику героев.</p>';
+
+        $('recentHeroGrid').innerHTML =
+            '<p>Не удалось загрузить статистику за 30 дней.</p>';
+
+        console.error(error);
     }
 }
 
@@ -58,7 +66,11 @@ function buildRatingHistory(matches, currentMmr) {
     const chronologicalMatches = matches.slice().reverse();
 
     const totalChange = matches.reduce(
-        (sum, match) => sum + (match.win ? MMR_PER_GAME : -MMR_PER_GAME),
+        (sum, match) => {
+            if (match.win === true) return sum + MMR_PER_GAME;
+            if (match.win === false) return sum - MMR_PER_GAME;
+            return sum;
+        },
         0
     );
 
@@ -71,12 +83,20 @@ function buildRatingHistory(matches, currentMmr) {
     }];
 
     chronologicalMatches.forEach(match => {
-        rating += match.win ? MMR_PER_GAME : -MMR_PER_GAME;
+        if (match.win === true) {
+            rating += MMR_PER_GAME;
+        } else if (match.win === false) {
+            rating -= MMR_PER_GAME;
+        }
 
         history.push({
             x: chartDate(match.start_time),
             y: rating,
-            result: match.win ? 'win' : 'loss'
+            result: match.win === true
+                ? 'win'
+                : match.win === false
+                    ? 'loss'
+                    : null
         });
     });
 
@@ -90,11 +110,16 @@ function render(data) {
         data.mmr ?? data.profile?.mmr ?? 5068
     );
 
-    const wins = matches.filter(match => match.win).length;
-    const losses = matches.length - wins;
+    const wins = matches.filter(match => match.win === true).length;
+    const losses = matches.filter(match => match.win === false).length;
+    const decidedMatches = wins + losses;
 
     const netChange = matches.reduce(
-        (sum, match) => sum + (match.win ? MMR_PER_GAME : -MMR_PER_GAME),
+        (sum, match) => {
+            if (match.win === true) return sum + MMR_PER_GAME;
+            if (match.win === false) return sum - MMR_PER_GAME;
+            return sum;
+        },
         0
     );
 
@@ -105,7 +130,7 @@ function render(data) {
     $('mmr').textContent = currentMmr.toLocaleString('ru-RU');
 
     $('mmrDelta').textContent =
-        `${netChange >= 0 ? '+' : ''}${netChange} за ${matches.length} игр`;
+        `${netChange >= 0 ? '+' : ''}${netChange}`;
 
     $('mmrDelta').className =
         netChange >= 0 ? 'positive' : 'lost';
@@ -113,47 +138,68 @@ function render(data) {
     $('wins').textContent = wins;
     $('losses').textContent = losses;
 
-    $('winrate').textContent = matches.length
-        ? Math.round(wins / matches.length * 100) + '%'
+    $('winrate').textContent = decidedMatches
+        ? Math.round(wins / decidedMatches * 100) + '%'
         : '—';
 
     $('record').textContent = `${wins}W — ${losses}L`;
 
-    $('matchesBody').innerHTML = matches.map(match => `
-        <tr>
-            <td>
-                <div class="hero">
-                    <img src="${match.hero_icon || ''}" alt="">
-                    <span>${esc(match.hero_name || 'Неизвестно')}</span>
-                </div>
-            </td>
-            <td class="${match.win ? 'won' : 'lost'}">
-                ${match.win ? 'ПОБЕДА' : 'ПОРАЖЕНИЕ'}
-            </td>
-            <td>${match.kills}/${match.deaths}/${match.assists}</td>
-            <td>${num(match.hero_damage)}</td>
-            <td>${num(
-                match.xp_per_min
-                    ? match.xp_per_min * Math.round(match.duration / 60)
-                    : match.total_xp
-            )}</td>
-            <td>${num(
-                match.gold_per_min
-                    ? match.gold_per_min * Math.round(match.duration / 60)
-                    : match.gold
-            )}</td>
-            <td>${duration(match.duration || 0)}</td>
-            <td>${fmtDate(match.start_time)}</td>
-            <td class="${match.win ? 'won' : 'lost'}">
-                ${match.win ? '+25' : '−25'}
-            </td>
-        </tr>
-    `).join('') || `
+    $('matchesBody').innerHTML = matches.map(match => {
+        const resultClass = match.win === true
+            ? 'won'
+            : match.win === false
+                ? 'lost'
+                : '';
+
+        const resultText = match.win === true
+            ? 'ПОБЕДА'
+            : match.win === false
+                ? 'ПОРАЖЕНИЕ'
+                : '—';
+
+        const mmrText = match.win === true
+            ? '+25'
+            : match.win === false
+                ? '−25'
+                : '—';
+
+        return `
+            <tr>
+                <td>
+                    <div class="hero">
+                        <img src="${esc(match.hero_icon || '')}" alt="">
+                        <span>${esc(match.hero_name || 'Неизвестно')}</span>
+                    </div>
+                </td>
+                <td class="${resultClass}">
+                    ${resultText}
+                </td>
+                <td>${num(match.kills)}/${num(match.deaths)}/${num(match.assists)}</td>
+                <td>${num(match.hero_damage)}</td>
+                <td>${num(
+                    match.xp_per_min != null
+                        ? match.xp_per_min * Math.round(match.duration / 60)
+                        : match.total_xp
+                )}</td>
+                <td>${num(
+                    match.gold_per_min != null
+                        ? match.gold_per_min * Math.round(match.duration / 60)
+                        : match.gold
+                )}</td>
+                <td>${duration(match.duration || 0)}</td>
+                <td>${fmtDate(match.start_time)}</td>
+                <td class="${resultClass}">
+                    ${mmrText}
+                </td>
+            </tr>
+        `;
+    }).join('') || `
         <tr>
             <td colspan="9">Пока нет матчей в выгрузке.</td>
         </tr>
     `;
 
+    // График MMR.
     const history = buildRatingHistory(matches, currentMmr);
 
     if (chart) {
@@ -229,6 +275,11 @@ function render(data) {
                             }
 
                             const match = history[index];
+
+                            if (!match.result) {
+                                return match.x;
+                            }
+
                             const result = match.result === 'win'
                                 ? 'Победа'
                                 : 'Поражение';
@@ -269,14 +320,12 @@ function render(data) {
         }
     });
 
+    // Топ-15 героев по винрейту.
     const heroes = (data.top_heroes || [])
         .slice()
         .sort((a, b) => {
-            const scoreA = a.score ?? a.winrate;
-            const scoreB = b.score ?? b.winrate;
-
-            if (scoreB !== scoreA) {
-                return scoreB - scoreA;
+            if (b.winrate !== a.winrate) {
+                return b.winrate - a.winrate;
             }
 
             return b.games - a.games;
@@ -285,18 +334,51 @@ function render(data) {
 
     $('heroGrid').innerHTML = heroes.map(hero => `
         <div class="herocard">
-            <img src="${hero.icon || ''}" alt="">
+            <img src="${esc(hero.icon || '')}" alt="">
 
             <div>
                 <b>${esc(hero.name)}</b>
 
                 <small>
-                    ${hero.games} игр · ${hero.winrate}% WR · KDA ${hero.kda}
+                    ${num(hero.games)} игр · ${num(hero.winrate)}% WR · KDA ${esc(hero.kda ?? '—')}
                 </small>
             </div>
         </div>
     `).join('') || `
         <p>Статистика героев появится после обработки матчей.</p>
+    `;
+
+    // Герои за последние 30 календарных дней.
+    const recentHeroes = (data.recent_heroes_30d || [])
+        .slice()
+        .sort((a, b) => {
+            if (b.games !== a.games) {
+                return b.games - a.games;
+            }
+
+            return b.winrate - a.winrate;
+        });
+
+    $('recentHeroGrid').innerHTML = recentHeroes.map(hero => `
+        <div class="recent-hero-row">
+            <img src="${esc(hero.icon || '')}" alt="">
+
+            <div class="recent-hero-name">
+                <b>${esc(hero.name)}</b>
+                <small>${num(hero.games)} игр</small>
+            </div>
+
+            <div class="recent-hero-results">
+                <span class="won">${num(hero.wins)}W</span>
+                <span class="lost">${num(hero.losses)}L</span>
+            </div>
+
+            <div class="recent-hero-winrate">
+                ${num(hero.winrate)}%
+            </div>
+        </div>
+    `).join('') || `
+        <p>За последние 30 дней Ranked-матчей пока нет.</p>
     `;
 
     $('updated').textContent =
