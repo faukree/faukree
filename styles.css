@@ -279,6 +279,77 @@ tbody tr:hover {
     font-weight: 700;
 }
 
+/* Предметы в таблице */
+
+.match-items {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 130px;
+}
+
+.match-items img {
+    display: block;
+    width: 30px;
+    height: 22px;
+    object-fit: contain;
+    border-radius: 3px;
+    background: #252b35;
+}
+
+.match-no-items {
+    color: var(--muted);
+}
+
+.item-name {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* Оценка матча */
+
+.match-rating {
+    display: inline-block;
+    min-width: 45px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.rating-high {
+    color: var(--green);
+}
+
+.rating-mid {
+    color: var(--gold);
+}
+
+.rating-low {
+    color: var(--red);
+}
+
+/* Заметки по матчам */
+
+.review-notes-list {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.review-notes-list li {
+    color: #cbd2dd;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+#reviewNotes p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Лучшие герои */
+
 .herogrid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -293,6 +364,7 @@ tbody tr:hover {
     border: 1px solid #222b37;
     border-radius: 8px;
     padding: 12px;
+    min-width: 0;
 }
 
 .herocard img {
@@ -300,6 +372,7 @@ tbody tr:hover {
     height: 32px;
     object-fit: cover;
     border-radius: 4px;
+    flex-shrink: 0;
 }
 
 .herocard b {
@@ -410,22 +483,16 @@ footer {
     padding: 12px 0 28px;
 }
 
-/* График MMR */
+/* Адаптация под планшеты */
 
-#chart {
-    display: block;
-    width: 100% !important;
-    height: 300px !important;
-    max-height: 300px;
-}
+@media (max-width: 1100px) {
+    .tablewrap table {
+        min-width: 1150px;
+    }
 
-.panel:has(#chart) {
-    height: auto;
-    min-height: 0;
-}
-
-.panel:has(#chart) canvas {
-    max-height: 300px;
+    .herogrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 900px) {
@@ -455,7 +522,7 @@ footer {
     }
 
     .stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     header {
@@ -465,9 +532,11 @@ footer {
     }
 
     .herogrid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+/* Адаптация под телефоны */
 
 @media (max-width: 540px) {
     .herogrid {
@@ -480,6 +549,10 @@ footer {
 
     .stats strong {
         font-size: 24px;
+    }
+
+    .panel {
+        padding: 15px;
     }
 
     .recent-hero-row {
