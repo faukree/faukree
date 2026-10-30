@@ -53,7 +53,6 @@ function formatMmrChange(value) {
 function renderPerformance(performance = {}) {
     const mmr7d = $('mmr7d');
     const mmr30d = $('mmr30d');
-    const streak = $('streak');
 
     if (mmr7d) {
         const value = Number(performance.mmr_change_7d ?? 0);
@@ -77,34 +76,12 @@ function renderPerformance(performance = {}) {
                 : '';
     }
 
-    if (!streak) return;
+    // Текущую серию больше не выводим.
+    const streak = $('streak');
 
-    const count = Number(performance.streak_count ?? 0);
-    const type = performance.streak_type;
-
-    if (count > 0 && type === 'win') {
-        const word = count === 1
-            ? 'победа'
-            : count < 5
-                ? 'победы'
-                : 'побед';
-
-        streak.textContent = `${count} ${word} подряд`;
-        streak.className = 'positive';
-
-    } else if (count > 0 && type === 'loss') {
-        const word = count === 1
-            ? 'поражение'
-            : count < 5
-                ? 'поражения'
-                : 'поражений';
-
-        streak.textContent = `${count} ${word} подряд`;
-        streak.className = 'lost';
-
-    } else {
-        streak.textContent = '—';
-        streak.className = '';
+    if (streak) {
+        streak.textContent = '';
+        streak.style.display = 'none';
     }
 }
 
@@ -390,13 +367,20 @@ function render(data) {
         $('mmrDelta').className = '';
     }
 
-    // Победы и поражения в верхних карточках.
+    // Победы: буква W и число раздельно для оформления.
     if ($('wins')) {
-        $('wins').innerHTML = `<span class="wins-letter">W</span> ${num(wins)}`;
+        $('wins').innerHTML = `
+            <span class="wins-letter">W</span>
+            <span class="wins-number">${num(wins)}</span>
+        `;
     }
 
+    // Поражения: буква L и число раздельно для оформления.
     if ($('losses')) {
-        $('losses').innerHTML = `<span class="losses-letter">L</span> ${num(losses)}`;
+        $('losses').innerHTML = `
+            <span class="losses-letter">L</span>
+            <span class="losses-number">${num(losses)}</span>
+        `;
     }
 
     if ($('winrate')) {
