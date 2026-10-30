@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T23:00:47.008478+00:00",
+  "updated_at": "2026-10-30T23:38:30.026495+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,72 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4943
+    "mmr": 4918
   },
-  "mmr": 4943,
+  "mmr": 4918,
   "performance": {
-    "mmr_change_7d": -125,
-    "mmr_change_30d": -125,
+    "mmr_change_7d": -150,
+    "mmr_change_30d": -150,
     "streak_type": "loss",
-    "streak_count": 6
+    "streak_count": 7
   },
   "matches": [
+    {
+      "match_id": 9069229907,
+      "hero_id": 121,
+      "hero_name": "Grimstroke",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "win": false,
+      "kills": 2,
+      "deaths": 7,
+      "assists": 13,
+      "hero_damage": 10053,
+      "damage_per_min": 375,
+      "total_xp": 10196,
+      "xp_per_min": 380,
+      "gold": 87,
+      "gold_per_min": 267,
+      "duration": 1610,
+      "start_time": 1793401194,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 188,
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 21,
+          "name": "Ogre Axe",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 23,
+          "name": "Staff of Wizardry",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
+        }
+      ],
+      "rating": 4.7,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 4918
+    },
     {
       "match_id": 9068810385,
       "hero_id": 21,
@@ -977,48 +1033,6 @@
         "Невысокий урон по героям в минуту. Это может зависеть от роли и хода матча."
       ],
       "mmr_after": 5193
-    },
-    {
-      "match_id": 9060870068,
-      "hero_id": 40,
-      "hero_name": "Venomancer",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "win": false,
-      "kills": 2,
-      "deaths": 9,
-      "assists": 2,
-      "hero_damage": 16517,
-      "damage_per_min": 711,
-      "total_xp": 6384,
-      "xp_per_min": 275,
-      "gold": 688,
-      "gold_per_min": 210,
-      "duration": 1393,
-      "start_time": 1792914184,
-      "items": [
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 190,
-          "name": "Veil of Discord",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/veil_of_discord.png"
-        }
-      ],
-      "rating": 3.3,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5168
     }
   ],
   "top_heroes": [
@@ -1256,15 +1270,11 @@
       "hero_id": 121,
       "name": "Grimstroke",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "games": 7,
+      "games": 8,
       "wins": 3,
-      "losses": 4,
-      "winrate": 42.9,
+      "losses": 5,
+      "winrate": 37.5,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792001069
-        },
         {
           "win": false,
           "start_time": 1792078610
@@ -1280,6 +1290,10 @@
         {
           "win": true,
           "start_time": 1792916084
+        },
+        {
+          "win": false,
+          "start_time": 1793401194
         }
       ]
     },
@@ -1555,37 +1569,6 @@
       ]
     },
     {
-      "hero_id": 128,
-      "name": "Snapfire",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
-      "games": 5,
-      "wins": 1,
-      "losses": 4,
-      "winrate": 20.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1791166644
-        },
-        {
-          "win": false,
-          "start_time": 1792004798
-        },
-        {
-          "win": false,
-          "start_time": 1792472835
-        },
-        {
-          "win": false,
-          "start_time": 1792677726
-        },
-        {
-          "win": false,
-          "start_time": 1793368426
-        }
-      ]
-    },
-    {
       "hero_id": 59,
       "name": "Huskar",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png",
@@ -1786,6 +1769,33 @@
       ]
     },
     {
+      "hero_id": 128,
+      "name": "Snapfire",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
+      "games": 4,
+      "wins": 0,
+      "losses": 4,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792004798
+        },
+        {
+          "win": false,
+          "start_time": 1792472835
+        },
+        {
+          "win": false,
+          "start_time": 1792677726
+        },
+        {
+          "win": false,
+          "start_time": 1793368426
+        }
+      ]
+    },
+    {
       "hero_id": 68,
       "name": "Ancient Apparition",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
@@ -1917,6 +1927,7 @@
     "9068469614",
     "9068688867",
     "9068744170",
-    "9068810385"
+    "9068810385",
+    "9069229907"
   ]
 }
