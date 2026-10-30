@@ -19,6 +19,10 @@ MAX_SAVED_MATCH_IDS = 5000
 RECENT_DAYS = 30
 RECENT_RESULTS_LIMIT = 5
 
+# Повторные попытки получения подробностей матча
+DETAIL_RETRIES = 2
+DETAIL_RETRY_DELAY = 2
+
 SESSION = requests.Session()
 SESSION.headers.update({
     "User-Agent": "Faukree-Dota-Tracker/1.0"
@@ -302,6 +306,73 @@ def load_item_constants():
     return item_by_id
 
 
+def find_player(detail, match):
+    players = detail.get("players") or []
+
+    me = next(
+        (
+            player
+            for player in players
+            if str(player.get("account_id")) == PLAYER_ID
+        ),
+        None
+    )
+
+    if me is None:
+        me = next(
+            (
+                player
+                for player in players
+                if player.get("player_slot")
+                == match.get("player_slot")
+            ),
+            None
+        )
+
+    return me
+
+
+def has_missing_details(match):
+    important_fields = (
+        "hero_damage",
+        "total_xp",
+        "xp_per_min",
+        "gold_per_min"
+    )
+
+    missing_stats = any(
+        match.get(field) is None
+        for field in important_fields
+    )
+
+    missing_items = not match.get("items")
+
+    return missing_stats or missing_items
+
+
+def merge_saved_match(new_match, old_match):
+    """
+    Не затираем уже полученные подробности пустыми значениями API.
+    Новые реальные значения имеют приоритет над старыми.
+    """
+
+    if not old_match:
+        return new_match
+
+    merged = dict(old_match)
+
+    for key, value in new_match.items():
+        if value is None:
+            continue
+
+        if key == "items" and not value:
+            continue
+
+        merged[key] = value
+
+    return merged
+
+
 def main():
     old_data = {}
 
@@ -312,6 +383,12 @@ def main():
             )
         except (json.JSONDecodeError, OSError):
             old_data = {}
+
+    old_matches = {
+        str(match.get("match_id")): match
+        for match in old_data.get("matches", [])
+        if match.get("match_id") is not None
+    }
 
     profile_data = get(f"/players/{PLAYER_ID}")
 
@@ -409,30 +486,47 @@ def main():
 
     for match in matches[:DISPLAY_MATCHES]:
         match_id = match["match_id"]
+        old_match = old_matches.get(str(match_id))
+
+        detail = {}
+        me = None
 
         try:
-            detail = get(f"/matches/{match_id}")
-            players = detail.get("players", [])
+            # Первая попытка + повторные попытки,
+            # если OpenDota не вернул игрока или подробности.
+            for attempt in range(DETAIL_RETRIES + 1):
+                detail = get(f"/matches/{match_id}")
+                me = find_player(detail, match)
 
-            me = next(
-                (
-                    player
-                    for player in players
-                    if str(player.get("account_id")) == PLAYER_ID
-                ),
-                None
-            )
+                if me and not (
+                    old_match and has_missing_details(old_match)
+                ):
+                    break
+
+                if me:
+                    temporary_items = get_final_items(
+                        me,
+                        item_by_id
+                    )
+
+                    if (
+                        me.get("hero_damage") is not None
+                        and me.get("total_xp") is not None
+                        and me.get("xp_per_min") is not None
+                        and me.get("gold_per_min") is not None
+                        and (temporary_items or old_match)
+                    ):
+                        break
+
+                if attempt < DETAIL_RETRIES:
+                    print(
+                        f"Match {match_id}: details incomplete. "
+                        f"Retry {attempt + 1}/{DETAIL_RETRIES}"
+                    )
+                    time.sleep(DETAIL_RETRY_DELAY)
 
             if me is None:
-                me = next(
-                    (
-                        player
-                        for player in players
-                        if player.get("player_slot")
-                        == match.get("player_slot")
-                    ),
-                    {}
-                )
+                me = {}
 
             hero_id = me.get(
                 "hero_id",
@@ -467,8 +561,6 @@ def main():
                 1
             )
 
-            # Общий урон по героям за матч.
-            # Если подробности не содержат значение, пробуем историю.
             hero_damage = me.get("hero_damage")
 
             if hero_damage is None:
@@ -531,6 +623,13 @@ def main():
                 )
             }
 
+            # Восстанавливаем ранее сохранённые значения,
+            # если API сейчас вернул пустые данные.
+            enriched_match = merge_saved_match(
+                enriched_match,
+                old_match
+            )
+
             enriched_match["rating"] = calculate_match_rating(
                 enriched_match
             )
@@ -543,7 +642,7 @@ def main():
 
             print(
                 f"Match {match_id}: hero damage = "
-                f"{hero_damage if hero_damage is not None else 'unavailable'}"
+                f"{enriched_match['hero_damage'] if enriched_match['hero_damage'] is not None else 'unavailable'}"
             )
 
         except Exception as exc:
@@ -558,8 +657,6 @@ def main():
                 {}
             )
 
-            # В резервной записи также пытаемся взять урон
-            # из истории, если API его предоставляет.
             hero_damage = match.get("hero_damage")
 
             enriched_match = {
@@ -587,6 +684,11 @@ def main():
                 ),
                 "items": []
             }
+
+            enriched_match = merge_saved_match(
+                enriched_match,
+                old_match
+            )
 
             enriched_match["rating"] = calculate_match_rating(
                 enriched_match
@@ -828,7 +930,7 @@ def main():
 
     print(
         f"Ranked stats updated successfully. "
-        f"Estimated MMR: {mmr}"
+        f"MMR: {mmr}"
     )
 
     print(
