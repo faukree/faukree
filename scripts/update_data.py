@@ -31,9 +31,6 @@ def hero_icon(hero):
 def hero_score(games, wins):
     """
     Adjusted winrate score.
-
-    A hero with a small sample is pulled toward 50%.
-    More games make the actual winrate more influential.
     """
     if games <= 0:
         return 50.0
@@ -215,9 +212,8 @@ def main():
                 2,
             )
 
-    
-    # Best heroes: minimum 20 games.
-    # Prioritize actual winrate over number of games.
+    # Best heroes: at least 20 games.
+    # Sort by actual winrate first.
     eligible_heroes = [
         hero
         for hero in totals.values()
@@ -249,12 +245,6 @@ def main():
     )
 
     print("Dota stats updated successfully.")
-
-
-if __name__ == "__main__":
-    main()
-
-print("Dota stats updated successfully.")
 
 
 if __name__ == "__main__":
