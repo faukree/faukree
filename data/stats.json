@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T02:31:03.370589+00:00",
+  "updated_at": "2026-10-30T02:42:28.664407+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -497,6 +497,296 @@
       "winrate": 55.1,
       "score": 53.93,
       "kda": "—"
+    }
+  ],
+  "recent_heroes_30d": [
+    {
+      "hero_id": 31,
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 15,
+      "wins": 10,
+      "losses": 5,
+      "winrate": 66.7
+    },
+    {
+      "hero_id": 110,
+      "name": "Phoenix",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "games": 14,
+      "wins": 11,
+      "losses": 3,
+      "winrate": 78.6
+    },
+    {
+      "hero_id": 121,
+      "name": "Grimstroke",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "games": 8,
+      "wins": 3,
+      "losses": 5,
+      "winrate": 37.5
+    },
+    {
+      "hero_id": 21,
+      "name": "Windranger",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "games": 5,
+      "wins": 4,
+      "losses": 1,
+      "winrate": 80.0
+    },
+    {
+      "hero_id": 85,
+      "name": "Undying",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0
+    },
+    {
+      "hero_id": 22,
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 4,
+      "wins": 1,
+      "losses": 3,
+      "winrate": 25.0
+    },
+    {
+      "hero_id": 40,
+      "name": "Venomancer",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+      "games": 4,
+      "wins": 1,
+      "losses": 3,
+      "winrate": 25.0
+    },
+    {
+      "hero_id": 128,
+      "name": "Snapfire",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
+      "games": 4,
+      "wins": 1,
+      "losses": 3,
+      "winrate": 25.0
+    },
+    {
+      "hero_id": 5,
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 4,
+      "wins": 1,
+      "losses": 3,
+      "winrate": 25.0
+    },
+    {
+      "hero_id": 68,
+      "name": "Ancient Apparition",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "games": 4,
+      "wins": 0,
+      "losses": 4,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 9,
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 3,
+      "wins": 1,
+      "losses": 2,
+      "winrate": 33.3
+    },
+    {
+      "hero_id": 101,
+      "name": "Skywrath Mage",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
+      "games": 3,
+      "wins": 1,
+      "losses": 2,
+      "winrate": 33.3
+    },
+    {
+      "hero_id": 51,
+      "name": "Clockwerk",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0
+    },
+    {
+      "hero_id": 14,
+      "name": "Pudge",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0
+    },
+    {
+      "hero_id": 105,
+      "name": "Techies",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0
+    },
+    {
+      "hero_id": 72,
+      "name": "Gyrocopter",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0
+    },
+    {
+      "hero_id": 87,
+      "name": "Disruptor",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0
+    },
+    {
+      "hero_id": 74,
+      "name": "Invoker",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 26,
+      "name": "Lion",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 37,
+      "name": "Warlock",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 75,
+      "name": "Silencer",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
+    },
+    {
+      "hero_id": 7,
+      "name": "Earthshaker",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png",
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
+    },
+    {
+      "hero_id": 50,
+      "name": "Dazzle",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dazzle.png",
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0
+    },
+    {
+      "hero_id": 59,
+      "name": "Huskar",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 102,
+      "name": "Abaddon",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 3,
+      "name": "Bane",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 23,
+      "name": "Kunkka",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 90,
+      "name": "Keeper of the Light",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 20,
+      "name": "Vengeful Spirit",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 86,
+      "name": "Rubick",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 83,
+      "name": "Treant Protector",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
+    },
+    {
+      "hero_id": 33,
+      "name": "Enigma",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0
     }
   ],
   "processed_match_ids": [
