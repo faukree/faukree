@@ -57,6 +57,59 @@ def match_won(match):
     return bool(radiant_win) == (int(player_slot) < 128)
 
 
+def calculate_performance(matches):
+    """Рассчитывает изменения MMR и текущую серию по Ranked-матчам."""
+
+    now = datetime.now(timezone.utc)
+    cutoff_7d = int((now - timedelta(days=7)).timestamp())
+    cutoff_30d = int((now - timedelta(days=30)).timestamp())
+
+    mmr_change_7d = 0
+    mmr_change_30d = 0
+
+    ordered_matches = sorted(
+        matches,
+        key=lambda match: int(match.get("start_time", 0)),
+        reverse=True,
+    )
+
+    streak_type = None
+    streak_count = 0
+
+    for match in ordered_matches:
+        start_time = int(match.get("start_time", 0))
+        result = match_won(match)
+
+        if result is None:
+            continue
+
+        change = MMR_PER_MATCH if result else -MMR_PER_MATCH
+
+        if start_time >= cutoff_7d:
+            mmr_change_7d += change
+
+        if start_time >= cutoff_30d:
+            mmr_change_30d += change
+
+        # Серия считается от самого последнего матча.
+        if streak_type is None:
+            streak_type = "win" if result else "loss"
+            streak_count = 1
+        elif (streak_type == "win" and result) or (
+            streak_type == "loss" and not result
+        ):
+            streak_count += 1
+        else:
+            break
+
+    return {
+        "mmr_change_7d": mmr_change_7d,
+        "mmr_change_30d": mmr_change_30d,
+        "streak_type": streak_type,
+        "streak_count": streak_count,
+    }
+
+
 def main():
     old_data = {}
 
@@ -255,7 +308,6 @@ def main():
 
         result = match_won(match)
 
-        # Не записываем матч, если OpenDota не вернул результат.
         if result is None:
             continue
 
@@ -292,15 +344,11 @@ def main():
             1,
         )
 
-        # Оставляем пять последних результатов.
-        # Порядок: от старой игры к новой.
         item["recent_results"] = sorted(
             item["recent_results"],
             key=lambda result: result["start_time"],
         )[-RECENT_RESULTS_LIMIT:]
 
-    # Порядок: больше побед, выше винрейт,
-    # при равенстве — меньше игр выше.
     recent_heroes_30d = sorted(
         recent_heroes.values(),
         key=lambda hero: (
@@ -370,6 +418,9 @@ def main():
         reverse=True,
     )[:15]
 
+    # Новые показатели: изменение MMR и текущая серия.
+    performance = calculate_performance(matches)
+
     profile = profile_data.get("profile", {})
     profile["mmr"] = mmr
 
@@ -377,6 +428,7 @@ def main():
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "profile": profile,
         "mmr": mmr,
+        "performance": performance,
         "matches": enriched,
         "top_heroes": top_heroes,
         "recent_heroes_30d": recent_heroes_30d,
@@ -392,6 +444,16 @@ def main():
 
     print(
         f"Ranked stats updated successfully. Estimated MMR: {mmr}"
+    )
+    print(
+        f"MMR change in 7 days: {performance['mmr_change_7d']}"
+    )
+    print(
+        f"MMR change in 30 days: {performance['mmr_change_30d']}"
+    )
+    print(
+        f"Current streak: {performance['streak_count']} "
+        f"{performance['streak_type'] or '—'}"
     )
     print(
         f"Heroes played in the last {RECENT_DAYS} days: "
