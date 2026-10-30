@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Faukree — Dota 2 Tracker</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="app">
@@ -17,7 +16,7 @@
       </div>
 
       <nav>
-        <a class="active">◈ Overview</a>
+        <a class="active" href="#">◈ Overview</a>
         <a href="#matches">▤ Match history</a>
         <a href="#heroes">♜ Heroes</a>
         <a href="#recentHeroes">◷ Last 30 days</a>
@@ -41,7 +40,7 @@
           <div class="rankicon">✦</div>
           <div>
             <b>DIVINE</b>
-            <small>Начальный MMR <span id="startMmr">5068</span></small>
+            <small>Базовый MMR <span id="startMmr">5043</span></small>
           </div>
         </div>
       </header>
@@ -49,8 +48,8 @@
       <section class="stats">
         <article>
           <label>ESTIMATED MMR</label>
-          <strong id="mmr">5068</strong>
-          <span id="mmrDelta" class="positive">+0</span>
+          <strong id="mmr">—</strong>
+          <span id="mmrDelta" class="positive">—</span>
         </article>
 
         <article>
@@ -76,13 +75,13 @@
         <article>
           <label>MMR ЗА 7 ДНЕЙ</label>
           <strong id="mmr7d">—</strong>
-          <span class="muted">изменение рейтинга</span>
+          <span class="muted">расчётное изменение</span>
         </article>
 
         <article>
           <label>MMR ЗА 30 ДНЕЙ</label>
           <strong id="mmr30d">—</strong>
-          <span class="muted">изменение рейтинга</span>
+          <span class="muted">расчётное изменение</span>
         </article>
 
         <article>
@@ -90,16 +89,6 @@
           <strong id="streak">—</strong>
           <span class="muted">последние Ranked-матчи</span>
         </article>
-      </section>
-
-      <section class="panel">
-        <div class="panelhead">
-          <div>
-            <h2>MMR & RESULTS</h2>
-          </div>
-          <span class="tag">LAST 20</span>
-        </div>
-        <canvas id="chart" height="100"></canvas>
       </section>
 
       <section class="panel" id="matches">
@@ -118,18 +107,34 @@
                 <th>Герой</th>
                 <th>Результат</th>
                 <th>K / D / A</th>
-                <th>Урон</th>
-                <th>Опыт</th>
-                <th>Золото</th>
+                <th>Предметы</th>
+                <th>Урон/мин</th>
+                <th>Опыт/мин</th>
+                <th>Золото/мин</th>
+                <th>Оценка</th>
+                <th>MMR</th>
                 <th>Длительность</th>
                 <th>Дата</th>
-                <th>MMR</th>
               </tr>
             </thead>
             <tbody id="matchesBody">
-              <tr><td colspan="9">Загрузка данных…</td></tr>
+              <tr><td colspan="11">Загрузка данных…</td></tr>
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section class="panel" id="review">
+        <div class="panelhead">
+          <div>
+            <h2>Разбор матчей</h2>
+            <p>Подсказки на основе базовых показателей</p>
+          </div>
+          <span class="tag">MATCH REVIEW</span>
+        </div>
+
+        <div id="reviewNotes">
+          <p>Загрузка заметок…</p>
         </div>
       </section>
 
@@ -162,7 +167,8 @@
       </section>
 
       <footer>
-        Статистика предоставлена OpenDota. MMR — расчётная оценка, не официальный рейтинг Valve.
+        Статистика предоставлена OpenDota. MMR — расчётная оценка,
+        не официальный рейтинг Valve.
       </footer>
     </main>
   </div>
