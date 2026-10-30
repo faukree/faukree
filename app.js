@@ -1,8 +1,11 @@
 
 const PLAYER_ID = '924159299';
 const DATA_URL = './data/stats.json';
-const BASE_MMR = 5043;
 const MMR_PER_MATCH = 25;
+
+// Пути к изображениям медалей.
+// Изображения добавим в папку assets/medals.
+const MEDAL_PATH = './assets/medals/';
 
 const $ = id => document.getElementById(id);
 
@@ -48,6 +51,126 @@ function formatMmrChange(value) {
     if (number < 0) return `−${Math.abs(number)}`;
 
     return '0';
+}
+
+// Определяем медаль по оценочному MMR.
+function getMedal(mmr) {
+    const value = Number(mmr);
+
+    if (!Number.isFinite(value) || value < 0) {
+        return null;
+    }
+
+    const ranks = [
+        {
+            name: 'Рекрут',
+            file: 'recruit',
+            thresholds: [0, 154, 308, 462, 616]
+        },
+        {
+            name: 'Страж',
+            file: 'guardian',
+            thresholds: [770, 924, 1078, 1232, 1386]
+        },
+        {
+            name: 'Рыцарь',
+            file: 'crusader',
+            thresholds: [1540, 1694, 1848, 2002, 2156]
+        },
+        {
+            name: 'Герой',
+            file: 'archon',
+            thresholds: [2310, 2464, 2618, 2772, 2926]
+        },
+        {
+            name: 'Легенда',
+            file: 'legend',
+            thresholds: [3080, 3234, 3388, 3542, 3696]
+        },
+        {
+            name: 'Властелин',
+            file: 'ancient',
+            thresholds: [3850, 4004, 4158, 4312, 4466]
+        },
+        {
+            name: 'Божество',
+            file: 'divine',
+            thresholds: [4620, 4820, 5020, 5220, 5420]
+        }
+    ];
+
+    if (value >= 5640) {
+        return {
+            name: 'Титан',
+            file: 'immortal',
+            stars: 0,
+            title: 'Титан',
+            image: `${MEDAL_PATH}immortal.png`
+        };
+    }
+
+    let currentRank = null;
+
+    for (const rank of ranks) {
+        if (value >= rank.thresholds[0]) {
+            currentRank = rank;
+        }
+    }
+
+    if (!currentRank) {
+        return null;
+    }
+
+    let stars = 1;
+
+    currentRank.thresholds.forEach((threshold, index) => {
+        if (value >= threshold) {
+            stars = index + 1;
+        }
+    });
+
+    return {
+        name: currentRank.name,
+        file: currentRank.file,
+        stars,
+        title: `${currentRank.name} ${stars}`,
+        image: `${MEDAL_PATH}${currentRank.file}_${stars}.png`
+    };
+}
+
+// Показываем соответствующую медаль на сайте.
+function renderMedal(mmr) {
+    const medalImage = $('medalImage');
+    const medalName = $('medalName');
+    const medalStars = $('medalStars');
+
+    if (!medalImage || !medalName || !medalStars) {
+        return;
+    }
+
+    const medal = getMedal(mmr);
+
+    if (!medal) {
+        medalImage.style.display = 'none';
+        medalName.textContent = 'Ранг неизвестен';
+        medalStars.textContent = '';
+        return;
+    }
+
+    medalImage.src = medal.image;
+    medalImage.alt = medal.title;
+    medalImage.title = medal.title;
+    medalImage.style.display = 'block';
+
+    medalImage.onerror = () => {
+        medalImage.style.display = 'none';
+    };
+
+    medalName.textContent = medal.name;
+
+    medalStars.textContent = medal.stars
+        ? `${'★'.repeat(medal.stars)}`
+        : 'Бессмертный';
 }
 
 function renderPerformance(performance = {}) {
@@ -332,9 +455,10 @@ function renderRecentHeroes(data) {
 function render(data) {
     const matches = (data.matches || []).slice(0, 20);
 
-    const currentMmr = Number(
-        data.mmr ?? data.profile?.mmr ?? BASE_MMR
-    );
+    const rawMmr = data.mmr ?? data.profile?.mmr;
+    const currentMmr = rawMmr == null ? null : Number(rawMmr);
+
+    const validMmr = currentMmr != null && Number.isFinite(currentMmr);
 
     const wins = matches.filter(match => match.win === true).length;
     const losses = matches.filter(match => match.win === false).length;
@@ -345,13 +469,13 @@ function render(data) {
             data.profile?.personaname || 'Faukree';
     }
 
-    if ($('startMmr')) {
-        $('startMmr').textContent = num(BASE_MMR);
+    if ($('mmr')) {
+        $('mmr').textContent = validMmr
+            ? num(currentMmr)
+            : '—';
     }
 
-    if ($('mmr')) {
-        $('mmr').textContent = num(currentMmr);
-    }
+    renderMedal(validMmr ? currentMmr : null);
 
     if ($('mmrDelta')) {
         $('mmrDelta').textContent = '';
