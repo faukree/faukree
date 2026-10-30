@@ -390,8 +390,14 @@ function render(data) {
         $('mmrDelta').className = '';
     }
 
-    if ($('wins')) $('wins').textContent = num(wins);
-    if ($('losses')) $('losses').textContent = num(losses);
+    // Победы и поражения в верхних карточках.
+    if ($('wins')) {
+        $('wins').innerHTML = `<span class="wins-letter">W</span> ${num(wins)}`;
+    }
+
+    if ($('losses')) {
+        $('losses').innerHTML = `<span class="losses-letter">L</span> ${num(losses)}`;
+    }
 
     if ($('winrate')) {
         $('winrate').textContent = decidedMatches
