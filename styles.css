@@ -155,6 +155,8 @@ header p,
     margin-top: 5px;
 }
 
+/* Верхние карточки статистики */
+
 .stats {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -186,6 +188,19 @@ header p,
     display: block;
     font-size: 29px;
     margin: 12px 0 7px;
+    white-space: nowrap;
+}
+
+/* W — победы, L — поражения */
+
+.wins-letter {
+    color: var(--green);
+    display: inline;
+}
+
+.losses-letter {
+    color: var(--red);
+    display: inline;
 }
 
 .stats span {
@@ -230,10 +245,13 @@ header p,
     white-space: nowrap;
 }
 
+/* Таблица матчей */
+
 .tablewrap {
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
+    max-width: 100%;
 }
 
 table {
