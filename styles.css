@@ -127,66 +127,54 @@ header p,
     font-size: 12px;
 }
 
-/* Медаль Dota 2 */
+/* Медаль и звёзды ранга */
 
 .rank {
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
     background: #191b20;
     border: 1px solid #3b3325;
-    padding: 10px 16px;
+    padding: 12px;
     border-radius: 12px;
-    min-width: 190px;
+    width: 116px;
+    min-width: 116px;
+    height: 116px;
 }
 
 .medal-wrapper {
     position: relative;
-    width: 76px;
-    height: 76px;
+    width: 88px;
+    height: 94px;
     flex-shrink: 0;
 }
 
-.rankicon,
+.rankicon {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    width: 76px;
+    height: 76px;
+    left: 6px;
+    bottom: 0;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .4));
+}
+
 .rankstar {
     position: absolute;
     display: block;
     object-fit: contain;
-    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, .35));
-}
-
-.rankicon {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.rankstar {
-    width: 43%;
-    height: 43%;
-    left: 28.5%;
-    top: 28.5%;
+    width: 62px;
+    height: 34px;
+    left: 13px;
+    top: 0;
     z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .4));
 }
 
+/* Старый текстовый блок ранга скрыт */
 .rankinfo {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.rank b {
-    display: block;
-    color: var(--gold);
-    font-size: 13px;
-    font-weight: 800;
-}
-
-.rank small {
-    display: block;
-    color: var(--muted);
-    font-size: 11px;
-    margin-top: 2px;
+    display: none !important;
 }
 
 /* Карточки статистики */
@@ -724,12 +712,14 @@ footer {
     }
 
     .rank {
-        padding: 9px 13px;
-        min-width: 170px;
+        width: 108px;
+        min-width: 108px;
+        height: 108px;
+        padding: 8px;
     }
 
     .medal-wrapper {
-        width: 66px;
-        height: 66px;
+        width: 88px;
+        height: 94px;
     }
 }
