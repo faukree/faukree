@@ -192,37 +192,37 @@ header p,
     font-size: 11px;
 }
 
-/* Буквы и числа W/L в верхних карточках */
+/* Победы и поражения: буква в 2 раза больше числа */
 
-#wins,
-#losses {
+.stats article #wins,
+.stats article #losses {
     display: flex;
     align-items: baseline;
     gap: 10px;
     white-space: nowrap;
 }
 
-#wins .wins-letter,
-#losses .losses-letter {
+.stats article #wins .wins-letter,
+.stats article #losses .losses-letter {
     display: inline-block;
-    font-size: 2em !important;
+    font-size: 58px !important;
     line-height: 1;
     font-weight: 800;
     vertical-align: baseline;
 }
 
-#wins .wins-letter,
-#wins .wins-number {
+.stats article #wins .wins-letter,
+.stats article #wins .wins-number {
     color: var(--green) !important;
 }
 
-#losses .losses-letter,
-#losses .losses-number {
+.stats article #losses .losses-letter,
+.stats article #losses .losses-number {
     color: var(--red) !important;
 }
 
-#wins .wins-number,
-#losses .losses-number {
+.stats article #wins .wins-number,
+.stats article #losses .losses-number {
     display: inline-block;
     font-size: 29px !important;
     line-height: 1.2;
@@ -619,8 +619,13 @@ footer {
         font-size: 24px;
     }
 
-    #wins .wins-number,
-    #losses .losses-number {
+    .stats article #wins .wins-letter,
+    .stats article #losses .losses-letter {
+        font-size: 48px !important;
+    }
+
+    .stats article #wins .wins-number,
+    .stats article #losses .losses-number {
         font-size: 24px !important;
     }
 
