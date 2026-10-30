@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T16:25:06.016004+00:00",
+  "updated_at": "2026-10-30T17:10:25.241624+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,58 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5018
+    "mmr": 4993
   },
-  "mmr": 5018,
+  "mmr": 4993,
   "performance": {
-    "mmr_change_7d": -50,
-    "mmr_change_30d": -50,
+    "mmr_change_7d": -75,
+    "mmr_change_30d": -75,
     "streak_type": "loss",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9068688867,
+      "hero_id": 110,
+      "hero_name": "Phoenix",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "win": false,
+      "kills": 2,
+      "deaths": 12,
+      "assists": 7,
+      "hero_damage": 20115,
+      "damage_per_min": 754,
+      "total_xp": 7813,
+      "xp_per_min": 293,
+      "gold": 1438,
+      "gold_per_min": 272,
+      "duration": 1600,
+      "start_time": 1793376635,
+      "items": [
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 42,
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
+        }
+      ],
+      "rating": 2.9,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 4993
+    },
     {
       "match_id": 9068469614,
       "hero_id": 128,
@@ -968,46 +1010,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5168
-    },
-    {
-      "match_id": 9060701328,
-      "hero_id": 31,
-      "hero_name": "Lich",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "win": false,
-      "kills": 10,
-      "deaths": 17,
-      "assists": 25,
-      "hero_damage": 31426,
-      "damage_per_min": 618,
-      "total_xp": 29534,
-      "xp_per_min": 581,
-      "gold": 3,
-      "gold_per_min": 380,
-      "duration": 3050,
-      "start_time": 1792902689,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 604,
-          "name": "Arcane Blink",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_blink.png"
-        }
-      ],
-      "rating": 3.1,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5193
     }
   ],
   "top_heroes": [
@@ -1048,15 +1050,6 @@
       "kda": 1.46
     },
     {
-      "name": "Phoenix",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 116,
-      "wins": 67,
-      "winrate": 57.8,
-      "score": 56.62,
-      "kda": 1.95
-    },
-    {
       "name": "Nyx Assassin",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
       "games": 45,
@@ -1066,13 +1059,22 @@
       "kda": "—"
     },
     {
+      "name": "Phoenix",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "games": 117,
+      "wins": 67,
+      "winrate": 57.3,
+      "score": 56.2,
+      "kda": 1.74
+    },
+    {
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
       "games": 131,
       "wins": 74,
       "winrate": 56.5,
       "score": 55.63,
-      "kda": 2.3
+      "kda": 3.0
     },
     {
       "name": "Io",
@@ -1152,15 +1154,11 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 14,
+      "games": 15,
       "wins": 11,
-      "losses": 3,
-      "winrate": 78.6,
+      "losses": 4,
+      "winrate": 73.3,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792926395
-        },
         {
           "win": true,
           "start_time": 1792930170
@@ -1176,6 +1174,10 @@
         {
           "win": true,
           "start_time": 1793220512
+        },
+        {
+          "win": false,
+          "start_time": 1793376635
         }
       ]
     },
@@ -1540,33 +1542,6 @@
       ]
     },
     {
-      "hero_id": 5,
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 4,
-      "wins": 1,
-      "losses": 3,
-      "winrate": 25.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1791159644
-        },
-        {
-          "win": false,
-          "start_time": 1791594581
-        },
-        {
-          "win": false,
-          "start_time": 1791998949
-        },
-        {
-          "win": false,
-          "start_time": 1792317632
-        }
-      ]
-    },
-    {
       "hero_id": 128,
       "name": "Snapfire",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
@@ -1790,6 +1765,29 @@
       ]
     },
     {
+      "hero_id": 5,
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 3,
+      "wins": 0,
+      "losses": 3,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1791594581
+        },
+        {
+          "win": false,
+          "start_time": 1791998949
+        },
+        {
+          "win": false,
+          "start_time": 1792317632
+        }
+      ]
+    },
+    {
       "hero_id": 68,
       "name": "Ancient Apparition",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
@@ -1918,6 +1916,7 @@
     "9066295924",
     "9066854381",
     "9067849694",
-    "9068469614"
+    "9068469614",
+    "9068688867"
   ]
 }
