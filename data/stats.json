@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T12:29:43.925145+00:00",
+  "updated_at": "2026-10-31T13:23:03.182751+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4893
+    "mmr": 4918
   },
-  "mmr": 4893,
+  "mmr": 4918,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
-    "streak_type": "loss",
-    "streak_count": 2
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "win",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9069865179,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": true,
+      "kills": 5,
+      "deaths": 5,
+      "assists": 20,
+      "hero_damage": 17915,
+      "damage_per_min": 555,
+      "total_xp": 16141,
+      "xp_per_min": 500,
+      "gold": 814,
+      "gold_per_min": 373,
+      "duration": 1937,
+      "start_time": 1793447830,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 8,
+          "name": "Mithril Hammer",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mithril_hammer.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 166,
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
+        },
+        {
+          "id": 21,
+          "name": "Ogre Axe",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
+        }
+      ],
+      "rating": 8.0,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 4918
+    },
     {
       "match_id": 9069812013,
       "hero_id": 88,
@@ -983,53 +1033,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": 9061065529,
-      "hero_id": 14,
-      "hero_name": "Pudge",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
-      "win": false,
-      "kills": 0,
-      "deaths": 15,
-      "assists": 7,
-      "hero_damage": 8737,
-      "damage_per_min": 260,
-      "total_xp": 7955,
-      "xp_per_min": 237,
-      "gold": 1231,
-      "gold_per_min": 197,
-      "duration": 2014,
-      "start_time": 1792923914,
-      "items": [
-        {
-          "id": 38,
-          "name": "Clarity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/clarity.png"
-        },
-        {
-          "id": 92,
-          "name": "Urn of Shadows",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 1.2,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5118
     }
   ],
   "top_heroes": [
@@ -1205,10 +1208,10 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 14,
-      "wins": 9,
+      "games": 13,
+      "wins": 8,
       "losses": 5,
-      "winrate": 64.3,
+      "winrate": 61.5,
       "recent_results": [
         {
           "win": true,
@@ -1236,15 +1239,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 6,
-      "wins": 4,
+      "games": 7,
+      "wins": 5,
       "losses": 2,
-      "winrate": 66.7,
+      "winrate": 71.4,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792310888
-        },
         {
           "win": true,
           "start_time": 1792324498
@@ -1260,6 +1259,10 @@
         {
           "win": false,
           "start_time": 1793381280
+        },
+        {
+          "win": true,
+          "start_time": 1793447830
         }
       ]
     },
@@ -1947,6 +1950,7 @@
     "9069229907",
     "9069255514",
     "9069282727",
-    "9069812013"
+    "9069812013",
+    "9069865179"
   ]
 }
