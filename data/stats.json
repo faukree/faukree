@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T00:11:29.246112+00:00",
+  "updated_at": "2026-10-31T01:17:13.630453+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4943
+    "mmr": 4918
   },
-  "mmr": 4943,
+  "mmr": 4918,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "win",
+    "streak_type": "loss",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9069282727,
+      "hero_id": 9,
+      "hero_name": "Mirana",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "win": false,
+      "kills": 7,
+      "deaths": 7,
+      "assists": 16,
+      "hero_damage": 40286,
+      "damage_per_min": 791,
+      "total_xp": 32983,
+      "xp_per_min": 648,
+      "gold": 1010,
+      "gold_per_min": 504,
+      "duration": 3054,
+      "start_time": 1793405845,
+      "items": [
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 277,
+          "name": "Yasha and Kaya",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/yasha_and_kaya.png"
+        },
+        {
+          "id": 48,
+          "name": "Boots of Travel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png"
+        }
+      ],
+      "rating": 6.9,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 4918
+    },
     {
       "match_id": 9069255514,
       "hero_id": 9,
@@ -981,62 +1036,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": 9060946958,
-      "hero_id": 59,
-      "hero_name": "Huskar",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png",
-      "win": false,
-      "kills": 6,
-      "deaths": 17,
-      "assists": 14,
-      "hero_damage": 27159,
-      "damage_per_min": 588,
-      "total_xp": 21244,
-      "xp_per_min": 460,
-      "gold": 383,
-      "gold_per_min": 331,
-      "duration": 2771,
-      "start_time": 1792918200,
-      "items": [
-        {
-          "id": 63,
-          "name": "Power Treads",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png"
-        },
-        {
-          "id": 21,
-          "name": "Ogre Axe",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 151,
-          "name": "Armlet of Mordiggian",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/armlet.png"
-        },
-        {
-          "id": 73,
-          "name": "Bracer",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bracer.png"
-        }
-      ],
-      "rating": 2.2,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5168
     }
   ],
   "top_heroes": [
@@ -1212,10 +1211,10 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 15,
-      "wins": 10,
+      "games": 14,
+      "wins": 9,
       "losses": 5,
-      "winrate": 66.7,
+      "winrate": 64.3,
       "recent_results": [
         {
           "win": true,
@@ -1302,33 +1301,6 @@
       ]
     },
     {
-      "hero_id": 9,
-      "name": "Mirana",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 4,
-      "wins": 2,
-      "losses": 2,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791465357
-        },
-        {
-          "win": false,
-          "start_time": 1792501027
-        },
-        {
-          "win": true,
-          "start_time": 1793028356
-        },
-        {
-          "win": true,
-          "start_time": 1793403285
-        }
-      ]
-    },
-    {
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
@@ -1352,6 +1324,37 @@
         {
           "win": false,
           "start_time": 1792936270
+        }
+      ]
+    },
+    {
+      "hero_id": 9,
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 5,
+      "wins": 2,
+      "losses": 3,
+      "winrate": 40.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1791465357
+        },
+        {
+          "win": false,
+          "start_time": 1792501027
+        },
+        {
+          "win": true,
+          "start_time": 1793028356
+        },
+        {
+          "win": true,
+          "start_time": 1793403285
+        },
+        {
+          "win": false,
+          "start_time": 1793405845
         }
       ]
     },
@@ -1937,6 +1940,7 @@
     "9068744170",
     "9068810385",
     "9069229907",
-    "9069255514"
+    "9069255514",
+    "9069282727"
   ]
 }
