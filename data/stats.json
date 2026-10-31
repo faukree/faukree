@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T13:23:03.182751+00:00",
+  "updated_at": "2026-10-31T14:02:46.144843+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4918
+    "mmr": 4893
   },
-  "mmr": 4918,
+  "mmr": 4893,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "win",
+    "streak_type": "loss",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9069951240,
+      "hero_id": 49,
+      "hero_name": "Dragon Knight",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 8,
+      "assists": 11,
+      "hero_damage": 29229,
+      "damage_per_min": 740,
+      "total_xp": 30506,
+      "xp_per_min": 772,
+      "gold": 362,
+      "gold_per_min": 552,
+      "duration": 2371,
+      "start_time": 1793451395,
+      "items": [
+        {
+          "id": 63,
+          "name": "Power Treads",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 55,
+          "name": "Hyperstone",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hyperstone.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 116,
+          "name": "Black King Bar",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
+        },
+        {
+          "id": 235,
+          "name": "Octarine Core",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png"
+        }
+      ],
+      "rating": 6.1,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 4893
+    },
     {
       "match_id": 9069865179,
       "hero_id": 21,
@@ -983,56 +1038,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 5168
-    },
-    {
-      "match_id": 9061121808,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": true,
-      "kills": 11,
-      "deaths": 12,
-      "assists": 24,
-      "hero_damage": 59605,
-      "damage_per_min": 1140,
-      "total_xp": 56622,
-      "xp_per_min": 1083,
-      "gold": 3349,
-      "gold_per_min": 564,
-      "duration": 3137,
-      "start_time": 1792926395,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 110,
-          "name": "Refresher Orb",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
-        },
-        {
-          "id": 116,
-          "name": "Black King Bar",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
-        },
-        {
-          "id": 137,
-          "name": "Radiance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/radiance.png"
-        }
-      ],
-      "rating": 6.8,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5143
     }
   ],
   "top_heroes": [
@@ -1079,7 +1084,7 @@
       "wins": 67,
       "winrate": 57.3,
       "score": 56.2,
-      "kda": 1.74
+      "kda": 1.49
     },
     {
       "name": "Lich",
@@ -1298,6 +1303,33 @@
       ]
     },
     {
+      "hero_id": 9,
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792501027
+        },
+        {
+          "win": true,
+          "start_time": 1793028356
+        },
+        {
+          "win": true,
+          "start_time": 1793403285
+        },
+        {
+          "win": false,
+          "start_time": 1793405845
+        }
+      ]
+    },
+    {
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
@@ -1321,37 +1353,6 @@
         {
           "win": false,
           "start_time": 1792936270
-        }
-      ]
-    },
-    {
-      "hero_id": 9,
-      "name": "Mirana",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 5,
-      "wins": 2,
-      "losses": 3,
-      "winrate": 40.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791465357
-        },
-        {
-          "win": false,
-          "start_time": 1792501027
-        },
-        {
-          "win": true,
-          "start_time": 1793028356
-        },
-        {
-          "win": true,
-          "start_time": 1793403285
-        },
-        {
-          "win": false,
-          "start_time": 1793405845
         }
       ]
     },
@@ -1569,6 +1570,21 @@
         {
           "win": false,
           "start_time": 1792914184
+        }
+      ]
+    },
+    {
+      "hero_id": 49,
+      "name": "Dragon Knight",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793451395
         }
       ]
     },
@@ -1951,6 +1967,7 @@
     "9069255514",
     "9069282727",
     "9069812013",
-    "9069865179"
+    "9069865179",
+    "9069951240"
   ]
 }
