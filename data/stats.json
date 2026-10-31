@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:02:46.144843+00:00",
+  "updated_at": "2026-10-31T14:38:38.350795+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4893
+    "mmr": 4868
   },
-  "mmr": 4893,
+  "mmr": 4868,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9070023989,
+      "hero_id": 104,
+      "hero_name": "Legion Commander",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
+      "win": false,
+      "kills": 9,
+      "deaths": 10,
+      "assists": 9,
+      "hero_damage": 38789,
+      "damage_per_min": 819,
+      "total_xp": 34837,
+      "xp_per_min": 736,
+      "gold": 234,
+      "gold_per_min": 498,
+      "duration": 2840,
+      "start_time": 1793454125,
+      "items": [
+        {
+          "id": 50,
+          "name": "Phase Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phase_boots.png"
+        },
+        {
+          "id": 127,
+          "name": "Blade Mail",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blade_mail.png"
+        },
+        {
+          "id": 174,
+          "name": "Diffusal Blade",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/diffusal_blade.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 116,
+          "name": "Black King Bar",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
+        },
+        {
+          "id": 249,
+          "name": "Silver Edge",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/silver_edge.png"
+        }
+      ],
+      "rating": 5.5,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 4868
+    },
     {
       "match_id": 9069951240,
       "hero_id": 49,
@@ -993,51 +1048,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": 9061217821,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": true,
-      "kills": 1,
-      "deaths": 7,
-      "assists": 18,
-      "hero_damage": 12745,
-      "damage_per_min": 497,
-      "total_xp": 11227,
-      "xp_per_min": 438,
-      "gold": 290,
-      "gold_per_min": 372,
-      "duration": 1538,
-      "start_time": 1792930170,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 73,
-          "name": "Bracer",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bracer.png"
-        },
-        {
-          "id": 1847,
-          "name": "Splintmail",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/splintmail.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        }
-      ],
-      "rating": 6.4,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5168
     }
   ],
   "top_heroes": [
@@ -1084,7 +1094,7 @@
       "wins": 67,
       "winrate": 57.3,
       "score": 56.2,
-      "kda": 1.49
+      "kda": 1.32
     },
     {
       "name": "Lich",
@@ -1574,6 +1584,21 @@
       ]
     },
     {
+      "hero_id": 104,
+      "name": "Legion Commander",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793454125
+        }
+      ]
+    },
+    {
       "hero_id": 49,
       "name": "Dragon Knight",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
@@ -1630,6 +1655,21 @@
         {
           "win": false,
           "start_time": 1792814392
+        }
+      ]
+    },
+    {
+      "hero_id": 26,
+      "name": "Lion",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792674606
         }
       ]
     },
@@ -1739,25 +1779,6 @@
         {
           "win": false,
           "start_time": 1793271336
-        }
-      ]
-    },
-    {
-      "hero_id": 26,
-      "name": "Lion",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791491428
-        },
-        {
-          "win": false,
-          "start_time": 1792674606
         }
       ]
     },
@@ -1968,6 +1989,7 @@
     "9069282727",
     "9069812013",
     "9069865179",
-    "9069951240"
+    "9069951240",
+    "9070023989"
   ]
 }
