@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T11:51:02.720985+00:00",
+  "updated_at": "2026-10-31T12:29:43.925145+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,62 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4918
+    "mmr": 4893
   },
-  "mmr": 4918,
+  "mmr": 4893,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9069812013,
+      "hero_id": 88,
+      "hero_name": "Nyx Assassin",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+      "win": false,
+      "kills": 5,
+      "deaths": 13,
+      "assists": 11,
+      "hero_damage": 20974,
+      "damage_per_min": 622,
+      "total_xp": 23062,
+      "xp_per_min": 684,
+      "gold": 758,
+      "gold_per_min": 314,
+      "duration": 2023,
+      "start_time": 1793445424,
+      "items": [
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 11,
+          "name": "Quelling Blade",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/quelling_blade.png"
+        },
+        {
+          "id": 202,
+          "name": "Dagon",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dagon_3.png"
+        }
+      ],
+      "rating": 3.7,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 4893
+    },
     {
       "match_id": 9069282727,
       "hero_id": 9,
@@ -984,58 +1030,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 5118
-    },
-    {
-      "match_id": 9061012416,
-      "hero_id": 68,
-      "hero_name": "Ancient Apparition",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "win": false,
-      "kills": 3,
-      "deaths": 10,
-      "assists": 12,
-      "hero_damage": 17201,
-      "damage_per_min": 506,
-      "total_xp": 11021,
-      "xp_per_min": 324,
-      "gold": 1869,
-      "gold_per_min": 274,
-      "duration": 2041,
-      "start_time": 1792921419,
-      "items": [
-        {
-          "id": 1575,
-          "name": "Orb of Frost",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_frost.png"
-        },
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 3.7,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5143
     }
   ],
   "top_heroes": [
@@ -1076,15 +1070,6 @@
       "kda": 1.5
     },
     {
-      "name": "Nyx Assassin",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
-      "games": 45,
-      "wins": 26,
-      "winrate": 57.8,
-      "score": 55.38,
-      "kda": "—"
-    },
-    {
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
       "games": 117,
@@ -1101,6 +1086,15 @@
       "winrate": 56.5,
       "score": 55.63,
       "kda": 3.0
+    },
+    {
+      "name": "Nyx Assassin",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+      "games": 46,
+      "wins": 26,
+      "winrate": 56.5,
+      "score": 54.55,
+      "kda": 1.23
     },
     {
       "name": "Io",
@@ -1461,6 +1455,25 @@
       ]
     },
     {
+      "hero_id": 101,
+      "name": "Skywrath Mage",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1792392047
+        },
+        {
+          "win": false,
+          "start_time": 1792416603
+        }
+      ]
+    },
+    {
       "hero_id": 72,
       "name": "Gyrocopter",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
@@ -1499,29 +1512,6 @@
         {
           "win": false,
           "start_time": 1793378735
-        }
-      ]
-    },
-    {
-      "hero_id": 101,
-      "name": "Skywrath Mage",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
-      "games": 3,
-      "wins": 1,
-      "losses": 2,
-      "winrate": 33.3,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791385349
-        },
-        {
-          "win": true,
-          "start_time": 1792392047
-        },
-        {
-          "win": false,
-          "start_time": 1792416603
         }
       ]
     },
@@ -1576,6 +1566,21 @@
         {
           "win": false,
           "start_time": 1792914184
+        }
+      ]
+    },
+    {
+      "hero_id": 88,
+      "name": "Nyx Assassin",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793445424
         }
       ]
     },
@@ -1941,6 +1946,7 @@
     "9068810385",
     "9069229907",
     "9069255514",
-    "9069282727"
+    "9069282727",
+    "9069812013"
   ]
 }
