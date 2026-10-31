@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T15:12:39.128710+00:00",
+  "updated_at": "2026-10-31T15:49:36.838492+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,58 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4868
+    "mmr": 4843
   },
-  "mmr": 4868,
+  "mmr": 4843,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
+    "mmr_change_7d": -50,
+    "mmr_change_30d": -50,
     "streak_type": "loss",
-    "streak_count": 2
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": 9070110762,
+      "hero_id": 74,
+      "hero_name": "Invoker",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+      "win": false,
+      "kills": 2,
+      "deaths": 11,
+      "assists": 1,
+      "hero_damage": 10012,
+      "damage_per_min": 295,
+      "total_xp": 12447,
+      "xp_per_min": 367,
+      "gold": 1576,
+      "gold_per_min": 224,
+      "duration": 2035,
+      "start_time": 1793457266,
+      "items": [
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 29,
+          "name": "Boots of Speed",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots.png"
+        },
+        {
+          "id": 77,
+          "name": "Null Talisman",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
+        }
+      ],
+      "rating": 2.5,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкое участие в убийствах. Возможно, стоит чаще подключаться к командным действиям.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 4843
+    },
     {
       "match_id": 9070023989,
       "hero_id": 104,
@@ -992,62 +1034,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5118
-    },
-    {
-      "match_id": 9061335318,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": false,
-      "kills": 8,
-      "deaths": 11,
-      "assists": 6,
-      "hero_damage": 22451,
-      "damage_per_min": 814,
-      "total_xp": 13598,
-      "xp_per_min": 493,
-      "gold": 1369,
-      "gold_per_min": 329,
-      "duration": 1655,
-      "start_time": 1792934251,
-      "items": [
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 92,
-          "name": "Urn of Shadows",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png"
-        },
-        {
-          "id": 226,
-          "name": "Lotus Orb",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 4.1,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5143
     }
   ],
   "top_heroes": [
@@ -1094,7 +1080,7 @@
       "wins": 67,
       "winrate": 57.3,
       "score": 56.2,
-      "kda": 1.32
+      "kda": 1.33
     },
     {
       "name": "Lich",
@@ -1749,40 +1735,6 @@
       ]
     },
     {
-      "hero_id": 83,
-      "name": "Treant Protector",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791493472
-        }
-      ]
-    },
-    {
-      "hero_id": 74,
-      "name": "Invoker",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792411103
-        },
-        {
-          "win": false,
-          "start_time": 1793271336
-        }
-      ]
-    },
-    {
       "hero_id": 37,
       "name": "Warlock",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
@@ -1798,6 +1750,29 @@
         {
           "win": false,
           "start_time": 1792286121
+        }
+      ]
+    },
+    {
+      "hero_id": 74,
+      "name": "Invoker",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+      "games": 3,
+      "wins": 0,
+      "losses": 3,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792411103
+        },
+        {
+          "win": false,
+          "start_time": 1793271336
+        },
+        {
+          "win": false,
+          "start_time": 1793457266
         }
       ]
     },
@@ -1990,6 +1965,7 @@
     "9069812013",
     "9069865179",
     "9069951240",
-    "9070023989"
+    "9070023989",
+    "9070110762"
   ]
 }
