@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:33:21.227986+00:00",
+  "updated_at": "2026-11-02T18:27:45.999942+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4843
+    "mmr": 4868
   },
-  "mmr": 4843,
+  "mmr": 4868,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
-    "streak_type": "loss",
-    "streak_count": 2
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "win",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9073444085,
+      "hero_id": 22,
+      "hero_name": "Zeus",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "win": true,
+      "kills": 13,
+      "deaths": 4,
+      "assists": 32,
+      "hero_damage": 51553,
+      "damage_per_min": 1216,
+      "total_xp": 39474,
+      "xp_per_min": 931,
+      "gold": 5521,
+      "gold_per_min": 522,
+      "duration": 2544,
+      "start_time": 1793639940,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 259,
+          "name": "Kaya",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/kaya.png"
+        },
+        {
+          "id": 110,
+          "name": "Refresher Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
+        },
+        {
+          "id": 77,
+          "name": "Null Talisman",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
+        }
+      ],
+      "rating": 9.3,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 4868
+    },
     {
       "match_id": 9073368469,
       "hero_id": 21,
@@ -1011,47 +1061,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5093
-    },
-    {
-      "match_id": 9066241459,
-      "hero_id": 22,
-      "hero_name": "Zeus",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "win": false,
-      "kills": 5,
-      "deaths": 6,
-      "assists": 9,
-      "hero_damage": 13779,
-      "damage_per_min": 380,
-      "total_xp": 10756,
-      "xp_per_min": 297,
-      "gold": 876,
-      "gold_per_min": 252,
-      "duration": 2173,
-      "start_time": 1793217706,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 77,
-          "name": "Null Talisman",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        }
-      ],
-      "rating": 4.9,
-      "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1101,6 +1110,15 @@
       "kda": 1.59
     },
     {
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 118,
+      "wins": 67,
+      "winrate": 56.8,
+      "score": 55.8,
+      "kda": 11.25
+    },
+    {
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
       "games": 131,
@@ -1135,15 +1153,6 @@
       "winrate": 56.5,
       "score": 53.49,
       "kda": "—"
-    },
-    {
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 117,
-      "wins": 66,
-      "winrate": 56.4,
-      "score": 55.47,
-      "kda": 2.33
     },
     {
       "name": "Enigma",
@@ -1313,6 +1322,33 @@
         {
           "win": false,
           "start_time": 1793401194
+        }
+      ]
+    },
+    {
+      "hero_id": 22,
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1791774251
+        },
+        {
+          "win": false,
+          "start_time": 1792314286
+        },
+        {
+          "win": false,
+          "start_time": 1793217706
+        },
+        {
+          "win": true,
+          "start_time": 1793639940
         }
       ]
     },
@@ -1523,29 +1559,6 @@
       ]
     },
     {
-      "hero_id": 22,
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 3,
-      "wins": 1,
-      "losses": 2,
-      "winrate": 33.3,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1791774251
-        },
-        {
-          "win": false,
-          "start_time": 1792314286
-        },
-        {
-          "win": false,
-          "start_time": 1793217706
-        }
-      ]
-    },
-    {
       "hero_id": 40,
       "name": "Venomancer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
@@ -1734,21 +1747,6 @@
         {
           "win": false,
           "start_time": 1791585850
-        }
-      ]
-    },
-    {
-      "hero_id": 86,
-      "name": "Rubick",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791551726
         }
       ]
     },
@@ -1969,6 +1967,7 @@
     "9073169994",
     "9073261077",
     "9073334942",
-    "9073368469"
+    "9073368469",
+    "9073444085"
   ]
 }
