@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T14:41:54.243289+00:00",
+  "updated_at": "2026-11-02T15:39:57.722550+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4843
+    "mmr": 4868
   },
-  "mmr": 4843,
+  "mmr": 4868,
   "performance": {
-    "mmr_change_7d": -50,
-    "mmr_change_30d": -50,
-    "streak_type": "loss",
-    "streak_count": 3
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "win",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9073169994,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": true,
+      "kills": 3,
+      "deaths": 3,
+      "assists": 23,
+      "hero_damage": 11833,
+      "damage_per_min": 309,
+      "total_xp": 19877,
+      "xp_per_min": 519,
+      "gold": 2320,
+      "gold_per_min": 339,
+      "duration": 2298,
+      "start_time": 1793629001,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 1852,
+          "name": "Essence Distiller",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 43,
+          "name": "Sentry Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png"
+        },
+        {
+          "id": 166,
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
+        }
+      ],
+      "rating": 7.7,
+      "review_notes": [
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 4868
+    },
     {
       "match_id": 9070110762,
       "hero_id": 74,
@@ -983,57 +1038,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 5093
-    },
-    {
-      "match_id": 9061396202,
-      "hero_id": 85,
-      "hero_name": "Undying",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "win": false,
-      "kills": 6,
-      "deaths": 13,
-      "assists": 13,
-      "hero_damage": 14690,
-      "damage_per_min": 467,
-      "total_xp": 14647,
-      "xp_per_min": 466,
-      "gold": 851,
-      "gold_per_min": 278,
-      "duration": 1886,
-      "start_time": 1792936270,
-      "items": [
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 127,
-          "name": "Blade Mail",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blade_mail.png"
-        }
-      ],
-      "rating": 3.2,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5118
     }
   ],
   "top_heroes": [
@@ -1062,7 +1066,7 @@
       "wins": 44,
       "winrate": 58.7,
       "score": 56.84,
-      "kda": 1.46
+      "kda": "—"
     },
     {
       "name": "Disruptor",
@@ -1240,15 +1244,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 7,
-      "wins": 5,
+      "games": 8,
+      "wins": 6,
       "losses": 2,
-      "winrate": 71.4,
+      "winrate": 75.0,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792324498
-        },
         {
           "win": false,
           "start_time": 1792365678
@@ -1264,6 +1264,10 @@
         {
           "win": true,
           "start_time": 1793447830
+        },
+        {
+          "win": true,
+          "start_time": 1793629001
         }
       ]
     },
@@ -1379,21 +1383,6 @@
         {
           "win": true,
           "start_time": 1791553812
-        }
-      ]
-    },
-    {
-      "hero_id": 50,
-      "name": "Dazzle",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dazzle.png",
-      "games": 1,
-      "wins": 1,
-      "losses": 0,
-      "winrate": 100.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1791496011
         }
       ]
     },
@@ -1966,6 +1955,7 @@
     "9069865179",
     "9069951240",
     "9070023989",
-    "9070110762"
+    "9070110762",
+    "9073169994"
   ]
 }
