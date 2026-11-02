@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T19:24:09.482670+00:00",
+  "updated_at": "2026-11-02T20:11:46.972748+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4843
+    "mmr": 4868
   },
-  "mmr": 4843,
+  "mmr": 4868,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9073601437,
+      "hero_id": 9,
+      "hero_name": "Mirana",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "win": true,
+      "kills": 5,
+      "deaths": 6,
+      "assists": 25,
+      "hero_damage": 15698,
+      "damage_per_min": 435,
+      "total_xp": 21315,
+      "xp_per_min": 591,
+      "gold": 2903,
+      "gold_per_min": 429,
+      "duration": 2164,
+      "start_time": 1793646481,
+      "items": [
+        {
+          "id": 75,
+          "name": "Wraith Band",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wraith_band.png"
+        },
+        {
+          "id": 223,
+          "name": "Meteor Hammer",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/meteor_hammer.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 8.0,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 4868
+    },
     {
       "match_id": 9073543891,
       "hero_id": 5,
@@ -1012,62 +1062,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9066854381,
-      "hero_id": 74,
-      "hero_name": "Invoker",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
-      "win": false,
-      "kills": 5,
-      "deaths": 13,
-      "assists": 15,
-      "hero_damage": 18531,
-      "damage_per_min": 443,
-      "total_xp": 20966,
-      "xp_per_min": 501,
-      "gold": 2041,
-      "gold_per_min": 333,
-      "duration": 2511,
-      "start_time": 1793271336,
-      "items": [
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 77,
-          "name": "Null Talisman",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 29,
-          "name": "Boots of Speed",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/boots.png"
-        }
-      ],
-      "rating": 3.4,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1243,10 +1237,10 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 12,
-      "wins": 8,
+      "games": 11,
+      "wins": 7,
       "losses": 4,
-      "winrate": 66.7,
+      "winrate": 63.6,
       "recent_results": [
         {
           "win": true,
@@ -1298,6 +1292,37 @@
         {
           "win": false,
           "start_time": 1793636852
+        }
+      ]
+    },
+    {
+      "hero_id": 9,
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 6,
+      "wins": 3,
+      "losses": 3,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793028356
+        },
+        {
+          "win": true,
+          "start_time": 1793403285
+        },
+        {
+          "win": false,
+          "start_time": 1793405845
+        },
+        {
+          "win": false,
+          "start_time": 1793635516
+        },
+        {
+          "win": true,
+          "start_time": 1793646481
         }
       ]
     },
@@ -1383,37 +1408,6 @@
         {
           "win": false,
           "start_time": 1792936270
-        }
-      ]
-    },
-    {
-      "hero_id": 9,
-      "name": "Mirana",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 5,
-      "wins": 2,
-      "losses": 3,
-      "winrate": 40.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792501027
-        },
-        {
-          "win": true,
-          "start_time": 1793028356
-        },
-        {
-          "win": true,
-          "start_time": 1793403285
-        },
-        {
-          "win": false,
-          "start_time": 1793405845
-        },
-        {
-          "win": false,
-          "start_time": 1793635516
         }
       ]
     },
@@ -1965,6 +1959,7 @@
     "9073334942",
     "9073368469",
     "9073444085",
-    "9073543891"
+    "9073543891",
+    "9073601437"
   ]
 }
