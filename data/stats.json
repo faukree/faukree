@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T15:39:57.722550+00:00",
+  "updated_at": "2026-11-02T16:40:02.609527+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4868
+    "mmr": 4893
   },
-  "mmr": 4868,
+  "mmr": 4893,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": 25,
+    "mmr_change_30d": 25,
     "streak_type": "win",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9073261077,
+      "hero_id": 110,
+      "hero_name": "Phoenix",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "win": true,
+      "kills": 9,
+      "deaths": 11,
+      "assists": 12,
+      "hero_damage": 32030,
+      "damage_per_min": 755,
+      "total_xp": 28738,
+      "xp_per_min": 677,
+      "gold": 3095,
+      "gold_per_min": 490,
+      "duration": 2547,
+      "start_time": 1793632565,
+      "items": [
+        {
+          "id": 42,
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 223,
+          "name": "Meteor Hammer",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/meteor_hammer.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 119,
+          "name": "Shiva's Guard",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shivas_guard.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 6.0,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 4893
+    },
     {
       "match_id": 9073169994,
       "hero_id": 21,
@@ -991,53 +1046,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5118
-    },
-    {
-      "match_id": 9061473359,
-      "hero_id": 51,
-      "hero_name": "Clockwerk",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
-      "win": false,
-      "kills": 1,
-      "deaths": 10,
-      "assists": 10,
-      "hero_damage": 12782,
-      "damage_per_min": 367,
-      "total_xp": 11854,
-      "xp_per_min": 340,
-      "gold": 1008,
-      "gold_per_min": 242,
-      "duration": 2092,
-      "start_time": 1792938770,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 244,
-          "name": "Wind Lace",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_lace.png"
-        },
-        {
-          "id": 1852,
-          "name": "Essence Distiller",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
-        },
-        {
-          "id": 98,
-          "name": "Orchid Malevolence",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
-        }
-      ],
-      "rating": 3.3,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5093
     }
   ],
   "top_heroes": [
@@ -1080,11 +1088,11 @@
     {
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 117,
-      "wins": 67,
-      "winrate": 57.3,
-      "score": 56.2,
-      "kda": 1.33
+      "games": 118,
+      "wins": 68,
+      "winrate": 57.6,
+      "score": 56.52,
+      "kda": 1.46
     },
     {
       "name": "Lich",
@@ -1182,15 +1190,11 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 14,
-      "wins": 10,
+      "games": 15,
+      "wins": 11,
       "losses": 4,
-      "winrate": 71.4,
+      "winrate": 73.3,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792930170
-        },
         {
           "win": false,
           "start_time": 1792934251
@@ -1206,6 +1210,10 @@
         {
           "win": false,
           "start_time": 1793376635
+        },
+        {
+          "win": true,
+          "start_time": 1793632565
         }
       ]
     },
@@ -1649,6 +1657,21 @@
       ]
     },
     {
+      "hero_id": 37,
+      "name": "Warlock",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792286121
+        }
+      ]
+    },
+    {
       "hero_id": 3,
       "name": "Bane",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
@@ -1720,25 +1743,6 @@
         {
           "win": false,
           "start_time": 1791551726
-        }
-      ]
-    },
-    {
-      "hero_id": 37,
-      "name": "Warlock",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791540645
-        },
-        {
-          "win": false,
-          "start_time": 1792286121
         }
       ]
     },
@@ -1956,6 +1960,7 @@
     "9069951240",
     "9070023989",
     "9070110762",
-    "9073169994"
+    "9073169994",
+    "9073261077"
   ]
 }
