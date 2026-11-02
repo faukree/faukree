@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T22:59:07.445628+00:00",
+  "updated_at": "2026-11-02T23:32:41.390874+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4918
+    "mmr": 4943
   },
-  "mmr": 4918,
+  "mmr": 4943,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
+    "mmr_change_7d": 75,
+    "mmr_change_30d": 75,
     "streak_type": "win",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9073819301,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": true,
+      "kills": 2,
+      "deaths": 5,
+      "assists": 12,
+      "hero_damage": 9100,
+      "damage_per_min": 333,
+      "total_xp": 12917,
+      "xp_per_min": 472,
+      "gold": 2704,
+      "gold_per_min": 350,
+      "duration": 1642,
+      "start_time": 1793658515,
+      "items": [
+        {
+          "id": 34,
+          "name": "Magic Stick",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 6.8,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 4943
+    },
     {
       "match_id": 9073715091,
       "hero_id": 110,
@@ -1019,48 +1069,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 4968
-    },
-    {
-      "match_id": 9068688867,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": false,
-      "kills": 2,
-      "deaths": 12,
-      "assists": 7,
-      "hero_damage": 20115,
-      "damage_per_min": 754,
-      "total_xp": 7813,
-      "xp_per_min": 293,
-      "gold": 1438,
-      "gold_per_min": 272,
-      "duration": 1600,
-      "start_time": 1793376635,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        }
-      ],
-      "rating": 2.9,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 4993
     }
   ],
   "top_heroes": [
@@ -1107,7 +1115,16 @@
       "wins": 69,
       "winrate": 58.0,
       "score": 56.83,
-      "kda": 1.74
+      "kda": 2.27
+    },
+    {
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 132,
+      "wins": 75,
+      "winrate": 56.8,
+      "score": 55.92,
+      "kda": 2.8
     },
     {
       "name": "Zeus",
@@ -1117,15 +1134,6 @@
       "winrate": 56.8,
       "score": 55.8,
       "kda": 11.25
-    },
-    {
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 131,
-      "wins": 74,
-      "winrate": 56.5,
-      "score": 55.63,
-      "kda": "—"
     },
     {
       "name": "Nyx Assassin",
@@ -1236,15 +1244,11 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 11,
-      "wins": 7,
+      "games": 12,
+      "wins": 8,
       "losses": 4,
-      "winrate": 63.6,
+      "winrate": 66.7,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792470446
-        },
         {
           "win": false,
           "start_time": 1792498402
@@ -1260,6 +1264,10 @@
         {
           "win": false,
           "start_time": 1793321829
+        },
+        {
+          "win": true,
+          "start_time": 1793658515
         }
       ]
     },
@@ -1713,21 +1721,6 @@
       ]
     },
     {
-      "hero_id": 20,
-      "name": "Vengeful Spirit",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791585850
-        }
-      ]
-    },
-    {
       "hero_id": 87,
       "name": "Disruptor",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
@@ -1972,6 +1965,7 @@
     "9073543891",
     "9073601437",
     "9073660354",
-    "9073715091"
+    "9073715091",
+    "9073819301"
   ]
 }
