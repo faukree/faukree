@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T18:29:26.540528+00:00",
+  "updated_at": "2026-11-03T19:25:24.747692+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,67 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4943
+    "mmr": 4968
   },
-  "mmr": 4943,
+  "mmr": 4968,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9074791756,
+      "hero_id": 121,
+      "hero_name": "Grimstroke",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "win": true,
+      "kills": 3,
+      "deaths": 8,
+      "assists": 12,
+      "hero_damage": 9485,
+      "damage_per_min": 228,
+      "total_xp": 22095,
+      "xp_per_min": 532,
+      "gold": 2751,
+      "gold_per_min": 355,
+      "duration": 2492,
+      "start_time": 1793725320,
+      "items": [
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 5.5,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Невысокий урон по героям в минуту. Это может зависеть от роли и хода матча."
+      ],
+      "mmr_after": 4968
+    },
     {
       "match_id": 9073869124,
       "hero_id": 9,
@@ -1004,62 +1055,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 4943
-    },
-    {
-      "match_id": 9069229907,
-      "hero_id": 121,
-      "hero_name": "Grimstroke",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "win": false,
-      "kills": 2,
-      "deaths": 7,
-      "assists": 13,
-      "hero_damage": 10053,
-      "damage_per_min": 375,
-      "total_xp": 10196,
-      "xp_per_min": 380,
-      "gold": 87,
-      "gold_per_min": 267,
-      "duration": 1610,
-      "start_time": 1793401194,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 188,
-          "name": "Smoke of Deceit",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 21,
-          "name": "Ogre Axe",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 23,
-          "name": "Staff of Wizardry",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
-        }
-      ],
-      "rating": 4.7,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 4918
     }
   ],
   "top_heroes": [
@@ -1294,6 +1289,37 @@
       ]
     },
     {
+      "hero_id": 121,
+      "name": "Grimstroke",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "games": 7,
+      "wins": 4,
+      "losses": 3,
+      "winrate": 57.1,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1792293876
+        },
+        {
+          "win": false,
+          "start_time": 1792403183
+        },
+        {
+          "win": true,
+          "start_time": 1792916084
+        },
+        {
+          "win": false,
+          "start_time": 1793401194
+        },
+        {
+          "win": true,
+          "start_time": 1793725320
+        }
+      ]
+    },
+    {
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
@@ -1352,37 +1378,6 @@
         {
           "win": false,
           "start_time": 1793663370
-        }
-      ]
-    },
-    {
-      "hero_id": 121,
-      "name": "Grimstroke",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "games": 7,
-      "wins": 3,
-      "losses": 4,
-      "winrate": 42.9,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792078610
-        },
-        {
-          "win": true,
-          "start_time": 1792293876
-        },
-        {
-          "win": false,
-          "start_time": 1792403183
-        },
-        {
-          "win": true,
-          "start_time": 1792916084
-        },
-        {
-          "win": false,
-          "start_time": 1793401194
         }
       ]
     },
@@ -1959,6 +1954,7 @@
     "9073715091",
     "9073819301",
     "9073841542",
-    "9073869124"
+    "9073869124",
+    "9074791756"
   ]
 }
