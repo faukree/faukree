@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T23:32:41.390874+00:00",
+  "updated_at": "2026-11-03T00:10:31.739263+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Chog[o]ri",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4943
+    "mmr": 4968
   },
-  "mmr": 4943,
+  "mmr": 4968,
   "performance": {
-    "mmr_change_7d": 75,
-    "mmr_change_30d": 75,
+    "mmr_change_7d": 100,
+    "mmr_change_30d": 100,
     "streak_type": "win",
-    "streak_count": 4
+    "streak_count": 5
   },
   "matches": [
+    {
+      "match_id": 9073841542,
+      "hero_id": 85,
+      "hero_name": "Undying",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
+      "win": true,
+      "kills": 5,
+      "deaths": 8,
+      "assists": 20,
+      "hero_damage": 11529,
+      "damage_per_min": 306,
+      "total_xp": 26239,
+      "xp_per_min": 696,
+      "gold": 140,
+      "gold_per_min": 418,
+      "duration": 2262,
+      "start_time": 1793660510,
+      "items": [
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 231,
+          "name": "Guardian Greaves",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
+        },
+        {
+          "id": 90,
+          "name": "Pipe of Insight",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pipe.png"
+        }
+      ],
+      "rating": 6.8,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 4968
+    },
     {
       "match_id": 9073819301,
       "hero_id": 31,
@@ -1012,63 +1062,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 4943
-    },
-    {
-      "match_id": 9068744170,
-      "hero_id": 87,
-      "hero_name": "Disruptor",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
-      "win": false,
-      "kills": 1,
-      "deaths": 10,
-      "assists": 14,
-      "hero_damage": 17744,
-      "damage_per_min": 516,
-      "total_xp": 9976,
-      "xp_per_min": 290,
-      "gold": 180,
-      "gold_per_min": 277,
-      "duration": 2064,
-      "start_time": 1793378735,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 23,
-          "name": "Staff of Wizardry",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
-        }
-      ],
-      "rating": 3.6,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 4968
     }
   ],
   "top_heroes": [
@@ -1093,11 +1086,11 @@
     {
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "games": 75,
-      "wins": 44,
-      "winrate": 58.7,
-      "score": 56.84,
-      "kda": "—"
+      "games": 76,
+      "wins": 45,
+      "winrate": 59.2,
+      "score": 57.29,
+      "kda": 3.12
     },
     {
       "name": "Disruptor",
@@ -1106,7 +1099,7 @@
       "wins": 24,
       "winrate": 58.5,
       "score": 55.74,
-      "kda": 1.5
+      "kda": "—"
     },
     {
       "name": "Phoenix",
@@ -1244,10 +1237,10 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 12,
-      "wins": 8,
+      "games": 11,
+      "wins": 7,
       "losses": 4,
-      "winrate": 66.7,
+      "winrate": 63.6,
       "recent_results": [
         {
           "win": false,
@@ -1299,6 +1292,37 @@
         {
           "win": false,
           "start_time": 1793636852
+        }
+      ]
+    },
+    {
+      "hero_id": 85,
+      "name": "Undying",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
+      "games": 5,
+      "wins": 3,
+      "losses": 2,
+      "winrate": 60.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1792024124
+        },
+        {
+          "win": false,
+          "start_time": 1792360402
+        },
+        {
+          "win": true,
+          "start_time": 1792656354
+        },
+        {
+          "win": false,
+          "start_time": 1792936270
+        },
+        {
+          "win": true,
+          "start_time": 1793660510
         }
       ]
     },
@@ -1388,33 +1412,6 @@
         {
           "win": true,
           "start_time": 1793639940
-        }
-      ]
-    },
-    {
-      "hero_id": 85,
-      "name": "Undying",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "games": 4,
-      "wins": 2,
-      "losses": 2,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792024124
-        },
-        {
-          "win": false,
-          "start_time": 1792360402
-        },
-        {
-          "win": true,
-          "start_time": 1792656354
-        },
-        {
-          "win": false,
-          "start_time": 1792936270
         }
       ]
     },
@@ -1966,6 +1963,7 @@
     "9073601437",
     "9073660354",
     "9073715091",
-    "9073819301"
+    "9073819301",
+    "9073841542"
   ]
 }
