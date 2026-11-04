@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T16:25:03.547647+00:00",
+  "updated_at": "2026-11-04T17:20:17.297875+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4968
+    "mmr": 4993
   },
-  "mmr": 4968,
+  "mmr": 4993,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": 25,
+    "mmr_change_30d": 25,
     "streak_type": "win",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9076095907,
+      "hero_id": 40,
+      "hero_name": "Venomancer",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+      "win": true,
+      "kills": 5,
+      "deaths": 11,
+      "assists": 28,
+      "hero_damage": 29093,
+      "damage_per_min": 646,
+      "total_xp": 21480,
+      "xp_per_min": 477,
+      "gold": 1111,
+      "gold_per_min": 422,
+      "duration": 2702,
+      "start_time": 1793806127,
+      "items": [
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 98,
+          "name": "Orchid Malevolence",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 249,
+          "name": "Silver Edge",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/silver_edge.png"
+        }
+      ],
+      "rating": 5.9,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 4993
+    },
     {
       "match_id": 9074791756,
       "hero_id": 121,
@@ -1005,56 +1055,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 4918
-    },
-    {
-      "match_id": 9069255514,
-      "hero_id": 9,
-      "hero_name": "Mirana",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "win": true,
-      "kills": 8,
-      "deaths": 6,
-      "assists": 27,
-      "hero_damage": 20282,
-      "damage_per_min": 654,
-      "total_xp": 20088,
-      "xp_per_min": 648,
-      "gold": 643,
-      "gold_per_min": 386,
-      "duration": 1860,
-      "start_time": 1793403285,
-      "items": [
-        {
-          "id": 123,
-          "name": "Linken's Sphere",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sphere.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 92,
-          "name": "Urn of Shadows",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/urn_of_shadows.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 8.2,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 4943
     }
   ],
   "top_heroes": [
@@ -1409,6 +1409,37 @@
       ]
     },
     {
+      "hero_id": 40,
+      "name": "Venomancer",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+      "games": 5,
+      "wins": 2,
+      "losses": 3,
+      "winrate": 40.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1792300191
+        },
+        {
+          "win": false,
+          "start_time": 1792362948
+        },
+        {
+          "win": false,
+          "start_time": 1792422739
+        },
+        {
+          "win": false,
+          "start_time": 1792914184
+        },
+        {
+          "win": true,
+          "start_time": 1793806127
+        }
+      ]
+    },
+    {
       "hero_id": 86,
       "name": "Rubick",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
@@ -1530,33 +1561,6 @@
         {
           "win": false,
           "start_time": 1792242427
-        }
-      ]
-    },
-    {
-      "hero_id": 40,
-      "name": "Venomancer",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "games": 4,
-      "wins": 1,
-      "losses": 3,
-      "winrate": 25.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792300191
-        },
-        {
-          "win": false,
-          "start_time": 1792362948
-        },
-        {
-          "win": false,
-          "start_time": 1792422739
-        },
-        {
-          "win": false,
-          "start_time": 1792914184
         }
       ]
     },
@@ -1692,21 +1696,6 @@
         {
           "win": false,
           "start_time": 1791909038
-        }
-      ]
-    },
-    {
-      "hero_id": 90,
-      "name": "Keeper of the Light",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791747866
         }
       ]
     },
@@ -1955,6 +1944,7 @@
     "9073819301",
     "9073841542",
     "9073869124",
-    "9074791756"
+    "9074791756",
+    "9076095907"
   ]
 }
