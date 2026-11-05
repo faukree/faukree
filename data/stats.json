@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:49:21.276832+00:00",
+  "updated_at": "2026-11-05T15:42:16.603038+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -27,6 +27,103 @@
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9077322672,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": false,
+      "kills": 0,
+      "deaths": 7,
+      "assists": 9,
+      "hero_damage": 16435,
+      "damage_per_min": 493,
+      "total_xp": 10528,
+      "xp_per_min": 316,
+      "gold": 321,
+      "gold_per_min": 234,
+      "duration": 1999,
+      "start_time": 1793890325,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 166,
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
+        },
+        {
+          "id": 21,
+          "name": "Ogre Axe",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
+        },
+        {
+          "id": 42,
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        }
+      ],
+      "rating": 4.2,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 4993
+    },
+    {
+      "match_id": 9077261245,
+      "hero_id": 23,
+      "hero_name": "Kunkka",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
+      "win": true,
+      "kills": 2,
+      "deaths": 3,
+      "assists": 13,
+      "hero_damage": 9641,
+      "damage_per_min": 270,
+      "total_xp": 20225,
+      "xp_per_min": 566,
+      "gold": 1223,
+      "gold_per_min": 413,
+      "duration": 2144,
+      "start_time": 1793887795,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 610,
+          "name": "Wind Waker",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        }
+      ],
+      "rating": 8.0,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5018
+    },
     {
       "match_id": 9076669878,
       "hero_id": 26,
@@ -956,114 +1053,18 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 4868
-    },
-    {
-      "match_id": 9069951240,
-      "hero_id": 49,
-      "hero_name": "Dragon Knight",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 8,
-      "assists": 11,
-      "hero_damage": 29229,
-      "damage_per_min": 740,
-      "total_xp": 30506,
-      "xp_per_min": 772,
-      "gold": 362,
-      "gold_per_min": 552,
-      "duration": 2371,
-      "start_time": 1793451395,
-      "items": [
-        {
-          "id": 63,
-          "name": "Power Treads",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 55,
-          "name": "Hyperstone",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hyperstone.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 116,
-          "name": "Black King Bar",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
-        },
-        {
-          "id": 235,
-          "name": "Octarine Core",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png"
-        }
-      ],
-      "rating": 6.1,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 4893
-    },
-    {
-      "match_id": 9069865179,
-      "hero_id": 21,
-      "hero_name": "Windranger",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "win": true,
-      "kills": 5,
-      "deaths": 5,
-      "assists": 20,
-      "hero_damage": 17915,
-      "damage_per_min": 555,
-      "total_xp": 16141,
-      "xp_per_min": 500,
-      "gold": 814,
-      "gold_per_min": 373,
-      "duration": 1937,
-      "start_time": 1793447830,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 8,
-          "name": "Mithril Hammer",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mithril_hammer.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 166,
-          "name": "Maelstrom",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
-        },
-        {
-          "id": 21,
-          "name": "Ogre Axe",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
-        }
-      ],
-      "rating": 8.0,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 4918
     }
   ],
   "top_heroes": [
+    {
+      "name": "Kunkka",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
+      "games": 42,
+      "wins": 26,
+      "winrate": 61.9,
+      "score": 58.06,
+      "kda": 5.0
+    },
     {
       "name": "Oracle",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/oracle.png",
@@ -1071,15 +1072,6 @@
       "wins": 19,
       "winrate": 61.3,
       "score": 56.86,
-      "kda": "—"
-    },
-    {
-      "name": "Kunkka",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
-      "games": 41,
-      "wins": 25,
-      "winrate": 61.0,
-      "score": 57.38,
       "kda": "—"
     },
     {
@@ -1267,15 +1259,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 9,
+      "games": 10,
       "wins": 6,
-      "losses": 3,
-      "winrate": 66.7,
+      "losses": 4,
+      "winrate": 60.0,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792816692
-        },
         {
           "win": false,
           "start_time": 1793381280
@@ -1291,6 +1279,10 @@
         {
           "win": false,
           "start_time": 1793636852
+        },
+        {
+          "win": false,
+          "start_time": 1793890325
         }
       ]
     },
@@ -1388,33 +1380,6 @@
       ]
     },
     {
-      "hero_id": 22,
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 4,
-      "wins": 2,
-      "losses": 2,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1791774251
-        },
-        {
-          "win": false,
-          "start_time": 1792314286
-        },
-        {
-          "win": false,
-          "start_time": 1793217706
-        },
-        {
-          "win": true,
-          "start_time": 1793639940
-        }
-      ]
-    },
-    {
       "hero_id": 40,
       "name": "Venomancer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
@@ -1491,21 +1456,21 @@
       ]
     },
     {
-      "hero_id": 51,
-      "name": "Clockwerk",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+      "hero_id": 23,
+      "name": "Kunkka",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
       "games": 2,
       "wins": 1,
       "losses": 1,
       "winrate": 50.0,
       "recent_results": [
         {
-          "win": true,
-          "start_time": 1791770551
+          "win": false,
+          "start_time": 1791909038
         },
         {
-          "win": false,
-          "start_time": 1792938770
+          "win": true,
+          "start_time": 1793887795
         }
       ]
     },
@@ -1567,6 +1532,29 @@
       ]
     },
     {
+      "hero_id": 22,
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 3,
+      "wins": 1,
+      "losses": 2,
+      "winrate": 33.3,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792314286
+        },
+        {
+          "win": false,
+          "start_time": 1793217706
+        },
+        {
+          "win": true,
+          "start_time": 1793639940
+        }
+      ]
+    },
+    {
       "hero_id": 104,
       "name": "Legion Commander",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
@@ -1608,6 +1596,21 @@
         {
           "win": false,
           "start_time": 1793445424
+        }
+      ]
+    },
+    {
+      "hero_id": 51,
+      "name": "Clockwerk",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792938770
         }
       ]
     },
@@ -1683,21 +1686,6 @@
         {
           "win": false,
           "start_time": 1792242427
-        }
-      ]
-    },
-    {
-      "hero_id": 23,
-      "name": "Kunkka",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791909038
         }
       ]
     },
@@ -1968,6 +1956,8 @@
     "9074791756",
     "9076095907",
     "9076285074",
-    "9076669878"
+    "9076669878",
+    "9077261245",
+    "9077322672"
   ]
 }
