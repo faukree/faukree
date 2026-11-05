@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T00:27:35.379259+00:00",
+  "updated_at": "2026-11-05T01:43:35.702218+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,68 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5018
+    "mmr": 4993
   },
-  "mmr": 5018,
+  "mmr": 4993,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
-    "streak_type": "win",
-    "streak_count": 3
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "loss",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9076669878,
+      "hero_id": 26,
+      "hero_name": "Lion",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "win": false,
+      "kills": 1,
+      "deaths": 7,
+      "assists": 6,
+      "hero_damage": 8702,
+      "damage_per_min": 382,
+      "total_xp": 6333,
+      "xp_per_min": 278,
+      "gold": 640,
+      "gold_per_min": 173,
+      "duration": 1367,
+      "start_time": 1793838532,
+      "items": [
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 215,
+          "name": "Shadow Amulet",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shadow_amulet.png"
+        },
+        {
+          "id": 1848,
+          "name": "Shawl",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shawl.png"
+        },
+        {
+          "id": 218,
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        }
+      ],
+      "rating": 3.7,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 4993
+    },
     {
       "match_id": 9076285074,
       "hero_id": 64,
@@ -1009,52 +1061,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 4918
-    },
-    {
-      "match_id": 9069812013,
-      "hero_id": 88,
-      "hero_name": "Nyx Assassin",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
-      "win": false,
-      "kills": 5,
-      "deaths": 13,
-      "assists": 11,
-      "hero_damage": 20974,
-      "damage_per_min": 622,
-      "total_xp": 23062,
-      "xp_per_min": 684,
-      "gold": 758,
-      "gold_per_min": 314,
-      "duration": 2023,
-      "start_time": 1793445424,
-      "items": [
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 11,
-          "name": "Quelling Blade",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/quelling_blade.png"
-        },
-        {
-          "id": 202,
-          "name": "Dagon",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dagon_3.png"
-        }
-      ],
-      "rating": 3.7,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 4893
     }
   ],
   "top_heroes": [
@@ -1128,7 +1134,7 @@
       "wins": 26,
       "winrate": 56.5,
       "score": 54.55,
-      "kda": 1.23
+      "kda": "—"
     },
     {
       "name": "Io",
@@ -1561,25 +1567,6 @@
       ]
     },
     {
-      "hero_id": 72,
-      "name": "Gyrocopter",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
-      "games": 2,
-      "wins": 1,
-      "losses": 1,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1791767446
-        },
-        {
-          "win": false,
-          "start_time": 1792242427
-        }
-      ]
-    },
-    {
       "hero_id": 104,
       "name": "Legion Commander",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
@@ -1655,21 +1642,6 @@
       ]
     },
     {
-      "hero_id": 26,
-      "name": "Lion",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792674606
-        }
-      ]
-    },
-    {
       "hero_id": 37,
       "name": "Warlock",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
@@ -1700,6 +1672,21 @@
       ]
     },
     {
+      "hero_id": 72,
+      "name": "Gyrocopter",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792242427
+        }
+      ]
+    },
+    {
       "hero_id": 23,
       "name": "Kunkka",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
@@ -1711,6 +1698,25 @@
         {
           "win": false,
           "start_time": 1791909038
+        }
+      ]
+    },
+    {
+      "hero_id": 26,
+      "name": "Lion",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792674606
+        },
+        {
+          "win": false,
+          "start_time": 1793838532
         }
       ]
     },
@@ -1961,6 +1967,7 @@
     "9073869124",
     "9074791756",
     "9076095907",
-    "9076285074"
+    "9076285074",
+    "9076669878"
   ]
 }
