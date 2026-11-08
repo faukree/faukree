@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T21:42:24.080125+00:00",
+  "updated_at": "2026-11-08T22:19:26.212149+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,61 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5068
+    "mmr": 5093
   },
-  "mmr": 5068,
+  "mmr": 5093,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
+    "mmr_change_7d": 75,
+    "mmr_change_30d": 75,
     "streak_type": "win",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9082406277,
+      "hero_id": 86,
+      "hero_name": "Rubick",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+      "win": true,
+      "kills": 5,
+      "deaths": 4,
+      "assists": 19,
+      "hero_damage": 16613,
+      "damage_per_min": 542,
+      "total_xp": 19585,
+      "xp_per_min": 639,
+      "gold": 3016,
+      "gold_per_min": 394,
+      "duration": 1839,
+      "start_time": 1794173956,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        }
+      ],
+      "rating": 8.4,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5093
+    },
     {
       "match_id": 9082374803,
       "hero_id": 9,
@@ -997,61 +1042,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 4868
-    },
-    {
-      "match_id": 9073261077,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": true,
-      "kills": 9,
-      "deaths": 11,
-      "assists": 12,
-      "hero_damage": 32030,
-      "damage_per_min": 755,
-      "total_xp": 28738,
-      "xp_per_min": 677,
-      "gold": 3095,
-      "gold_per_min": 490,
-      "duration": 2547,
-      "start_time": 1793632565,
-      "items": [
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 223,
-          "name": "Meteor Hammer",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/meteor_hammer.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 119,
-          "name": "Shiva's Guard",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shivas_guard.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 6.0,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 4893
     }
   ],
   "top_heroes": [
@@ -1098,7 +1088,7 @@
       "wins": 69,
       "winrate": 58.0,
       "score": 56.83,
-      "kda": 2.27
+      "kda": 2.64
     },
     {
       "name": "Lich",
@@ -1379,6 +1369,25 @@
       ]
     },
     {
+      "hero_id": 86,
+      "name": "Rubick",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+      "games": 2,
+      "wins": 2,
+      "losses": 0,
+      "winrate": 100.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793649105
+        },
+        {
+          "win": true,
+          "start_time": 1794173956
+        }
+      ]
+    },
+    {
       "hero_id": 40,
       "name": "Venomancer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
@@ -1451,21 +1460,6 @@
         {
           "win": true,
           "start_time": 1793814051
-        }
-      ]
-    },
-    {
-      "hero_id": 86,
-      "name": "Rubick",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
-      "games": 1,
-      "wins": 1,
-      "losses": 0,
-      "winrate": 100.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793649105
         }
       ]
     },
@@ -1737,15 +1731,11 @@
       "hero_id": 5,
       "name": "Crystal Maiden",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 3,
+      "games": 2,
       "wins": 0,
-      "losses": 3,
+      "losses": 2,
       "winrate": 0.0,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1791998949
-        },
         {
           "win": false,
           "start_time": 1792317632
@@ -1967,6 +1957,7 @@
     "9077322672",
     "9078050312",
     "9079396358",
-    "9082374803"
+    "9082374803",
+    "9082406277"
   ]
 }
