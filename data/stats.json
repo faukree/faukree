@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T06:19:27.426329+00:00",
+  "updated_at": "2026-11-10T07:36:53.850802+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5068
   },
-  "mmr": 5093,
+  "mmr": 5068,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
-    "streak_type": "win",
-    "streak_count": 3
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "loss",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9083969176,
+      "hero_id": 68,
+      "hero_name": "Ancient Apparition",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "win": false,
+      "kills": 7,
+      "deaths": 9,
+      "assists": 10,
+      "hero_damage": 14863,
+      "damage_per_min": 376,
+      "total_xp": 14529,
+      "xp_per_min": 368,
+      "gold": 980,
+      "gold_per_min": 373,
+      "duration": 2369,
+      "start_time": 1794291186,
+      "items": [
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 37,
+          "name": "Ghost Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        }
+      ],
+      "rating": 4.4,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 5068
+    },
     {
       "match_id": 9083945594,
       "hero_id": 20,
@@ -1001,56 +1051,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 4943
-    },
-    {
-      "match_id": 9073841542,
-      "hero_id": 85,
-      "hero_name": "Undying",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "win": true,
-      "kills": 5,
-      "deaths": 8,
-      "assists": 20,
-      "hero_damage": 11529,
-      "damage_per_min": 306,
-      "total_xp": 26239,
-      "xp_per_min": 696,
-      "gold": 140,
-      "gold_per_min": 418,
-      "duration": 2262,
-      "start_time": 1793660510,
-      "items": [
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 231,
-          "name": "Guardian Greaves",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
-        },
-        {
-          "id": 90,
-          "name": "Pipe of Insight",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/pipe.png"
-        }
-      ],
-      "rating": 6.8,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 4968
     }
   ],
   "top_heroes": [
@@ -1079,7 +1079,7 @@
       "wins": 45,
       "winrate": 59.2,
       "score": 57.29,
-      "kda": 3.12
+      "kda": "—"
     },
     {
       "name": "Disruptor",
@@ -1195,10 +1195,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 14,
+      "games": 13,
       "wins": 9,
-      "losses": 5,
-      "winrate": 64.3,
+      "losses": 4,
+      "winrate": 69.2,
       "recent_results": [
         {
           "win": true,
@@ -1828,9 +1828,9 @@
       "hero_id": 68,
       "name": "Ancient Apparition",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "games": 4,
+      "games": 5,
       "wins": 0,
-      "losses": 4,
+      "losses": 5,
       "winrate": 0.0,
       "recent_results": [
         {
@@ -1848,6 +1848,10 @@
         {
           "win": false,
           "start_time": 1792921419
+        },
+        {
+          "win": false,
+          "start_time": 1794291186
         }
       ]
     }
@@ -1994,6 +1998,7 @@
     "9082571534",
     "9083845493",
     "9083869208",
-    "9083945594"
+    "9083945594",
+    "9083969176"
   ]
 }
