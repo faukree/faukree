@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T03:28:31.114941+00:00",
+  "updated_at": "2026-11-10T04:23:27.245271+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,61 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5043
+    "mmr": 5068
   },
-  "mmr": 5043,
+  "mmr": 5068,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": 25,
+    "mmr_change_30d": 25,
     "streak_type": "win",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9083869208,
+      "hero_id": 102,
+      "hero_name": "Abaddon",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
+      "win": true,
+      "kills": 1,
+      "deaths": 5,
+      "assists": 12,
+      "hero_damage": 8728,
+      "damage_per_min": 270,
+      "total_xp": 15584,
+      "xp_per_min": 482,
+      "gold": 241,
+      "gold_per_min": 294,
+      "duration": 1940,
+      "start_time": 1794279946,
+      "items": [
+        {
+          "id": 43,
+          "name": "Sentry Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png"
+        },
+        {
+          "id": 231,
+          "name": "Guardian Greaves",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 15,
+          "name": "Mantle of Intelligence",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mantle.png"
+        }
+      ],
+      "rating": 6.5,
+      "review_notes": [
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5068
+    },
     {
       "match_id": 9083845493,
       "hero_id": 31,
@@ -999,61 +1044,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 4943
-    },
-    {
-      "match_id": 9073715091,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": true,
-      "kills": 5,
-      "deaths": 11,
-      "assists": 24,
-      "hero_damage": 27869,
-      "damage_per_min": 683,
-      "total_xp": 26215,
-      "xp_per_min": 642,
-      "gold": 5325,
-      "gold_per_min": 412,
-      "duration": 2450,
-      "start_time": 1793651800,
-      "items": [
-        {
-          "id": 4206,
-          "name": "Greater Healing Lotus",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/greater_famango.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 116,
-          "name": "Black King Bar",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 6.0,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 4918
     }
   ],
   "top_heroes": [
@@ -1100,7 +1090,7 @@
       "wins": 69,
       "winrate": 57.5,
       "score": 56.43,
-      "kda": 1.76
+      "kda": 0.8
     },
     {
       "name": "Lich",
@@ -1226,37 +1216,6 @@
       ]
     },
     {
-      "hero_id": 21,
-      "name": "Windranger",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 12,
-      "wins": 7,
-      "losses": 5,
-      "winrate": 58.3,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793629001
-        },
-        {
-          "win": false,
-          "start_time": 1793636852
-        },
-        {
-          "win": false,
-          "start_time": 1793890325
-        },
-        {
-          "win": true,
-          "start_time": 1794017641
-        },
-        {
-          "win": false,
-          "start_time": 1794176726
-        }
-      ]
-    },
-    {
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
@@ -1284,6 +1243,37 @@
         {
           "win": true,
           "start_time": 1794277296
+        }
+      ]
+    },
+    {
+      "hero_id": 21,
+      "name": "Windranger",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "games": 11,
+      "wins": 6,
+      "losses": 5,
+      "winrate": 54.5,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793629001
+        },
+        {
+          "win": false,
+          "start_time": 1793636852
+        },
+        {
+          "win": false,
+          "start_time": 1793890325
+        },
+        {
+          "win": true,
+          "start_time": 1794017641
+        },
+        {
+          "win": false,
+          "start_time": 1794176726
         }
       ]
     },
@@ -1514,6 +1504,25 @@
       ]
     },
     {
+      "hero_id": 102,
+      "name": "Abaddon",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792814392
+        },
+        {
+          "win": true,
+          "start_time": 1794279946
+        }
+      ]
+    },
+    {
       "hero_id": 14,
       "name": "Pudge",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
@@ -1657,21 +1666,6 @@
         {
           "win": false,
           "start_time": 1792918200
-        }
-      ]
-    },
-    {
-      "hero_id": 102,
-      "name": "Abaddon",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792814392
         }
       ]
     },
@@ -1980,6 +1974,7 @@
     "9082500987",
     "9082546255",
     "9082571534",
-    "9083845493"
+    "9083845493",
+    "9083869208"
   ]
 }
