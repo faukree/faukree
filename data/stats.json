@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T23:21:23.386816+00:00",
+  "updated_at": "2026-11-10T23:58:02.244351+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,67 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5018
+    "mmr": 4993
   },
-  "mmr": 5018,
+  "mmr": 4993,
   "performance": {
-    "mmr_change_7d": -50,
-    "mmr_change_30d": -50,
+    "mmr_change_7d": -75,
+    "mmr_change_30d": -75,
     "streak_type": "loss",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9084997391,
+      "hero_id": 37,
+      "hero_name": "Warlock",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 10,
+      "assists": 11,
+      "hero_damage": 16514,
+      "damage_per_min": 571,
+      "total_xp": 12701,
+      "xp_per_min": 439,
+      "gold": 475,
+      "gold_per_min": 346,
+      "duration": 1736,
+      "start_time": 1794350506,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 56,
+          "name": "Ring of Health",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ring_of_health.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 34,
+          "name": "Magic Stick",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
+        },
+        {
+          "id": 9,
+          "name": "Platemail",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/platemail.png"
+        }
+      ],
+      "rating": 4.2,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 4993
+    },
     {
       "match_id": 9084029811,
       "hero_id": 101,
@@ -998,56 +1049,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9076095907,
-      "hero_id": 40,
-      "hero_name": "Venomancer",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "win": true,
-      "kills": 5,
-      "deaths": 11,
-      "assists": 28,
-      "hero_damage": 29093,
-      "damage_per_min": 646,
-      "total_xp": 21480,
-      "xp_per_min": 477,
-      "gold": 1111,
-      "gold_per_min": 422,
-      "duration": 2702,
-      "start_time": 1793806127,
-      "items": [
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 98,
-          "name": "Orchid Malevolence",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 249,
-          "name": "Silver Edge",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/silver_edge.png"
-        }
-      ],
-      "rating": 5.9,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 4993
     }
   ],
   "top_heroes": [
@@ -1584,6 +1585,21 @@
       ]
     },
     {
+      "hero_id": 37,
+      "name": "Warlock",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794350506
+        }
+      ]
+    },
+    {
       "hero_id": 104,
       "name": "Legion Commander",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
@@ -1685,21 +1701,6 @@
         {
           "win": false,
           "start_time": 1792918200
-        }
-      ]
-    },
-    {
-      "hero_id": 37,
-      "name": "Warlock",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792286121
         }
       ]
     },
@@ -1972,6 +1973,7 @@
     "9083945594",
     "9083969176",
     "9083997239",
-    "9084029811"
+    "9084029811",
+    "9084997391"
   ]
 }
