@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T05:21:38.670669+00:00",
+  "updated_at": "2026-11-10T06:19:27.426329+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,73 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5068
+    "mmr": 5093
   },
-  "mmr": 5068,
+  "mmr": 5093,
   "performance": {
-    "mmr_change_7d": 25,
-    "mmr_change_30d": 25,
+    "mmr_change_7d": 50,
+    "mmr_change_30d": 50,
     "streak_type": "win",
-    "streak_count": 2
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": 9083945594,
+      "hero_id": 20,
+      "hero_name": "Vengeful Spirit",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
+      "win": true,
+      "kills": 1,
+      "deaths": 7,
+      "assists": 24,
+      "hero_damage": 8752,
+      "damage_per_min": 243,
+      "total_xp": 20088,
+      "xp_per_min": 558,
+      "gold": 215,
+      "gold_per_min": 291,
+      "duration": 2160,
+      "start_time": 1794288576,
+      "items": [
+        {
+          "id": 42,
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 185,
+          "name": "Drum of Endurance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 6.6,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Невысокий урон по героям в минуту. Это может зависеть от роли и хода матча."
+      ],
+      "mmr_after": 5093
+    },
     {
       "match_id": 9083869208,
       "hero_id": 102,
@@ -994,56 +1051,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 4968
-    },
-    {
-      "match_id": 9073819301,
-      "hero_id": 31,
-      "hero_name": "Lich",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "win": true,
-      "kills": 2,
-      "deaths": 5,
-      "assists": 12,
-      "hero_damage": 9100,
-      "damage_per_min": 333,
-      "total_xp": 12917,
-      "xp_per_min": 472,
-      "gold": 2704,
-      "gold_per_min": 350,
-      "duration": 1642,
-      "start_time": 1793658515,
-      "items": [
-        {
-          "id": 34,
-          "name": "Magic Stick",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 6.8,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 4943
     }
   ],
   "top_heroes": [
@@ -1099,7 +1106,7 @@
       "wins": 76,
       "winrate": 57.1,
       "score": 56.21,
-      "kda": 1.59
+      "kda": 1.08
     },
     {
       "name": "Zeus",
@@ -1138,21 +1145,21 @@
       "kda": "—"
     },
     {
+      "name": "Vengeful Spirit",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
+      "games": 57,
+      "wins": 32,
+      "winrate": 56.1,
+      "score": 54.55,
+      "kda": 3.57
+    },
+    {
       "name": "Enigma",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
       "games": 27,
       "wins": 15,
       "winrate": 55.6,
       "score": 53.19,
-      "kda": "—"
-    },
-    {
-      "name": "Vengeful Spirit",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
-      "games": 56,
-      "wins": 31,
-      "winrate": 55.4,
-      "score": 53.95,
       "kda": "—"
     },
     {
@@ -1444,6 +1451,21 @@
       ]
     },
     {
+      "hero_id": 20,
+      "name": "Vengeful Spirit",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
+      "games": 1,
+      "wins": 1,
+      "losses": 0,
+      "winrate": 100.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794288576
+        }
+      ]
+    },
+    {
       "hero_id": 112,
       "name": "Winter Wyvern",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
@@ -1519,25 +1541,6 @@
         {
           "win": true,
           "start_time": 1794279946
-        }
-      ]
-    },
-    {
-      "hero_id": 14,
-      "name": "Pudge",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
-      "games": 2,
-      "wins": 1,
-      "losses": 1,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792234967
-        },
-        {
-          "win": false,
-          "start_time": 1792923914
         }
       ]
     },
@@ -1651,6 +1654,21 @@
         {
           "win": false,
           "start_time": 1792938770
+        }
+      ]
+    },
+    {
+      "hero_id": 14,
+      "name": "Pudge",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792923914
         }
       ]
     },
@@ -1975,6 +1993,7 @@
     "9082546255",
     "9082571534",
     "9083845493",
-    "9083869208"
+    "9083869208",
+    "9083945594"
   ]
 }
