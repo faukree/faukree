@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T00:18:19.839576+00:00",
+  "updated_at": "2026-11-12T01:37:01.047685+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5018
+    "mmr": 4993
   },
-  "mmr": 5018,
+  "mmr": 4993,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "win",
+    "streak_type": "loss",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9086335513,
+      "hero_id": 64,
+      "hero_name": "Jakiro",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
+      "win": false,
+      "kills": 5,
+      "deaths": 10,
+      "assists": 10,
+      "hero_damage": 20643,
+      "damage_per_min": 514,
+      "total_xp": 20301,
+      "xp_per_min": 505,
+      "gold": 645,
+      "gold_per_min": 394,
+      "duration": 2412,
+      "start_time": 1794440912,
+      "items": [
+        {
+          "id": 34,
+          "name": "Magic Stick",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 231,
+          "name": "Guardian Greaves",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 37,
+          "name": "Ghost Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
+        }
+      ],
+      "rating": 4.4,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 4993
+    },
     {
       "match_id": 9085015231,
       "hero_id": 5,
@@ -997,58 +1047,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9076669878,
-      "hero_id": 26,
-      "hero_name": "Lion",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "win": false,
-      "kills": 1,
-      "deaths": 7,
-      "assists": 6,
-      "hero_damage": 8702,
-      "damage_per_min": 382,
-      "total_xp": 6333,
-      "xp_per_min": 278,
-      "gold": 640,
-      "gold_per_min": 173,
-      "duration": 1367,
-      "start_time": 1793838532,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 215,
-          "name": "Shadow Amulet",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shadow_amulet.png"
-        },
-        {
-          "id": 1848,
-          "name": "Shawl",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shawl.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 3.7,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 4993
     }
   ],
   "top_heroes": [
@@ -1314,37 +1312,6 @@
       ]
     },
     {
-      "hero_id": 121,
-      "name": "Grimstroke",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "games": 5,
-      "wins": 3,
-      "losses": 2,
-      "winrate": 60.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792293876
-        },
-        {
-          "win": false,
-          "start_time": 1792403183
-        },
-        {
-          "win": true,
-          "start_time": 1792916084
-        },
-        {
-          "win": false,
-          "start_time": 1793401194
-        },
-        {
-          "win": true,
-          "start_time": 1793725320
-        }
-      ]
-    },
-    {
       "hero_id": 86,
       "name": "Rubick",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
@@ -1387,6 +1354,33 @@
         {
           "win": true,
           "start_time": 1794179931
+        }
+      ]
+    },
+    {
+      "hero_id": 121,
+      "name": "Grimstroke",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792403183
+        },
+        {
+          "win": true,
+          "start_time": 1792916084
+        },
+        {
+          "win": false,
+          "start_time": 1793401194
+        },
+        {
+          "win": true,
+          "start_time": 1793725320
         }
       ]
     },
@@ -1494,21 +1488,6 @@
       ]
     },
     {
-      "hero_id": 64,
-      "name": "Jakiro",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
-      "games": 1,
-      "wins": 1,
-      "losses": 0,
-      "winrate": 100.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793814051
-        }
-      ]
-    },
-    {
       "hero_id": 75,
       "name": "Silencer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
@@ -1520,6 +1499,25 @@
         {
           "win": true,
           "start_time": 1792909493
+        }
+      ]
+    },
+    {
+      "hero_id": 64,
+      "name": "Jakiro",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793814051
+        },
+        {
+          "win": false,
+          "start_time": 1794440912
         }
       ]
     },
@@ -1979,6 +1977,7 @@
     "9083997239",
     "9084029811",
     "9084997391",
-    "9085015231"
+    "9085015231",
+    "9086335513"
   ]
 }
