@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T10:42:25.179688+00:00",
+  "updated_at": "2026-11-13T11:38:31.520910+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5043
+    "mmr": 5068
   },
-  "mmr": 5043,
+  "mmr": 5068,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": 25,
+    "mmr_change_30d": 25,
     "streak_type": "win",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9088025681,
+      "hero_id": 64,
+      "hero_name": "Jakiro",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
+      "win": true,
+      "kills": 7,
+      "deaths": 9,
+      "assists": 16,
+      "hero_damage": 13074,
+      "damage_per_min": 388,
+      "total_xp": 20813,
+      "xp_per_min": 617,
+      "gold": 1963,
+      "gold_per_min": 415,
+      "duration": 2024,
+      "start_time": 1794565618,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 102,
+          "name": "Force Staff",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
+        },
+        {
+          "id": 4204,
+          "name": "Healing Lotus",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/famango.png"
+        }
+      ],
+      "rating": 6.1,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 5068
+    },
     {
       "match_id": 9087988980,
       "hero_id": 31,
@@ -1010,62 +1060,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5093
-    },
-    {
-      "match_id": 9082442539,
-      "hero_id": 21,
-      "hero_name": "Windranger",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "win": false,
-      "kills": 3,
-      "deaths": 11,
-      "assists": 16,
-      "hero_damage": 25555,
-      "damage_per_min": 560,
-      "total_xp": 25965,
-      "xp_per_min": 569,
-      "gold": 694,
-      "gold_per_min": 314,
-      "duration": 2738,
-      "start_time": 1794176726,
-      "items": [
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 1852,
-          "name": "Essence Distiller",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
-        },
-        {
-          "id": 98,
-          "name": "Orchid Malevolence",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
-        },
-        {
-          "id": 116,
-          "name": "Black King Bar",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 4.2,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1238,37 +1232,6 @@
       ]
     },
     {
-      "hero_id": 21,
-      "name": "Windranger",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 11,
-      "wins": 6,
-      "losses": 5,
-      "winrate": 54.5,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793636852
-        },
-        {
-          "win": false,
-          "start_time": 1793890325
-        },
-        {
-          "win": true,
-          "start_time": 1794017641
-        },
-        {
-          "win": false,
-          "start_time": 1794176726
-        },
-        {
-          "win": true,
-          "start_time": 1794539582
-        }
-      ]
-    },
-    {
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
@@ -1296,6 +1259,37 @@
         {
           "win": true,
           "start_time": 1794562963
+        }
+      ]
+    },
+    {
+      "hero_id": 21,
+      "name": "Windranger",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "games": 10,
+      "wins": 5,
+      "losses": 5,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793636852
+        },
+        {
+          "win": false,
+          "start_time": 1793890325
+        },
+        {
+          "win": true,
+          "start_time": 1794017641
+        },
+        {
+          "win": false,
+          "start_time": 1794176726
+        },
+        {
+          "win": true,
+          "start_time": 1794539582
         }
       ]
     },
@@ -1377,6 +1371,29 @@
         {
           "win": true,
           "start_time": 1794173956
+        }
+      ]
+    },
+    {
+      "hero_id": 64,
+      "name": "Jakiro",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
+      "games": 3,
+      "wins": 2,
+      "losses": 1,
+      "winrate": 66.7,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793814051
+        },
+        {
+          "win": false,
+          "start_time": 1794440912
+        },
+        {
+          "win": true,
+          "start_time": 1794565618
         }
       ]
     },
@@ -1491,25 +1508,6 @@
         {
           "win": true,
           "start_time": 1792909493
-        }
-      ]
-    },
-    {
-      "hero_id": 64,
-      "name": "Jakiro",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/jakiro.png",
-      "games": 2,
-      "wins": 1,
-      "losses": 1,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793814051
-        },
-        {
-          "win": false,
-          "start_time": 1794440912
         }
       ]
     },
@@ -2003,6 +2001,7 @@
     "9087900575",
     "9087939836",
     "9087964420",
-    "9087988980"
+    "9087988980",
+    "9088025681"
   ]
 }
