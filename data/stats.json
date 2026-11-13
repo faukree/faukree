@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T06:34:57.597432+00:00",
+  "updated_at": "2026-11-13T08:47:06.082516+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,67 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4993
+    "mmr": 5018
   },
-  "mmr": 4993,
+  "mmr": 5018,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9087900575,
+      "hero_id": 26,
+      "hero_name": "Lion",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "win": true,
+      "kills": 4,
+      "deaths": 13,
+      "assists": 30,
+      "hero_damage": 21226,
+      "damage_per_min": 472,
+      "total_xp": 29307,
+      "xp_per_min": 652,
+      "gold": 2884,
+      "gold_per_min": 343,
+      "duration": 2697,
+      "start_time": 1794555463,
+      "items": [
+        {
+          "id": 149,
+          "name": "Crystalys",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lesser_crit.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 5.1,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5018
+    },
     {
       "match_id": 9087769141,
       "hero_id": 40,
@@ -1005,56 +1056,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9078050312,
-      "hero_id": 112,
-      "hero_name": "Winter Wyvern",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
-      "win": true,
-      "kills": 8,
-      "deaths": 10,
-      "assists": 26,
-      "hero_damage": 22482,
-      "damage_per_min": 610,
-      "total_xp": 22505,
-      "xp_per_min": 611,
-      "gold": 2592,
-      "gold_per_min": 390,
-      "duration": 2210,
-      "start_time": 1793937105,
-      "items": [
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 102,
-          "name": "Force Staff",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 6.5,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1230,10 +1231,10 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 12,
-      "wins": 7,
+      "games": 11,
+      "wins": 6,
       "losses": 5,
-      "winrate": 58.3,
+      "winrate": 54.5,
       "recent_results": [
         {
           "win": false,
@@ -1537,6 +1538,29 @@
       ]
     },
     {
+      "hero_id": 26,
+      "name": "Lion",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "games": 3,
+      "wins": 1,
+      "losses": 2,
+      "winrate": 33.3,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792674606
+        },
+        {
+          "win": false,
+          "start_time": 1793838532
+        },
+        {
+          "win": true,
+          "start_time": 1794555463
+        }
+      ]
+    },
+    {
       "hero_id": 5,
       "name": "Crystal Maiden",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
@@ -1730,25 +1754,6 @@
         {
           "win": false,
           "start_time": 1792918200
-        }
-      ]
-    },
-    {
-      "hero_id": 26,
-      "name": "Lion",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792674606
-        },
-        {
-          "win": false,
-          "start_time": 1793838532
         }
       ]
     },
@@ -1984,6 +1989,7 @@
     "9085015231",
     "9086335513",
     "9087751310",
-    "9087769141"
+    "9087769141",
+    "9087900575"
   ]
 }
