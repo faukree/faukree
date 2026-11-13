@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T03:31:09.676229+00:00",
+  "updated_at": "2026-11-13T04:35:14.291944+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 4993
+    "mmr": 5018
   },
-  "mmr": 4993,
+  "mmr": 5018,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9087751310,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": true,
+      "kills": 8,
+      "deaths": 2,
+      "assists": 10,
+      "hero_damage": 13800,
+      "damage_per_min": 591,
+      "total_xp": 11293,
+      "xp_per_min": 484,
+      "gold": 946,
+      "gold_per_min": 381,
+      "duration": 1400,
+      "start_time": 1794539582,
+      "items": [
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 102,
+          "name": "Force Staff",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
+        },
+        {
+          "id": 20,
+          "name": "Circlet",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/circlet.png"
+        },
+        {
+          "id": 166,
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
+        }
+      ],
+      "rating": 8.1,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5018
+    },
     {
       "match_id": 9086335513,
       "hero_id": 64,
@@ -1002,51 +1052,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 4993
-    },
-    {
-      "match_id": 9077261245,
-      "hero_id": 23,
-      "hero_name": "Kunkka",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
-      "win": true,
-      "kills": 2,
-      "deaths": 3,
-      "assists": 13,
-      "hero_damage": 9641,
-      "damage_per_min": 270,
-      "total_xp": 20225,
-      "xp_per_min": 566,
-      "gold": 1223,
-      "gold_per_min": 413,
-      "duration": 2144,
-      "start_time": 1793887795,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 610,
-          "name": "Wind Waker",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wind_waker.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 8.0,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1057,7 +1062,7 @@
       "wins": 26,
       "winrate": 61.9,
       "score": 58.06,
-      "kda": 5.0
+      "kda": "—"
     },
     {
       "name": "Oracle",
@@ -1222,15 +1227,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 11,
-      "wins": 6,
+      "games": 12,
+      "wins": 7,
       "losses": 5,
-      "winrate": 54.5,
+      "winrate": 58.3,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793629001
-        },
         {
           "win": false,
           "start_time": 1793636852
@@ -1246,6 +1247,10 @@
         {
           "win": false,
           "start_time": 1794176726
+        },
+        {
+          "win": true,
+          "start_time": 1794539582
         }
       ]
     },
@@ -1412,37 +1417,6 @@
       ]
     },
     {
-      "hero_id": 40,
-      "name": "Venomancer",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "games": 5,
-      "wins": 2,
-      "losses": 3,
-      "winrate": 40.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792300191
-        },
-        {
-          "win": false,
-          "start_time": 1792362948
-        },
-        {
-          "win": false,
-          "start_time": 1792422739
-        },
-        {
-          "win": false,
-          "start_time": 1792914184
-        },
-        {
-          "win": true,
-          "start_time": 1793806127
-        }
-      ]
-    },
-    {
       "hero_id": 20,
       "name": "Vengeful Spirit",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
@@ -1602,6 +1576,33 @@
         {
           "win": false,
           "start_time": 1794297431
+        }
+      ]
+    },
+    {
+      "hero_id": 40,
+      "name": "Venomancer",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+      "games": 4,
+      "wins": 1,
+      "losses": 3,
+      "winrate": 25.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792362948
+        },
+        {
+          "win": false,
+          "start_time": 1792422739
+        },
+        {
+          "win": false,
+          "start_time": 1792914184
+        },
+        {
+          "win": true,
+          "start_time": 1793806127
         }
       ]
     },
@@ -1978,6 +1979,7 @@
     "9084029811",
     "9084997391",
     "9085015231",
-    "9086335513"
+    "9086335513",
+    "9087751310"
   ]
 }
