@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T04:35:14.291944+00:00",
+  "updated_at": "2026-11-13T05:35:09.581114+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5018
+    "mmr": 4993
   },
-  "mmr": 5018,
+  "mmr": 4993,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "win",
+    "streak_type": "loss",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9087769141,
+      "hero_id": 40,
+      "hero_name": "Venomancer",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 12,
+      "assists": 18,
+      "hero_damage": 33559,
+      "damage_per_min": 517,
+      "total_xp": 41903,
+      "xp_per_min": 646,
+      "gold": 2898,
+      "gold_per_min": 440,
+      "duration": 3892,
+      "start_time": 1794541462,
+      "items": [
+        {
+          "id": 37,
+          "name": "Ghost Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 250,
+          "name": "Bloodthorn",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        }
+      ],
+      "rating": 4.4,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 4993
+    },
     {
       "match_id": 9087751310,
       "hero_id": 21,
@@ -1000,58 +1055,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9077322672,
-      "hero_id": 21,
-      "hero_name": "Windranger",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "win": false,
-      "kills": 0,
-      "deaths": 7,
-      "assists": 9,
-      "hero_damage": 16435,
-      "damage_per_min": 493,
-      "total_xp": 10528,
-      "xp_per_min": 316,
-      "gold": 321,
-      "gold_per_min": 234,
-      "duration": 1999,
-      "start_time": 1793890325,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 166,
-          "name": "Maelstrom",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
-        },
-        {
-          "id": 21,
-          "name": "Ogre Axe",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
-        },
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        }
-      ],
-      "rating": 4.2,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 4993
     }
   ],
   "top_heroes": [
@@ -1583,10 +1586,10 @@
       "hero_id": 40,
       "name": "Venomancer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "games": 4,
+      "games": 5,
       "wins": 1,
-      "losses": 3,
-      "winrate": 25.0,
+      "losses": 4,
+      "winrate": 20.0,
       "recent_results": [
         {
           "win": false,
@@ -1603,6 +1606,10 @@
         {
           "win": true,
           "start_time": 1793806127
+        },
+        {
+          "win": false,
+          "start_time": 1794541462
         }
       ]
     },
@@ -1746,6 +1753,33 @@
       ]
     },
     {
+      "hero_id": 68,
+      "name": "Ancient Apparition",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "games": 4,
+      "wins": 0,
+      "losses": 4,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792405042
+        },
+        {
+          "win": false,
+          "start_time": 1792653424
+        },
+        {
+          "win": false,
+          "start_time": 1792921419
+        },
+        {
+          "win": false,
+          "start_time": 1794291186
+        }
+      ]
+    },
+    {
       "hero_id": 74,
       "name": "Invoker",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
@@ -1796,37 +1830,6 @@
         {
           "win": false,
           "start_time": 1794182256
-        }
-      ]
-    },
-    {
-      "hero_id": 68,
-      "name": "Ancient Apparition",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "games": 5,
-      "wins": 0,
-      "losses": 5,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792308537
-        },
-        {
-          "win": false,
-          "start_time": 1792405042
-        },
-        {
-          "win": false,
-          "start_time": 1792653424
-        },
-        {
-          "win": false,
-          "start_time": 1792921419
-        },
-        {
-          "win": false,
-          "start_time": 1794291186
         }
       ]
     }
@@ -1980,6 +1983,7 @@
     "9084997391",
     "9085015231",
     "9086335513",
-    "9087751310"
+    "9087751310",
+    "9087769141"
   ]
 }
