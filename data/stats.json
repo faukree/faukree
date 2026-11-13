@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T12:35:47.460135+00:00",
+  "updated_at": "2026-11-13T13:49:09.488843+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,72 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5118
   },
-  "mmr": 5093,
+  "mmr": 5118,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
+    "mmr_change_7d": 75,
+    "mmr_change_30d": 75,
     "streak_type": "win",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9088126251,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": true,
+      "kills": 4,
+      "deaths": 8,
+      "assists": 25,
+      "hero_damage": 16140,
+      "damage_per_min": 381,
+      "total_xp": 24478,
+      "xp_per_min": 578,
+      "gold": 803,
+      "gold_per_min": 317,
+      "duration": 2541,
+      "start_time": 1794571527,
+      "items": [
+        {
+          "id": 218,
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 98,
+          "name": "Orchid Malevolence",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 166,
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
+        }
+      ],
+      "rating": 6.6,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5118
+    },
     {
       "match_id": 9088094791,
       "hero_id": 21,
@@ -1010,61 +1066,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9082500987,
-      "hero_id": 128,
-      "hero_name": "Snapfire",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
-      "win": false,
-      "kills": 9,
-      "deaths": 7,
-      "assists": 13,
-      "hero_damage": 25357,
-      "damage_per_min": 755,
-      "total_xp": 15280,
-      "xp_per_min": 455,
-      "gold": 451,
-      "gold_per_min": 427,
-      "duration": 2015,
-      "start_time": 1794182256,
-      "items": [
-        {
-          "id": 24,
-          "name": "Ultimate Orb",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_orb.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 73,
-          "name": "Bracer",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bracer.png"
-        }
-      ],
-      "rating": 6.2,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1240,15 +1241,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 11,
-      "wins": 6,
+      "games": 12,
+      "wins": 7,
       "losses": 5,
-      "winrate": 54.5,
+      "winrate": 58.3,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793890325
-        },
         {
           "win": true,
           "start_time": 1794017641
@@ -1264,6 +1261,10 @@
         {
           "win": true,
           "start_time": 1794569848
+        },
+        {
+          "win": true,
+          "start_time": 1794571527
         }
       ]
     },
@@ -1619,15 +1620,11 @@
       "hero_id": 40,
       "name": "Venomancer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "games": 5,
+      "games": 4,
       "wins": 1,
-      "losses": 4,
-      "winrate": 20.0,
+      "losses": 3,
+      "winrate": 25.0,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792362948
-        },
         {
           "win": false,
           "start_time": 1792422739
@@ -2004,6 +2001,7 @@
     "9087964420",
     "9087988980",
     "9088025681",
-    "9088094791"
+    "9088094791",
+    "9088126251"
   ]
 }
