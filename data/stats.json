@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T17:39:04.402559+00:00",
+  "updated_at": "2026-11-14T18:13:51.063195+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5068
   },
-  "mmr": 5093,
+  "mmr": 5068,
   "performance": {
-    "mmr_change_7d": -50,
-    "mmr_change_30d": -50,
+    "mmr_change_7d": -75,
+    "mmr_change_30d": -75,
     "streak_type": "loss",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9089691630,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": false,
+      "kills": 5,
+      "deaths": 14,
+      "assists": 19,
+      "hero_damage": 24764,
+      "damage_per_min": 603,
+      "total_xp": 21002,
+      "xp_per_min": 511,
+      "gold": 685,
+      "gold_per_min": 354,
+      "duration": 2466,
+      "start_time": 1794659026,
+      "items": [
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 34,
+          "name": "Magic Stick",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 231,
+          "name": "Guardian Greaves",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
+        }
+      ],
+      "rating": 3.5,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 5068
+    },
     {
       "match_id": 9089260561,
       "hero_id": 21,
@@ -1016,61 +1066,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 4993
-    },
-    {
-      "match_id": 9085015231,
-      "hero_id": 5,
-      "hero_name": "Crystal Maiden",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "win": true,
-      "kills": 1,
-      "deaths": 9,
-      "assists": 26,
-      "hero_damage": 14401,
-      "damage_per_min": 419,
-      "total_xp": 20506,
-      "xp_per_min": 597,
-      "gold": 1380,
-      "gold_per_min": 365,
-      "duration": 2061,
-      "start_time": 1794353086,
-      "items": [
-        {
-          "id": 23,
-          "name": "Staff of Wizardry",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 60,
-          "name": "Point Booster",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png"
-        }
-      ],
-      "rating": 6.2,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1122,11 +1117,11 @@
     {
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 134,
+      "games": 135,
       "wins": 77,
-      "winrate": 57.5,
-      "score": 56.49,
-      "kda": 4.0
+      "winrate": 57.0,
+      "score": 56.13,
+      "kda": 2.48
     },
     {
       "name": "Zeus",
@@ -1277,15 +1272,11 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 8,
+      "games": 9,
       "wins": 5,
-      "losses": 3,
-      "winrate": 62.5,
+      "losses": 4,
+      "winrate": 55.6,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792902689
-        },
         {
           "win": false,
           "start_time": 1793321829
@@ -1301,6 +1292,10 @@
         {
           "win": true,
           "start_time": 1794562963
+        },
+        {
+          "win": false,
+          "start_time": 1794659026
         }
       ]
     },
@@ -1629,15 +1624,11 @@
       "hero_id": 40,
       "name": "Venomancer",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "games": 4,
+      "games": 3,
       "wins": 1,
-      "losses": 3,
-      "winrate": 25.0,
+      "losses": 2,
+      "winrate": 33.3,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792422739
-        },
         {
           "win": false,
           "start_time": 1792914184
@@ -2057,6 +2048,7 @@
     "9089150847",
     "9089184086",
     "9089228849",
-    "9089260561"
+    "9089260561",
+    "9089691630"
   ]
 }
