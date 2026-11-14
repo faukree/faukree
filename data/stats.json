@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T04:41:57.497869+00:00",
+  "updated_at": "2026-11-14T05:33:30.692657+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,57 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5143
+    "mmr": 5118
   },
-  "mmr": 5143,
+  "mmr": 5118,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9089228849,
+      "hero_id": 90,
+      "hero_name": "Keeper of the Light",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
+      "win": false,
+      "kills": 1,
+      "deaths": 14,
+      "assists": 10,
+      "hero_damage": 18792,
+      "damage_per_min": 508,
+      "total_xp": 14201,
+      "xp_per_min": 384,
+      "gold": 504,
+      "gold_per_min": 300,
+      "duration": 2219,
+      "start_time": 1794630756,
+      "items": [
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 201,
+          "name": "Dagon",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dagon_2.png"
+        },
+        {
+          "id": 48,
+          "name": "Boots of Travel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png"
+        }
+      ],
+      "rating": 2.5,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5118
+    },
     {
       "match_id": 9089184086,
       "hero_id": 85,
@@ -1031,58 +1072,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 4993
-    },
-    {
-      "match_id": 9084029811,
-      "hero_id": 101,
-      "hero_name": "Skywrath Mage",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 7,
-      "assists": 7,
-      "hero_damage": 11917,
-      "damage_per_min": 425,
-      "total_xp": 7549,
-      "xp_per_min": 269,
-      "gold": 1317,
-      "gold_per_min": 231,
-      "duration": 1684,
-      "start_time": 1794297431,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 77,
-          "name": "Null Talisman",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
-        },
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 206,
-          "name": "Rod of Atos",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/rod_of_atos.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        }
-      ],
-      "rating": 4.2,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1665,6 +1654,21 @@
       ]
     },
     {
+      "hero_id": 90,
+      "name": "Keeper of the Light",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794630756
+        }
+      ]
+    },
+    {
       "hero_id": 33,
       "name": "Enigma",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
@@ -1691,6 +1695,21 @@
         {
           "win": false,
           "start_time": 1794350506
+        }
+      ]
+    },
+    {
+      "hero_id": 101,
+      "name": "Skywrath Mage",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794297431
         }
       ]
     },
@@ -1796,25 +1815,6 @@
         {
           "win": false,
           "start_time": 1792918200
-        }
-      ]
-    },
-    {
-      "hero_id": 101,
-      "name": "Skywrath Mage",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792416603
-        },
-        {
-          "win": false,
-          "start_time": 1794297431
         }
       ]
     },
@@ -2056,6 +2056,7 @@
     "9089086825",
     "9089124617",
     "9089150847",
-    "9089184086"
+    "9089184086",
+    "9089228849"
   ]
 }
