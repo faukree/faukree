@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T19:00:24.947787+00:00",
+  "updated_at": "2026-11-14T19:40:02.272634+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,73 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5118
+    "mmr": 5093
   },
-  "mmr": 5118,
+  "mmr": 5093,
   "performance": {
-    "mmr_change_7d": 25,
-    "mmr_change_30d": 25,
-    "streak_type": "win",
-    "streak_count": 2
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "loss",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9089913633,
+      "hero_id": 30,
+      "hero_name": "Witch Doctor",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png",
+      "win": false,
+      "kills": 5,
+      "deaths": 11,
+      "assists": 7,
+      "hero_damage": 20012,
+      "damage_per_min": 606,
+      "total_xp": 9782,
+      "xp_per_min": 296,
+      "gold": 733,
+      "gold_per_min": 292,
+      "duration": 1983,
+      "start_time": 1794667288,
+      "items": [
+        {
+          "id": 216,
+          "name": "Enchanted Mango",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/enchanted_mango.png"
+        },
+        {
+          "id": 1441,
+          "name": "Gris-Gris",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/grisgris.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 188,
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
+        }
+      ],
+      "rating": 3.3,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 5093
+    },
     {
       "match_id": 9089843437,
       "hero_id": 85,
@@ -1016,61 +1073,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9087769141,
-      "hero_id": 40,
-      "hero_name": "Venomancer",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 12,
-      "assists": 18,
-      "hero_damage": 33559,
-      "damage_per_min": 517,
-      "total_xp": 41903,
-      "xp_per_min": 646,
-      "gold": 2898,
-      "gold_per_min": 440,
-      "duration": 3892,
-      "start_time": 1794541462,
-      "items": [
-        {
-          "id": 37,
-          "name": "Ghost Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
-        },
-        {
-          "id": 96,
-          "name": "Scythe of Vyse",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
-        },
-        {
-          "id": 250,
-          "name": "Bloodthorn",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 4.4,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 4993
     }
   ],
   "top_heroes": [
@@ -1626,6 +1628,21 @@
       ]
     },
     {
+      "hero_id": 30,
+      "name": "Witch Doctor",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794667288
+        }
+      ]
+    },
+    {
       "hero_id": 90,
       "name": "Keeper of the Light",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
@@ -1859,15 +1876,11 @@
       "hero_id": 128,
       "name": "Snapfire",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
-      "games": 4,
+      "games": 3,
       "wins": 0,
-      "losses": 4,
+      "losses": 3,
       "winrate": 0.0,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792472835
-        },
         {
           "win": false,
           "start_time": 1792677726
@@ -2052,6 +2065,7 @@
     "9089260561",
     "9089691630",
     "9089762012",
-    "9089843437"
+    "9089843437",
+    "9089913633"
   ]
 }
