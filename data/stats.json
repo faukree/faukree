@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T19:40:02.272634+00:00",
+  "updated_at": "2026-11-14T20:15:45.217887+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,63 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5068
   },
-  "mmr": 5093,
+  "mmr": 5068,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9089981707,
+      "hero_id": 19,
+      "hero_name": "Tiny",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
+      "win": false,
+      "kills": 0,
+      "deaths": 7,
+      "assists": 6,
+      "hero_damage": 9998,
+      "damage_per_min": 300,
+      "total_xp": 11227,
+      "xp_per_min": 337,
+      "gold": 760,
+      "gold_per_min": 266,
+      "duration": 1999,
+      "start_time": 1794669667,
+      "items": [
+        {
+          "id": 34,
+          "name": "Magic Stick",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 1107,
+          "name": "Phylactery",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phylactery.png"
+        }
+      ],
+      "rating": 3.9,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 5068
+    },
     {
       "match_id": 9089913633,
       "hero_id": 30,
@@ -1022,57 +1069,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9087900575,
-      "hero_id": 26,
-      "hero_name": "Lion",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "win": true,
-      "kills": 4,
-      "deaths": 13,
-      "assists": 30,
-      "hero_damage": 21226,
-      "damage_per_min": 472,
-      "total_xp": 29307,
-      "xp_per_min": 652,
-      "gold": 2884,
-      "gold_per_min": 343,
-      "duration": 2697,
-      "start_time": 1794555463,
-      "items": [
-        {
-          "id": 149,
-          "name": "Crystalys",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lesser_crit.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 5.1,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1217,10 +1213,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 13,
-      "wins": 9,
+      "games": 12,
+      "wins": 8,
       "losses": 4,
-      "winrate": 69.2,
+      "winrate": 66.7,
       "recent_results": [
         {
           "win": true,
@@ -1624,6 +1620,21 @@
         {
           "win": false,
           "start_time": 1794541462
+        }
+      ]
+    },
+    {
+      "hero_id": 19,
+      "name": "Tiny",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794669667
         }
       ]
     },
@@ -2066,6 +2077,7 @@
     "9089691630",
     "9089762012",
     "9089843437",
-    "9089913633"
+    "9089913633",
+    "9089981707"
   ]
 }
