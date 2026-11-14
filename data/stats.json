@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T06:26:56.085443+00:00",
+  "updated_at": "2026-11-14T15:06:15.623601+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5118
+    "mmr": 5093
   },
-  "mmr": 5118,
+  "mmr": 5093,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
+    "mmr_change_7d": -50,
+    "mmr_change_30d": -50,
     "streak_type": "loss",
-    "streak_count": 2
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": 9089260561,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 5,
+      "assists": 6,
+      "hero_damage": 15454,
+      "damage_per_min": 389,
+      "total_xp": 18579,
+      "xp_per_min": 468,
+      "gold": 1991,
+      "gold_per_min": 325,
+      "duration": 2382,
+      "start_time": 1794633496,
+      "items": [
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 1852,
+          "name": "Essence Distiller",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        }
+      ],
+      "rating": 5.5,
+      "review_notes": [
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5093
+    },
     {
       "match_id": 9089228849,
       "hero_id": 90,
@@ -1021,57 +1071,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9084997391,
-      "hero_id": 37,
-      "hero_name": "Warlock",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 10,
-      "assists": 11,
-      "hero_damage": 16514,
-      "damage_per_min": 571,
-      "total_xp": 12701,
-      "xp_per_min": 439,
-      "gold": 475,
-      "gold_per_min": 346,
-      "duration": 1736,
-      "start_time": 1794350506,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 56,
-          "name": "Ring of Health",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ring_of_health.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 34,
-          "name": "Magic Stick",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
-        },
-        {
-          "id": 9,
-          "name": "Platemail",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/platemail.png"
-        }
-      ],
-      "rating": 4.2,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 4993
     }
   ],
   "top_heroes": [
@@ -1202,13 +1201,13 @@
       "kda": "—"
     },
     {
-      "name": "Windranger",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 133,
-      "wins": 72,
-      "winrate": 54.1,
-      "score": 53.59,
-      "kda": 5.4
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 403,
+      "wins": 217,
+      "winrate": 53.8,
+      "score": 53.66,
+      "kda": "—"
     }
   ],
   "recent_heroes_30d": [
@@ -1216,10 +1215,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 13,
-      "wins": 9,
+      "games": 12,
+      "wins": 8,
       "losses": 4,
-      "winrate": 69.2,
+      "winrate": 66.7,
       "recent_results": [
         {
           "win": false,
@@ -1247,15 +1246,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 11,
+      "games": 12,
       "wins": 7,
-      "losses": 4,
-      "winrate": 63.6,
+      "losses": 5,
+      "winrate": 58.3,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794017641
-        },
         {
           "win": false,
           "start_time": 1794176726
@@ -1271,6 +1266,10 @@
         {
           "win": true,
           "start_time": 1794571527
+        },
+        {
+          "win": false,
+          "start_time": 1794633496
         }
       ]
     },
@@ -2057,6 +2056,7 @@
     "9089124617",
     "9089150847",
     "9089184086",
-    "9089228849"
+    "9089228849",
+    "9089260561"
   ]
 }
