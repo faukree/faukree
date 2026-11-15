@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T09:12:17.091408+00:00",
+  "updated_at": "2026-11-15T09:59:59.837575+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,72 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5118
   },
-  "mmr": 5093,
+  "mmr": 5118,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
+    "mmr_change_7d": 75,
+    "mmr_change_30d": 75,
     "streak_type": "win",
-    "streak_count": 3
+    "streak_count": 4
   },
   "matches": [
+    {
+      "match_id": 9091077602,
+      "hero_id": 26,
+      "hero_name": "Lion",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "win": true,
+      "kills": 3,
+      "deaths": 9,
+      "assists": 19,
+      "hero_damage": 11169,
+      "damage_per_min": 283,
+      "total_xp": 25969,
+      "xp_per_min": 658,
+      "gold": 3109,
+      "gold_per_min": 324,
+      "duration": 2368,
+      "start_time": 1794733491,
+      "items": [
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 218,
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 5.8,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5118
+    },
     {
       "match_id": 9091026770,
       "hero_id": 5,
@@ -1018,62 +1074,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5093
-    },
-    {
-      "match_id": 9088126251,
-      "hero_id": 21,
-      "hero_name": "Windranger",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "win": true,
-      "kills": 4,
-      "deaths": 8,
-      "assists": 25,
-      "hero_damage": 16140,
-      "damage_per_min": 381,
-      "total_xp": 24478,
-      "xp_per_min": 578,
-      "gold": 803,
-      "gold_per_min": 317,
-      "duration": 2541,
-      "start_time": 1794571527,
-      "items": [
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 98,
-          "name": "Orchid Malevolence",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orchid.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 166,
-          "name": "Maelstrom",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
-        }
-      ],
-      "rating": 6.6,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5118
     }
   ],
   "top_heroes": [
@@ -1218,10 +1218,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 12,
-      "wins": 8,
+      "games": 11,
+      "wins": 7,
       "losses": 4,
-      "winrate": 66.7,
+      "winrate": 63.6,
       "recent_results": [
         {
           "win": true,
@@ -1485,6 +1485,33 @@
       ]
     },
     {
+      "hero_id": 26,
+      "name": "Lion",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792674606
+        },
+        {
+          "win": false,
+          "start_time": 1793838532
+        },
+        {
+          "win": true,
+          "start_time": 1794555463
+        },
+        {
+          "win": true,
+          "start_time": 1794733491
+        }
+      ]
+    },
+    {
       "hero_id": 22,
       "name": "Zeus",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
@@ -1587,29 +1614,6 @@
         {
           "win": true,
           "start_time": 1794279946
-        }
-      ]
-    },
-    {
-      "hero_id": 26,
-      "name": "Lion",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
-      "games": 3,
-      "wins": 1,
-      "losses": 2,
-      "winrate": 33.3,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792674606
-        },
-        {
-          "win": false,
-          "start_time": 1793838532
-        },
-        {
-          "win": true,
-          "start_time": 1794555463
         }
       ]
     },
@@ -2096,6 +2100,7 @@
     "9090836946",
     "9090863367",
     "9090898769",
-    "9091026770"
+    "9091026770",
+    "9091077602"
   ]
 }
