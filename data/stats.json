@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T03:26:03.079926+00:00",
+  "updated_at": "2026-11-15T04:23:17.218569+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5068
+    "mmr": 5043
   },
-  "mmr": 5068,
+  "mmr": 5043,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
+    "mmr_change_7d": -50,
+    "mmr_change_30d": -50,
     "streak_type": "loss",
-    "streak_count": 2
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": 9090782690,
+      "hero_id": 68,
+      "hero_name": "Ancient Apparition",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "win": false,
+      "kills": 5,
+      "deaths": 13,
+      "assists": 42,
+      "hero_damage": 30978,
+      "damage_per_min": 467,
+      "total_xp": 46101,
+      "xp_per_min": 695,
+      "gold": 4681,
+      "gold_per_min": 398,
+      "duration": 3980,
+      "start_time": 1794712051,
+      "items": [
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 1804,
+          "name": "Roshan's Banner",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/roshans_banner.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        }
+      ],
+      "rating": 5.1,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 5043
+    },
     {
       "match_id": 9089981707,
       "hero_id": 19,
@@ -1019,56 +1074,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9087939836,
-      "hero_id": 121,
-      "hero_name": "Grimstroke",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "win": true,
-      "kills": 4,
-      "deaths": 4,
-      "assists": 13,
-      "hero_damage": 8018,
-      "damage_per_min": 286,
-      "total_xp": 11661,
-      "xp_per_min": 416,
-      "gold": 2016,
-      "gold_per_min": 334,
-      "duration": 1682,
-      "start_time": 1794558973,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 1575,
-          "name": "Orb of Frost",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/orb_of_frost.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 7.4,
-      "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5043
     }
   ],
   "top_heroes": [
@@ -1306,10 +1311,10 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 8,
+      "games": 7,
       "wins": 4,
-      "losses": 4,
-      "winrate": 50.0,
+      "losses": 3,
+      "winrate": 57.1,
       "recent_results": [
         {
           "win": false,
@@ -1838,29 +1843,6 @@
       ]
     },
     {
-      "hero_id": 68,
-      "name": "Ancient Apparition",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "games": 3,
-      "wins": 0,
-      "losses": 3,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792653424
-        },
-        {
-          "win": false,
-          "start_time": 1792921419
-        },
-        {
-          "win": false,
-          "start_time": 1794291186
-        }
-      ]
-    },
-    {
       "hero_id": 74,
       "name": "Invoker",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
@@ -1903,6 +1885,33 @@
         {
           "win": false,
           "start_time": 1794182256
+        }
+      ]
+    },
+    {
+      "hero_id": 68,
+      "name": "Ancient Apparition",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "games": 4,
+      "wins": 0,
+      "losses": 4,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792653424
+        },
+        {
+          "win": false,
+          "start_time": 1792921419
+        },
+        {
+          "win": false,
+          "start_time": 1794291186
+        },
+        {
+          "win": false,
+          "start_time": 1794712051
         }
       ]
     }
@@ -2078,6 +2087,7 @@
     "9089762012",
     "9089843437",
     "9089913633",
-    "9089981707"
+    "9089981707",
+    "9090782690"
   ]
 }
