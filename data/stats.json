@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T05:21:27.847721+00:00",
+  "updated_at": "2026-11-15T06:16:54.435246+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5018
+    "mmr": 5043
   },
-  "mmr": 5018,
+  "mmr": 5043,
   "performance": {
-    "mmr_change_7d": -75,
-    "mmr_change_30d": -75,
-    "streak_type": "loss",
-    "streak_count": 4
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "win",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9090863367,
+      "hero_id": 9,
+      "hero_name": "Mirana",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "win": true,
+      "kills": 4,
+      "deaths": 3,
+      "assists": 21,
+      "hero_damage": 16984,
+      "damage_per_min": 468,
+      "total_xp": 20981,
+      "xp_per_min": 578,
+      "gold": 2232,
+      "gold_per_min": 385,
+      "duration": 2178,
+      "start_time": 1794719271,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 259,
+          "name": "Kaya",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/kaya.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 75,
+          "name": "Wraith Band",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wraith_band.png"
+        }
+      ],
+      "rating": 8.1,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5043
+    },
     {
       "match_id": 9090836946,
       "hero_id": 31,
@@ -1024,61 +1074,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 5068
-    },
-    {
-      "match_id": 9087988980,
-      "hero_id": 31,
-      "hero_name": "Lich",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "win": true,
-      "kills": 5,
-      "deaths": 7,
-      "assists": 23,
-      "hero_damage": 15854,
-      "damage_per_min": 439,
-      "total_xp": 26004,
-      "xp_per_min": 720,
-      "gold": 638,
-      "gold_per_min": 502,
-      "duration": 2167,
-      "start_time": 1794562963,
-      "items": [
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 250,
-          "name": "Bloodthorn",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/bloodthorn.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 7.9,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5043
     }
   ],
   "top_heroes": [
@@ -1143,7 +1138,7 @@
       "wins": 77,
       "winrate": 56.6,
       "score": 55.77,
-      "kda": 2.43
+      "kda": 1.9
     },
     {
       "name": "Nyx Assassin",
@@ -1211,11 +1206,11 @@
     {
       "name": "Mirana",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 403,
-      "wins": 217,
-      "winrate": 53.8,
-      "score": 53.66,
-      "kda": "—"
+      "games": 404,
+      "wins": 218,
+      "winrate": 54.0,
+      "score": 53.77,
+      "kda": 8.33
     }
   ],
   "recent_heroes_30d": [
@@ -1282,6 +1277,37 @@
       ]
     },
     {
+      "hero_id": 9,
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 9,
+      "wins": 5,
+      "losses": 4,
+      "winrate": 55.6,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793646481
+        },
+        {
+          "win": false,
+          "start_time": 1793663370
+        },
+        {
+          "win": true,
+          "start_time": 1794171890
+        },
+        {
+          "win": false,
+          "start_time": 1794294161
+        },
+        {
+          "win": true,
+          "start_time": 1794719271
+        }
+      ]
+    },
+    {
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
@@ -1340,37 +1366,6 @@
         {
           "win": false,
           "start_time": 1794716981
-        }
-      ]
-    },
-    {
-      "hero_id": 9,
-      "name": "Mirana",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 8,
-      "wins": 4,
-      "losses": 4,
-      "winrate": 50.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793635516
-        },
-        {
-          "win": true,
-          "start_time": 1793646481
-        },
-        {
-          "win": false,
-          "start_time": 1793663370
-        },
-        {
-          "win": true,
-          "start_time": 1794171890
-        },
-        {
-          "win": false,
-          "start_time": 1794294161
         }
       ]
     },
@@ -1848,6 +1843,29 @@
       ]
     },
     {
+      "hero_id": 68,
+      "name": "Ancient Apparition",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "games": 3,
+      "wins": 0,
+      "losses": 3,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1792921419
+        },
+        {
+          "win": false,
+          "start_time": 1794291186
+        },
+        {
+          "win": false,
+          "start_time": 1794712051
+        }
+      ]
+    },
+    {
       "hero_id": 74,
       "name": "Invoker",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
@@ -1890,33 +1908,6 @@
         {
           "win": false,
           "start_time": 1794182256
-        }
-      ]
-    },
-    {
-      "hero_id": 68,
-      "name": "Ancient Apparition",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "games": 4,
-      "wins": 0,
-      "losses": 4,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792653424
-        },
-        {
-          "win": false,
-          "start_time": 1792921419
-        },
-        {
-          "win": false,
-          "start_time": 1794291186
-        },
-        {
-          "win": false,
-          "start_time": 1794712051
         }
       ]
     }
@@ -2094,6 +2085,7 @@
     "9089913633",
     "9089981707",
     "9090782690",
-    "9090836946"
+    "9090836946",
+    "9090863367"
   ]
 }
