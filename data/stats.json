@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T16:39:09.528702+00:00",
+  "updated_at": "2026-11-17T17:40:43.529251+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5068
+    "mmr": 5093
   },
-  "mmr": 5068,
+  "mmr": 5093,
   "performance": {
-    "mmr_change_7d": 25,
-    "mmr_change_30d": 25,
+    "mmr_change_7d": 50,
+    "mmr_change_30d": 50,
     "streak_type": "win",
-    "streak_count": 2
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": 9094355813,
+      "hero_id": 101,
+      "hero_name": "Skywrath Mage",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
+      "win": true,
+      "kills": 8,
+      "deaths": 13,
+      "assists": 26,
+      "hero_damage": 41575,
+      "damage_per_min": 764,
+      "total_xp": 48485,
+      "xp_per_min": 891,
+      "gold": 8836,
+      "gold_per_min": 656,
+      "duration": 3265,
+      "start_time": 1794932564,
+      "items": [
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 37,
+          "name": "Ghost Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
+        },
+        {
+          "id": 48,
+          "name": "Boots of Travel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png"
+        }
+      ],
+      "rating": 6.4,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 5093
+    },
     {
       "match_id": 9094310258,
       "hero_id": 9,
@@ -1017,56 +1072,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5068
-    },
-    {
-      "match_id": 9089260561,
-      "hero_id": 21,
-      "hero_name": "Windranger",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 5,
-      "assists": 6,
-      "hero_damage": 15454,
-      "damage_per_min": 389,
-      "total_xp": 18579,
-      "xp_per_min": 468,
-      "gold": 1991,
-      "gold_per_min": 325,
-      "duration": 2382,
-      "start_time": 1794633496,
-      "items": [
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 1852,
-          "name": "Essence Distiller",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/essence_distiller.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 5.5,
-      "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5093
     }
   ],
   "top_heroes": [
@@ -1332,37 +1337,6 @@
       ]
     },
     {
-      "hero_id": 121,
-      "name": "Grimstroke",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "games": 5,
-      "wins": 3,
-      "losses": 2,
-      "winrate": 60.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1792916084
-        },
-        {
-          "win": false,
-          "start_time": 1793401194
-        },
-        {
-          "win": true,
-          "start_time": 1793725320
-        },
-        {
-          "win": true,
-          "start_time": 1794558973
-        },
-        {
-          "win": false,
-          "start_time": 1794737681
-        }
-      ]
-    },
-    {
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
@@ -1494,6 +1468,33 @@
       ]
     },
     {
+      "hero_id": 121,
+      "name": "Grimstroke",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793401194
+        },
+        {
+          "win": true,
+          "start_time": 1793725320
+        },
+        {
+          "win": true,
+          "start_time": 1794558973
+        },
+        {
+          "win": false,
+          "start_time": 1794737681
+        }
+      ]
+    },
+    {
       "hero_id": 22,
       "name": "Zeus",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
@@ -1607,6 +1608,25 @@
         {
           "win": true,
           "start_time": 1793887795
+        }
+      ]
+    },
+    {
+      "hero_id": 101,
+      "name": "Skywrath Mage",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794297431
+        },
+        {
+          "win": true,
+          "start_time": 1794932564
         }
       ]
     },
@@ -1735,21 +1755,6 @@
         {
           "win": false,
           "start_time": 1794350506
-        }
-      ]
-    },
-    {
-      "hero_id": 101,
-      "name": "Skywrath Mage",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1794297431
         }
       ]
     },
@@ -2113,6 +2118,7 @@
     "9092837689",
     "9094168575",
     "9094251068",
-    "9094310258"
+    "9094310258",
+    "9094355813"
   ]
 }
