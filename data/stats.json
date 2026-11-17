@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T18:36:33.377677+00:00",
+  "updated_at": "2026-11-17T19:40:55.232211+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,116 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5143
   },
-  "mmr": 5093,
+  "mmr": 5143,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
+    "mmr_change_7d": 100,
+    "mmr_change_30d": 100,
     "streak_type": "win",
-    "streak_count": 3
+    "streak_count": 5
   },
   "matches": [
+    {
+      "match_id": 9094541795,
+      "hero_id": 110,
+      "hero_name": "Phoenix",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "win": true,
+      "kills": 6,
+      "deaths": 2,
+      "assists": 26,
+      "hero_damage": 34309,
+      "damage_per_min": 931,
+      "total_xp": 26741,
+      "xp_per_min": 726,
+      "gold": 182,
+      "gold_per_min": 405,
+      "duration": 2210,
+      "start_time": 1794940845,
+      "items": [
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 96,
+          "name": "Scythe of Vyse",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
+        },
+        {
+          "id": 43,
+          "name": "Sentry Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png"
+        }
+      ],
+      "rating": 8.9,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5143
+    },
+    {
+      "match_id": 9094468804,
+      "hero_id": 21,
+      "hero_name": "Windranger",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "win": true,
+      "kills": 6,
+      "deaths": 14,
+      "assists": 21,
+      "hero_damage": 18396,
+      "damage_per_min": 374,
+      "total_xp": 28447,
+      "xp_per_min": 578,
+      "gold": 3307,
+      "gold_per_min": 352,
+      "duration": 2953,
+      "start_time": 1794937534,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 116,
+          "name": "Black King Bar",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
+        },
+        {
+          "id": 166,
+          "name": "Maelstrom",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
+        },
+        {
+          "id": 77,
+          "name": "Null Talisman",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
+        }
+      ],
+      "rating": 4.3,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 5118
+    },
     {
       "match_id": 9094355813,
       "hero_id": 101,
@@ -967,111 +1067,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5118
-    },
-    {
-      "match_id": 9089762012,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": true,
-      "kills": 6,
-      "deaths": 8,
-      "assists": 15,
-      "hero_damage": 30098,
-      "damage_per_min": 671,
-      "total_xp": 26317,
-      "xp_per_min": 587,
-      "gold": 1578,
-      "gold_per_min": 478,
-      "duration": 2690,
-      "start_time": 1794661827,
-      "items": [
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 96,
-          "name": "Scythe of Vyse",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
-        },
-        {
-          "id": 176,
-          "name": "Ethereal Blade",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ethereal_blade.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 6.8,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5093
-    },
-    {
-      "match_id": 9089691630,
-      "hero_id": 31,
-      "hero_name": "Lich",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "win": false,
-      "kills": 5,
-      "deaths": 14,
-      "assists": 19,
-      "hero_damage": 24764,
-      "damage_per_min": 603,
-      "total_xp": 21002,
-      "xp_per_min": 511,
-      "gold": 685,
-      "gold_per_min": 354,
-      "duration": 2466,
-      "start_time": 1794659026,
-      "items": [
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 34,
-          "name": "Magic Stick",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 231,
-          "name": "Guardian Greaves",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
-        }
-      ],
-      "rating": 3.5,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1105,11 +1100,11 @@
     {
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 122,
-      "wins": 71,
-      "winrate": 58.2,
-      "score": 57.04,
-      "kda": 2.62
+      "games": 123,
+      "wins": 72,
+      "winrate": 58.5,
+      "score": 57.34,
+      "kda": 16.0
     },
     {
       "name": "Disruptor",
@@ -1136,7 +1131,7 @@
       "wins": 77,
       "winrate": 56.6,
       "score": 55.77,
-      "kda": 1.9
+      "kda": 2.29
     },
     {
       "name": "Nyx Assassin",
@@ -1216,15 +1211,11 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 11,
-      "wins": 7,
+      "games": 12,
+      "wins": 8,
       "losses": 4,
-      "winrate": 63.6,
+      "winrate": 66.7,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793632565
-        },
         {
           "win": true,
           "start_time": 1793651800
@@ -1240,6 +1231,10 @@
         {
           "win": true,
           "start_time": 1794661827
+        },
+        {
+          "win": true,
+          "start_time": 1794940845
         }
       ]
     },
@@ -1247,15 +1242,11 @@
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 12,
-      "wins": 7,
+      "games": 13,
+      "wins": 8,
       "losses": 5,
-      "winrate": 58.3,
+      "winrate": 61.5,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794539582
-        },
         {
           "win": true,
           "start_time": 1794569848
@@ -1271,6 +1262,10 @@
         {
           "win": true,
           "start_time": 1794928145
+        },
+        {
+          "win": true,
+          "start_time": 1794937534
         }
       ]
     },
@@ -1834,21 +1829,6 @@
       ]
     },
     {
-      "hero_id": 59,
-      "name": "Huskar",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/huskar.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792918200
-        }
-      ]
-    },
-    {
       "hero_id": 87,
       "name": "Disruptor",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
@@ -1868,6 +1848,25 @@
       ]
     },
     {
+      "hero_id": 68,
+      "name": "Ancient Apparition",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794291186
+        },
+        {
+          "win": false,
+          "start_time": 1794712051
+        }
+      ]
+    },
+    {
       "hero_id": 128,
       "name": "Snapfire",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
@@ -1883,29 +1882,6 @@
         {
           "win": false,
           "start_time": 1794182256
-        }
-      ]
-    },
-    {
-      "hero_id": 68,
-      "name": "Ancient Apparition",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "games": 3,
-      "wins": 0,
-      "losses": 3,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792921419
-        },
-        {
-          "win": false,
-          "start_time": 1794291186
-        },
-        {
-          "win": false,
-          "start_time": 1794712051
         }
       ]
     },
@@ -2119,6 +2095,8 @@
     "9094168575",
     "9094251068",
     "9094310258",
-    "9094355813"
+    "9094355813",
+    "9094468804",
+    "9094541795"
   ]
 }
