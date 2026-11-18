@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T11:41:08.304533+00:00",
+  "updated_at": "2026-11-18T12:43:08.985608+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5193
+    "mmr": 5168
   },
-  "mmr": 5193,
+  "mmr": 5168,
   "performance": {
-    "mmr_change_7d": 25,
-    "mmr_change_30d": 25,
-    "streak_type": "win",
-    "streak_count": 2
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "loss",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9095249174,
+      "hero_id": 112,
+      "hero_name": "Winter Wyvern",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 6,
+      "assists": 7,
+      "hero_damage": 8362,
+      "damage_per_min": 292,
+      "total_xp": 10845,
+      "xp_per_min": 379,
+      "gold": 3,
+      "gold_per_min": 322,
+      "duration": 1717,
+      "start_time": 1795002646,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 43,
+          "name": "Sentry Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png"
+        },
+        {
+          "id": 1850,
+          "name": "Eldwurm's Edda",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/eldwurms_edda.png"
+        }
+      ],
+      "rating": 4.9,
+      "review_notes": [
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5168
+    },
     {
       "match_id": 9095192161,
       "hero_id": 31,
@@ -998,62 +1053,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9090836946,
-      "hero_id": 31,
-      "hero_name": "Lich",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "win": false,
-      "kills": 6,
-      "deaths": 7,
-      "assists": 10,
-      "hero_damage": 17774,
-      "damage_per_min": 604,
-      "total_xp": 12972,
-      "xp_per_min": 441,
-      "gold": 580,
-      "gold_per_min": 337,
-      "duration": 1765,
-      "start_time": 1794716981,
-      "items": [
-        {
-          "id": 21,
-          "name": "Ogre Axe",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
-        },
-        {
-          "id": 23,
-          "name": "Staff of Wizardry",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 5.4,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1100,7 +1099,7 @@
       "wins": 79,
       "winrate": 57.2,
       "score": 56.33,
-      "kda": 4.67
+      "kda": 6.75
     },
     {
       "name": "Disruptor",
@@ -1353,15 +1352,11 @@
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "games": 5,
+      "games": 4,
       "wins": 3,
-      "losses": 2,
-      "winrate": 60.0,
+      "losses": 1,
+      "winrate": 75.0,
       "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792936270
-        },
         {
           "win": true,
           "start_time": 1793660510
@@ -1564,21 +1559,6 @@
       ]
     },
     {
-      "hero_id": 112,
-      "name": "Winter Wyvern",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
-      "games": 1,
-      "wins": 1,
-      "losses": 0,
-      "winrate": 100.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793937105
-        }
-      ]
-    },
-    {
       "hero_id": 23,
       "name": "Kunkka",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
@@ -1590,6 +1570,25 @@
         {
           "win": true,
           "start_time": 1793887795
+        }
+      ]
+    },
+    {
+      "hero_id": 112,
+      "name": "Winter Wyvern",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793937105
+        },
+        {
+          "win": false,
+          "start_time": 1795002646
         }
       ]
     },
@@ -2073,6 +2072,7 @@
     "9095079411",
     "9095101421",
     "9095134561",
-    "9095192161"
+    "9095192161",
+    "9095249174"
   ]
 }
