@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T18:32:25.339034+00:00",
+  "updated_at": "2026-11-18T19:36:43.057693+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,63 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5118
+    "mmr": 5093
   },
-  "mmr": 5118,
+  "mmr": 5093,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9095806936,
+      "hero_id": 72,
+      "hero_name": "Gyrocopter",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
+      "win": false,
+      "kills": 3,
+      "deaths": 12,
+      "assists": 5,
+      "hero_damage": 17418,
+      "damage_per_min": 615,
+      "total_xp": 7990,
+      "xp_per_min": 282,
+      "gold": 338,
+      "gold_per_min": 229,
+      "duration": 1700,
+      "start_time": 1795028396,
+      "items": [
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 188,
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
+        },
+        {
+          "id": 102,
+          "name": "Force Staff",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        }
+      ],
+      "rating": 2.6,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 5093
+    },
     {
       "match_id": 9095673505,
       "hero_id": 75,
@@ -1000,61 +1047,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9091262586,
-      "hero_id": 5,
-      "hero_name": "Crystal Maiden",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "win": false,
-      "kills": 8,
-      "deaths": 16,
-      "assists": 20,
-      "hero_damage": 55573,
-      "damage_per_min": 731,
-      "total_xp": 62472,
-      "xp_per_min": 822,
-      "gold": 3650,
-      "gold_per_min": 488,
-      "duration": 4560,
-      "start_time": 1794742582,
-      "items": [
-        {
-          "id": 110,
-          "name": "Refresher Orb",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
-        },
-        {
-          "id": 37,
-          "name": "Ghost Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 116,
-          "name": "Black King Bar",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
-        },
-        {
-          "id": 48,
-          "name": "Boots of Travel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png"
-        }
-      ],
-      "rating": 3.9,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5043
     }
   ],
   "top_heroes": [
@@ -1292,10 +1284,10 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 8,
+      "games": 7,
       "wins": 5,
-      "losses": 3,
-      "winrate": 62.5,
+      "losses": 2,
+      "winrate": 71.4,
       "recent_results": [
         {
           "win": true,
@@ -1652,6 +1644,21 @@
         {
           "win": false,
           "start_time": 1794541462
+        }
+      ]
+    },
+    {
+      "hero_id": 72,
+      "name": "Gyrocopter",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1795028396
         }
       ]
     },
@@ -2096,6 +2103,7 @@
     "9095457608",
     "9095540600",
     "9095617970",
-    "9095673505"
+    "9095673505",
+    "9095806936"
   ]
 }
