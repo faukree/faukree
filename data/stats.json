@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T17:41:31.944705+00:00",
+  "updated_at": "2026-11-18T18:32:25.339034+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,72 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5143
+    "mmr": 5118
   },
-  "mmr": 5143,
+  "mmr": 5118,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "win",
+    "streak_type": "loss",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9095673505,
+      "hero_id": 75,
+      "hero_name": "Silencer",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
+      "win": false,
+      "kills": 5,
+      "deaths": 14,
+      "assists": 9,
+      "hero_damage": 19703,
+      "damage_per_min": 387,
+      "total_xp": 21435,
+      "xp_per_min": 421,
+      "gold": 305,
+      "gold_per_min": 268,
+      "duration": 3055,
+      "start_time": 1795022116,
+      "items": [
+        {
+          "id": 63,
+          "name": "Power Treads",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/power_treads.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 102,
+          "name": "Force Staff",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
+        },
+        {
+          "id": 43,
+          "name": "Sentry Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 2.5,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5118
+    },
     {
       "match_id": 9095617970,
       "hero_id": 5,
@@ -999,52 +1055,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9091201041,
-      "hero_id": 86,
-      "hero_name": "Rubick",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
-      "win": false,
-      "kills": 1,
-      "deaths": 7,
-      "assists": 12,
-      "hero_damage": 15784,
-      "damage_per_min": 420,
-      "total_xp": 19421,
-      "xp_per_min": 517,
-      "gold": 2228,
-      "gold_per_min": 315,
-      "duration": 2254,
-      "start_time": 1794739821,
-      "items": [
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        }
-      ],
-      "rating": 5.0,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1502,21 +1512,6 @@
       ]
     },
     {
-      "hero_id": 75,
-      "name": "Silencer",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
-      "games": 1,
-      "wins": 1,
-      "losses": 0,
-      "winrate": 100.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794722086
-        }
-      ]
-    },
-    {
       "hero_id": 111,
       "name": "Oracle",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/oracle.png",
@@ -1543,6 +1538,25 @@
         {
           "win": true,
           "start_time": 1794279946
+        }
+      ]
+    },
+    {
+      "hero_id": 75,
+      "name": "Silencer",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
+      "games": 2,
+      "wins": 1,
+      "losses": 1,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794722086
+        },
+        {
+          "win": false,
+          "start_time": 1795022116
         }
       ]
     },
@@ -1845,6 +1859,25 @@
       ]
     },
     {
+      "hero_id": 74,
+      "name": "Invoker",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793457266
+        },
+        {
+          "win": false,
+          "start_time": 1794190201
+        }
+      ]
+    },
+    {
       "hero_id": 128,
       "name": "Snapfire",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
@@ -1860,29 +1893,6 @@
         {
           "win": false,
           "start_time": 1794182256
-        }
-      ]
-    },
-    {
-      "hero_id": 74,
-      "name": "Invoker",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
-      "games": 3,
-      "wins": 0,
-      "losses": 3,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793271336
-        },
-        {
-          "win": false,
-          "start_time": 1793457266
-        },
-        {
-          "win": false,
-          "start_time": 1794190201
         }
       ]
     }
@@ -2085,6 +2095,7 @@
     "9095340890",
     "9095457608",
     "9095540600",
-    "9095617970"
+    "9095617970",
+    "9095673505"
   ]
 }
