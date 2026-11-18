@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T10:43:43.669388+00:00",
+  "updated_at": "2026-11-18T11:41:08.304533+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,61 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5168
+    "mmr": 5193
   },
-  "mmr": 5168,
+  "mmr": 5193,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": 25,
+    "mmr_change_30d": 25,
     "streak_type": "win",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9095192161,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": true,
+      "kills": 4,
+      "deaths": 6,
+      "assists": 29,
+      "hero_damage": 18639,
+      "damage_per_min": 427,
+      "total_xp": 27881,
+      "xp_per_min": 639,
+      "gold": 2928,
+      "gold_per_min": 365,
+      "duration": 2618,
+      "start_time": 1794999021,
+      "items": [
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 7.9,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5193
+    },
     {
       "match_id": 9095134561,
       "hero_id": 5,
@@ -1009,61 +1054,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9090782690,
-      "hero_id": 68,
-      "hero_name": "Ancient Apparition",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ancient_apparition.png",
-      "win": false,
-      "kills": 5,
-      "deaths": 13,
-      "assists": 42,
-      "hero_damage": 30978,
-      "damage_per_min": 467,
-      "total_xp": 46101,
-      "xp_per_min": 695,
-      "gold": 4681,
-      "gold_per_min": 398,
-      "duration": 3980,
-      "start_time": 1794712051,
-      "items": [
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 1804,
-          "name": "Roshan's Banner",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/roshans_banner.png"
-        },
-        {
-          "id": 96,
-          "name": "Scythe of Vyse",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 5.1,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5043
     }
   ],
   "top_heroes": [
@@ -1104,6 +1094,15 @@
       "kda": 16.0
     },
     {
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 138,
+      "wins": 79,
+      "winrate": 57.2,
+      "score": 56.33,
+      "kda": 4.67
+    },
+    {
       "name": "Disruptor",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
       "games": 42,
@@ -1111,15 +1110,6 @@
       "winrate": 57.1,
       "score": 54.84,
       "kda": 2.33
-    },
-    {
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 137,
-      "wins": 78,
-      "winrate": 56.9,
-      "score": 56.05,
-      "kda": 4.11
     },
     {
       "name": "Zeus",
@@ -1239,10 +1229,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 10,
+      "games": 9,
       "wins": 6,
-      "losses": 4,
-      "winrate": 60.0,
+      "losses": 3,
+      "winrate": 66.7,
       "recent_results": [
         {
           "win": true,
@@ -1298,6 +1288,37 @@
       ]
     },
     {
+      "hero_id": 31,
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 8,
+      "wins": 5,
+      "losses": 3,
+      "winrate": 62.5,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794562963
+        },
+        {
+          "win": false,
+          "start_time": 1794659026
+        },
+        {
+          "win": false,
+          "start_time": 1794716981
+        },
+        {
+          "win": true,
+          "start_time": 1794989915
+        },
+        {
+          "win": true,
+          "start_time": 1794999021
+        }
+      ]
+    },
+    {
       "hero_id": 5,
       "name": "Crystal Maiden",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
@@ -1325,37 +1346,6 @@
         {
           "win": true,
           "start_time": 1794994682
-        }
-      ]
-    },
-    {
-      "hero_id": 31,
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 7,
-      "wins": 4,
-      "losses": 3,
-      "winrate": 57.1,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794277296
-        },
-        {
-          "win": true,
-          "start_time": 1794562963
-        },
-        {
-          "win": false,
-          "start_time": 1794659026
-        },
-        {
-          "win": false,
-          "start_time": 1794716981
-        },
-        {
-          "win": true,
-          "start_time": 1794989915
         }
       ]
     },
@@ -2082,6 +2072,7 @@
     "9094541795",
     "9095079411",
     "9095101421",
-    "9095134561"
+    "9095134561",
+    "9095192161"
   ]
 }
