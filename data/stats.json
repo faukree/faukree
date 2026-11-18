@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T16:46:40.886521+00:00",
+  "updated_at": "2026-11-18T17:41:31.944705+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5118
+    "mmr": 5143
   },
-  "mmr": 5118,
+  "mmr": 5143,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9095617970,
+      "hero_id": 5,
+      "hero_name": "Crystal Maiden",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "win": true,
+      "kills": 3,
+      "deaths": 5,
+      "assists": 13,
+      "hero_damage": 9852,
+      "damage_per_min": 288,
+      "total_xp": 13830,
+      "xp_per_min": 405,
+      "gold": 490,
+      "gold_per_min": 425,
+      "duration": 2049,
+      "start_time": 1795019562,
+      "items": [
+        {
+          "id": 42,
+          "name": "Observer Ward",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 37,
+          "name": "Ghost Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
+        },
+        {
+          "id": 60,
+          "name": "Point Booster",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png"
+        }
+      ],
+      "rating": 7.0,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5143
+    },
     {
       "match_id": 9095540600,
       "hero_id": 23,
@@ -990,62 +1045,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5068
-    },
-    {
-      "match_id": 9091156641,
-      "hero_id": 121,
-      "hero_name": "Grimstroke",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "win": false,
-      "kills": 1,
-      "deaths": 10,
-      "assists": 17,
-      "hero_damage": 11570,
-      "damage_per_min": 392,
-      "total_xp": 13622,
-      "xp_per_min": 461,
-      "gold": 1376,
-      "gold_per_min": 323,
-      "duration": 1773,
-      "start_time": 1794737681,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 4.1,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5093
     }
   ],
   "top_heroes": [
@@ -1221,10 +1220,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 9,
-      "wins": 7,
+      "games": 8,
+      "wins": 6,
       "losses": 2,
-      "winrate": 77.8,
+      "winrate": 75.0,
       "recent_results": [
         {
           "win": false,
@@ -1245,6 +1244,37 @@
         {
           "win": true,
           "start_time": 1795012566
+        }
+      ]
+    },
+    {
+      "hero_id": 5,
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 7,
+      "wins": 5,
+      "losses": 2,
+      "winrate": 71.4,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794621231
+        },
+        {
+          "win": true,
+          "start_time": 1794730581
+        },
+        {
+          "win": false,
+          "start_time": 1794742582
+        },
+        {
+          "win": true,
+          "start_time": 1794994682
+        },
+        {
+          "win": true,
+          "start_time": 1795019562
         }
       ]
     },
@@ -1307,37 +1337,6 @@
         {
           "win": true,
           "start_time": 1794930614
-        }
-      ]
-    },
-    {
-      "hero_id": 5,
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 6,
-      "wins": 4,
-      "losses": 2,
-      "winrate": 66.7,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794353086
-        },
-        {
-          "win": true,
-          "start_time": 1794621231
-        },
-        {
-          "win": true,
-          "start_time": 1794730581
-        },
-        {
-          "win": false,
-          "start_time": 1794742582
-        },
-        {
-          "win": true,
-          "start_time": 1794994682
         }
       ]
     },
@@ -2085,6 +2084,7 @@
     "9095288667",
     "9095340890",
     "9095457608",
-    "9095540600"
+    "9095540600",
+    "9095617970"
   ]
 }
