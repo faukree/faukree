@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T19:36:43.057693+00:00",
+  "updated_at": "2026-11-18T20:30:54.370261+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,14 +17,14 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5118
   },
-  "mmr": 5093,
+  "mmr": 5118,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
     "streak_type": "loss",
-    "streak_count": 2
+    "streak_count": 1
   },
   "matches": [
     {
@@ -72,7 +72,52 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
-      "mmr_after": 5093
+      "mmr_after": 5118
+    },
+    {
+      "match_id": 9095752551,
+      "hero_id": 85,
+      "hero_name": "Undying",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
+      "win": true,
+      "kills": 8,
+      "deaths": 6,
+      "assists": 29,
+      "hero_damage": 19140,
+      "damage_per_min": 542,
+      "total_xp": 30054,
+      "xp_per_min": 851,
+      "gold": 1936,
+      "gold_per_min": 478,
+      "duration": 2119,
+      "start_time": 1795025801,
+      "items": [
+        {
+          "id": 231,
+          "name": "Guardian Greaves",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/guardian_greaves.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 37,
+          "name": "Ghost Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
+        }
+      ],
+      "rating": 8.4,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5143
     },
     {
       "match_id": 9095673505,
@@ -992,61 +1037,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9091387527,
-      "hero_id": 87,
-      "hero_name": "Disruptor",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
-      "win": false,
-      "kills": 5,
-      "deaths": 6,
-      "assists": 9,
-      "hero_damage": 12460,
-      "damage_per_min": 364,
-      "total_xp": 14193,
-      "xp_per_min": 415,
-      "gold": 1226,
-      "gold_per_min": 327,
-      "duration": 2052,
-      "start_time": 1794747516,
-      "items": [
-        {
-          "id": 218,
-          "name": "Observer and Sentry Wards",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 5.3,
-      "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5018
     }
   ],
   "top_heroes": [
@@ -1071,11 +1061,11 @@
     {
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "games": 79,
-      "wins": 47,
-      "winrate": 59.5,
-      "score": 57.58,
-      "kda": "—"
+      "games": 80,
+      "wins": 48,
+      "winrate": 60.0,
+      "score": 58.0,
+      "kda": 6.17
     },
     {
       "name": "Phoenix",
@@ -1102,7 +1092,7 @@
       "wins": 24,
       "winrate": 57.1,
       "score": 54.84,
-      "kda": 2.33
+      "kda": "—"
     },
     {
       "name": "Zeus",
@@ -1346,10 +1336,10 @@
       "hero_id": 85,
       "name": "Undying",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "games": 4,
-      "wins": 3,
+      "games": 5,
+      "wins": 4,
       "losses": 1,
-      "winrate": 75.0,
+      "winrate": 80.0,
       "recent_results": [
         {
           "win": true,
@@ -1366,6 +1356,10 @@
         {
           "win": true,
           "start_time": 1794664827
+        },
+        {
+          "win": true,
+          "start_time": 1795025801
         }
       ]
     },
@@ -1783,6 +1777,21 @@
       ]
     },
     {
+      "hero_id": 128,
+      "name": "Snapfire",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794182256
+        }
+      ]
+    },
+    {
       "hero_id": 104,
       "name": "Legion Commander",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
@@ -1881,25 +1890,6 @@
         {
           "win": false,
           "start_time": 1794190201
-        }
-      ]
-    },
-    {
-      "hero_id": 128,
-      "name": "Snapfire",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/snapfire.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793368426
-        },
-        {
-          "win": false,
-          "start_time": 1794182256
         }
       ]
     }
@@ -2104,6 +2094,7 @@
     "9095540600",
     "9095617970",
     "9095673505",
+    "9095752551",
     "9095806936"
   ]
 }
