@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T12:43:08.985608+00:00",
+  "updated_at": "2026-11-18T13:58:13.932653+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,124 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5168
+    "mmr": 5118
   },
-  "mmr": 5168,
+  "mmr": 5118,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -50,
+    "mmr_change_30d": -50,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": 9095340890,
+      "hero_id": 131,
+      "hero_name": "Ring Master",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ringmaster.png",
+      "win": false,
+      "kills": 0,
+      "deaths": 8,
+      "assists": 5,
+      "hero_damage": 9723,
+      "damage_per_min": 403,
+      "total_xp": 6410,
+      "xp_per_min": 266,
+      "gold": 928,
+      "gold_per_min": 203,
+      "duration": 1446,
+      "start_time": 1795007387,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 1123,
+          "name": "Blood Grenade",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blood_grenade.png"
+        },
+        {
+          "id": 44,
+          "name": "Tango",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tango.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 23,
+          "name": "Staff of Wizardry",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
+        }
+      ],
+      "rating": 3.3,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
+        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
+      ],
+      "mmr_after": 5118
+    },
+    {
+      "match_id": 9095288667,
+      "hero_id": 103,
+      "hero_name": "Elder Titan",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/elder_titan.png",
+      "win": false,
+      "kills": 3,
+      "deaths": 10,
+      "assists": 13,
+      "hero_damage": 11176,
+      "damage_per_min": 292,
+      "total_xp": 16079,
+      "xp_per_min": 420,
+      "gold": 40,
+      "gold_per_min": 261,
+      "duration": 2297,
+      "start_time": 1795004791,
+      "items": [
+        {
+          "id": 279,
+          "name": "Ring of Tarrasque",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ring_of_tarrasque.png"
+        },
+        {
+          "id": 1848,
+          "name": "Shawl",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shawl.png"
+        },
+        {
+          "id": 185,
+          "name": "Drum of Endurance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ancient_janggo.png"
+        },
+        {
+          "id": 100,
+          "name": "Eul's Scepter of Divinity",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
+        },
+        {
+          "id": 36,
+          "name": "Magic Wand",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 3.7,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5143
+    },
     {
       "match_id": 9095249174,
       "hero_id": 112,
@@ -953,106 +1061,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5093
-    },
-    {
-      "match_id": 9090898769,
-      "hero_id": 75,
-      "hero_name": "Silencer",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
-      "win": true,
-      "kills": 6,
-      "deaths": 7,
-      "assists": 22,
-      "hero_damage": 14476,
-      "damage_per_min": 320,
-      "total_xp": 23238,
-      "xp_per_min": 513,
-      "gold": 2323,
-      "gold_per_min": 370,
-      "duration": 2718,
-      "start_time": 1794722086,
-      "items": [
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 96,
-          "name": "Scythe of Vyse",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/sheepstick.png"
-        },
-        {
-          "id": 102,
-          "name": "Force Staff",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        }
-      ],
-      "rating": 7.0,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5068
-    },
-    {
-      "match_id": 9090863367,
-      "hero_id": 9,
-      "hero_name": "Mirana",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "win": true,
-      "kills": 4,
-      "deaths": 3,
-      "assists": 21,
-      "hero_damage": 16984,
-      "damage_per_min": 468,
-      "total_xp": 20981,
-      "xp_per_min": 578,
-      "gold": 2232,
-      "gold_per_min": 385,
-      "duration": 2178,
-      "start_time": 1794719271,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 259,
-          "name": "Kaya",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/kaya.png"
-        },
-        {
-          "id": 100,
-          "name": "Eul's Scepter of Divinity",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/cyclone.png"
-        },
-        {
-          "id": 75,
-          "name": "Wraith Band",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/wraith_band.png"
-        }
-      ],
-      "rating": 8.1,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 5043
     }
   ],
   "top_heroes": [
@@ -1256,37 +1264,6 @@
       ]
     },
     {
-      "hero_id": 9,
-      "name": "Mirana",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 10,
-      "wins": 6,
-      "losses": 4,
-      "winrate": 60.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793663370
-        },
-        {
-          "win": true,
-          "start_time": 1794171890
-        },
-        {
-          "win": false,
-          "start_time": 1794294161
-        },
-        {
-          "win": true,
-          "start_time": 1794719271
-        },
-        {
-          "win": true,
-          "start_time": 1794930614
-        }
-      ]
-    },
-    {
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
@@ -1314,6 +1291,37 @@
         {
           "win": true,
           "start_time": 1794999021
+        }
+      ]
+    },
+    {
+      "hero_id": 9,
+      "name": "Mirana",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+      "games": 9,
+      "wins": 5,
+      "losses": 4,
+      "winrate": 55.6,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1793663370
+        },
+        {
+          "win": true,
+          "start_time": 1794171890
+        },
+        {
+          "win": false,
+          "start_time": 1794294161
+        },
+        {
+          "win": true,
+          "start_time": 1794719271
+        },
+        {
+          "win": true,
+          "start_time": 1794930614
         }
       ]
     },
@@ -1650,6 +1658,36 @@
       ]
     },
     {
+      "hero_id": 131,
+      "name": "Ring Master",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ringmaster.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1795007387
+        }
+      ]
+    },
+    {
+      "hero_id": 103,
+      "name": "Elder Titan",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/elder_titan.png",
+      "games": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1795004791
+        }
+      ]
+    },
+    {
       "hero_id": 19,
       "name": "Tiny",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
@@ -1781,21 +1819,6 @@
         {
           "win": false,
           "start_time": 1793445424
-        }
-      ]
-    },
-    {
-      "hero_id": 51,
-      "name": "Clockwerk",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1792938770
         }
       ]
     },
@@ -2073,6 +2096,8 @@
     "9095101421",
     "9095134561",
     "9095192161",
-    "9095249174"
+    "9095249174",
+    "9095288667",
+    "9095340890"
   ]
 }
