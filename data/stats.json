@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T09:41:27.949671+00:00",
+  "updated_at": "2026-11-18T10:43:43.669388+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5143
+    "mmr": 5168
   },
-  "mmr": 5143,
+  "mmr": 5168,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9095134561,
+      "hero_id": 5,
+      "hero_name": "Crystal Maiden",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "win": true,
+      "kills": 12,
+      "deaths": 4,
+      "assists": 20,
+      "hero_damage": 34896,
+      "damage_per_min": 864,
+      "total_xp": 42240,
+      "xp_per_min": 1046,
+      "gold": 955,
+      "gold_per_min": 620,
+      "duration": 2423,
+      "start_time": 1794994682,
+      "items": [
+        {
+          "id": 223,
+          "name": "Meteor Hammer",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/meteor_hammer.png"
+        },
+        {
+          "id": 48,
+          "name": "Boots of Travel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 116,
+          "name": "Black King Bar",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 9.4,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5168
+    },
     {
       "match_id": 9095101421,
       "hero_id": 21,
@@ -1009,53 +1064,6 @@
         "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
       ],
       "mmr_after": 5043
-    },
-    {
-      "match_id": 9089981707,
-      "hero_id": 19,
-      "hero_name": "Tiny",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
-      "win": false,
-      "kills": 0,
-      "deaths": 7,
-      "assists": 6,
-      "hero_damage": 9998,
-      "damage_per_min": 300,
-      "total_xp": 11227,
-      "xp_per_min": 337,
-      "gold": 760,
-      "gold_per_min": 266,
-      "duration": 1999,
-      "start_time": 1794669667,
-      "items": [
-        {
-          "id": 34,
-          "name": "Magic Stick",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 1107,
-          "name": "Phylactery",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/phylactery.png"
-        }
-      ],
-      "rating": 3.9,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5068
     }
   ],
   "top_heroes": [
@@ -1231,10 +1239,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 11,
-      "wins": 7,
+      "games": 10,
+      "wins": 6,
       "losses": 4,
-      "winrate": 63.6,
+      "winrate": 60.0,
       "recent_results": [
         {
           "win": true,
@@ -1290,6 +1298,37 @@
       ]
     },
     {
+      "hero_id": 5,
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 6,
+      "wins": 4,
+      "losses": 2,
+      "winrate": 66.7,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794353086
+        },
+        {
+          "win": true,
+          "start_time": 1794621231
+        },
+        {
+          "win": true,
+          "start_time": 1794730581
+        },
+        {
+          "win": false,
+          "start_time": 1794742582
+        },
+        {
+          "win": true,
+          "start_time": 1794994682
+        }
+      ]
+    },
+    {
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
@@ -1317,37 +1356,6 @@
         {
           "win": true,
           "start_time": 1794989915
-        }
-      ]
-    },
-    {
-      "hero_id": 5,
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 5,
-      "wins": 3,
-      "losses": 2,
-      "winrate": 60.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793644046
-        },
-        {
-          "win": true,
-          "start_time": 1794353086
-        },
-        {
-          "win": true,
-          "start_time": 1794621231
-        },
-        {
-          "win": true,
-          "start_time": 1794730581
-        },
-        {
-          "win": false,
-          "start_time": 1794742582
         }
       ]
     },
@@ -2073,6 +2081,7 @@
     "9094468804",
     "9094541795",
     "9095079411",
-    "9095101421"
+    "9095101421",
+    "9095134561"
   ]
 }
