@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T20:30:54.370261+00:00",
+  "updated_at": "2026-11-18T21:28:40.056456+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5118
+    "mmr": 5143
   },
-  "mmr": 5118,
+  "mmr": 5143,
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "loss",
+    "streak_type": "win",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9095852708,
+      "hero_id": 22,
+      "hero_name": "Zeus",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "win": true,
+      "kills": 5,
+      "deaths": 4,
+      "assists": 36,
+      "hero_damage": 79955,
+      "damage_per_min": 1429,
+      "total_xp": 53208,
+      "xp_per_min": 951,
+      "gold": 9387,
+      "gold_per_min": 545,
+      "duration": 3357,
+      "start_time": 1795030706,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 235,
+          "name": "Octarine Core",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/octarine_core.png"
+        },
+        {
+          "id": 110,
+          "name": "Refresher Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
+        },
+        {
+          "id": 259,
+          "name": "Kaya",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/kaya.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 9.3,
+      "review_notes": [
+        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
+      ],
+      "mmr_after": 5143
+    },
     {
       "match_id": 9095806936,
       "hero_id": 72,
@@ -987,56 +1037,6 @@
         "Низкий XPM. Возможно, часть времени теряется без получения опыта."
       ],
       "mmr_after": 5018
-    },
-    {
-      "match_id": 9092837689,
-      "hero_id": 3,
-      "hero_name": "Bane",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
-      "win": true,
-      "kills": 1,
-      "deaths": 4,
-      "assists": 8,
-      "hero_damage": 9071,
-      "damage_per_min": 321,
-      "total_xp": 10238,
-      "xp_per_min": 362,
-      "gold": 1278,
-      "gold_per_min": 308,
-      "duration": 1697,
-      "start_time": 1794837246,
-      "items": [
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 6.1,
-      "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5043
     }
   ],
   "top_heroes": [
@@ -1097,11 +1097,11 @@
     {
       "name": "Zeus",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 120,
-      "wins": 68,
-      "winrate": 56.7,
-      "score": 55.71,
-      "kda": "—"
+      "games": 121,
+      "wins": 69,
+      "winrate": 57.0,
+      "score": 56.03,
+      "kda": 10.25
     },
     {
       "name": "Nyx Assassin",
@@ -1164,7 +1164,7 @@
       "wins": 11,
       "winrate": 55.0,
       "score": 52.5,
-      "kda": 2.25
+      "kda": "—"
     },
     {
       "name": "Magnus",
@@ -1212,10 +1212,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 8,
+      "games": 7,
       "wins": 6,
-      "losses": 2,
-      "winrate": 75.0,
+      "losses": 1,
+      "winrate": 85.7,
       "recent_results": [
         {
           "win": false,
@@ -1364,6 +1364,33 @@
       ]
     },
     {
+      "hero_id": 22,
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 4,
+      "wins": 3,
+      "losses": 1,
+      "winrate": 75.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793639940
+        },
+        {
+          "win": true,
+          "start_time": 1794179931
+        },
+        {
+          "win": false,
+          "start_time": 1794561002
+        },
+        {
+          "win": true,
+          "start_time": 1795030706
+        }
+      ]
+    },
+    {
       "hero_id": 86,
       "name": "Rubick",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
@@ -1429,29 +1456,6 @@
         {
           "win": true,
           "start_time": 1794565618
-        }
-      ]
-    },
-    {
-      "hero_id": 22,
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 3,
-      "wins": 2,
-      "losses": 1,
-      "winrate": 66.7,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793639940
-        },
-        {
-          "win": true,
-          "start_time": 1794179931
-        },
-        {
-          "win": false,
-          "start_time": 1794561002
         }
       ]
     },
@@ -2095,6 +2099,7 @@
     "9095617970",
     "9095673505",
     "9095752551",
-    "9095806936"
+    "9095806936",
+    "9095852708"
   ]
 }
