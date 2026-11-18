@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T14:47:35.789175+00:00",
+  "updated_at": "2026-11-18T15:41:55.101509+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5118
+    "mmr": 5143
   },
-  "mmr": 5118,
+  "mmr": 5143,
   "performance": {
-    "mmr_change_7d": -50,
-    "mmr_change_30d": -50,
-    "streak_type": "loss",
-    "streak_count": 3
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "win",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9095457608,
+      "hero_id": 110,
+      "hero_name": "Phoenix",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+      "win": true,
+      "kills": 9,
+      "deaths": 8,
+      "assists": 26,
+      "hero_damage": 26496,
+      "damage_per_min": 651,
+      "total_xp": 35083,
+      "xp_per_min": 862,
+      "gold": 4065,
+      "gold_per_min": 481,
+      "duration": 2442,
+      "start_time": 1795012566,
+      "items": [
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 226,
+          "name": "Lotus Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 119,
+          "name": "Shiva's Guard",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shivas_guard.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        }
+      ],
+      "rating": 8.0,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 5143
+    },
     {
       "match_id": 9095340890,
       "hero_id": 131,
@@ -1006,61 +1056,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5118
-    },
-    {
-      "match_id": 9091026770,
-      "hero_id": 5,
-      "hero_name": "Crystal Maiden",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "win": true,
-      "kills": 5,
-      "deaths": 12,
-      "assists": 15,
-      "hero_damage": 15962,
-      "damage_per_min": 415,
-      "total_xp": 25245,
-      "xp_per_min": 656,
-      "gold": 57,
-      "gold_per_min": 368,
-      "duration": 2309,
-      "start_time": 1794730581,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 21,
-          "name": "Ogre Axe",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ogre_axe.png"
-        },
-        {
-          "id": 8,
-          "name": "Mithril Hammer",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mithril_hammer.png"
-        }
-      ],
-      "rating": 4.9,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5093
     }
   ],
   "top_heroes": [
@@ -1094,11 +1089,11 @@
     {
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 123,
-      "wins": 72,
-      "winrate": 58.5,
-      "score": 57.34,
-      "kda": 16.0
+      "games": 124,
+      "wins": 73,
+      "winrate": 58.9,
+      "score": 57.64,
+      "kda": 6.7
     },
     {
       "name": "Lich",
@@ -1237,14 +1232,10 @@
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
       "games": 9,
-      "wins": 6,
-      "losses": 3,
-      "winrate": 66.7,
+      "wins": 7,
+      "losses": 2,
+      "winrate": 77.8,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793651800
-        },
         {
           "win": false,
           "start_time": 1794187336
@@ -1260,6 +1251,10 @@
         {
           "win": true,
           "start_time": 1794940845
+        },
+        {
+          "win": true,
+          "start_time": 1795012566
         }
       ]
     },
@@ -2098,6 +2093,7 @@
     "9095192161",
     "9095249174",
     "9095288667",
-    "9095340890"
+    "9095340890",
+    "9095457608"
   ]
 }
