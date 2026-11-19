@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T12:40:39.301110+00:00",
+  "updated_at": "2026-11-19T14:00:29.420464+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,67 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5193
+    "mmr": 5168
   },
-  "mmr": 5193,
+  "mmr": 5168,
   "performance": {
-    "mmr_change_7d": 50,
-    "mmr_change_30d": 50,
-    "streak_type": "win",
-    "streak_count": 3
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "loss",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": "9096598851",
+      "hero_id": 121,
+      "hero_name": "Grimstroke",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "win": false,
+      "kills": 2,
+      "deaths": 10,
+      "assists": 12,
+      "hero_damage": 11533,
+      "damage_per_min": 281,
+      "total_xp": 21075,
+      "xp_per_min": 513,
+      "gold": 723,
+      "gold_per_min": 329,
+      "duration": 2465,
+      "start_time": 1795092343,
+      "items": [
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 58,
+          "name": "Mystic Staff",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/mystic_staff.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        }
+      ],
+      "rating": 3.9,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5168
+    },
     {
       "match_id": "9096521100",
       "hero_id": 101,
@@ -985,56 +1036,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": "9094468804",
-      "hero_id": 21,
-      "hero_name": "Windranger",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "win": true,
-      "kills": 6,
-      "deaths": 14,
-      "assists": 21,
-      "hero_damage": 18396,
-      "damage_per_min": 374,
-      "total_xp": 28447,
-      "xp_per_min": 578,
-      "gold": 3307,
-      "gold_per_min": 352,
-      "duration": 2953,
-      "start_time": 1794937534,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 116,
-          "name": "Black King Bar",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
-        },
-        {
-          "id": 166,
-          "name": "Maelstrom",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/maelstrom.png"
-        },
-        {
-          "id": 77,
-          "name": "Null Talisman",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
-        }
-      ],
-      "rating": 4.3,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
-      ],
-      "mmr_after": 5118
     }
   ],
   "top_heroes": [],
@@ -1198,10 +1199,10 @@
       "hero_id": 9,
       "name": "Mirana",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 9,
+      "games": 8,
       "wins": 4,
-      "losses": 5,
-      "winrate": 44.4,
+      "losses": 4,
+      "winrate": 50.0,
       "recent_results": [
         {
           "win": true,
@@ -1299,29 +1300,6 @@
       ]
     },
     {
-      "hero_id": 121,
-      "name": "Grimstroke",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
-      "games": 3,
-      "wins": 2,
-      "losses": 1,
-      "winrate": 66.7,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793725320
-        },
-        {
-          "win": true,
-          "start_time": 1794558973
-        },
-        {
-          "win": false,
-          "start_time": 1794737681
-        }
-      ]
-    },
-    {
       "hero_id": 26,
       "name": "Lion",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
@@ -1364,6 +1342,33 @@
         {
           "win": true,
           "start_time": 1794565618
+        }
+      ]
+    },
+    {
+      "hero_id": 121,
+      "name": "Grimstroke",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/grimstroke.png",
+      "games": 4,
+      "wins": 2,
+      "losses": 2,
+      "winrate": 50.0,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1793725320
+        },
+        {
+          "win": true,
+          "start_time": 1794558973
+        },
+        {
+          "win": false,
+          "start_time": 1794737681
+        },
+        {
+          "win": false,
+          "start_time": 1795092343
         }
       ]
     },
@@ -1977,6 +1982,7 @@
     "9096380220",
     "9096414540",
     "9096481810",
-    "9096521100"
+    "9096521100",
+    "9096598851"
   ]
 }
