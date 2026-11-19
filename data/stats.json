@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T17:42:09.567592+00:00",
+  "updated_at": "2026-11-19T18:39:37.214408+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,62 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5193
+    "mmr": 5168
   },
-  "mmr": 5193,
+  "mmr": 5168,
   "performance": {
-    "mmr_change_7d": -25,
-    "mmr_change_30d": -25,
+    "mmr_change_7d": -50,
+    "mmr_change_30d": -50,
     "streak_type": "loss",
-    "streak_count": 2
+    "streak_count": 3
   },
   "matches": [
+    {
+      "match_id": "9096970737",
+      "hero_id": 87,
+      "hero_name": "Disruptor",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+      "win": false,
+      "kills": 1,
+      "deaths": 11,
+      "assists": 27,
+      "hero_damage": 19027,
+      "damage_per_min": 391,
+      "total_xp": 27564,
+      "xp_per_min": 566,
+      "gold": 2981,
+      "gold_per_min": 288,
+      "duration": 2922,
+      "start_time": 1795107404,
+      "items": [
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        }
+      ],
+      "rating": 4.4,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5168
+    },
     {
       "match_id": "9096903140",
       "hero_id": 37,
@@ -988,96 +1034,10 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": "9095249174",
-      "hero_id": 112,
-      "hero_name": "Winter Wyvern",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 6,
-      "assists": 7,
-      "hero_damage": 8362,
-      "damage_per_min": 292,
-      "total_xp": 10845,
-      "xp_per_min": 379,
-      "gold": 3,
-      "gold_per_min": 322,
-      "duration": 1717,
-      "start_time": 1795002646,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 43,
-          "name": "Sentry Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_sentry.png"
-        },
-        {
-          "id": 1850,
-          "name": "Eldwurm's Edda",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/eldwurms_edda.png"
-        }
-      ],
-      "rating": 4.9,
-      "review_notes": [
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5168
     }
   ],
   "top_heroes": [],
   "recent_heroes_30d": [
-    {
-      "hero_id": 21,
-      "name": "Windranger",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 13,
-      "wins": 8,
-      "losses": 5,
-      "winrate": 61.5,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1794633496
-        },
-        {
-          "win": true,
-          "start_time": 1794928145
-        },
-        {
-          "win": true,
-          "start_time": 1794937534
-        },
-        {
-          "win": false,
-          "start_time": 1794991880
-        },
-        {
-          "win": true,
-          "start_time": 1795097660
-        }
-      ]
-    },
     {
       "hero_id": 110,
       "name": "Phoenix",
@@ -1106,6 +1066,37 @@
         {
           "win": true,
           "start_time": 1795095165
+        }
+      ]
+    },
+    {
+      "hero_id": 21,
+      "name": "Windranger",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+      "games": 12,
+      "wins": 7,
+      "losses": 5,
+      "winrate": 58.3,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794633496
+        },
+        {
+          "win": true,
+          "start_time": 1794928145
+        },
+        {
+          "win": true,
+          "start_time": 1794937534
+        },
+        {
+          "win": false,
+          "start_time": 1794991880
+        },
+        {
+          "win": true,
+          "start_time": 1795097660
         }
       ]
     },
@@ -1580,21 +1571,6 @@
       ]
     },
     {
-      "hero_id": 87,
-      "name": "Disruptor",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
-      "games": 1,
-      "wins": 0,
-      "losses": 1,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1794747516
-        }
-      ]
-    },
-    {
       "hero_id": 19,
       "name": "Tiny",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
@@ -1681,6 +1657,25 @@
         {
           "win": false,
           "start_time": 1794182256
+        }
+      ]
+    },
+    {
+      "hero_id": 87,
+      "name": "Disruptor",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794747516
+        },
+        {
+          "win": false,
+          "start_time": 1795107404
         }
       ]
     },
@@ -1954,6 +1949,7 @@
     "9096726608",
     "9096780221",
     "9096850876",
-    "9096903140"
+    "9096903140",
+    "9096970737"
   ]
 }
