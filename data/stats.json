@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T16:49:14.928144+00:00",
+  "updated_at": "2026-11-19T17:42:09.567592+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,67 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5218
+    "mmr": 5193
   },
-  "mmr": 5218,
+  "mmr": 5193,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": "9096903140",
+      "hero_id": 37,
+      "hero_name": "Warlock",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "win": false,
+      "kills": 2,
+      "deaths": 10,
+      "assists": 11,
+      "hero_damage": 15974,
+      "damage_per_min": 410,
+      "total_xp": 16210,
+      "xp_per_min": 416,
+      "gold": 30,
+      "gold_per_min": 295,
+      "duration": 2338,
+      "start_time": 1795104628,
+      "items": [
+        {
+          "id": 188,
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        },
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 34,
+          "name": "Magic Stick",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_stick.png"
+        }
+      ],
+      "rating": 3.7,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5193
+    },
     {
       "match_id": "9096850876",
       "hero_id": 33,
@@ -992,51 +1043,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5168
-    },
-    {
-      "match_id": "9095192161",
-      "hero_id": 31,
-      "hero_name": "Lich",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "win": true,
-      "kills": 4,
-      "deaths": 6,
-      "assists": 29,
-      "hero_damage": 18639,
-      "damage_per_min": 427,
-      "total_xp": 27881,
-      "xp_per_min": 639,
-      "gold": 2928,
-      "gold_per_min": 365,
-      "duration": 2618,
-      "start_time": 1794999021,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 254,
-          "name": "Glimmer Cape",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        }
-      ],
-      "rating": 7.9,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 5193
     }
   ],
   "top_heroes": [],
@@ -1649,9 +1655,9 @@
       ]
     },
     {
-      "hero_id": 37,
-      "name": "Warlock",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "hero_id": 74,
+      "name": "Invoker",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
       "games": 1,
       "wins": 0,
       "losses": 1,
@@ -1659,7 +1665,7 @@
       "recent_results": [
         {
           "win": false,
-          "start_time": 1794350506
+          "start_time": 1794190201
         }
       ]
     },
@@ -1675,6 +1681,25 @@
         {
           "win": false,
           "start_time": 1794182256
+        }
+      ]
+    },
+    {
+      "hero_id": 37,
+      "name": "Warlock",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+      "games": 2,
+      "wins": 0,
+      "losses": 2,
+      "winrate": 0.0,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794350506
+        },
+        {
+          "win": false,
+          "start_time": 1795104628
         }
       ]
     },
@@ -1713,25 +1738,6 @@
         {
           "win": false,
           "start_time": 1794712051
-        }
-      ]
-    },
-    {
-      "hero_id": 74,
-      "name": "Invoker",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
-      "games": 2,
-      "wins": 0,
-      "losses": 2,
-      "winrate": 0.0,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1793457266
-        },
-        {
-          "win": false,
-          "start_time": 1794190201
         }
       ]
     }
@@ -1947,6 +1953,7 @@
     "9096664708",
     "9096726608",
     "9096780221",
-    "9096850876"
+    "9096850876",
+    "9096903140"
   ]
 }
