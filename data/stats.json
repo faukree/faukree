@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T05:29:50.414094+00:00",
+  "updated_at": "2026-11-19T06:28:07.283851+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -28,7 +28,7 @@
   },
   "matches": [
     {
-      "match_id": 9095852708,
+      "match_id": "9095852708",
       "hero_id": 22,
       "hero_name": "Zeus",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
@@ -78,7 +78,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9095806936,
+      "match_id": "9095806936",
       "hero_id": 72,
       "hero_name": "Gyrocopter",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
@@ -125,7 +125,7 @@
       "mmr_after": 5118
     },
     {
-      "match_id": 9095752551,
+      "match_id": "9095752551",
       "hero_id": 85,
       "hero_name": "Undying",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
@@ -170,7 +170,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9095673505,
+      "match_id": "9095673505",
       "hero_id": 75,
       "hero_name": "Silencer",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
@@ -226,7 +226,7 @@
       "mmr_after": 5118
     },
     {
-      "match_id": 9095617970,
+      "match_id": "9095617970",
       "hero_id": 5,
       "hero_name": "Crystal Maiden",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
@@ -281,7 +281,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9095540600,
+      "match_id": "9095540600",
       "hero_id": 23,
       "hero_name": "Kunkka",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
@@ -327,7 +327,7 @@
       "mmr_after": 5118
     },
     {
-      "match_id": 9095457608,
+      "match_id": "9095457608",
       "hero_id": 110,
       "hero_name": "Phoenix",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
@@ -377,7 +377,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9095340890,
+      "match_id": "9095340890",
       "hero_id": 131,
       "hero_name": "Ring Master",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ringmaster.png",
@@ -429,7 +429,7 @@
       "mmr_after": 5118
     },
     {
-      "match_id": 9095288667,
+      "match_id": "9095288667",
       "hero_id": 103,
       "hero_name": "Elder Titan",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/elder_titan.png",
@@ -485,7 +485,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9095249174,
+      "match_id": "9095249174",
       "hero_id": 112,
       "hero_name": "Winter Wyvern",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
@@ -540,7 +540,7 @@
       "mmr_after": 5168
     },
     {
-      "match_id": 9095192161,
+      "match_id": "9095192161",
       "hero_id": 31,
       "hero_name": "Lich",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
@@ -585,7 +585,7 @@
       "mmr_after": 5193
     },
     {
-      "match_id": 9095134561,
+      "match_id": "9095134561",
       "hero_id": 5,
       "hero_name": "Crystal Maiden",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
@@ -640,7 +640,7 @@
       "mmr_after": 5168
     },
     {
-      "match_id": 9095101421,
+      "match_id": "9095101421",
       "hero_id": 21,
       "hero_name": "Windranger",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
@@ -686,7 +686,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9095079411,
+      "match_id": "9095079411",
       "hero_id": 31,
       "hero_name": "Lich",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
@@ -736,7 +736,7 @@
       "mmr_after": 5168
     },
     {
-      "match_id": 9094541795,
+      "match_id": "9094541795",
       "hero_id": 110,
       "hero_name": "Phoenix",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
@@ -786,7 +786,7 @@
       "mmr_after": 5143
     },
     {
-      "match_id": 9094468804,
+      "match_id": "9094468804",
       "hero_id": 21,
       "hero_name": "Windranger",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
@@ -836,7 +836,7 @@
       "mmr_after": 5118
     },
     {
-      "match_id": 9094355813,
+      "match_id": "9094355813",
       "hero_id": 101,
       "hero_name": "Skywrath Mage",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
@@ -891,7 +891,7 @@
       "mmr_after": 5093
     },
     {
-      "match_id": 9094310258,
+      "match_id": "9094310258",
       "hero_id": 9,
       "hero_name": "Mirana",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
@@ -942,7 +942,7 @@
       "mmr_after": 5068
     },
     {
-      "match_id": 9094251068,
+      "match_id": "9094251068",
       "hero_id": 21,
       "hero_name": "Windranger",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
@@ -987,7 +987,7 @@
       "mmr_after": 5043
     },
     {
-      "match_id": 9094168575,
+      "match_id": "9094168575",
       "hero_id": 20,
       "hero_name": "Vengeful Spirit",
       "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
@@ -1039,143 +1039,7 @@
       "mmr_after": 5018
     }
   ],
-  "top_heroes": [
-    {
-      "name": "Oracle",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/oracle.png",
-      "games": 32,
-      "wins": 20,
-      "winrate": 62.5,
-      "score": 57.69,
-      "kda": "—"
-    },
-    {
-      "name": "Kunkka",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
-      "games": 43,
-      "wins": 26,
-      "winrate": 60.5,
-      "score": 57.14,
-      "kda": 2.0
-    },
-    {
-      "name": "Undying",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
-      "games": 80,
-      "wins": 48,
-      "winrate": 60.0,
-      "score": 58.0,
-      "kda": 6.17
-    },
-    {
-      "name": "Phoenix",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 124,
-      "wins": 73,
-      "winrate": 58.9,
-      "score": 57.64,
-      "kda": 6.7
-    },
-    {
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 138,
-      "wins": 79,
-      "winrate": 57.2,
-      "score": 56.33,
-      "kda": 6.75
-    },
-    {
-      "name": "Disruptor",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
-      "games": 42,
-      "wins": 24,
-      "winrate": 57.1,
-      "score": 54.84,
-      "kda": "—"
-    },
-    {
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 121,
-      "wins": 69,
-      "winrate": 57.0,
-      "score": 56.03,
-      "kda": 10.25
-    },
-    {
-      "name": "Nyx Assassin",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
-      "games": 46,
-      "wins": 26,
-      "winrate": 56.5,
-      "score": 54.55,
-      "kda": "—"
-    },
-    {
-      "name": "Io",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
-      "games": 23,
-      "wins": 13,
-      "winrate": 56.5,
-      "score": 53.49,
-      "kda": "—"
-    },
-    {
-      "name": "Marci",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png",
-      "games": 23,
-      "wins": 13,
-      "winrate": 56.5,
-      "score": 53.49,
-      "kda": "—"
-    },
-    {
-      "name": "Leshrac",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/leshrac.png",
-      "games": 38,
-      "wins": 21,
-      "winrate": 55.3,
-      "score": 53.45,
-      "kda": "—"
-    },
-    {
-      "name": "Spirit Breaker",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/spirit_breaker.png",
-      "games": 38,
-      "wins": 21,
-      "winrate": 55.3,
-      "score": 53.45,
-      "kda": "—"
-    },
-    {
-      "name": "Vengeful Spirit",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
-      "games": 58,
-      "wins": 32,
-      "winrate": 55.2,
-      "score": 53.85,
-      "kda": 0.92
-    },
-    {
-      "name": "Bane",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
-      "games": 20,
-      "wins": 11,
-      "winrate": 55.0,
-      "score": 52.5,
-      "kda": "—"
-    },
-    {
-      "name": "Magnus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnataur.png",
-      "games": 31,
-      "wins": 17,
-      "winrate": 54.8,
-      "score": 52.94,
-      "kda": "—"
-    }
-  ],
+  "top_heroes": [],
   "recent_heroes_30d": [
     {
       "hero_id": 21,
