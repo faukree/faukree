@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T20:30:30.017229+00:00",
+  "updated_at": "2026-11-20T21:25:24.801054+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -23,10 +23,116 @@
   "performance": {
     "mmr_change_7d": 0,
     "mmr_change_30d": 0,
-    "streak_type": "win",
+    "streak_type": "loss",
     "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9098610851,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": false,
+      "kills": 4,
+      "deaths": 10,
+      "assists": 15,
+      "hero_damage": 10503,
+      "damage_per_min": 327,
+      "total_xp": 18095,
+      "xp_per_min": 564,
+      "gold": 744,
+      "gold_per_min": 338,
+      "duration": 1925,
+      "start_time": 1795207575,
+      "items": [
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 23,
+          "name": "Staff of Wizardry",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 60,
+          "name": "Point Booster",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png"
+        }
+      ],
+      "rating": 4.4,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
+        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
+      ],
+      "mmr_after": 5168
+    },
+    {
+      "match_id": 9098554656,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": true,
+      "kills": 6,
+      "deaths": 7,
+      "assists": 27,
+      "hero_damage": 20191,
+      "damage_per_min": 555,
+      "total_xp": 27771,
+      "xp_per_min": 764,
+      "gold": 881,
+      "gold_per_min": 418,
+      "duration": 2181,
+      "start_time": 1795204704,
+      "items": [
+        {
+          "id": 77,
+          "name": "Null Talisman",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/null_talisman.png"
+        },
+        {
+          "id": 214,
+          "name": "Tranquil Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
+        },
+        {
+          "id": 110,
+          "name": "Refresher Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 8.1,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 5193
+    },
     {
       "match_id": 9098496469,
       "hero_id": 5,
@@ -940,102 +1046,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": 9095540600,
-      "hero_id": 23,
-      "hero_name": "Kunkka",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/kunkka.png",
-      "win": false,
-      "kills": 4,
-      "deaths": 8,
-      "assists": 12,
-      "hero_damage": 17789,
-      "damage_per_min": 479,
-      "total_xp": 16234,
-      "xp_per_min": 437,
-      "gold": 1424,
-      "gold_per_min": 293,
-      "duration": 2229,
-      "start_time": 1795016137,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 108,
-          "name": "Aghanim's Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 188,
-          "name": "Smoke of Deceit",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
-        }
-      ],
-      "rating": 4.7,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
-      ],
-      "mmr_after": 5118
-    },
-    {
-      "match_id": 9095457608,
-      "hero_id": 110,
-      "hero_name": "Phoenix",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "win": true,
-      "kills": 9,
-      "deaths": 8,
-      "assists": 26,
-      "hero_damage": 26496,
-      "damage_per_min": 651,
-      "total_xp": 35083,
-      "xp_per_min": 862,
-      "gold": 4065,
-      "gold_per_min": 481,
-      "duration": 2442,
-      "start_time": 1795012566,
-      "items": [
-        {
-          "id": 40,
-          "name": "Dust of Appearance",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
-        },
-        {
-          "id": 226,
-          "name": "Lotus Orb",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/lotus_orb.png"
-        },
-        {
-          "id": 267,
-          "name": "Spirit Vessel",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
-        },
-        {
-          "id": 119,
-          "name": "Shiva's Guard",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/shivas_guard.png"
-        },
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        }
-      ],
-      "rating": 8.0,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
-      ],
-      "mmr_after": 5143
     }
   ],
   "top_heroes": [
@@ -1055,7 +1065,7 @@
       "wins": 26,
       "winrate": 60.5,
       "score": 57.14,
-      "kda": 2.0
+      "kda": "—"
     },
     {
       "name": "Undying",
@@ -1073,16 +1083,16 @@
       "wins": 74,
       "winrate": 59.2,
       "score": 57.93,
-      "kda": 3.33
+      "kda": 2.5
     },
     {
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 140,
-      "wins": 80,
-      "winrate": 57.1,
-      "score": 56.25,
-      "kda": 3.12
+      "games": 142,
+      "wins": 81,
+      "winrate": 57.0,
+      "score": 56.17,
+      "kda": 3.09
     },
     {
       "name": "Zeus",
@@ -1208,13 +1218,44 @@
       ]
     },
     {
+      "hero_id": 31,
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 11,
+      "wins": 7,
+      "losses": 4,
+      "winrate": 63.6,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794999021
+        },
+        {
+          "win": true,
+          "start_time": 1795081899
+        },
+        {
+          "win": false,
+          "start_time": 1795196774
+        },
+        {
+          "win": true,
+          "start_time": 1795204704
+        },
+        {
+          "win": false,
+          "start_time": 1795207575
+        }
+      ]
+    },
+    {
       "hero_id": 21,
       "name": "Windranger",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
-      "games": 12,
+      "games": 11,
       "wins": 7,
-      "losses": 5,
-      "winrate": 58.3,
+      "losses": 4,
+      "winrate": 63.6,
       "recent_results": [
         {
           "win": false,
@@ -1266,37 +1307,6 @@
         {
           "win": true,
           "start_time": 1795095165
-        }
-      ]
-    },
-    {
-      "hero_id": 31,
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 9,
-      "wins": 6,
-      "losses": 3,
-      "winrate": 66.7,
-      "recent_results": [
-        {
-          "win": false,
-          "start_time": 1794716981
-        },
-        {
-          "win": true,
-          "start_time": 1794989915
-        },
-        {
-          "win": true,
-          "start_time": 1794999021
-        },
-        {
-          "win": true,
-          "start_time": 1795081899
-        },
-        {
-          "win": false,
-          "start_time": 1795196774
         }
       ]
     },
@@ -1363,33 +1373,6 @@
       ]
     },
     {
-      "hero_id": 22,
-      "name": "Zeus",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
-      "games": 4,
-      "wins": 3,
-      "losses": 1,
-      "winrate": 75.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1793639940
-        },
-        {
-          "win": true,
-          "start_time": 1794179931
-        },
-        {
-          "win": false,
-          "start_time": 1794561002
-        },
-        {
-          "win": true,
-          "start_time": 1795030706
-        }
-      ]
-    },
-    {
       "hero_id": 101,
       "name": "Skywrath Mage",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skywrath_mage.png",
@@ -1409,6 +1392,29 @@
         {
           "win": true,
           "start_time": 1795088599
+        }
+      ]
+    },
+    {
+      "hero_id": 22,
+      "name": "Zeus",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+      "games": 3,
+      "wins": 2,
+      "losses": 1,
+      "winrate": 66.7,
+      "recent_results": [
+        {
+          "win": true,
+          "start_time": 1794179931
+        },
+        {
+          "win": false,
+          "start_time": 1794561002
+        },
+        {
+          "win": true,
+          "start_time": 1795030706
         }
       ]
     },
@@ -2090,6 +2096,8 @@
     "9096903140",
     "9096970737",
     "9098368823",
-    "9098496469"
+    "9098496469",
+    "9098554656",
+    "9098610851"
   ]
 }
