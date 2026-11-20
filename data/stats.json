@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T19:41:42.791456+00:00",
+  "updated_at": "2026-11-20T20:30:30.017229+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5143
+    "mmr": 5168
   },
-  "mmr": 5143,
+  "mmr": 5168,
   "performance": {
-    "mmr_change_7d": -75,
-    "mmr_change_30d": -75,
-    "streak_type": "loss",
-    "streak_count": 4
+    "mmr_change_7d": 0,
+    "mmr_change_30d": 0,
+    "streak_type": "win",
+    "streak_count": 1
   },
   "matches": [
+    {
+      "match_id": 9098496469,
+      "hero_id": 5,
+      "hero_name": "Crystal Maiden",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "win": true,
+      "kills": 1,
+      "deaths": 7,
+      "assists": 21,
+      "hero_damage": 14750,
+      "damage_per_min": 418,
+      "total_xp": 21628,
+      "xp_per_min": 613,
+      "gold": 2245,
+      "gold_per_min": 374,
+      "duration": 2117,
+      "start_time": 1795202125,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 40,
+          "name": "Dust of Appearance",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/dust.png"
+        },
+        {
+          "id": 267,
+          "name": "Spirit Vessel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/spirit_vessel.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 218,
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
+        },
+        {
+          "id": 188,
+          "name": "Smoke of Deceit",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
+        }
+      ],
+      "rating": 6.9,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 5168
+    },
     {
       "match_id": 9098368823,
       "hero_id": 31,
@@ -981,58 +1036,6 @@
         "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": 9095340890,
-      "hero_id": 131,
-      "hero_name": "Ring Master",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ringmaster.png",
-      "win": false,
-      "kills": 0,
-      "deaths": 8,
-      "assists": 5,
-      "hero_damage": 9723,
-      "damage_per_min": 403,
-      "total_xp": 6410,
-      "xp_per_min": 266,
-      "gold": 928,
-      "gold_per_min": 203,
-      "duration": 1446,
-      "start_time": 1795007387,
-      "items": [
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 1123,
-          "name": "Blood Grenade",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blood_grenade.png"
-        },
-        {
-          "id": 44,
-          "name": "Tango",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tango.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        },
-        {
-          "id": 23,
-          "name": "Staff of Wizardry",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/staff_of_wizardry.png"
-        }
-      ],
-      "rating": 3.3,
-      "review_notes": [
-        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5118
     }
   ],
   "top_heroes": [
@@ -1127,6 +1130,15 @@
       "kda": 2.55
     },
     {
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 110,
+      "wins": 61,
+      "winrate": 55.5,
+      "score": 54.62,
+      "kda": 3.6
+    },
+    {
       "name": "Leshrac",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/leshrac.png",
       "games": 38,
@@ -1154,15 +1166,6 @@
       "kda": "—"
     },
     {
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 109,
-      "wins": 60,
-      "winrate": 55.0,
-      "score": 54.26,
-      "kda": 3.85
-    },
-    {
       "name": "Bane",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
       "games": 20,
@@ -1173,6 +1176,37 @@
     }
   ],
   "recent_heroes_30d": [
+    {
+      "hero_id": 5,
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 9,
+      "wins": 7,
+      "losses": 2,
+      "winrate": 77.8,
+      "recent_results": [
+        {
+          "win": false,
+          "start_time": 1794742582
+        },
+        {
+          "win": true,
+          "start_time": 1794994682
+        },
+        {
+          "win": true,
+          "start_time": 1795019562
+        },
+        {
+          "win": true,
+          "start_time": 1795099739
+        },
+        {
+          "win": true,
+          "start_time": 1795202125
+        }
+      ]
+    },
     {
       "hero_id": 21,
       "name": "Windranger",
@@ -1232,37 +1266,6 @@
         {
           "win": true,
           "start_time": 1795095165
-        }
-      ]
-    },
-    {
-      "hero_id": 5,
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 8,
-      "wins": 6,
-      "losses": 2,
-      "winrate": 75.0,
-      "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794730581
-        },
-        {
-          "win": false,
-          "start_time": 1794742582
-        },
-        {
-          "win": true,
-          "start_time": 1794994682
-        },
-        {
-          "win": true,
-          "start_time": 1795019562
-        },
-        {
-          "win": true,
-          "start_time": 1795099739
         }
       ]
     },
@@ -1332,10 +1335,10 @@
       "hero_id": 9,
       "name": "Mirana",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
-      "games": 8,
+      "games": 7,
       "wins": 4,
-      "losses": 4,
-      "winrate": 50.0,
+      "losses": 3,
+      "winrate": 57.1,
       "recent_results": [
         {
           "win": true,
@@ -2086,6 +2089,7 @@
     "9096850876",
     "9096903140",
     "9096970737",
-    "9098368823"
+    "9098368823",
+    "9098496469"
   ]
 }
