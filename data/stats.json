@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T22:13:57.747158+00:00",
+  "updated_at": "2026-11-20T23:50:50.114830+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,71 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5168
+    "mmr": 5143
   },
-  "mmr": 5168,
+  "mmr": 5143,
   "performance": {
-    "mmr_change_7d": 0,
-    "mmr_change_30d": 0,
+    "mmr_change_7d": -25,
+    "mmr_change_30d": -25,
     "streak_type": "loss",
-    "streak_count": 1
+    "streak_count": 2
   },
   "matches": [
+    {
+      "match_id": 9098654939,
+      "hero_id": 5,
+      "hero_name": "Crystal Maiden",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "win": false,
+      "kills": 8,
+      "deaths": 7,
+      "assists": 32,
+      "hero_damage": 22675,
+      "damage_per_min": 406,
+      "total_xp": 44341,
+      "xp_per_min": 793,
+      "gold": 2209,
+      "gold_per_min": 420,
+      "duration": 3355,
+      "start_time": 1795209910,
+      "items": [
+        {
+          "id": 180,
+          "name": "Arcane Boots",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
+        },
+        {
+          "id": 218,
+          "name": "Observer and Sentry Wards",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_dispenser.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 116,
+          "name": "Black King Bar",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/black_king_bar.png"
+        },
+        {
+          "id": 108,
+          "name": "Aghanim's Scepter",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ultimate_scepter.png"
+        }
+      ],
+      "rating": 7.1,
+      "review_notes": [
+        "Смертей довольно много. Можно обратить внимание на моменты перед проигранными драками."
+      ],
+      "mmr_after": 5143
+    },
     {
       "match_id": 9098610851,
       "hero_id": 31,
@@ -991,61 +1046,6 @@
         "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками."
       ],
       "mmr_after": 5118
-    },
-    {
-      "match_id": 9095617970,
-      "hero_id": 5,
-      "hero_name": "Crystal Maiden",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "win": true,
-      "kills": 3,
-      "deaths": 5,
-      "assists": 13,
-      "hero_damage": 9852,
-      "damage_per_min": 288,
-      "total_xp": 13830,
-      "xp_per_min": 405,
-      "gold": 490,
-      "gold_per_min": 425,
-      "duration": 2049,
-      "start_time": 1795019562,
-      "items": [
-        {
-          "id": 42,
-          "name": "Observer Ward",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ward_observer.png"
-        },
-        {
-          "id": 180,
-          "name": "Arcane Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/arcane_boots.png"
-        },
-        {
-          "id": 65,
-          "name": "Hand of Midas",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
-        },
-        {
-          "id": 1,
-          "name": "Blink Dagger",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
-        },
-        {
-          "id": 37,
-          "name": "Ghost Scepter",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/ghost.png"
-        },
-        {
-          "id": 60,
-          "name": "Point Booster",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/point_booster.png"
-        }
-      ],
-      "rating": 7.0,
-      "review_notes": [
-        "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
-      ],
-      "mmr_after": 5143
     }
   ],
   "top_heroes": [
@@ -1140,15 +1140,6 @@
       "kda": 2.55
     },
     {
-      "name": "Crystal Maiden",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
-      "games": 110,
-      "wins": 61,
-      "winrate": 55.5,
-      "score": 54.62,
-      "kda": 3.6
-    },
-    {
       "name": "Leshrac",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/leshrac.png",
       "games": 38,
@@ -1176,6 +1167,15 @@
       "kda": "—"
     },
     {
+      "name": "Crystal Maiden",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+      "games": 111,
+      "wins": 61,
+      "winrate": 55.0,
+      "score": 54.2,
+      "kda": 4.36
+    },
+    {
       "name": "Bane",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
       "games": 20,
@@ -1196,10 +1196,6 @@
       "winrate": 77.8,
       "recent_results": [
         {
-          "win": false,
-          "start_time": 1794742582
-        },
-        {
           "win": true,
           "start_time": 1794994682
         },
@@ -1214,6 +1210,10 @@
         {
           "win": true,
           "start_time": 1795202125
+        },
+        {
+          "win": false,
+          "start_time": 1795209910
         }
       ]
     },
@@ -2098,6 +2098,7 @@
     "9098368823",
     "9098496469",
     "9098554656",
-    "9098610851"
+    "9098610851",
+    "9098654939"
   ]
 }
