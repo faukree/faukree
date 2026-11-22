@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T12:26:31.152675+00:00",
+  "updated_at": "2026-11-22T15:07:25.992636+00:00",
   "profile": {
     "account_id": 924159299,
     "personaname": "Jonathan Briley",
@@ -17,16 +17,66 @@
     "fh_unavailable": false,
     "is_contributor": false,
     "is_subscriber": false,
-    "mmr": 5093
+    "mmr": 5068
   },
-  "mmr": 5093,
+  "mmr": 5068,
   "performance": {
-    "mmr_change_7d": -75,
-    "mmr_change_30d": -75,
+    "mmr_change_7d": -100,
+    "mmr_change_30d": -100,
     "streak_type": "loss",
-    "streak_count": 4
+    "streak_count": 5
   },
   "matches": [
+    {
+      "match_id": 9101015645,
+      "hero_id": 31,
+      "hero_name": "Lich",
+      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "win": false,
+      "kills": 8,
+      "deaths": 14,
+      "assists": 20,
+      "hero_damage": 37187,
+      "damage_per_min": 604,
+      "total_xp": 50532,
+      "xp_per_min": 821,
+      "gold": 1413,
+      "gold_per_min": 527,
+      "duration": 3693,
+      "start_time": 1795349040,
+      "items": [
+        {
+          "id": 110,
+          "name": "Refresher Orb",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/refresher.png"
+        },
+        {
+          "id": 254,
+          "name": "Glimmer Cape",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/glimmer_cape.png"
+        },
+        {
+          "id": 1,
+          "name": "Blink Dagger",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/blink.png"
+        },
+        {
+          "id": 65,
+          "name": "Hand of Midas",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/hand_of_midas.png"
+        },
+        {
+          "id": 48,
+          "name": "Boots of Travel",
+          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/travel_boots.png"
+        }
+      ],
+      "rating": 4.5,
+      "review_notes": [
+        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте."
+      ],
+      "mmr_after": 5068
+    },
     {
       "match_id": 9100124443,
       "hero_id": 21,
@@ -1009,53 +1059,6 @@
         "Явных сигналов по базовым показателям нет. Для более точного разбора нужны данные о карте, предметах и ключевых моментах."
       ],
       "mmr_after": 5143
-    },
-    {
-      "match_id": 9095806936,
-      "hero_id": 72,
-      "hero_name": "Gyrocopter",
-      "hero_icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
-      "win": false,
-      "kills": 3,
-      "deaths": 12,
-      "assists": 5,
-      "hero_damage": 17418,
-      "damage_per_min": 615,
-      "total_xp": 7990,
-      "xp_per_min": 282,
-      "gold": 338,
-      "gold_per_min": 229,
-      "duration": 1700,
-      "start_time": 1795028396,
-      "items": [
-        {
-          "id": 214,
-          "name": "Tranquil Boots",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/tranquil_boots.png"
-        },
-        {
-          "id": 188,
-          "name": "Smoke of Deceit",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/smoke_of_deceit.png"
-        },
-        {
-          "id": 102,
-          "name": "Force Staff",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/force_staff.png"
-        },
-        {
-          "id": 36,
-          "name": "Magic Wand",
-          "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/items/magic_wand.png"
-        }
-      ],
-      "rating": 2.6,
-      "review_notes": [
-        "Много смертей. Стоит проверить позиционирование и опасные перемещения по карте.",
-        "Низкий GPM. Проверь фарм, свободные линии и сбор ресурсов между драками.",
-        "Низкий XPM. Возможно, часть времени теряется без получения опыта."
-      ],
-      "mmr_after": 5118
     }
   ],
   "top_heroes": [
@@ -1096,15 +1099,6 @@
       "kda": 2.5
     },
     {
-      "name": "Lich",
-      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 142,
-      "wins": 81,
-      "winrate": 57.0,
-      "score": 56.17,
-      "kda": 3.09
-    },
-    {
       "name": "Zeus",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
       "games": 121,
@@ -1112,6 +1106,15 @@
       "winrate": 57.0,
       "score": 56.03,
       "kda": 10.25
+    },
+    {
+      "name": "Lich",
+      "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
+      "games": 143,
+      "wins": 81,
+      "winrate": 56.6,
+      "score": 55.83,
+      "kda": 2.77
     },
     {
       "name": "Nyx Assassin",
@@ -1231,15 +1234,11 @@
       "hero_id": 31,
       "name": "Lich",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lich.png",
-      "games": 11,
+      "games": 12,
       "wins": 7,
-      "losses": 4,
-      "winrate": 63.6,
+      "losses": 5,
+      "winrate": 58.3,
       "recent_results": [
-        {
-          "win": true,
-          "start_time": 1794999021
-        },
         {
           "win": true,
           "start_time": 1795081899
@@ -1255,6 +1254,10 @@
         {
           "win": false,
           "start_time": 1795207575
+        },
+        {
+          "win": false,
+          "start_time": 1795349040
         }
       ]
     },
@@ -1293,10 +1296,10 @@
       "hero_id": 110,
       "name": "Phoenix",
       "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
-      "games": 7,
-      "wins": 6,
+      "games": 6,
+      "wins": 5,
       "losses": 1,
-      "winrate": 85.7,
+      "winrate": 83.3,
       "recent_results": [
         {
           "win": true,
@@ -2111,6 +2114,7 @@
     "9098610851",
     "9098654939",
     "9100062371",
-    "9100124443"
+    "9100124443",
+    "9101015645"
   ]
 }
